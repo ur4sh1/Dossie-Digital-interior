@@ -12,12 +12,13 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{asset('js/rh.js')}}"></script>
-    <script src="{{asset('js/vue.js')}}" defer></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}" defer></script>
+    <script type="text/javascript" src="{{asset('js/vue.js')}}" defer></script>
 
+    <!--datatable-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6/css/bootstrap.css">
-
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
 
 
@@ -45,11 +46,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-
-
-    <!--datatable-->
-
 
 </head>
 <body>
