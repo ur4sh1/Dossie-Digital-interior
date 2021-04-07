@@ -45,7 +45,7 @@ class MunicipiosController extends Controller
     public function indexAlternativo()
     {
         $autoridade=Autoridade::all();
-        $municipio=Municipio::all();
+        $municipios=Municipio::all();
         $regional=Regional::all();
         $leito=Leito::all();
         $hospital=Hospital::all();
@@ -55,7 +55,7 @@ class MunicipiosController extends Controller
         $tipo_servico=TipoServico::all();
         $servico=Servico::all();
 
-        return view("admin.municipiosv2", compact('autoridade','municipio','regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico'));
+        return view("admin.municipiosv2", compact('autoridade','municipios','regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico'));
     }
     /**
      * Show the form for creating a new resource.

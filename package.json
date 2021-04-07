@@ -29,6 +29,7 @@
         "datatables.net-buttons": "^1.7.0",
         "datatables.net-buttons-bs4": "^1.7.0",
         "font-awesome": "^4.7.0",
-        "jquery-mask-plugin": "^1.14.16"
+        "jquery-mask-plugin": "^1.14.16",
+        "jquery-plugin": "0.0.0-ignored"
     }
 }

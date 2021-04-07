@@ -1925,6 +1925,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['municipios']
 });
+$(document).ready(function () {
+  $('#municipios').DataTable({
+    "searching": true,
+    "aaSorting": [[1, "asc"]],
+    "language": {
+      "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+    }
+  });
+});
 
 /***/ }),
 
@@ -56812,7 +56821,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h3", [_vm._v("LISTA")]),
+    _c("h3", [_vm._v("MUNICÍPIOS")]),
     _vm._v(" "),
     _c(
       "table",
@@ -56833,7 +56842,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [_c("td", [_vm._v("NOME")])])
+    return _c("tr", [_c("td", [_c("b", [_vm._v("NOME")])])])
   }
 ]
 render._withStripped = true
