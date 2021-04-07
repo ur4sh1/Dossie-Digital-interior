@@ -15,7 +15,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}" defer></script>
-    <script type="text/javascript" src="{{asset('js/vue.js')}}" defer></script>
+    <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
 
     <!--datatable-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6/css/bootstrap.css">

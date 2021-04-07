@@ -34,8 +34,9 @@ class FolhaController extends Controller
         return view('admin.folhaForm',compact('hospital','profissional'));
     }
 
-    public function createAlter($id)
+    public function teste(int $id)
     {
+        dd($id);
         $hospital=Hospital::find($id);
         $profissional=Profissional::all();
         return view('admin.folhaForm',compact('hospital','profissional'));

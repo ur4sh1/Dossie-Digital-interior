@@ -7,6 +7,7 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
+                <a class="btn btn-primary" href="{{action('MunicipiosController@indexAlternativo')}}" role="button">VIEW</a>
             </div>
         </div>
         @foreach($municipio as $m)

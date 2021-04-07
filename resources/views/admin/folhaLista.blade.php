@@ -11,6 +11,10 @@
             </div>
         </div>
         <div class="text-right mb-2">
+<!--            <form method="post" action="{{--{{action('FolhaController@teste',$hospital->id)}}--}}">
+                @csrf
+                <button class="btn btn-primary" type="submit" role="button">ADICIONAR</button>
+            </form>-->
             <a class="btn btn-primary" href="{{route('folhas.create')}}" role="button">ADICIONAR</a>
             <a class="btn btn-primary" href="{{route('folhas.index')}}" role="button">VOLTAR</a>
         </div>

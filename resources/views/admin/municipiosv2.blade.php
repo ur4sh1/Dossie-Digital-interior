@@ -20,11 +20,17 @@
                                 <button class="dropdown-item" value="{{$m->id}}" type="button">{{$m->nome}}</button>
                             @endforeach
                         </div>
+                        <example-component></example-component>
                     </div>
                 </div>
                 <div class="col-sm-6 border">
                 </div>
             </div>
         </form>
-
+        <script>
+            import ExampleComponent from "../../js/components/ExampleComponent";
+            export default {
+                components: {ExampleComponent}
+            }
+        </script>
 @endsection
