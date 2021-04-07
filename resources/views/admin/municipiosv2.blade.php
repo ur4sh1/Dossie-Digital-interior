@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/jquery-3.6.0.js"/>
     <div class="container">
         <div class="text-info">
             <h1>Pesquisa de Municípios</h1>
@@ -20,17 +21,11 @@
                                 <button class="dropdown-item" value="{{$m->id}}" type="button">{{$m->nome}}</button>
                             @endforeach
                         </div>
-                        <example-component></example-component>
                     </div>
                 </div>
-                <div class="col-sm-6 border">
-                </div>
+                <example-component v-bind:municipios="{{$municipio}}"></example-component>
             </div>
         </form>
-        <script>
-            import ExampleComponent from "../../js/components/ExampleComponent";
-            export default {
-                components: {ExampleComponent}
-            }
-        </script>
+
 @endsection
+

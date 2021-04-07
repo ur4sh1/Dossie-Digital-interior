@@ -1,13 +1,3 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-require( 'datatables.net-bs4' )();
-require( 'datatables.net-buttons-bs4' )();
-require( 'datatables.net-buttons/js/buttons.html5.js' )();
 window.Vue = require('vue');
 import axios from 'axios'
 /**
@@ -20,9 +10,6 @@ import axios from 'axios'
 
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-// Vue.component('endereco', require('./components/Endereco.vue').default);
-// Vue.component('listafuncionario', require('./components/ListaFuncionario.vue'));
 
 Vue.use({
     install (Vue) {

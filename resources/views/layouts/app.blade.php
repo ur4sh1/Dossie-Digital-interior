@@ -14,13 +14,9 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}" defer></script>
-    <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
 
     <!--datatable-->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
-
 
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -107,9 +103,6 @@
             </div>
         </main>
     </div>
-
-    <!-- Scripts -->
-
 
 </body>
 </html>
