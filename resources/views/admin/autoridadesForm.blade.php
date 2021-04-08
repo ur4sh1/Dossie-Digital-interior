@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Cadastro de Político</h1>
+            <h1>Cadastro de Autoridade</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">

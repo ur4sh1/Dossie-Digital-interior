@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container">
-        <example-component/>
         <div class="text-info">
             <h1>Lista de Partidos Cadastrados</h1>
         </div>
@@ -37,9 +36,6 @@
             @endforeach
         </table>
     </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.24/b-1.7.0/datatables.min.js"></script>
-
     <script>
         $(document).ready(function () {
             $('#partidos').DataTable({

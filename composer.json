@@ -1,10 +1,10 @@
 {
-    "name": "Dossie/Dossie",
+    "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
         "framework",
-        "Dossie"
+        "laravel"
     ],
     "license": "MIT",
     "require": {

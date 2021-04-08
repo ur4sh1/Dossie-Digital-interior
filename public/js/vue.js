@@ -1921,18 +1921,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['municipios']
-});
-$(document).ready(function () {
-  $('#municipios').DataTable({
-    "searching": true,
-    "aaSorting": [[1, "asc"]],
-    "language": {
-      "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-    }
-  });
 });
 
 /***/ }),
