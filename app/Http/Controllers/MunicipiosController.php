@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Autoridade;
+use App\dados_municipios;
+use App\Detalhes_municipio;
 use App\Equipamento;
 use App\Hospital;
 use App\Leito;
@@ -54,8 +56,11 @@ class MunicipiosController extends Controller
         $tipo_equipamento=TipoEquipamento::all();
         $tipo_servico=TipoServico::all();
         $servico=Servico::all();
+        $dadosMunicipios=Dados_municipios::all();
+        $detalhes=Detalhes_municipio::all();
 
-        return view("admin.municipiosv2", compact('autoridade','municipios','regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico'));
+        return view("admin.municipiosv2", compact('autoridade','municipios','regional'
+            ,'leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico','dadosMunicipios','detalhes'));
     }
     /**
      * Show the form for creating a new resource.
