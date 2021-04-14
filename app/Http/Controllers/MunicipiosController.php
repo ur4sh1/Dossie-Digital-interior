@@ -49,7 +49,7 @@ class MunicipiosController extends Controller
         $autoridade=Autoridade::all();
         $municipios=Municipio::all();
         $regional=Regional::all();
-        $leito=Leito::all();
+        $leitos=Leito::all();
         $hospital=Hospital::all();
         $veiculo=Veiculo::all();
         $equipamento=Equipamento::all();
@@ -60,7 +60,7 @@ class MunicipiosController extends Controller
         $detalhes=Detalhes_municipio::all();
 
         return view("admin.municipiosv2", compact('autoridade','municipios','regional'
-            ,'leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico','dadosMunicipios','detalhes'));
+            ,'leitos','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico','dadosMunicipios','detalhes'));
     }
     /**
      * Show the form for creating a new resource.

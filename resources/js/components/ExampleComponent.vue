@@ -84,7 +84,6 @@ export default {
                         return true;
                 });
             } else return this.municipios
-
         }
     }
 }
