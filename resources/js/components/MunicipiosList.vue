@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <div class="col-12 busca d-flex">
-                <input class="form-control mr-sm-2" id="seach" type="search" v-model="pesquisa" placeholder="Filtro" aria-label="Search">
+                <the-mask class="form-control mr-sm-2" type="text" :mask="['SSSSSSSSSSSSSSSSS']" id="seach" v-model="pesquisa" placeholder="Filtro" aria-label="Search"></the-mask>
             </div>
         </div>
         <div class="row">
@@ -29,48 +29,44 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-
+                                <!--modal tablist menu-->
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" :href="`#infor${m.id}`" role="tab" aria-controls="home" aria-selected="true">Informações Gerais</a>
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" :href="`#infor${m.id}`" role="tab" aria-controls="home" aria-selected="true">Gerais</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" :href="`#auto${m.id}`" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" :href="`#auto${m.id}`" role="tab" aria-controls="profile" aria-selected="false">Autoridades</a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" :href="`#hosp${m.id}`" role="tab" aria-controls="contact" aria-selected="false">Hospital</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
+                                    <!--tab hinformações gerais-->
                                     <div class="tab-pane fade show active" :id="`infor${m.id}`" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-6">
-                                                <label>Localização:</label>
-                                                <img :src="'/img/images/mapa'+`${m.id}`+'.jpg'" class="img-fluid mb-3" width="300px">
-                                            </div>
-                                            <div class="col-6">
-                                                <div v-for="d in dados" v-if="m.dados_id===d.id">
-                                                    <label><b>Área Territorial:</b></label> {{ d.area_territorial }}<br>
-                                                    <label><b>Densidade Demográfica:</b></label> {{d.densidade_demografica}}
-                                                </div>
-                                                <div v-for="det in detalhes" v-if="m.detalhes_id===det.id">
-                                                    <label><b>População:</b></label> {{ det.populacao_estimada }}<br>
-                                                    <label><b>PIB:</b></label> {{ det.pib_percapita }}
-                                                </div>
-                                                <div v-for="r in regional" v-if="m.regional_id===r.id">
-                                                    <label><b>Regional:</b></label> {{ r.nome }}
-                                                </div>
+
                                             </div>
                                         </div>
+                                        <dados-list :dados=" dados.filter(da => {
+                                            return da.id===m.id
+                                        })"></dados-list>
                                     </div>
-                                    <div class="tab-pane fade" :id="`auto${m.id}`" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                                    <!--tab autoridades-->
+                                    <div class="tab-pane fade" :id="`auto${m.id}`" role="tabpanel" aria-labelledby="profile-tab">
+                                        <autoridades-list :partidos=" partidos " :cargos=" cargos" :autoridades=" autoridades.filter(a => {
+                                        return a.municipio_id===m.id
+                                        })"></autoridades-list>
+                                    </div>
+                                    <!--tab hospital-->
+                                    <div class="tab-pane fade" :id="`hosp${m.id}`" role="tabpanel" aria-labelledby="contact-tab">
+                                        <hospital-list :internacaos=" internacaos " :leitos=" leitos " :hospital=" hospitals.filter(h => {
+                                            return h.municipio_id===m.id
+                                        })"></hospital-list>
+                                    </div>
                                 </div>
-
-                                <div v-for="h in hospitals" v-if="m.id===h.municipio_id">
-                                    <label><b>Hospital:</b></label> {{ h.nome }}
-                                </div>
-
+                                <!--fim modal tablist-->
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -84,15 +80,21 @@
 </template>
 <script>
 import LeitosList from "./LeitosList";
+import AutoridadesList from "./AutoridadesList";
+import HospitalList from "./HospitalList";
+import DadosList from "./DadosList";
 export default {
-    components: {LeitosList},
-    props: ['municipios','hospitals','regional','dados','detalhes'],
+    components: {DadosList, HospitalList, AutoridadesList, LeitosList},
+    props: ['municipios','hospitals','regional','dados','detalhes','leitos','autoridades','cargos','partidos','internacaos'],
     data(){
         return{
             pesquisa:''
         }
     },
     watch:{
+    },
+    created() {
+
     },
     methods: {
     },

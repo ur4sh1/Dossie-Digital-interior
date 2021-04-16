@@ -50,7 +50,10 @@ class FolhaController extends Controller
      */
     public function store(Request $request)
     {
-        $folha=Folha::create($request->all());
+        $data=$request->all();
+        $data['salario_inicial']=str_replace('.',"",$data['salario_inicial']);
+        $data['salario_inicial']=str_replace(',',".",$data['salario_inicial']);
+        $folha=Folha::create($data);
         return redirect()->route('folhas.index');
     }
 

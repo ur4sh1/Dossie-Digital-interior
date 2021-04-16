@@ -16,7 +16,7 @@ class CreateInternacaosTable extends Migration
         Schema::create('internacaos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('hospital_id');
-            $table->foreign('hospital_id')->references('id')->on('hospitals');
+            $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
             $table->integer('media_dia')->nullable();
             $table->integer('media_mes')->nullable();
             $table->timestamps();

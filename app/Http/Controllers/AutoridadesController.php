@@ -83,7 +83,7 @@ class AutoridadesController extends Controller
     {
         $autoridade= Autoridade::find($id);
         $autoridade->update($request->all());
-        return redirect()->route('autoridade.index');
+        return redirect()->route('autoridades.index');
     }
 
     /**

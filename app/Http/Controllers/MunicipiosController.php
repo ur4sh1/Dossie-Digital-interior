@@ -17,6 +17,9 @@ use App\Servico;
 use App\TipoEquipamento;
 use App\TipoServico;
 use App\Veiculo;
+use App\Cargo;
+use App\Partido;
+use App\Internacao;
 use Illuminate\Http\Request;
 
 class MunicipiosController extends Controller
@@ -46,7 +49,7 @@ class MunicipiosController extends Controller
 
     public function indexAlternativo()
     {
-        $autoridade=Autoridade::all();
+        $autoridades=Autoridade::all();
         $municipios=Municipio::all();
         $regional=Regional::all();
         $leitos=Leito::all();
@@ -58,9 +61,12 @@ class MunicipiosController extends Controller
         $servico=Servico::all();
         $dadosMunicipios=Dados_municipios::all();
         $detalhes=Detalhes_municipio::all();
+        $cargos=Cargo::all();
+        $partidos=Partido::all();
+        $internacaos=Internacao::all();
 
-        return view("admin.municipiosv2", compact('autoridade','municipios','regional'
-            ,'leitos','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico','dadosMunicipios','detalhes'));
+        return view("admin.municipiosv2", compact('autoridades','municipios','regional','partidos','internacaos',
+            'leitos','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico','dadosMunicipios','detalhes','cargos'));
     }
     /**
      * Show the form for creating a new resource.

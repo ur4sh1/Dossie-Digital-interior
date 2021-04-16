@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <municipios-list v-bind:municipios="{{ $municipios }}" v-bind:hospitals="{{ $hospital }}"
-                     v-bind:regional="{{ $regional }}" v-bind:dados="{{ $dadosMunicipios }}"
-                     v-bind:detalhes="{{ $detalhes }}"></municipios-list>
+    <municipios-list :municipios="{{ $municipios }}" :hospitals="{{ $hospital }}"
+                     :regional="{{ $regional }}" :dados="{{ $dadosMunicipios }}"
+                     :detalhes="{{ $detalhes }}" :leitos="{{ $leitos }}"
+                     :autoridades="{{ $autoridades }}" :cargos="{{ $cargos }}"
+                     :partidos="{{ $partidos }}" :internacaos="{{ $internacaos }}"
+    ></municipios-list>
 @endsection

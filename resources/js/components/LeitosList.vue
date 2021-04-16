@@ -1,21 +1,26 @@
 <template>
     <div class="container">
-        <h3>Leitos</h3>
-        <table class="table-sm" id="municipios">
-            <tr>
-                <td><b>ID do Hospital</b></td>
-                <td><b>Clinico</b></td>
-            </tr>
-            <tr v-for="l in leitos">
-                <td>{{l.hospital_id}}</td>
-                <td>{{l.leito_clinico}}</td>
-            </tr>
-        </table>
-    </div>
+            <table class="table table-sm" id="municipios">
+                <tr>
+                    <td><b>Clínico</b></td>
+                    <td><b>Cirúrgicos</b></td>
+                    <td><b>Obstétrico</b></td>
+                    <td><b>Pediátrico</b></td>
+                    <td><b>Outros</b></td>
+                </tr>
+                <tr v-for="l in leitos">
+                    <td>{{l.leito_clinico}}</td>
+                    <td>{{l.leito_cirurgico}}</td>
+                    <td>{{l.leito_obstetrico}}</td>
+                    <td>{{l.leito_pediatrico}}</td>
+                    <td>{{l.leito_outro}}</td>
+                </tr>
+            </table>
+        </div>
 </template>
 <script>
 export default {
-    props: ['leitos'],
+    props: ['leitos']
 }
 </script>
 

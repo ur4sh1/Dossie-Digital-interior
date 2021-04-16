@@ -19,8 +19,8 @@ class CreateFolhasTable extends Migration
             $table->foreign('hospital_id')->references('id')->on('hospitals');
             $table->unsignedBigInteger('profissional_id');
             $table->foreign('profissional_id')->references('id')->on('profissionals');
-            $table->decimal('salario_inicial',7,2);
-            $table->integer('SUSAM')->nullable();
+            $table->decimal('salario_inicial',16,2);
+            $table->integer('SUSAM');
             $table->integer('prefeitura')->nullable();
             $table->integer('aponsetadoria')->nullable();
             $table->integer('cedidos')->nullable();
