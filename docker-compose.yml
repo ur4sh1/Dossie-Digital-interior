@@ -1,44 +1,29 @@
 version: "3.7"
+
 services:
-  app:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    image: dossie
-    container_name: dossie-app
-    restart: unless-stopped
-    working_dir: /var/www/
+  laravel-app:
+    build: .
+    ports:
+      - "8501:80"
     volumes:
-      - ./:/var/www
-      - ./docker-compose/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./:/usr/share/nginx
     networks:
       - dossie
 
-  db:
-    image: mysql:5.7
-    container_name: dossie-db
-    restart: unless-stopped
+  mysql-app:
+    image: mysql:5.7.22
+    ports:
+      - "8500:3306"
+    volumes:
+#     - dossie_volume:/var/lib/mysql
+      - .docker/dbdata:/var/lib/mysql
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_USERNAME}
-    ports:
-      - 8500:3306
-    volumes:
-      - dossie_volume:/var/lib/mysql
-    networks:
-      - dossie
-
-  nginx:
-    image: nginx:1.17-alpine
-    container_name: dossie-nginx
-    restart: unless-stopped
-    ports:
-      - 8501:80
-    volumes:
-      - ./:/var/www
-      - ./docker-compose/nginx:/etc/nginx/conf.d
+    command:
+      'mysqld --innodb-flush-method=fsync'
     networks:
       - dossie
 

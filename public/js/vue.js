@@ -2308,7 +2308,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.busca{\n    justify-content: flex-end;\n}\n#seach{\n    width: 300px;\n    background: #ccdfe7;\n    justify-content: center;\n}\n", ""]);
+exports.push([module.i, "\n.busca{\r\n    justify-content: flex-end;\n}\n#seach{\r\n    width: 300px;\r\n    background: #ccdfe7;\r\n    justify-content: center;\n}\r\n", ""]);
 
 // exports
 
@@ -17095,7 +17095,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Sistema Dossie\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Sistema-Dossie-docker\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })
