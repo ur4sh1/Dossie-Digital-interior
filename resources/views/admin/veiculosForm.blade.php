@@ -24,10 +24,10 @@
                     <label><b>ADMINISTRATIVO</b></label>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input  type="text" maxlength="3" class="form-control" style="width:90px;" id="administrativo_existente" name="administrativo_existente" placeholder="Existente">
+                            <the-mask type="text" class="form-control text-right" style="width:90px;" id="administrativo_existente" name="administrativo_existente" placeholder="Existente" :mask="['###']"></the-mask>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" class="form-control" style="width:90px;" id="administrativo_funcional" name="administrativo_funcional" placeholder="Funcional">
+                            <the-mask type="text" class="form-control text-right" style="width:90px;" id="administrativo_funcional" name="administrativo_funcional" placeholder="Funcional" :mask="['###']"></the-mask>
                         </div>
                     </div>
                 </div>
@@ -35,10 +35,10 @@
                     <label><b>AMBULÂNCIA TERRESTRE</b></label>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" class="form-control" style="width:90px;" id="ambulancia_terrestre_existente" name="ambulancia_terrestre_existente" placeholder="Existente">
+                            <the-mask type="text" class="form-control text-right" style="width:90px;" id="ambulancia_terrestre_existente" name="ambulancia_terrestre_existente" placeholder="Existente" :mask="['###']"></the-mask>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" class="form-control" style="width:90px;" id="ambulancia_terrestre_funcional" name="ambulancia_terrestre_funcional" placeholder="Funcional">
+                            <the-mask type="text" class="form-control text-right" style="width:90px;" id="ambulancia_terrestre_funcional" name="ambulancia_terrestre_funcional" placeholder="Funcional" :mask="['###']"></the-mask>
                         </div>
                     </div>
                 </div>
@@ -46,10 +46,10 @@
                     <label><b>AMBULÂNCIA FLUVIAL</b></label>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" class="form-control" style="width:90px;" id="ambulancia_fluvial_existente" name="ambulancia_fluvial_existente" placeholder="Existente">
+                            <the-mask type="text" class="form-control text-right" style="width:90px;" id="ambulancia_fluvial_existente" name="ambulancia_fluvial_existente" placeholder="Existente" :mask="['###']"></the-mask>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" class="form-control" style="width:90px;"id="ambulancia_fluvial_funcional" name="ambulancia_fluvial_funcional" placeholder="Funcional">
+                            <the-mask type="text" class="form-control text-right" style="width:90px;"id="ambulancia_fluvial_funcional" name="ambulancia_fluvial_funcional" placeholder="Funcional" :mask="['###']"></the-mask>
                         </div>
                     </div>
                 </div>

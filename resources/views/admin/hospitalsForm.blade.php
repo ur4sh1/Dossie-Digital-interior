@@ -15,7 +15,7 @@
             <div class="form-row">
                 <div class="col-sm-8"><!--nome-->
                     <label for="nome"><h5><b>Nome</b></h5></label>
-                    <input type="text" class="form-control" id="nome" name="nome" required>
+                    <input type="text" class="form-control text-uppercase" id="nome" name="nome"  required>
                 </div>
                 <div class="col-sm-4"><!--municipio-->
                     <label for="municipio_id"><h5><b>Município</b></h5></label>
@@ -35,11 +35,11 @@
             <div class="row">
                 <div class="col-sm-3">
                     <label for="nome"><h5><b>Média Dia</b></h5></label>
-                    <input type="text" style="width: 100px;" class="form-control" id="media_dia" name="media_dia" required>
+                    <the-mask type="text" style="width: 100px;" class="form-control" id="media_dia" name="media_dia" :mask="['##']" required></the-mask>
                 </div>
                 <div class="col-sm-3">
                      <label for="nome"><h5><b>Média Mês</b></h5></label>
-                    <input type="text" style="width: 100px;" class="form-control" id="media_mes" name="media_mes" required>
+                    <the-mask type="text" style="width: 100px;" class="form-control" id="media_mes" name="media_mes" :mask="['###']" required></the-mask>
                 </div>
             </div>
             <div class="form-row text-right"><!--buttonsAções-->

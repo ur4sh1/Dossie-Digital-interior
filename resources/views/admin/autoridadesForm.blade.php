@@ -67,11 +67,11 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <label for="tel">Fixo</label>
-                        <input type="text" class="form-control" style="width: 200px;" name="tel" id="tel">
+                        <the-mask type="text" class="form-control" style="width: 200px;" name="tel" id="tel" :mask="['(##)####-####']"></the-mask>
                     </div>
                     <div class="col-sm-6">
                         <label for="cel">Celular</label>
-                        <input type="text" class="form-control" style="width: 200px;" name="cel" id="cel">
+                        <the-mask type="text" class="form-control" style="width: 200px;" name="cel" id="cel" :mask="['(##)#####-####']"></the-mask>
                     </div>
                 </div>
             </div>
