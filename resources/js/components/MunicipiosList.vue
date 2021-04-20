@@ -45,13 +45,18 @@
                                     <!--tab hinformações gerais-->
                                     <div class="tab-pane fade show active" :id="`infor${m.id}`" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-6">
-
+                                            <div class="col-sm-6">
+                                                <img :src="'/img/images/mapa'+`${m.id}`+'.jpg'" class="img-fluid mt-3" width="400px">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <dados-list :dados=" dados.filter(da => {
+                                                    return da.id===m.id
+                                                })"></dados-list>
+                                                <detalhes-list :detalhes=" detalhes.filter(de =>{
+                                                    return de.id===m.id
+                                                })"></detalhes-list>
                                             </div>
                                         </div>
-                                        <dados-list :dados=" dados.filter(da => {
-                                            return da.id===m.id
-                                        })"></dados-list>
                                     </div>
                                     <!--tab autoridades-->
                                     <div class="tab-pane fade" :id="`auto${m.id}`" role="tabpanel" aria-labelledby="profile-tab">
@@ -83,8 +88,9 @@ import LeitosList from "./LeitosList";
 import AutoridadesList from "./AutoridadesList";
 import HospitalList from "./HospitalList";
 import DadosList from "./DadosList";
+import DetalhesList from "./DetalhesList";
 export default {
-    components: {DadosList, HospitalList, AutoridadesList, LeitosList},
+    components: {DadosList, HospitalList, AutoridadesList, LeitosList, DetalhesList},
     props: ['municipios','hospitals','regional','dados','detalhes','leitos','autoridades','cargos','partidos','internacaos'],
     data(){
         return{

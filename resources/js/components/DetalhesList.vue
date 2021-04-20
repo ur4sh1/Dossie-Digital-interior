@@ -1,52 +1,44 @@
 <template>
     <div class="container">
-        <span v-for="d in dados">
+        <span v-for="de in detalhes">
             <div class="row">
                 <div class="col-6">
-                   <label>Área Territorial: </label>
+                   <label>População: </label>
                 </div>
                 <div class="col-6 infor">
-                   {{ d.area_territorial }}
+                    {{ de.populacao_estimada }}
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
-                   <label>Densidade Demográfica: </label>
+                   <label>PIB: </label>
                 </div>
                 <div class="col-6 infor">
-                   {{ d.densidade_demografica }}
+                    {{ de.pib_percapita}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
-                    <label>Linha Reta: </label>
+                    <label>IDH: </label>
                 </div>
                 <div class="col-6 infor">
-                    {{ d.linha_reta }}
+                    {{ de.idh}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
-                    <label>Linha Fluvia: </label>
+                    <label>População com plano de Saúde: </label>
                 </div>
                 <div class="col-6 infor">
-                    {{ d.linha_fluvial }}
+                    {{ de.pop_plan_saude}} {{ de.pop_plan_saude_ano}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
-                    <label>Latitude: </label>
+                    <label>População em extrema pobreza: </label>
                 </div>
                 <div class="col-6 infor">
-                    {{ d.latitude_decimal }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <label>Longitude: </label>
-                </div>
-                <div class="col-6 infor">
-                    {{ d.longitude_decimal }}
+                    {{ de.pop_extr_pobreza}} {{ de.pop_extr_pobreza_ano}}
                 </div>
             </div>
        </span>
@@ -54,7 +46,7 @@
 </template>
 <script>
 export default {
-    props: ['dados']
+    props: ['detalhes']
 }
 </script>
 
