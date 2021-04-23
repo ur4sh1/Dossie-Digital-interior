@@ -12,7 +12,7 @@
         <div class="text-right mb-2">
             <a class="btn btn-primary" href="{{route('hospitals.create')}}" role="button">ADICIONAR</a>
         </div>
-        <table class="table table-sm" id="hospitals">
+        <table class="table table-sm" id="table">
             <thead>
                 <td scope="col"><b>NOME</b></td>
                 <td scope="col"><b>MUNICÍPIO</b></td>
@@ -37,16 +37,6 @@
             @endforeach
         </table>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('#hospitals').DataTable({
-                "searching": true,
-                "aaSorting": [[1, "asc"]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-                }
-            })});
-    </script>
 @endsection
 
 

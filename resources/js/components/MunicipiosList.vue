@@ -66,9 +66,13 @@
                                     </div>
                                     <!--tab hospital-->
                                     <div class="tab-pane fade" :id="`hosp${m.id}`" role="tabpanel" aria-labelledby="contact-tab">
-                                        <hospital-list :internacaos=" internacaos " :leitos=" leitos " :hospital=" hospitals.filter(h => {
-                                            return h.municipio_id===m.id
-                                        })"></hospital-list>
+                                         <div class="row">
+                                                <div class="col-sm-12">
+                                                    <hospital-list :internacaos=" internacaos " :leitos=" leitos " :hospital=" hospitals.filter(h => {
+                                                    return h.municipio_id===m.id
+                                                    })"></hospital-list>
+                                               </div>
+                                         </div>
                                     </div>
                                 </div>
                                 <!--fim modal tablist-->

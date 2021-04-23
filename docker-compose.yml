@@ -24,7 +24,7 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_USERNAME}
     ports:
-      - 8500:3306
+      - 8510:3306
     volumes:
       - dossie_volume:/var/lib/mysql
     networks:
@@ -35,7 +35,7 @@ services:
     container_name: dossie-nginx
     restart: unless-stopped
     ports:
-      - 8501:80
+      - 8511:80
     volumes:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d

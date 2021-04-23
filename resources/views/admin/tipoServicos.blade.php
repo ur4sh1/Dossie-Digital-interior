@@ -11,7 +11,7 @@
                 <a class="btn btn-primary mt-1" href="{{route('servicos.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
-        <table class="table table-sm" id="tipos">
+        <table class="table table-sm" id="table">
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -38,14 +38,4 @@
             @endforeach
         </table>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('#tipos').DataTable({
-                "searching": true,
-                "aaSorting": [[1, "asc"]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-                }
-            })});
-    </script>
 @endsection

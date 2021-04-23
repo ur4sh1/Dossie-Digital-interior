@@ -11,7 +11,7 @@
                 <a class="btn btn-primary mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">LISTA DE EQUIPAMENTOS</a>
             </div>
         </div>
-        <table class="table table-sm" id="equipamentos">
+        <table class="table table-sm" id="table">
             <thead>
             <tr>
                 <th scope="col">HOSPITAL</th>
@@ -42,14 +42,4 @@
             @endforeach
         </table>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('#equipamentos').DataTable({
-                "searching": true,
-                "aaSorting": [[1, "asc"]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-                }
-            })});
-    </script>
 @endsection

@@ -21,7 +21,7 @@
         @if($folha->count()==0)
             <i>Informações não Cadastradas</i>
         @else
-            <table class="table-sm display" id="folha">
+            <table class="table-sm display" id="table">
                 <thead>
                 <th scope="col">PROFISSIONAL</th>
                 <th scope="col" class="text-center">SALÁRIO UNITÁRIO</th>
@@ -51,14 +51,4 @@
             </table>
         @endif
     </div>
-    <script>
-        $(document).ready(function () {
-            $('#folha').DataTable({
-                "searching": true,
-                "aaSorting": [[1, "asc"]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-                }
-            })});
-    </script>
 @endsection

@@ -9,12 +9,13 @@
         <div class="text-right mb-2">
             <a class="btn btn-primary" href="{{route('autoridades.create')}}" role="button">ADICIONAR</a>
         </div>
-        <table class="table table-sm" id="autoridades">
+        <table class="table table-sm" id="table">
             <thead>
             <tr>
-                <th colspan="2" scope="col">NOME</th>
+                <th scope="col">NOME</th>
                 <th scope="col">CARGO</th>
                 <th scope="col">MUNICÍPIO</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             @foreach($autoridades as $a)
@@ -40,14 +41,4 @@
             @endforeach
         </table>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('#autoridades').DataTable({
-                "searching": true,
-                "aaSorting": [[1, "asc"]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-                }
-        })});
-    </script>
 @endsection

@@ -2193,6 +2193,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2200,7 +2211,18 @@ __webpack_require__.r(__webpack_exports__);
     InternacaosList: _InternacaosList__WEBPACK_IMPORTED_MODULE_1__["default"],
     LeitosList: _LeitosList__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['hospital', 'leitos', 'internacaos']
+  props: ['hospital', 'leitos', 'internacaos'],
+  data: function data() {
+    return {
+      info: '',
+      nome: ''
+    };
+  },
+  methods: {
+    selectHospital: function selectHospital(id) {
+      return this.info = id;
+    }
+  }
 });
 
 /***/ }),
@@ -2214,6 +2236,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2266,23 +2295,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['leitos']
 });
@@ -2303,6 +2315,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HospitalList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HospitalList */ "./resources/js/components/HospitalList.vue");
 /* harmony import */ var _DadosList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DadosList */ "./resources/js/components/DadosList.vue");
 /* harmony import */ var _DetalhesList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DetalhesList */ "./resources/js/components/DetalhesList.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -6917,7 +6933,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.inf{\n    color: blue;\n    text-align: right;\n}\n", ""]);
+exports.push([module.i, "\ntable{\n}\n.inf{\n    color: blue;\n    text-align: right;\n}\n", ""]);
 
 // exports
 
@@ -58743,85 +58759,76 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c(
-        "ul",
-        {
-          staticClass: "nav nav-tabs",
-          attrs: { id: "myTab", role: "tablist" }
-        },
-        _vm._l(_vm.hospital, function(hos) {
-          return _c(
-            "li",
-            { staticClass: "nav-item", attrs: { role: "presentation" } },
-            [
-              _c(
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "input-group mt-3 mb-3" }, [
+        _c("div", { staticClass: "input-group-prepend" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-outline-secondary dropdown-toggle",
+              attrs: {
+                type: "button",
+                "data-toggle": "dropdown",
+                "aria-haspopup": "true",
+                "aria-expanded": "false"
+              }
+            },
+            [_vm._v("Selecione")]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "dropdown-menu" },
+            _vm._l(_vm.hospital, function(hos) {
+              return _c(
                 "a",
                 {
-                  staticClass: "nav-link active",
-                  attrs: {
-                    id: "home-tab",
-                    "data-toggle": "tab",
-                    href: "#home" + hos.id,
-                    role: "tab",
-                    "aria-controls": "home",
-                    "aria-selected": "true"
+                  staticClass: "dropdown-item",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      return _vm.selectHospital(hos.id)
+                    }
                   }
                 },
                 [_vm._v(_vm._s(hos.nome))]
               )
-            ]
-          )
-        }),
-        0
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.hospital, function(hos) {
-        return _c(
-          "div",
-          { staticClass: "tab-content", attrs: { id: "myTabContent" } },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "tab-pane fade show active",
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.nome))])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _vm.info > 0
+        ? _c(
+            "span",
+            [
+              _c("internacaos-list", {
                 attrs: {
-                  id: "home" + hos.id,
-                  role: "tabpanel",
-                  "aria-labelledby": "home-tab"
+                  internacaos: _vm.internacaos.filter(function(int) {
+                    return _vm.info === int.hospital_id
+                  })
                 }
-              },
-              [
-                _c("internacaos-list", {
-                  attrs: {
-                    internacaos: _vm.internacaos.filter(function(int) {
-                      return hos.id === int.hospital_id
-                    })
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", [_vm._v("Leitos")]),
-                _c("br"),
-                _vm._v(" "),
-                _c("leitos-list", {
-                  attrs: {
-                    leitos: _vm.leitos.filter(function(le) {
-                      return hos.id === le.hospital_id
-                    })
-                  }
-                })
-              ],
-              1
-            )
-          ]
-        )
-      })
-    ],
-    2
-  )
+              }),
+              _vm._v(" "),
+              _c("leitos-list", {
+                attrs: {
+                  leitos: _vm.leitos.filter(function(le) {
+                    return _vm.info === le.hospital_id
+                  })
+                }
+              })
+            ],
+            1
+          )
+        : _vm._e()
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -58845,35 +58852,51 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "table",
-      { staticClass: "table table-sm" },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._l(_vm.internacaos, function(int) {
-          return _c("tr", [
-            _c("td", [_vm._v(_vm._s(int.media_dia))]),
+  return _c(
+    "div",
+    { staticClass: "container" },
+    _vm._l(_vm.internacaos, function(int) {
+      return _vm.internacaos
+        ? _c("span", [
+            _vm._m(0, true),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(int.media_mes))])
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c("table", [
+                  _c("tr", [
+                    _c("td", { staticStyle: { width: "80px" } }, [
+                      _vm._v("Média dia")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "inf" }, [
+                      _vm._v(_vm._s(int.media_dia))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", { staticStyle: { width: "80px" } }, [
+                      _vm._v("Média mês")
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "inf" }, [
+                      _vm._v(_vm._s(int.media_mes))
+                    ])
+                  ])
+                ])
+              ])
+            ])
           ])
-        })
-      ],
-      2
-    )
-  ])
+        : _vm._e()
+    }),
+    0
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [_c("b", [_vm._v("Média por dia")])]),
-      _vm._v(" "),
-      _c("td", [_c("b", [_vm._v("Média por mês")])])
-    ])
+    return _c("label", [_c("b", [_vm._v("Internação")])])
   }
 ]
 render._withStripped = true
@@ -58901,64 +58924,58 @@ var render = function() {
     "div",
     { staticClass: "container" },
     _vm._l(_vm.leitos, function(l) {
-      return _c("span", [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-6" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-6" }, [
-                _c("table", { staticClass: "mr-2" }, [
-                  _c("tr", [
-                    _c("td", [_vm._v("Clínico")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "inf" }, [
-                      _vm._v(_vm._s(l.leito_clinico))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Cirúrgico")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "inf" }, [
-                      _vm._v(_vm._s(l.leito_cirurgico))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Outro")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "inf" }, [_vm._v(_vm._s(l.outro))])
-                  ])
+      return _vm.leitos
+        ? _c("span", [
+            _vm._m(0, true),
+            _c("br"),
+            _vm._v(" "),
+            _c("table", { staticClass: "mr-2 mt-2" }, [
+              _c("tr", [
+                _c("td", [_vm._v("Clínico")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "inf" }, [
+                  _vm._v(_vm._s(l.leito_clinico))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v("Obstétrico")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "inf" }, [
+                  _vm._v(_vm._s(l.leito_obstetrico))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v("Cirúrgico")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "inf" }, [
+                  _vm._v(_vm._s(l.leito_cirurgico))
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-6" }, [
-                _c("table", { staticClass: "ml-2" }, [
-                  _c("tr", [
-                    _c("td", [_vm._v("Obstétrico")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "inf" }, [
-                      _vm._v(_vm._s(l.leito_obstetrico))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", [_vm._v("Pediátrico")]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "inf" }, [
-                      _vm._v(_vm._s(l.leito_pediatrico))
-                    ])
-                  ])
-                ])
+              _c("tr", [
+                _c("td", [_vm._v("Pediátrico")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "inf" }, [
+                  _vm._v(_vm._s(l.leito_pediatrico))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v("Outro")]),
+                _vm._v(" "),
+                _c("td", { staticClass: "inf" }, [_vm._v(_vm._s(l.outro))])
               ])
             ])
           ])
-        ])
-      ])
+        : _vm._e()
     }),
     0
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("b", [_vm._v("Leitos")])])
+  }
+]
 render._withStripped = true
 
 
@@ -59244,17 +59261,27 @@ var render = function() {
                             }
                           },
                           [
-                            _c("hospital-list", {
-                              attrs: {
-                                internacaos: _vm.internacaos,
-                                leitos: _vm.leitos,
-                                hospital: _vm.hospitals.filter(function(h) {
-                                  return h.municipio_id === m.id
-                                })
-                              }
-                            })
-                          ],
-                          1
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-sm-12" },
+                                [
+                                  _c("hospital-list", {
+                                    attrs: {
+                                      internacaos: _vm.internacaos,
+                                      leitos: _vm.leitos,
+                                      hospital: _vm.hospitals.filter(function(
+                                        h
+                                      ) {
+                                        return h.municipio_id === m.id
+                                      })
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          ]
                         )
                       ]
                     )
@@ -71594,12 +71621,6 @@ try {
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-
-  __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js")();
-
-  __webpack_require__(/*! datatables.net-buttons-bs4 */ "./node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.js")();
-
-  __webpack_require__(/*! datatables.net-buttons/js/buttons.html5.js */ "./node_modules/datatables.net-buttons/js/buttons.html5.js")();
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

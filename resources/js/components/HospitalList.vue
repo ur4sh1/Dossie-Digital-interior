@@ -1,24 +1,35 @@
 <template>
     <div class="container">
+        <div class="row">
+<!--            <div v-for="hos in hospital">
+                <button @click="info = hos.id" class="btn btn-light" type="button">{{ hos.nome }}</button>
+            </div>-->
 
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li v-for="hos in hospital" class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" :href="`#home${hos.id}`" role="tab" aria-controls="home" aria-selected="true">{{hos.nome}}</a>
-            </li>
-        </ul>
-        <div v-for="hos in hospital" class="tab-content" id="myTabContent">
-            <div  class="tab-pane fade show active" :id="`home${hos.id}`" role="tabpanel" aria-labelledby="home-tab">
-                <internacaos-list :internacaos=" internacaos.filter(int => {
-                return hos.id===int.hospital_id
-            })"></internacaos-list>
-                <label>Leitos</label><br>
-                <leitos-list :leitos=" leitos.filter(le => {
-                return hos.id===le.hospital_id
-            })"></leitos-list>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Selecione</button>
+                    <div class="dropdown-menu">
+                        <a v-for="hos in hospital"  @click="selectHospital(hos.id)" class="dropdown-item" href="#">{{ hos.nome }}</a>
+                    </div>
+                    <p>{{ nome }}</p>
+                </div>
             </div>
+
         </div>
+        <div class="row">
+               <span v-if="info > 0">
+
+                    <internacaos-list :internacaos=" internacaos.filter(int => {
+                    return info===int.hospital_id
+                    })"></internacaos-list>
 
 
+                    <leitos-list :leitos=" leitos.filter(le => {
+                    return info===le.hospital_id
+                    })"></leitos-list>
+
+            </span>
+        </div>
     </div>
 </template>
 <script>
@@ -27,6 +38,20 @@ import InternacaosList from "./InternacaosList";
 export default {
     components: {InternacaosList, LeitosList},
     props: ['hospital','leitos','internacaos'],
+    data(){
+        return {
+            info:'',
+            nome:''
+        }
+
+    },
+    methods:{
+        selectHospital(id){
+            return this.info = id
+        }
+    },
+
+
 }
 </script>
 

@@ -47,7 +47,10 @@ class HospitalController extends Controller
      */
     public function store(Request $request)
     {
-        $hospital=Hospital::create($request->all());
+
+        $data=$request->all();
+        $data['nome']=strtoupper($data['nome']);
+        $hospital=Hospital::create($data);
 
         $internacaos=[];
         $internacaos["hospital_id"]=$hospital->id;

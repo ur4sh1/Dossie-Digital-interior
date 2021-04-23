@@ -17,10 +17,24 @@
     <script type="text/javascript" src="{{ asset('js/vue.js') }}" defer></script>
 
     <!--jquery-->
-    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
 
     <!--datatable-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable({
+                "searching": true,
+                "aaSorting": [[1, "asc"]],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+                }
+            })});
+    </script>
+
+
 
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields

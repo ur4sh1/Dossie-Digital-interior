@@ -12,7 +12,7 @@
         <div class="text-right mb-2">
             <a class="btn btn-primary" href="{{route('rhs.create')}}" role="button">ADICIONAR</a>
         </div>
-        <table class="table table-sm" id="rh">
+        <table class="table table-sm" id="table">
             <thead>
                 <td><h5><b>HOSPITAL</b></h5></td>
                 <td><h5><b>CATEGORIA</b></h5></td>
@@ -43,16 +43,6 @@
             @endforeach
         </table>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('#rh').DataTable({
-                "searching": true,
-                "aaSorting": [[1, "asc"]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
-                }
-            })});
-    </script>
 @endsection
 
 
