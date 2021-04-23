@@ -11,7 +11,7 @@
                     <div class="dropdown-menu">
                         <a v-for="hos in hospital"  @click="selectHospital(hos.id)" class="dropdown-item" href="#">{{ hos.nome }}</a>
                     </div>
-                    <p>{{ nome }}</p>
+                    <p>{{ hospital }}</p>
                 </div>
             </div>
 

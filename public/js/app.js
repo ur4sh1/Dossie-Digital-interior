@@ -6933,7 +6933,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ntable{\n}\n.inf{\n    color: blue;\n    text-align: right;\n}\n", ""]);
+exports.push([module.i, "\ntable{\n}\n.inf{\n    text-align: right;\n}\n", ""]);
 
 // exports
 
@@ -58798,7 +58798,7 @@ var render = function() {
             0
           ),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.nome))])
+          _c("p", [_vm._v(_vm._s(_vm.hospital))])
         ])
       ])
     ]),
@@ -58868,7 +58868,7 @@ var render = function() {
                       _vm._v("Média dia")
                     ]),
                     _vm._v(" "),
-                    _c("td", { staticClass: "inf" }, [
+                    _c("td", { staticClass: "inf badge badge-secondary" }, [
                       _vm._v(_vm._s(int.media_dia))
                     ])
                   ]),
@@ -58878,7 +58878,7 @@ var render = function() {
                       _vm._v("Média mês")
                     ]),
                     _vm._v(" "),
-                    _c("td", { staticClass: "inf" }, [
+                    _c("td", { staticClass: "inf badge badge-secondary" }, [
                       _vm._v(_vm._s(int.media_mes))
                     ])
                   ])
@@ -58933,19 +58933,19 @@ var render = function() {
               _c("tr", [
                 _c("td", [_vm._v("Clínico")]),
                 _vm._v(" "),
-                _c("td", { staticClass: "inf" }, [
+                _c("td", { staticClass: "inf badge badge-secondary" }, [
                   _vm._v(_vm._s(l.leito_clinico))
                 ]),
                 _vm._v(" "),
                 _c("td", [_vm._v("Obstétrico")]),
                 _vm._v(" "),
-                _c("td", { staticClass: "inf" }, [
+                _c("td", { staticClass: "inf badge badge-secondary" }, [
                   _vm._v(_vm._s(l.leito_obstetrico))
                 ]),
                 _vm._v(" "),
                 _c("td", [_vm._v("Cirúrgico")]),
                 _vm._v(" "),
-                _c("td", { staticClass: "inf" }, [
+                _c("td", { staticClass: "inf badge badge-secondary" }, [
                   _vm._v(_vm._s(l.leito_cirurgico))
                 ])
               ]),
@@ -58953,13 +58953,15 @@ var render = function() {
               _c("tr", [
                 _c("td", [_vm._v("Pediátrico")]),
                 _vm._v(" "),
-                _c("td", { staticClass: "inf" }, [
+                _c("td", { staticClass: "inf badge badge-secondary" }, [
                   _vm._v(_vm._s(l.leito_pediatrico))
                 ]),
                 _vm._v(" "),
                 _c("td", [_vm._v("Outro")]),
                 _vm._v(" "),
-                _c("td", { staticClass: "inf" }, [_vm._v(_vm._s(l.outro))])
+                _c("td", { staticClass: "inf badge badge-secondary" }, [
+                  _vm._v(_vm._s(l.outro))
+                ])
               ])
             ])
           ])
