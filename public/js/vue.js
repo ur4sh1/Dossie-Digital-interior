@@ -2061,6 +2061,43 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['equipamentos', 'tipo_equipamentos']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -2170,6 +2207,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _LeitosList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LeitosList */ "./resources/js/components/LeitosList.vue");
 /* harmony import */ var _InternacaosList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InternacaosList */ "./resources/js/components/InternacaosList.vue");
+/* harmony import */ var _EquipamentosList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EquipamentosList */ "./resources/js/components/EquipamentosList.vue");
 //
 //
 //
@@ -2204,25 +2242,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    EquipamentosList: _EquipamentosList__WEBPACK_IMPORTED_MODULE_2__["default"],
     InternacaosList: _InternacaosList__WEBPACK_IMPORTED_MODULE_1__["default"],
     LeitosList: _LeitosList__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['hospital', 'leitos', 'internacaos'],
+  props: ['hospital', 'leitos', 'internacaos', 'equipamentos', 'tipo_equipamentos'],
   data: function data() {
     return {
-      info: '',
-      nome: ''
+      info: ''
     };
   },
-  methods: {
-    selectHospital: function selectHospital(id) {
-      return this.info = id;
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -2236,8 +2274,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2295,6 +2331,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['leitos']
 });
@@ -2315,6 +2353,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HospitalList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HospitalList */ "./resources/js/components/HospitalList.vue");
 /* harmony import */ var _DadosList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DadosList */ "./resources/js/components/DadosList.vue");
 /* harmony import */ var _DetalhesList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DetalhesList */ "./resources/js/components/DetalhesList.vue");
+/* harmony import */ var _EquipamentosList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EquipamentosList */ "./resources/js/components/EquipamentosList.vue");
 //
 //
 //
@@ -2404,6 +2443,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -2415,9 +2455,10 @@ __webpack_require__.r(__webpack_exports__);
     HospitalList: _HospitalList__WEBPACK_IMPORTED_MODULE_2__["default"],
     AutoridadesList: _AutoridadesList__WEBPACK_IMPORTED_MODULE_1__["default"],
     LeitosList: _LeitosList__WEBPACK_IMPORTED_MODULE_0__["default"],
-    DetalhesList: _DetalhesList__WEBPACK_IMPORTED_MODULE_4__["default"]
+    DetalhesList: _DetalhesList__WEBPACK_IMPORTED_MODULE_4__["default"],
+    EquipamentosList: _EquipamentosList__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
-  props: ['municipios', 'hospitals', 'regional', 'dados', 'detalhes', 'leitos', 'autoridades', 'cargos', 'partidos', 'internacaos'],
+  props: ['municipios', 'hospitals', 'regional', 'dados', 'detalhes', 'leitos', 'autoridades', 'cargos', 'partidos', 'internacaos', 'equipamentos', 'tipo_equipamentos'],
   data: function data() {
     return {
       pesquisa: ''
@@ -2430,7 +2471,7 @@ __webpack_require__.r(__webpack_exports__);
     filterdados: function filterdados() {
       var _this = this;
 
-      if (this.pesquisa != "") {
+      if (this.pesquisa !== "") {
         return this.municipios.filter(function (res) {
           if (res.nome.toLowerCase().match(_this.pesquisa.toLowerCase())) return true;
         });
@@ -2491,7 +2532,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ntable{\n}\n.inf{\n    text-align: right;\n}\n", ""]);
+exports.push([module.i, "\ntable{\n}\n.inf{\n    text-align: right;\n}\n.titulo{\n    border-radius: 10px;\n    background: #ace2ff;\n    width: 80px;\n}\n", ""]);
 
 // exports
 
@@ -4059,6 +4100,87 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _vm.equipamentos.length
+      ? _c("span", [
+          _c("table", { staticClass: "mt-2" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.equipamentos, function(e) {
+                return _c(
+                  "tr",
+                  [
+                    _vm._l(_vm.tipo_equipamentos, function(tp) {
+                      return e.tipo_equipamentos_id === tp.id
+                        ? _c("td", [_vm._v(_vm._s(tp.nome))])
+                        : _vm._e()
+                    }),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("label", { staticClass: "badge badge-secondary" }, [
+                        _vm._v(_vm._s(e.existente))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("label", { staticClass: "badge badge-secondary" }, [
+                        _vm._v(_vm._s(e.funcional))
+                      ])
+                    ])
+                  ],
+                  2
+                )
+              }),
+              0
+            )
+          ])
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("td", [
+          _c("label", { staticClass: "titulo" }, [
+            _c("b", [_vm._v("Equipamentos")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Existente")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Funcional")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -4361,76 +4483,109 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "input-group mt-3 mb-3" }, [
-        _c("div", { staticClass: "input-group-prepend" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-outline-secondary dropdown-toggle",
-              attrs: {
-                type: "button",
-                "data-toggle": "dropdown",
-                "aria-haspopup": "true",
-                "aria-expanded": "false"
-              }
-            },
-            [_vm._v("Selecione")]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "dropdown-menu" },
-            _vm._l(_vm.hospital, function(hos) {
-              return _c(
-                "a",
-                {
-                  staticClass: "dropdown-item",
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      return _vm.selectHospital(hos.id)
-                    }
+      _vm.hospital.length === 0 ? _c("span", [_vm._m(0)]) : _vm._e(),
+      _vm._v(" "),
+      _vm.hospital.length > 0
+        ? _c("span", [
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.info,
+                    expression: "info"
                   }
-                },
-                [_vm._v(_vm._s(hos.nome))]
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.hospital))])
-        ])
-      ])
+                ],
+                staticClass: "custom-select mt-3 mb-3",
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.info = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { disabled: "", value: "" } }, [
+                  _vm._v("Selecione")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.hospital, function(hos) {
+                  return _c("option", { domProps: { value: hos.id } }, [
+                    _vm._v(_vm._s(hos.nome))
+                  ])
+                })
+              ],
+              2
+            )
+          ])
+        : _vm._e()
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _vm.info > 0
-        ? _c(
-            "span",
-            [
-              _c("internacaos-list", {
-                attrs: {
-                  internacaos: _vm.internacaos.filter(function(int) {
-                    return _vm.info === int.hospital_id
-                  })
-                }
-              }),
-              _vm._v(" "),
-              _c("leitos-list", {
-                attrs: {
-                  leitos: _vm.leitos.filter(function(le) {
-                    return _vm.info === le.hospital_id
-                  })
-                }
-              })
-            ],
-            1
-          )
-        : _vm._e()
-    ])
+    _vm.info > 0
+      ? _c("span", [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-6" },
+              [
+                _c("internacaos-list", {
+                  attrs: {
+                    internacaos: _vm.internacaos.filter(function(int) {
+                      return _vm.info === int.hospital_id
+                    })
+                  }
+                }),
+                _vm._v(" "),
+                _c("equipamentos-list", {
+                  attrs: {
+                    tipo_equipamentos: _vm.tipo_equipamentos,
+                    equipamentos: _vm.equipamentos.filter(function(eq) {
+                      return _vm.info === eq.hospital_id
+                    })
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-6" },
+              [
+                _c("leitos-list", {
+                  attrs: {
+                    leitos: _vm.leitos.filter(function(le) {
+                      return _vm.info === le.hospital_id
+                    })
+                  }
+                })
+              ],
+              1
+            )
+          ])
+        ])
+      : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("b", [_c("i", [_vm._v("Não há Hospital cadastrado.")])])
+  }
+]
 render._withStripped = true
 
 
@@ -4458,30 +4613,26 @@ var render = function() {
     _vm._l(_vm.internacaos, function(int) {
       return _vm.internacaos
         ? _c("span", [
-            _vm._m(0, true),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-12" }, [
-                _c("table", [
-                  _c("tr", [
-                    _c("td", { staticStyle: { width: "80px" } }, [
-                      _vm._v("Média dia")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "inf badge badge-secondary" }, [
-                      _vm._v(_vm._s(int.media_dia))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("td", { staticStyle: { width: "80px" } }, [
-                      _vm._v("Média mês")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "inf badge badge-secondary" }, [
-                      _vm._v(_vm._s(int.media_mes))
-                    ])
-                  ])
+            _c("table", [
+              _vm._m(0, true),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", { staticStyle: { width: "80px" } }, [
+                  _vm._v("Média dia")
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "inf badge badge-secondary" }, [
+                  _vm._v(_vm._s(int.media_dia))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("td", { staticStyle: { width: "80px" } }, [
+                  _vm._v("Média mês")
+                ]),
+                _vm._v(" "),
+                _c("td", { staticClass: "inf badge badge-secondary" }, [
+                  _vm._v(_vm._s(int.media_mes))
                 ])
               ])
             ])
@@ -4496,7 +4647,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("Internação")])])
+    return _c("tr", [
+      _c("label", { staticClass: "titulo" }, [_c("b", [_vm._v("Internação")])])
+    ])
   }
 ]
 render._withStripped = true
@@ -4526,10 +4679,9 @@ var render = function() {
     _vm._l(_vm.leitos, function(l) {
       return _vm.leitos
         ? _c("span", [
-            _vm._m(0, true),
-            _c("br"),
-            _vm._v(" "),
-            _c("table", { staticClass: "mr-2 mt-2" }, [
+            _c("table", { staticClass: "mt-2" }, [
+              _vm._m(0, true),
+              _vm._v(" "),
               _c("tr", [
                 _c("td", [_vm._v("Clínico")]),
                 _vm._v(" "),
@@ -4575,7 +4727,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("b", [_vm._v("Leitos")])])
+    return _c("tr", [
+      _c("label", { staticClass: "titulo" }, [_c("b", [_vm._v("Leitos")])])
+    ])
   }
 ]
 render._withStripped = true
@@ -4872,6 +5026,8 @@ var render = function() {
                                     attrs: {
                                       internacaos: _vm.internacaos,
                                       leitos: _vm.leitos,
+                                      tipo_equipamentos: _vm.tipo_equipamentos,
+                                      equipamentos: _vm.equipamentos,
                                       hospital: _vm.hospitals.filter(function(
                                         h
                                       ) {
@@ -17103,6 +17259,7 @@ var map = {
 	"./components/AutoridadesList.vue": "./resources/js/components/AutoridadesList.vue",
 	"./components/DadosList.vue": "./resources/js/components/DadosList.vue",
 	"./components/DetalhesList.vue": "./resources/js/components/DetalhesList.vue",
+	"./components/EquipamentosList.vue": "./resources/js/components/EquipamentosList.vue",
 	"./components/ExampleComponent.vue": "./resources/js/components/ExampleComponent.vue",
 	"./components/HospitalList.vue": "./resources/js/components/HospitalList.vue",
 	"./components/InternacaosList.vue": "./resources/js/components/InternacaosList.vue",
@@ -17370,6 +17527,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetalhesList_vue_vue_type_template_id_81c556fe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetalhesList_vue_vue_type_template_id_81c556fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/EquipamentosList.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/EquipamentosList.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EquipamentosList_vue_vue_type_template_id_0ba80348___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EquipamentosList.vue?vue&type=template&id=0ba80348& */ "./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348&");
+/* harmony import */ var _EquipamentosList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EquipamentosList.vue?vue&type=script&lang=js& */ "./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EquipamentosList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EquipamentosList_vue_vue_type_template_id_0ba80348___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EquipamentosList_vue_vue_type_template_id_0ba80348___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/EquipamentosList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EquipamentosList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./EquipamentosList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EquipamentosList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EquipamentosList_vue_vue_type_template_id_0ba80348___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EquipamentosList.vue?vue&type=template&id=0ba80348& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EquipamentosList_vue_vue_type_template_id_0ba80348___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EquipamentosList_vue_vue_type_template_id_0ba80348___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

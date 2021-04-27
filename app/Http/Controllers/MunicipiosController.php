@@ -55,8 +55,8 @@ class MunicipiosController extends Controller
         $leitos=Leito::all();
         $hospital=Hospital::all();
         $veiculo=Veiculo::all();
-        $equipamento=Equipamento::all();
-        $tipo_equipamento=TipoEquipamento::all();
+        $equipamentos=Equipamento::all();
+        $tipo_equipamentos=TipoEquipamento::all();
         $tipo_servico=TipoServico::all();
         $servico=Servico::all();
         $dadosMunicipios=Dados_municipios::all();
@@ -66,7 +66,7 @@ class MunicipiosController extends Controller
         $internacaos=Internacao::all();
 
         return view("admin.municipiosv2", compact('autoridades','municipios','regional','partidos','internacaos',
-            'leitos','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico','dadosMunicipios','detalhes','cargos'));
+            'leitos','hospital','veiculo','equipamentos','tipo_equipamentos','tipo_servico','servico','dadosMunicipios','detalhes','cargos'));
     }
     /**
      * Show the form for creating a new resource.

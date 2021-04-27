@@ -5,7 +5,7 @@
         <div class="text-info">
             <h1>Lista de Municípios</h1>
         </div>
-        <div class="text-right mb-2">
+       <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary" href="{{action('MunicipiosController@indexAlternativo')}}" role="button">VIEW</a>
             </div>
@@ -357,3 +357,23 @@
         @endforeach
     </div>
 @endsection
+<script>
+    export default {
+        props: ['municipio'],
+        data(){
+            return{
+                pesquisa:''
+            }
+        },
+        computed: {
+            filterdados(){
+                if(this.pesquisa !== ""){
+                    return this.municipio.filter(res => {
+                        if(res.nome.toLowerCase().match(this.pesquisa.toLowerCase()))
+                            return true;
+                    });
+                } else return this.municipio
+            }
+        }
+    }
+</script>

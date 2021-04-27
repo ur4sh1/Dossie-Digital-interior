@@ -68,7 +68,7 @@
                                     <div class="tab-pane fade" :id="`hosp${m.id}`" role="tabpanel" aria-labelledby="contact-tab">
                                          <div class="row">
                                                 <div class="col-sm-12">
-                                                    <hospital-list :internacaos=" internacaos " :leitos=" leitos " :hospital=" hospitals.filter(h => {
+                                                    <hospital-list :internacaos=" internacaos " :leitos=" leitos " :tipo_equipamentos="tipo_equipamentos" :equipamentos="equipamentos" :hospital=" hospitals.filter(h => {
                                                     return h.municipio_id===m.id
                                                     })"></hospital-list>
                                                </div>
@@ -93,9 +93,11 @@ import AutoridadesList from "./AutoridadesList";
 import HospitalList from "./HospitalList";
 import DadosList from "./DadosList";
 import DetalhesList from "./DetalhesList";
+import EquipamentosList from "./EquipamentosList";
+
 export default {
-    components: {DadosList, HospitalList, AutoridadesList, LeitosList, DetalhesList},
-    props: ['municipios','hospitals','regional','dados','detalhes','leitos','autoridades','cargos','partidos','internacaos'],
+    components: {DadosList, HospitalList, AutoridadesList, LeitosList, DetalhesList, EquipamentosList},
+    props: ['municipios','hospitals','regional','dados','detalhes','leitos','autoridades','cargos','partidos','internacaos','equipamentos','tipo_equipamentos'],
     data(){
         return{
             pesquisa:''
@@ -110,7 +112,7 @@ export default {
     },
     computed: {
         filterdados(){
-            if(this.pesquisa != ""){
+            if(this.pesquisa !== ""){
                 return this.municipios.filter(res => {
                     if(res.nome.toLowerCase().match(this.pesquisa.toLowerCase()))
                         return true;

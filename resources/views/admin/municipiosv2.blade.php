@@ -6,5 +6,6 @@
                      :detalhes="{{ $detalhes }}" :leitos="{{ $leitos }}"
                      :autoridades="{{ $autoridades }}" :cargos="{{ $cargos }}"
                      :partidos="{{ $partidos }}" :internacaos="{{ $internacaos }}"
+                     :equipamentos="{{ $equipamentos }}" :tipo_equipamentos="{{ $tipo_equipamentos }}"
     ></municipios-list>
 @endsection
