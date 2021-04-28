@@ -1,10 +1,14 @@
 <template>
     <div class="container">
             <span v-if="equipamentos.length" >
-                <table class="mt-2">
+                <button class="btn btn-link" @click="show = !show">
+    <label class="titulo"><b>Equipamentos</b></label>
+  </button>
+  <transition name="slide-fade">
+                   <table class="mt-2" v-if="show">
                     <thead>
                        <tr>
-                          <td><label class="titulo"><b>Equipamentos</b></label></td>
+                          <td></td>
                           <td>Existente</td>
                           <td>Funcional</td>
                        </tr>
@@ -17,12 +21,18 @@
                        </tr>
                    </tbody>
                 </table>
+  </transition>
             </span>
     </div>
 </template>
 <script>
 export default {
-    props: ['equipamentos','tipo_equipamentos']
+    props: ['equipamentos','tipo_equipamentos'],
+    data() {
+        return {
+            show: false
+        }
+    }
 }
 </script>
 
