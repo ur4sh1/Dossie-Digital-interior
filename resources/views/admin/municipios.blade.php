@@ -79,7 +79,7 @@
                                                 <div class="col-sm-7">
 
                                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#detail{{$auto->id}}">
-                                                        <b>{{$auto->cargo->nome}}:</b> {{$auto->nome}}
+                                                        <b>{{$auto->cargo->nome}}:</b> {{$auto->nome}} ({{$auto->partido->sigla}})
                                                     </button>
                                                     <!-- Modal Detalhes adicionais-->
                                                     <div class="modal fade" id="detail{{$auto->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
