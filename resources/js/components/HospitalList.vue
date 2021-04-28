@@ -30,6 +30,10 @@
                             <leitos-list :leitos=" leitos.filter(le => {
                             return info===le.hospital_id
                             })"></leitos-list>
+
+                            <folha-list :folhas="folhas.filter(fo =>{
+                                return info===fo.hospital_id
+                            })"></folha-list>
                 </div>
             </div>
         </span>
@@ -39,9 +43,10 @@
 import LeitosList from "./LeitosList";
 import InternacaosList from "./InternacaosList";
 import EquipamentosList from "./EquipamentosList";
+import FolhaList from "./FolhaList";
 export default {
-    components: {EquipamentosList, InternacaosList, LeitosList},
-    props: ['hospital','leitos','internacaos','equipamentos','tipo_equipamentos'],
+    components: {FolhaList, EquipamentosList, InternacaosList, LeitosList},
+    props: ['hospital','leitos','internacaos','equipamentos','tipo_equipamentos','folhas','profissionals'],
     data(){
         return {
             info:''

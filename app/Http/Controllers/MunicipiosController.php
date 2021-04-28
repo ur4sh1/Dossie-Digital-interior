@@ -6,6 +6,7 @@ use App\Autoridade;
 use App\dados_municipios;
 use App\Detalhes_municipio;
 use App\Equipamento;
+use App\Folha;
 use App\Hospital;
 use App\Leito;
 use App\Municipio;
@@ -64,9 +65,11 @@ class MunicipiosController extends Controller
         $cargos=Cargo::all();
         $partidos=Partido::all();
         $internacaos=Internacao::all();
+        $folhas=Folha::all();
 
         return view("admin.municipiosv2", compact('autoridades','municipios','regional','partidos','internacaos',
-            'leitos','hospital','veiculo','equipamentos','tipo_equipamentos','tipo_servico','servico','dadosMunicipios','detalhes','cargos'));
+            'leitos','hospital','veiculo','equipamentos','tipo_equipamentos','tipo_servico','servico','dadosMunicipios','detalhes',
+            'cargos','folhas'));
     }
     /**
      * Show the form for creating a new resource.
