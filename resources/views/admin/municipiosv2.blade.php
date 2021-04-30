@@ -7,6 +7,7 @@
                      :autoridades="{{ $autoridades }}" :cargos="{{ $cargos }}"
                      :partidos="{{ $partidos }}" :internacaos="{{ $internacaos }}"
                      :equipamentos="{{ $equipamentos }}" :tipo_equipamentos="{{ $tipo_equipamentos }}"
-                     :folhas="{{ $folhas }}"
+                     :folhas="{{ $folhas }}" :profissionals="{{ $profissionals }}"
+                     :veiculos="{{ $veiculos }}"
     ></municipios-list>
 @endsection

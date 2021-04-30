@@ -346,6 +346,16 @@
                                                                 </tr>
                                                             </table>
                                                         @endif
+
+                                                        <b>Veículos</b><br>
+                                                            <table class="table table-sm border">
+                                                                <tr>
+                                                                    <td>Administrativo</td>
+                                                                    <td>Ambulância Flúvia</td>
+                                                                    <td>Ambulância Terrestre</td>
+                                                                </tr>
+                                                            </table>
+
                                                     </div><!--fimcolunadireita-->
                                                 </div><!--Fimlinha-->
                                             </div><!--fimcolapse-->

@@ -10,6 +10,7 @@ use App\Folha;
 use App\Hospital;
 use App\Leito;
 use App\Municipio;
+use App\Profissional;
 use App\Regional;
 use App\Rh;
 use App\RhCategoria;
@@ -45,7 +46,8 @@ class MunicipiosController extends Controller
         $rh=Rh::all();
         $rhcategoria=RhCategoria::all();
 
-        return view("admin.municipios", compact('autoridade','municipio','regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico','servico','rh','rhcategoria'));
+        return view("admin.municipios", compact('autoridade','municipio','regional','leito','hospital',
+            'veiculo','equipamento','tipo_equipamento','tipo_servico','servico','rh','rhcategoria'));
     }
 
     public function indexAlternativo()
@@ -55,7 +57,7 @@ class MunicipiosController extends Controller
         $regional=Regional::all();
         $leitos=Leito::all();
         $hospital=Hospital::all();
-        $veiculo=Veiculo::all();
+        $veiculos=Veiculo::all();
         $equipamentos=Equipamento::all();
         $tipo_equipamentos=TipoEquipamento::all();
         $tipo_servico=TipoServico::all();
@@ -66,10 +68,11 @@ class MunicipiosController extends Controller
         $partidos=Partido::all();
         $internacaos=Internacao::all();
         $folhas=Folha::all();
+        $profissionals=Profissional::all();
 
         return view("admin.municipiosv2", compact('autoridades','municipios','regional','partidos','internacaos',
-            'leitos','hospital','veiculo','equipamentos','tipo_equipamentos','tipo_servico','servico','dadosMunicipios','detalhes',
-            'cargos','folhas'));
+            'leitos','hospital','veiculos','equipamentos','tipo_equipamentos','tipo_servico','servico','dadosMunicipios','detalhes',
+            'cargos','folhas','profissionals'));
     }
     /**
      * Show the form for creating a new resource.

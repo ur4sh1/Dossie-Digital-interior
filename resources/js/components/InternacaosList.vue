@@ -2,7 +2,7 @@
   <div class="container">
       <span v-if="internacaos" v-for="int in internacaos">
           <button class="btn btn-link" @click="show = !show">
-            <label class="titulo"><b>Internação</b></label>
+            <label><b>Internação</b></label>
           </button>
             <transition name="slide-fade">
                 <table v-if="show">

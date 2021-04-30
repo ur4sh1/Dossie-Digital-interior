@@ -15,7 +15,7 @@
         </div>
         <span v-if="info > 0">
             <div class="row">
-                <div class="col-6">
+                <div class="col-sm-6">
                             <internacaos-list :internacaos=" internacaos.filter(int => {
                             return info===int.hospital_id
                             })"></internacaos-list>
@@ -24,16 +24,20 @@
                             return info===eq.hospital_id
                             })"></equipamentos-list>
 
+                            <VeiculosList :veiculos="veiculos.filter(ve =>{
+                                return info===ve.hospital_id
+                            })"></VeiculosList>
 
                 </div>
-                <div class="col-6">
+                <div class="col-sm-6">
                             <leitos-list :leitos=" leitos.filter(le => {
                             return info===le.hospital_id
                             })"></leitos-list>
 
-                            <folha-list :folhas="folhas.filter(fo =>{
+                            <folha-list :profissionals="profissionals" :folhas="folhas.filter(fo =>{
                                 return info===fo.hospital_id
                             })"></folha-list>
+
                 </div>
             </div>
         </span>
@@ -44,9 +48,11 @@ import LeitosList from "./LeitosList";
 import InternacaosList from "./InternacaosList";
 import EquipamentosList from "./EquipamentosList";
 import FolhaList from "./FolhaList";
+import VeiculosList from "./VeiculosList";
 export default {
-    components: {FolhaList, EquipamentosList, InternacaosList, LeitosList},
-    props: ['hospital','leitos','internacaos','equipamentos','tipo_equipamentos','folhas','profissionals'],
+    components: {FolhaList, EquipamentosList, InternacaosList, LeitosList, VeiculosList},
+    props: ['hospital','leitos','internacaos','equipamentos','tipo_equipamentos','folhas','profissionals','profissionals',
+    'veiculos'],
     data(){
         return {
             info:''

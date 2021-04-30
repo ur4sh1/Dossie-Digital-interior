@@ -4,6 +4,7 @@
             <button class="btn btn-link text-left" type="button" data-toggle="collapse" :data-target="`#collapse${aut.id}`" aria-expanded="false" aria-controls="collapseExample">
                 <span v-for="car in cargos" v-if="aut.cargo_id===car.id"><b>{{ car.nome}}:</b></span>
                 {{aut.nome}}
+                <span v-for="par in partidos" v-if="aut.partido_id===par.id">({{ par.sigla }})</span>
             </button>
             <div class="collapse" :id="`collapse${aut.id}`">
                 <div class="card card-body">

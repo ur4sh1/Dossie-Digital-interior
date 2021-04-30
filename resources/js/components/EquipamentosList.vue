@@ -2,8 +2,8 @@
     <div class="container">
             <span v-if="equipamentos.length" >
                 <button class="btn btn-link" @click="show = !show">
-    <label class="titulo"><b>Equipamentos</b></label>
-  </button>
+                    <label><b>Equipamentos</b></label>
+                </button>
   <transition name="slide-fade">
                    <table class="mt-2" v-if="show">
                     <thead>

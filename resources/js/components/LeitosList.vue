@@ -2,7 +2,7 @@
     <div class="container">
             <span v-if="leitos" v-for="l in leitos">
   <button  class="btn btn-link" @click="show = !show">
-    <label class="titulo"><b>Leitos</b></label>
+    <label><b>Leitos</b></label>
   </button>
   <transition name="slide-fade">
        <table class="mt-2" v-if="show">
