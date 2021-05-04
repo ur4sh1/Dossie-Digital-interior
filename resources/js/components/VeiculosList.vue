@@ -1,34 +1,37 @@
 <template>
     <div class="container">
             <span v-if="veiculos.length">
-  <button  class="btn btn-link" @click="show = !show">
-    <label><b>Veículos</b></label>
-  </button>
-  <transition name="slide-fade">
-       <table class="table table-sm tabela mt-2" v-if="show">
-           <tr>
-               <td colspan="2"><b>Administrativo</b></td>
-               <td colspan="2" class="text-center"><b>Ambulância Terrestre</b></td>
-               <td colspan="2" class="text-center"><b>Ambulância Flúvial</b></td>
-           </tr>
-           <tr>
-               <td><b>Existente</b></td>
-               <td><b>Funcional</b></td>
-               <td><b>Existente</b></td>
-               <td><b>Funcional</b></td>
-               <td><b>Existente</b></td>
-               <td><b>Funcional</b></td>
-           </tr>
-           <tr v-for="v in veiculos">
-               <td>{{ v.administrativo_existente }}</td>
-               <td>{{ v.administrativo_funcional }}</td>
-               <td>{{ v.ambulancia_terrestre_existente }}</td>
-               <td>{{ v.ambulancia_terrestre_funcional }}</td>
-               <td>{{ v.ambulancia_fluvial_existente }}</td>
-               <td>{{ v.ambulancia_fluvial_funcional }}</td>
-           </tr>
-       </table>
-  </transition>
+                  <button  class="btn btn-link" @click="show = !show">
+                    <label><b>Veículos</b></label>
+                  </button>
+                  <transition name="slide-fade">
+                       <table class="mt-2" v-if="show" v-for="v in veiculos" :key="v">
+                           <thead>
+                               <tr>
+                                   <td></td>
+                                   <td><b>Existente</b></td>
+                                   <td><b>Funcional</b></td>
+                               </tr>
+                           </thead>
+                           <t-body>
+                               <tr>
+                                   <td>Administrativo</td>
+                                   <td><label class="badge badge-secondary">{{ v.administrativo_existente }}</label></td>
+                                   <td><label class="badge badge-secondary">{{ v.administrativo_funcional }}</label></td>
+                               </tr>
+                               <tr>
+                                   <td>Ambulância Terrestre</td>
+                                   <td><label class="badge badge-secondary">{{ v.ambulancia_terrestre_existente }}</label></td>
+                                   <td><label class="badge badge-secondary">{{ v.ambulancia_terrestre_funcional }}</label></td>
+                               </tr>
+                               <tr>
+                                   <td>Ambulância Flúvial</td>
+                                   <td><label class="badge badge-secondary">{{ v.ambulancia_fluvial_existente }}</label></td>
+                                   <td><label class="badge badge-secondary">{{ v.ambulancia_fluvial_funcional }}</label></td>
+                               </tr>
+                           </t-body>
+                       </table>
+                  </transition>
             </span>
     </div>
 </template>
@@ -39,35 +42,10 @@ export default {
         return {
             show: false
         }
-    },
-    methods:{
-        multiplicaSalario(a , b){
-            let c =a*b;
-            return c;
-        }
     }
 }
 </script>
 
 <style>
-@media screen and (min-width: 442px) {
-    table.tabela td:nth-child(2) {
-        display: run-in;
-    }
-}
-@media screen and (min-width: 442px) {
-    table.tabela td:nth-child(3) {
-        display: run-in;
-    }
-}
-@media screen and (max-width: 442px) {
-    table.tabela td:nth-child(2) {
-        display: none;
-    }
-}
-@media screen and (max-width: 442px) {
-    table.tabela td:nth-child(3) {
-        display: none;
-    }
-}
+
 </style>

@@ -4,13 +4,13 @@
                 <button class="btn btn-link" @click="show = !show">
                     <label><b>Equipamentos</b></label>
                 </button>
-  <transition name="slide-fade">
+                  <transition name="slide-fade">
                    <table class="mt-2" v-if="show">
                     <thead>
                        <tr>
                           <td></td>
-                          <td>Existente</td>
-                          <td>Funcional</td>
+                          <td><b>Existente</b></td>
+                          <td><b>Funcional</b></td>
                        </tr>
                    </thead>
                    <tbody>
@@ -21,7 +21,7 @@
                        </tr>
                    </tbody>
                 </table>
-  </transition>
+              </transition>
             </span>
     </div>
 </template>

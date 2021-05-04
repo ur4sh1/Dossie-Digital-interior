@@ -14,7 +14,6 @@ use App\Profissional;
 use App\Regional;
 use App\Rh;
 use App\RhCategoria;
-use App\RhTipoCategoria;
 use App\Servico;
 use App\TipoEquipamento;
 use App\TipoServico;
@@ -29,7 +28,7 @@ class MunicipiosController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
