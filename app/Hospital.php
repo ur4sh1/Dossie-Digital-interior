@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hospital extends Model
 {
-    protected $fillable=['nome','media_internacao_dia','media_internacao_mes','municipio_id'];
+    protected $fillable=['nome','rua','numero','bairro','cep','tel','email','municipio_id'];
 
 
     public function municipio()

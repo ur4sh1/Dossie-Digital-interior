@@ -22,10 +22,8 @@ class HospitalController extends Controller
      */
     public function index()
     {
-
        $hospital=Hospital::all();
-       $internacao=Internacao::all();
-       return view('admin.hospitals', compact('hospital','internacao'));
+       return view('admin.hospitals', compact('hospital'));
     }
 
     /**
@@ -47,16 +45,10 @@ class HospitalController extends Controller
      */
     public function store(Request $request)
     {
-
+ /*   dd($request->all());*/
         $data=$request->all();
         $data['nome']=strtoupper($data['nome']);
         $hospital=Hospital::create($data);
-
-        $internacaos=[];
-        $internacaos["hospital_id"]=$hospital->id;
-        $internacaos["media_dia"]=$request["media_dia"];
-        $internacaos["media_mes"]=$request["media_mes"];
-        $internacaos=Internacao::create($internacaos);
 
         return redirect()->route('hospitals.index');
     }
@@ -82,8 +74,7 @@ class HospitalController extends Controller
     {
         $municipio=Municipio::all();
         $hospital=Hospital::find($id);
-        $internacao=Internacao::all();
-        return view('admin.hospitalsFormAlt',compact('municipio','hospital','internacao'));
+        return view('admin.hospitalsFormAlt',compact('municipio','hospital'));
     }
 
     /**
@@ -97,8 +88,6 @@ class HospitalController extends Controller
     {
         $hospital=Hospital::find($id);
         $hospital->update($request->all());
-        $internacao=Internacao::find($id);
-        $internacao->update($request->all());
 
         return redirect()->route('hospitals.index');
     }

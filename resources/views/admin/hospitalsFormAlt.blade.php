@@ -28,19 +28,32 @@
                     </select>
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-sm-12">
-                    <label for="nome"><h5><b>Média Internação</b></h5></label>
+            <div class="form-row">
+                <div class="col-sm-3 mt-2">
+                    <label><h5><b>CEP</b></h5></label>
+                    <input id="cep" name="cep" value="{{ $hospital->cep }}" class="form-control mb-3 text-uppercase"/>
+                </div>
+                <div class="col-sm-5 mt-2">
+                    <label><h5><b>Endereço</b></h5></label>
+                    <input id="rua" name="rua" value="{{ $hospital->rua }}" class="form-control mb-3 text-uppercase"/>
+                </div>
+                <div class="col-sm-2 mt-2">
+                    <label><h5><b>Bairro</b></h5></label>
+                    <input type="text" class="form-control" name="bairro" id="bairro" value="{{ $hospital->bairro }}">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <label for="nome"><h5><b>Média Dia</b></h5></label>
-                    <input type="text" style="width: 100px;" class="form-control" value="{{$hospital->internacao->media_dia}}" id="media_dia" name="media_dia">
+            <div class="form-row">
+                <div class="col-sm-2 mt-2">
+                    <label><h5><b>N°</b></h5></label>
+                    <input type="text" class="form-control" name="numero" id="numero"value="{{ $hospital->numero }}">
                 </div>
-                <div class="col-sm-3">
-                    <label for="nome"><h5><b>Média Mês</b></h5></label>
-                    <input type="text" style="width: 100px;" class="form-control" value="{{$hospital->internacao->media_mes}}" id="media_mes" name="media_mes">
+                <div class="col-sm-2 mt-2">
+                    <label><h5><b>Telefone</b></h5></label>
+                    <input type="tel" class="form-control" name="tel" id="tel" value="{{ $hospital->tel }}">
+                </div>
+                <div class="col-sm-5 mt-2">
+                    <label><h5><b>E-mail</b></h5></label>
+                    <input type="email" class="form-control" name="email" id="email" value="{{ $hospital->email }}">
                 </div>
             </div>
             <div class="form-row"><!--buttonsAções-->

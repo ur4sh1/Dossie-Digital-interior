@@ -2062,6 +2062,90 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Endereco.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Endereco.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["cep", "bairro", "endereco", "cidade", "municipios"],
+  data: function data() {
+    return {
+      cep: "",
+      endereco: "",
+      cidade: "",
+      bairro: "",
+      selected: this.municipios
+    };
+  },
+  methods: {
+    localizaCep: function localizaCep() {
+      var _this = this;
+
+      // this.loadingCep=true
+      this.$api.get('https://viacep.com.br/ws/' + this.cep + '/json').then(function (res) {
+        if (res.data.erro) {
+          window.alert('Nenhuma informação encontrada, prossiga com o preenchimento manual');
+        }
+
+        _this.endereco = res.data.logradouro;
+        _this.bairro = res.data.bairro;
+        _this.cidade = res.data.localidade;
+
+        _this.$forceUpdate();
+
+        console.log(res.data);
+      });
+    },
+    selecionado: function selecionado(n1, n2) {
+      if (n1 === n2) {
+        return "true";
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EquipamentosList.vue?vue&type=script&lang=js& ***!
@@ -58703,6 +58787,182 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-sm-3 mt-2" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "input-group" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.cep,
+              expression: "cep"
+            }
+          ],
+          staticClass: "form-control cep mb-3",
+          attrs: { type: "text", id: "cep", name: "cep" },
+          domProps: { value: _vm.cep },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.cep = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group-append" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary mb-3",
+              attrs: { type: "button", id: "button-addon2" },
+              on: {
+                click: function($event) {
+                  return _vm.localizaCep()
+                }
+              }
+            },
+            [_vm._v("\n                    Localizar\n                ")]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-sm-3 mt-2" }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          staticClass: "form-control",
+          attrs: { id: "municipio_id", name: "municipio_id", required: "" }
+        },
+        [
+          _c("option", [_vm._v("Selecione")]),
+          _vm._v(" "),
+          _vm._l(_vm.municipios, function(m, i) {
+            return _c(
+              "option",
+              {
+                domProps: {
+                  value: i,
+                  selected: _vm.selecionado(m.nome, _vm.cidade)
+                }
+              },
+              [_vm._v(_vm._s(m.nome))]
+            )
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-sm-5 mt-2" }, [
+      _vm._m(2),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.endereco,
+            expression: "endereco"
+          }
+        ],
+        staticClass: "form-control mb-3 text-uppercase",
+        attrs: { id: "rua", name: "rua" },
+        domProps: { value: _vm.endereco },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.endereco = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-sm-2 mt-2" }, [
+      _vm._m(3),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.bairro,
+            expression: "bairro"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", name: "bairro", id: "bairro" },
+        domProps: { value: _vm.bairro },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.bairro = $event.target.value
+          }
+        }
+      })
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("h5", [_c("b", [_vm._v("CEP")])])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "municipio_id" } }, [
+      _c("h5", [_c("b", [_vm._v("Município")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("h5", [_c("b", [_vm._v("Endereço")])])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("h5", [_c("b", [_vm._v("Bairro")])])])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EquipamentosList.vue?vue&type=template&id=0ba80348& ***!
@@ -72236,6 +72496,7 @@ var map = {
 	"./components/AutoridadesList.vue": "./resources/js/components/AutoridadesList.vue",
 	"./components/DadosList.vue": "./resources/js/components/DadosList.vue",
 	"./components/DetalhesList.vue": "./resources/js/components/DetalhesList.vue",
+	"./components/Endereco.vue": "./resources/js/components/Endereco.vue",
 	"./components/EquipamentosList.vue": "./resources/js/components/EquipamentosList.vue",
 	"./components/ExampleComponent.vue": "./resources/js/components/ExampleComponent.vue",
 	"./components/FolhaList.vue": "./resources/js/components/FolhaList.vue",
@@ -72601,6 +72862,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetalhesList_vue_vue_type_template_id_81c556fe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DetalhesList_vue_vue_type_template_id_81c556fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Endereco.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Endereco.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Endereco_vue_vue_type_template_id_4ced1e98___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Endereco.vue?vue&type=template&id=4ced1e98& */ "./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98&");
+/* harmony import */ var _Endereco_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Endereco.vue?vue&type=script&lang=js& */ "./resources/js/components/Endereco.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Endereco_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Endereco_vue_vue_type_template_id_4ced1e98___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Endereco_vue_vue_type_template_id_4ced1e98___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Endereco.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Endereco.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/Endereco.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Endereco_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Endereco.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Endereco.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Endereco_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Endereco_vue_vue_type_template_id_4ced1e98___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Endereco.vue?vue&type=template&id=4ced1e98& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Endereco.vue?vue&type=template&id=4ced1e98&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Endereco_vue_vue_type_template_id_4ced1e98___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Endereco_vue_vue_type_template_id_4ced1e98___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

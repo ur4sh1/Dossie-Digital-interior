@@ -18,6 +18,12 @@ class CreateHospitalTable extends Migration
             $table->string('nome');
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
+            $table->string('rua')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('cep')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

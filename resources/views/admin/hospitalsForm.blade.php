@@ -13,35 +13,27 @@
         <form method="post" class="needs-validation" action="{{route('hospitals.store')}}">
             @csrf
             <div class="form-row">
-                <div class="col-sm-8"><!--nome-->
+                <div class="col-sm-8 mt-2"><!--nome-->
                     <label for="nome"><h5><b>Nome</b></h5></label>
                     <input type="text" class="form-control text-uppercase" id="nome" name="nome"  required>
                 </div>
-                <div class="col-sm-4"><!--municipio-->
-                    <label for="municipio_id"><h5><b>Município</b></h5></label>
-                    <select class="form-control" id="municipio_id" name="municipio_id" required>
-                        <option value="" selected disabled hidden>Selecione</option>
-                        @foreach($municipio as $m)
-                            <option value="{{$m->id}}">{{$m->nome}}</option>
-                        @endforeach
-                    </select>
+            </div>
+            <endereco :municipios="{{$municipio}}"></endereco>
+            <div class="form-row">
+                <div class="col-sm-2 mt-2">
+                    <label><h5><b>N°</b></h5></label>
+                    <input type="text" class="form-control" name="numero" id="numero">
+                </div>
+                <div class="col-sm-2 mt-2">
+                    <label><h5><b>Telefone</b></h5></label>
+                    <input type="tel" class="form-control" name="tel" id="tel">
+                </div>
+                <div class="col-sm-5 mt-2">
+                    <label><h5><b>E-mail</b></h5></label>
+                    <input type="email" class="form-control" name="email" id="email">
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-sm-12">
-                    <label for="nome"><h5><b>Média Internação</b></h5></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <label for="nome"><h5><b>Média Dia</b></h5></label>
-                    <the-mask type="text" style="width: 100px;" class="form-control" id="media_dia" name="media_dia" :mask="['##']" required></the-mask>
-                </div>
-                <div class="col-sm-3">
-                     <label for="nome"><h5><b>Média Mês</b></h5></label>
-                    <the-mask type="text" style="width: 100px;" class="form-control" id="media_mes" name="media_mes" :mask="['###']" required></the-mask>
-                </div>
-            </div>
+
             <div class="form-row text-right"><!--buttonsAções-->
                 <div class="col-sm-12 mt-3">
                     <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>
@@ -51,6 +43,4 @@
         </form>
     </div>
 @endsection
-
-
 
