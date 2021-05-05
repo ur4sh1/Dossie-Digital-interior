@@ -35,7 +35,7 @@
                     <the-mask class="form-control text-right" style="width: 150px" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
                 </div>
                 <div class="col">
-                    <label for="SUSAM">SUSAM</label><br>
+                    <label for="SUSAM">Qtd Funcionários SESAM</label><br>
                     <the-mask class="form-control text-right" style="width: 50px" name="SUSAM" id="SUSAM" :mask="['##']" required></the-mask>
                 </div>
             </div>

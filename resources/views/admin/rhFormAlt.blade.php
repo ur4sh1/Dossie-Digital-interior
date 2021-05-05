@@ -20,10 +20,10 @@
                 <h5><b>CATEGORIA</b></h5>
             </div>
             <div class="col-sm-2">
-                <h5><b>SUSAM ESTATUTÁRIO</b></h5>
+                <h5><b>SESAM ESTATUTÁRIO</b></h5>
             </div>
             <div class="col-sm-2">
-                <h5><b>SUSAM <br>CONTRATO</b></h5>
+                <h5><b>SESAM <br>CONTRATO</b></h5>
             </div>
             <div class="col-sm-2">
                 <h5><b>PREFEITURA</b></h5>

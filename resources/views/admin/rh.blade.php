@@ -16,8 +16,8 @@
             <thead>
                 <td><h5><b>HOSPITAL</b></h5></td>
                 <td><h5><b>CATEGORIA</b></h5></td>
-                <td> <h5><b>SUSAM ESTATUTÁRIO</b></h5></td>
-                <td><h5><b>SUSAM <br>CONTRATO</b></h5></td>
+                <td> <h5><b>SESAM ESTATUTÁRIO</b></h5></td>
+                <td><h5><b>SESAM <br>CONTRATO</b></h5></td>
                 <td><h5><b>PREFEITURA</b></h5></td>
                 <td><h5><b>AÇÕES</b></h5></td>
             </thead>
