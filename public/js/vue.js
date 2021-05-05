@@ -4548,7 +4548,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("h5", [_c("b", [_vm._v("Endereço")])])])
+    return _c("label", [_c("h5", [_c("b", [_vm._v("Logradouro")])])])
   },
   function() {
     var _vm = this
@@ -5417,311 +5417,314 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-12 busca d-flex" },
-        [
-          _c("the-mask", {
-            staticClass: "form-control mr-sm-2",
-            attrs: {
-              type: "text",
-              mask: ["SSSSSSSSSSSSSSSSS"],
-              id: "seach",
-              placeholder: "Filtro",
-              "aria-label": "Search"
-            },
-            model: {
-              value: _vm.pesquisa,
-              callback: function($$v) {
-                _vm.pesquisa = $$v
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 busca d-flex" },
+          [
+            _c("the-mask", {
+              staticClass: "form-control mr-sm-2",
+              attrs: {
+                type: "text",
+                mask: ["SSSSSSSSSSSSSSSSS"],
+                id: "seach",
+                placeholder: "Filtro",
+                "aria-label": "Search"
               },
-              expression: "pesquisa"
-            }
-          })
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row" },
+              model: {
+                value: _vm.pesquisa,
+                callback: function($$v) {
+                  _vm.pesquisa = $$v
+                },
+                expression: "pesquisa"
+              }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
       _vm._l(_vm.filterdados, function(m) {
-        return _c("div", [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-link",
-              attrs: {
-                type: "button",
-                "data-toggle": "modal",
-                "data-target": "#m" + m.id
-              }
-            },
-            [_vm._v("\n                " + _vm._s(m.nome) + "\n            ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "modal fade",
-              attrs: {
-                id: "m" + m.id,
-                tabindex: "-1",
-                "aria-labelledby": "exampleModalLabel",
-                "aria-hidden": "true"
-              }
-            },
-            [
-              _c("div", { staticClass: "modal-dialog modal-lg" }, [
-                _c("div", { staticClass: "modal-content" }, [
-                  _c("div", { staticClass: "modal-header" }, [
-                    _c(
-                      "h5",
-                      {
-                        staticClass: "modal-title",
-                        attrs: { id: "exampleModalLabel" }
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "img-fluid mb-3",
-                          attrs: {
-                            src: "/img/images/bandeira" + "" + m.id + ".png",
-                            width: "50px"
-                          }
-                        }),
-                        _vm._v(" " + _vm._s(m.nome))
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(1, true)
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "modal-body" }, [
-                    _c(
-                      "ul",
-                      {
-                        staticClass: "nav nav-tabs",
-                        attrs: { id: "myTab", role: "tablist" }
-                      },
-                      [
-                        _c(
-                          "li",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { role: "presentation" }
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link active",
-                                attrs: {
-                                  id: "home-tab",
-                                  "data-toggle": "tab",
-                                  href: "#infor" + m.id,
-                                  role: "tab",
-                                  "aria-controls": "home",
-                                  "aria-selected": "true"
-                                }
-                              },
-                              [_vm._v("Gerais")]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { role: "presentation" }
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: {
-                                  id: "profile-tab",
-                                  "data-toggle": "tab",
-                                  href: "#auto" + m.id,
-                                  role: "tab",
-                                  "aria-controls": "profile",
-                                  "aria-selected": "false"
-                                }
-                              },
-                              [_vm._v("Autoridades")]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          {
-                            staticClass: "nav-item",
-                            attrs: { role: "presentation" }
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: {
-                                  id: "contact-tab",
-                                  "data-toggle": "tab",
-                                  href: "#hosp" + m.id,
-                                  role: "tab",
-                                  "aria-controls": "contact",
-                                  "aria-selected": "false"
-                                }
-                              },
-                              [_vm._v("Hospital")]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-content",
-                        attrs: { id: "myTabContent" }
-                      },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade show active",
+        return _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-link",
+                attrs: {
+                  type: "button",
+                  "data-toggle": "modal",
+                  "data-target": "#m" + m.id
+                }
+              },
+              [_vm._v("\n                " + _vm._s(m.nome) + "\n            ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "modal fade",
+                attrs: {
+                  id: "m" + m.id,
+                  tabindex: "-1",
+                  "aria-labelledby": "exampleModalLabel",
+                  "aria-hidden": "true"
+                }
+              },
+              [
+                _c("div", { staticClass: "modal-dialog modal-lg" }, [
+                  _c("div", { staticClass: "modal-content" }, [
+                    _c("div", { staticClass: "modal-header" }, [
+                      _c(
+                        "h5",
+                        {
+                          staticClass: "modal-title",
+                          attrs: { id: "exampleModalLabel" }
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "img-fluid mb-3",
                             attrs: {
-                              id: "infor" + m.id,
-                              role: "tabpanel",
-                              "aria-labelledby": "home-tab"
+                              src: "/img/images/bandeira" + "" + m.id + ".png",
+                              width: "50px"
                             }
-                          },
-                          [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-sm-6" }, [
-                                _c("img", {
-                                  staticClass: "img-fluid mt-3",
+                          }),
+                          _vm._v(" " + _vm._s(m.nome))
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1, true)
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-body" }, [
+                      _c(
+                        "ul",
+                        {
+                          staticClass: "nav nav-tabs",
+                          attrs: { id: "myTab", role: "tablist" }
+                        },
+                        [
+                          _c(
+                            "li",
+                            {
+                              staticClass: "nav-item",
+                              attrs: { role: "presentation" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link active",
                                   attrs: {
-                                    src:
-                                      "/img/images/mapa" + "" + m.id + ".jpg",
-                                    width: "400px"
+                                    id: "home-tab",
+                                    "data-toggle": "tab",
+                                    href: "#infor" + m.id,
+                                    role: "tab",
+                                    "aria-controls": "home",
+                                    "aria-selected": "true"
                                   }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "col-sm-6" },
-                                [
-                                  _c("dados-list", {
-                                    attrs: {
-                                      dados: _vm.dados.filter(function(da) {
-                                        return da.id === m.id
-                                      })
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("detalhes-list", {
-                                    attrs: {
-                                      detalhes: _vm.detalhes.filter(function(
-                                        de
-                                      ) {
-                                        return de.id === m.id
-                                      })
-                                    }
-                                  })
-                                ],
-                                1
+                                },
+                                [_vm._v("Gerais")]
                               )
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade",
-                            attrs: {
-                              id: "auto" + m.id,
-                              role: "tabpanel",
-                              "aria-labelledby": "profile-tab"
-                            }
-                          },
-                          [
-                            _c("autoridades-list", {
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            {
+                              staticClass: "nav-item",
+                              attrs: { role: "presentation" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link",
+                                  attrs: {
+                                    id: "profile-tab",
+                                    "data-toggle": "tab",
+                                    href: "#auto" + m.id,
+                                    role: "tab",
+                                    "aria-controls": "profile",
+                                    "aria-selected": "false"
+                                  }
+                                },
+                                [_vm._v("Autoridades")]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            {
+                              staticClass: "nav-item",
+                              attrs: { role: "presentation" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link",
+                                  attrs: {
+                                    id: "contact-tab",
+                                    "data-toggle": "tab",
+                                    href: "#hosp" + m.id,
+                                    role: "tab",
+                                    "aria-controls": "contact",
+                                    "aria-selected": "false"
+                                  }
+                                },
+                                [_vm._v("Hospital")]
+                              )
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "tab-content",
+                          attrs: { id: "myTabContent" }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-pane fade show active",
                               attrs: {
-                                partidos: _vm.partidos,
-                                cargos: _vm.cargos,
-                                autoridades: _vm.autoridades.filter(function(
-                                  a
-                                ) {
-                                  return a.municipio_id === m.id
-                                })
+                                id: "infor" + m.id,
+                                role: "tabpanel",
+                                "aria-labelledby": "home-tab"
                               }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "tab-pane fade",
-                            attrs: {
-                              id: "hosp" + m.id,
-                              role: "tabpanel",
-                              "aria-labelledby": "contact-tab"
-                            }
-                          },
-                          [
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-sm-12" },
-                                [
-                                  _c("hospital-list", {
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-sm-6" }, [
+                                  _c("img", {
+                                    staticClass: "img-fluid mt-3",
                                     attrs: {
-                                      profissionals: _vm.profissionals,
-                                      folhas: _vm.folhas,
-                                      internacaos: _vm.internacaos,
-                                      leitos: _vm.leitos,
-                                      tipo_equipamentos: _vm.tipo_equipamentos,
-                                      equipamentos: _vm.equipamentos,
-                                      veiculos: _vm.veiculos,
-                                      hospital: _vm.hospitals.filter(function(
-                                        h
-                                      ) {
-                                        return h.municipio_id === m.id
-                                      })
+                                      src:
+                                        "/img/images/mapa" + "" + m.id + ".jpg",
+                                      width: "400px"
                                     }
                                   })
-                                ],
-                                1
-                              )
-                            ])
-                          ]
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(2, true)
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-6" },
+                                  [
+                                    _c("dados-list", {
+                                      attrs: {
+                                        dados: _vm.dados.filter(function(da) {
+                                          return da.id === m.id
+                                        })
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("detalhes-list", {
+                                      attrs: {
+                                        detalhes: _vm.detalhes.filter(function(
+                                          de
+                                        ) {
+                                          return de.id === m.id
+                                        })
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-pane fade",
+                              attrs: {
+                                id: "auto" + m.id,
+                                role: "tabpanel",
+                                "aria-labelledby": "profile-tab"
+                              }
+                            },
+                            [
+                              _c("autoridades-list", {
+                                attrs: {
+                                  partidos: _vm.partidos,
+                                  cargos: _vm.cargos,
+                                  autoridades: _vm.autoridades.filter(function(
+                                    a
+                                  ) {
+                                    return a.municipio_id === m.id
+                                  })
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "tab-pane fade",
+                              attrs: {
+                                id: "hosp" + m.id,
+                                role: "tabpanel",
+                                "aria-labelledby": "contact-tab"
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-12" },
+                                  [
+                                    _c("hospital-list", {
+                                      attrs: {
+                                        profissionals: _vm.profissionals,
+                                        folhas: _vm.folhas,
+                                        internacaos: _vm.internacaos,
+                                        leitos: _vm.leitos,
+                                        tipo_equipamentos:
+                                          _vm.tipo_equipamentos,
+                                        equipamentos: _vm.equipamentos,
+                                        veiculos: _vm.veiculos,
+                                        hospital: _vm.hospitals.filter(function(
+                                          h
+                                        ) {
+                                          return h.municipio_id === m.id
+                                        })
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2, true)
+                  ])
                 ])
-              ])
-            ]
-          )
+              ]
+            )
+          ])
         ])
-      }),
-      0
-    )
-  ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {

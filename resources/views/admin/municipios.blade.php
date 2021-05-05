@@ -55,7 +55,7 @@
                                             <i class="fa fa-globe"></i> Densidade Demográfica: {{$m->dados->densidade_demografica?? ''}} hab/Km²<br>
                                             <i class="fa fa-globe"></i> Latitude Decimal: {{$m->dados->latitude_decimal?? ''}}<br>
                                             <i class="fa fa-globe"></i> Longitude Decimal: {{$m->dados->longitude_decimal?? ''}}<br>
-                                        <!--                                        <i class="fa fa-globe"></i> Latitude Sexagesimal: {{$m->dados->latitude_sexagesimais?? ''}}<br>
+                                        <!--<i class="fa fa-globe"></i> Latitude Sexagesimal: {{$m->dados->latitude_sexagesimais?? ''}}<br>
                                             <i class="fa fa-globe"></i> Longitude Sexagesimal: {{$m->dados->longitude_sexagesimais?? ''}}<br><br>-->
                                             <i class="fa fa-group"></i> População Estimada: {{number_format($m->detalhe->populacao_estimada??'',0,'.','.')}}<br>
                                             <i class="fa fa-arrow-up"></i>PIB: {{$m->detalhe->pib_percapita??''}}<br>
@@ -130,13 +130,21 @@
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                        <h5 class="modal-title" id="exampleModalLabel">{{$ho->nome}}</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        ...TEXTO TESTE
+                                                                        <b>Logradouro</b>{{ $ho->rua }}, {{ $ho->numero }}<br>
+                                                                        <b>Bairro: </b>{{ $ho->bairro }}<br>
+                                                                        <b>Contato: </b>{{ $ho->tel }}<br>
+                                                                        <b>E-mail: </b>{{ $ho->email }}<br>
+                                                                        @foreach($ho->municipio->autoridade as $auto)
+                                                                            @if($auto->cargo_id==12)
+                                                                                <b>Diretor Geral: </b>{{ $auto->nome }}
+                                                                            @endif
+                                                                        @endforeach
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

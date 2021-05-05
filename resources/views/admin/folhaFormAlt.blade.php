@@ -26,7 +26,7 @@
                 <input type="text" class="text-right" name="salario_inicial" id="salario_inicial" value="{{$folha->salario_inicial}}">
             </div>
             <div class="col">
-                <label for="SUSAM">SUSAM</label><br>
+                <label for="SUSAM">SESAM</label><br>
                 <input type="text" class="text-right" style="width: 50px" name="SUSAM" id="SUSAM" value="{{$folha->SUSAM}}">
             </div>
         </div>

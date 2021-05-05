@@ -25,7 +25,7 @@
                 <thead>
                 <th scope="col">PROFISSIONAL</th>
                 <th scope="col" class="text-center">SALÁRIO UNITÁRIO</th>
-                <th scope="col">SUSAM</th>
+                <th scope="col">SESAM</th>
                 <th scope="col">Valor em Folha</th>
                 <th scope="col">Ações</th>
                 </thead>

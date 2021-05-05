@@ -34,7 +34,7 @@
                     <input id="cep" name="cep" value="{{ $hospital->cep }}" class="form-control mb-3 text-uppercase"/>
                 </div>
                 <div class="col-sm-5 mt-2">
-                    <label><h5><b>Endereço</b></h5></label>
+                    <label><h5><b>Logradouro</b></h5></label>
                     <input id="rua" name="rua" value="{{ $hospital->rua }}" class="form-control mb-3 text-uppercase"/>
                 </div>
                 <div class="col-sm-2 mt-2">

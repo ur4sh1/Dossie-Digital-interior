@@ -12,8 +12,8 @@
                 <the-mask class="form-control mr-sm-2" type="text" :mask="['SSSSSSSSSSSSSSSSS']" id="seach" v-model="pesquisa" placeholder="Filtro" aria-label="Search"></the-mask>
             </div>
         </div>
-        <div class="row">
-            <div v-for="m in filterdados">
+        <div class="row" v-for="m in filterdados">
+            <div class="col">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-link" data-toggle="modal" :data-target="`#m${m.id}`">
                     {{ m.nome }}

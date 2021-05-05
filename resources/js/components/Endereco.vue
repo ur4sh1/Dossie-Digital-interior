@@ -21,7 +21,7 @@
         </div>
 
         <div class="col-sm-5 mt-2">
-            <label><h5><b>Endereço</b></h5></label>
+            <label><h5><b>Logradouro</b></h5></label>
             <input v-model="endereco" id="rua" name="rua" class="form-control mb-3 text-uppercase"/>
         </div>
 
