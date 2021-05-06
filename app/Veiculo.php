@@ -10,7 +10,7 @@ class Veiculo extends Model
 
     public function hospital()
     {
-        return $this->belongsTo('App\hospital','hospital_id','id');
+        return $this->hasMany('App\Hospital','hospital_id','id');
     }
 
     public function municipio()
