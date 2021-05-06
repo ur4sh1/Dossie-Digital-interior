@@ -78,7 +78,7 @@
                                             @foreach ($m->autoridade as $auto)
                                                 <div class="col-sm-7">
 
-                                                    <button type="button" class="btn btn-link redime" data-toggle="modal" data-target="#detail{{$auto->id}}">
+                                                    <button type="button" class="btn btn-link redime text-left" data-toggle="modal" data-target="#detail{{$auto->id}}">
                                                         <b>{{$auto->cargo->nome}}:</b> {{$auto->nome}} ({{$auto->partido->sigla}})
                                                     </button>
                                                     <!-- Modal Detalhes adicionais-->
@@ -187,7 +187,7 @@
                                                     <a class="btn btn-link" data-toggle="collapse" href="#ser{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Serviços</b><br>
                                                     </a>
-                                                    <!--servicos-->
+                                                    <!--servidor-->
                                                     <a class="btn btn-link" data-toggle="collapse" href="#servi{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Servidor</b><br>
                                                     </a>
@@ -579,6 +579,17 @@
     @media screen and (max-width: 442px) {
         button.redime{
             font-size: 20px;
+            text-align: left;
+        }
+    }
+    @media screen and (min-width: 442px) {
+        div.container {
+            font-size: 15px;
+        }
+    }
+    @media screen and (min-width: 442px) {
+        button.redime{
+            font-size: 15px;
             text-align: left;
         }
     }
