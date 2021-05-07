@@ -36,5 +36,6 @@ Route::resources([
     'dados'=>'DadosController',
     'rhs'=>'RhController',
     'rhCategorias'=>'RhCategoriaController',
-    'folhas'=>'FolhaController'
+    'folhas'=>'FolhaController',
+    'programas'=>'ProgramaController'
 ]);

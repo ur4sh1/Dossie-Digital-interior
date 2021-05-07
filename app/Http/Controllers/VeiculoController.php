@@ -16,7 +16,8 @@ class VeiculoController extends Controller
     public function index()
     {
         $veiculo=Veiculo::all();
-        return view('admin.veiculos',compact('veiculo'));
+        $hospital=Hospital::all();
+        return view('admin.veiculos',compact('veiculo','hospital'));
     }
 
     /**

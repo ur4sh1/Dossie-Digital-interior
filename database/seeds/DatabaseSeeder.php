@@ -35,5 +35,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfissionalSeeder::class);
         $this->call(FolhaSeeder::class);
         $this->call(InternacaoSeeder::class);
+        $this->call(ProgramaSeeder::class);
     }
 }

@@ -7,7 +7,8 @@
             <h1>Lista de Autoridades Cadastrados</h1>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary" href="{{route('autoridades.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+            <a class="btn btn-primary btn-sm" href="{{route('autoridades.create')}}" role="button">ADICIONAR</a>
         </div>
         <table class="table table-sm" id="table">
             <thead>

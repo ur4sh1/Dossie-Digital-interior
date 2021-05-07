@@ -6,8 +6,9 @@
             <h1>Lista de Municípios</h1>
         </div>
         <div class="text-right mb-2">
-        <!--            <div class="form-group">
-                <a class="btn btn-primary" href="{{action('MunicipiosController@indexAlternativo')}}" role="button">VIEW</a>
+            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+        <!--<div class="form-group">
+                <a class="btn btn-primary btn-sm" href="{{action('MunicipiosController@indexAlternativo')}}" role="button">VIEW</a>
             </div>-->
         </div>
         @foreach($municipio as $m)
@@ -76,8 +77,7 @@
                                     @else
                                         <div class="row mt-3">
                                             @foreach ($m->autoridade as $auto)
-                                                <div class="col-sm-7">
-
+                                                <div class="col-sm-12">
                                                     <button type="button" class="btn btn-link redime text-left" data-toggle="modal" data-target="#detail{{$auto->id}}">
                                                         <b>{{$auto->cargo->nome}}:</b> {{$auto->nome}} ({{$auto->partido->sigla}})
                                                     </button>
@@ -139,13 +139,13 @@
                                                                     <b>Endereço: </b>{{ $ho->rua }}, {{ $ho->numero }}, {{ $ho->bairro }}<br>
                                                                     <b>Contato: </b>{{ $ho->tel }}<br>
                                                                     <b>E-mail: </b>{{ $ho->email }}<br>
-                                                                        @foreach($ho->municipio->autoridade as $auto)
-                                                                            @if($auto->cargo_id==12)
-                                                                                <b>Diretor Geral: </b>{{ $auto->nome }}<br>
-                                                                                <b>Contato: </b>{{ $auto->tel }} _ {{ $auto->cel }}<br>
-                                                                                <b>E-mail: </b>{{ $auto->email }}
-                                                                            @endif
-                                                                        @endforeach
+                                                                    @foreach($ho->municipio->autoridade as $auto)
+                                                                        @if($auto->cargo_id==12)
+                                                                            <b>Diretor Geral: </b>{{ $auto->nome }}<br>
+                                                                            <b>Contato: </b>{{ $auto->tel }} _ {{ $auto->cel }}<br>
+                                                                            <b>E-mail: </b>{{ $auto->email }}
+                                                                        @endif
+                                                                    @endforeach
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -207,19 +207,19 @@
                                                                 </tr>
                                                             </table>
                                                         @else
-                                                        <table class="table table-sm">
-                                                            <tr>
-                                                                <td>
-                                                                    <label><b>INTERNAÇÃO</b></label>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Média / dia:</td>
-                                                                <td>{{$ho->internacao->media_dia??''}}</td>
-                                                                <td>Média / mês:</td>
-                                                                <td>{{$ho->internacao->media_mes??''}}</td>
-                                                            </tr>
-                                                        </table>
+                                                            <table class="table table-sm">
+                                                                <tr>
+                                                                    <td>
+                                                                        <label><b>INTERNAÇÃO</b></label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Média / dia:</td>
+                                                                    <td>{{$ho->internacao->media_dia??''}}</td>
+                                                                    <td>Média / mês:</td>
+                                                                    <td>{{$ho->internacao->media_mes??''}}</td>
+                                                                </tr>
+                                                            </table>
                                                         @endif
                                                     </div>
                                                     <!--colapse Leitos-->
@@ -232,43 +232,43 @@
                                                                 </tr>
                                                             </table>
                                                         @else
-                                                        <table class="table table-sm">
-                                                            <tr>
-                                                                <td>
-                                                                    <label><b>LEITOS</b></label>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="table">
-                                                                <td>Clínicos:</td>
-                                                                <td>{{$ho->leito->leito_clinico ?? 'Informações não cadastradas'}}</td>
-                                                                <td>Cirúrgicos:</td>
-                                                                <td>{{$ho->leito->leito_cirurgico ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Obstétrico:</td>
-                                                                <td>{{$ho->leito->leito_obstetrico ?? 'Informações não cadastradas'}}</td>
-                                                                <td>Pediádrico:</td>
-                                                                <td>{{$ho->leito->leito_pediatrico ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Outros:</td>
-                                                                <td>{{$ho->leito->leito_outro ?? 'Informações não cadastradas'}}</td>
-                                                                <td>Suporte Ventilátorio</td>
-                                                                <td>{{$ho->leito->suporte_ventilatorio ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>UCI Adulto:</td>
-                                                                <td>{{$ho->leito->uci_adulto ?? 'Informações não cadastradas'}}</td>
-                                                                <td>UCI Pediátrico</td>
-                                                                <td>{{$ho->leito->uci_pediatrico ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Total: </td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td>{{$ho->leito->total ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                        </table>
+                                                            <table class="table table-sm">
+                                                                <tr>
+                                                                    <td>
+                                                                        <label><b>LEITOS</b></label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="table">
+                                                                    <td>Clínicos:</td>
+                                                                    <td>{{$ho->leito->leito_clinico ?? 'Informações não cadastradas'}}</td>
+                                                                    <td>Cirúrgicos:</td>
+                                                                    <td>{{$ho->leito->leito_cirurgico ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Obstétrico:</td>
+                                                                    <td>{{$ho->leito->leito_obstetrico ?? 'Informações não cadastradas'}}</td>
+                                                                    <td>Pediádrico:</td>
+                                                                    <td>{{$ho->leito->leito_pediatrico ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Outros:</td>
+                                                                    <td>{{$ho->leito->leito_outro ?? 'Informações não cadastradas'}}</td>
+                                                                    <td>Suporte Ventilátorio</td>
+                                                                    <td>{{$ho->leito->suporte_ventilatorio ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>UCI Adulto:</td>
+                                                                    <td>{{$ho->leito->uci_adulto ?? 'Informações não cadastradas'}}</td>
+                                                                    <td>UCI Pediátrico</td>
+                                                                    <td>{{$ho->leito->uci_pediatrico ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Total: </td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td>{{$ho->leito->total ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                            </table>
                                                         @endif
                                                     </div>
                                                     <!--colapse exames realizados-->
@@ -281,23 +281,23 @@
                                                                 </tr>
                                                             </table>
                                                         @else
-                                                        <table class="table table-sm">
-                                                            <tr>
-                                                                <td><label><b>EXAMES REALIZADOS</b></label></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Mamografia:</td>
-                                                                <td>{{$ho->exame->mamografia ?? 'Informações não cadastradas'}}</td>
-                                                                <td>Ultrassonografia</td>
-                                                                <td>{{$ho->exame->ultrassonografia ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Raio X:</td>
-                                                                <td>{{$ho->exame->raio_x ?? 'Informações não cadastradas'}}</td>
-                                                                <td>Eletrocardiograma</td>
-                                                                <td>{{$ho->exame->eletrocardiograma ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                        </table>
+                                                            <table class="table table-sm">
+                                                                <tr>
+                                                                    <td><label><b>EXAMES REALIZADOS</b></label></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Mamografia:</td>
+                                                                    <td>{{$ho->exame->mamografia ?? 'Informações não cadastradas'}}</td>
+                                                                    <td>Ultrassonografia</td>
+                                                                    <td>{{$ho->exame->ultrassonografia ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Raio X:</td>
+                                                                    <td>{{$ho->exame->raio_x ?? 'Informações não cadastradas'}}</td>
+                                                                    <td>Eletrocardiograma</td>
+                                                                    <td>{{$ho->exame->eletrocardiograma ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                            </table>
                                                         @endif
                                                     </div>
                                                     <!--colapse salas cirurgicas-->
@@ -310,17 +310,17 @@
                                                                 </tr>
                                                             </table>
                                                         @else
-                                                        <table class="table table-sm">
-                                                            <tr>
-                                                                <td><label><b>SALAS CIRÚRGICAS</b></label></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Existente</td>
-                                                                <td>{{$ho->salacirurgica->sala_cirurgicas_existentes ?? 'Informações não cadastradas'}}</td>
-                                                                <td>Funcional</td>
-                                                                <td>{{$ho->salacirurgica->sala_cirurgicas_funcionais ?? 'Informações não cadastradas'}}</td>
-                                                            </tr>
-                                                        </table>
+                                                            <table class="table table-sm">
+                                                                <tr>
+                                                                    <td><label><b>SALAS CIRÚRGICAS</b></label></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Existente</td>
+                                                                    <td>{{$ho->salacirurgica->sala_cirurgicas_existentes ?? 'Informações não cadastradas'}}</td>
+                                                                    <td>Funcional</td>
+                                                                    <td>{{$ho->salacirurgica->sala_cirurgicas_funcionais ?? 'Informações não cadastradas'}}</td>
+                                                                </tr>
+                                                            </table>
                                                         @endif
                                                     </div>
                                                     <!--colapse RH-->
@@ -505,34 +505,34 @@
                                                                 </tr>
                                                             </table>
                                                         @else
-                                                        <table class="table table-sm">
-                                                            <tr>
-                                                                <td><label><b>VEÍCULOS</b></label></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-center" colspan="2">Administrativo</td>
-                                                                <td class="text-center" colspan="2">Ambulância Terrestre</td>
-                                                                <td class="text-center" colspan="2">Ambulância Flúvia</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-center" >Existente</td>
-                                                                <td class="text-center" >Funcional</td>
-                                                                <td class="text-center" >Existente</td>
-                                                                <td class="text-center" >Funcional</td>
-                                                                <td class="text-center" >Existente</td>
-                                                                <td class="text-center" >Funcional</td>
-                                                            </tr>
-                                                            @foreach($ho->veiculo as $hv)
+                                                            <table class="table table-sm">
                                                                 <tr>
-                                                                    <td class="text-center">{{ $hv->administrativo_existente }}</td>
-                                                                    <td class="text-center">{{ $hv->administrativo_funcional }}</td>
-                                                                    <td class="text-center">{{ $hv->ambulancia_terrestre_existente }}</td>
-                                                                    <td class="text-center">{{ $hv->ambulancia_terrestre_funcional }}</td>
-                                                                    <td class="text-center">{{ $hv->ambulancia_fluvial_existente }}</td>
-                                                                    <td class="text-center">{{ $hv->ambulancia_fluvial_funcional }}</td>
+                                                                    <td><label><b>VEÍCULOS</b></label></td>
                                                                 </tr>
-                                                            @endforeach
-                                                        </table>
+                                                                <tr>
+                                                                    <td class="text-center" colspan="2">Administrativo</td>
+                                                                    <td class="text-center" colspan="2">Ambulância Terrestre</td>
+                                                                    <td class="text-center" colspan="2">Ambulância Flúvia</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center" >Existente</td>
+                                                                    <td class="text-center" >Funcional</td>
+                                                                    <td class="text-center" >Existente</td>
+                                                                    <td class="text-center" >Funcional</td>
+                                                                    <td class="text-center" >Existente</td>
+                                                                    <td class="text-center" >Funcional</td>
+                                                                </tr>
+                                                                @foreach($ho->veiculo as $hv)
+                                                                    <tr>
+                                                                        <td class="text-center">{{ $hv->administrativo_existente }}</td>
+                                                                        <td class="text-center">{{ $hv->administrativo_funcional }}</td>
+                                                                        <td class="text-center">{{ $hv->ambulancia_terrestre_existente }}</td>
+                                                                        <td class="text-center">{{ $hv->ambulancia_terrestre_funcional }}</td>
+                                                                        <td class="text-center">{{ $hv->ambulancia_fluvial_existente }}</td>
+                                                                        <td class="text-center">{{ $hv->ambulancia_fluvial_funcional }}</td>
+                                                                    </tr>
+                                                                @endforeach
+                                                            </table>
                                                         @endif
                                                     </div>
 
@@ -551,24 +551,7 @@
     </div>
 @endsection
 <script>
-    export default {
-        props: ['municipio'],
-        data(){
-            return{
-                pesquisa:''
-            }
-        },
-        computed: {
-            filterdados(){
-                if(this.pesquisa !== ""){
-                    return this.municipio.filter(res => {
-                        if(res.nome.toLowerCase().match(this.pesquisa.toLowerCase()))
-                            return true;
-                    });
-                } else return this.municipio
-            }
-        }
-    }
+
 </script>
 <style>
     @media screen and (max-width: 442px) {

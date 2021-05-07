@@ -7,8 +7,9 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary mt-1" href="{{route('equipamentos.create')}}" role="button">ADICIONAR EQUIPAMENTO HOSPITAL</a>
-                <a class="btn btn-primary mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">LISTA DE EQUIPAMENTOS</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('equipamentos.create')}}" role="button">ADICIONAR EQUIPAMENTO HOSPITAL</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">LISTA DE EQUIPAMENTOS</a>
             </div>
         </div>
         <table class="table table-sm" id="table">

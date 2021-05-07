@@ -10,7 +10,8 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary" href="{{route('folhas.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+            <a class="btn btn-primary btn-sm" href="{{route('folhas.create')}}" role="button">ADICIONAR</a>
         </div>
 
         <div class="dropdown">

@@ -99,6 +99,19 @@
                                 </div>
                             </div>
                         </div>
+
+                            <div class="row mb-2 align-items-center">
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">PROGRAMAS E AÇÕES</h5>
+                                            <p class="card-text">Cadastre, edite ou exclua programas e ações no sistema.</p>
+                                            <a href="/programas" class="btn btn-primary">GERENCIAR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                     </div>
                 </div>
             </div>
