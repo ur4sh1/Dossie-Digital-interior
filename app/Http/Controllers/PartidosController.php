@@ -15,7 +15,7 @@ class PartidosController extends Controller
     public function index()
     {
         $partidos= Partido::all();
-        return view("admin.partidos", compact('partidos'));
+        return view("partido.index", compact('partidos'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PartidosController extends Controller
      */
     public function create()
     {
-        return view('admin.partidosForm');
+        return view('partido.form');
     }
 
     /**
@@ -37,7 +37,7 @@ class PartidosController extends Controller
     public function store(Request $request)
     {
         $partido = Partido::create($request->all());
-        return redirect()->route('partidos.index');
+        return redirect()->route('partido.index');
     }
 
     /**
@@ -60,7 +60,7 @@ class PartidosController extends Controller
     public function edit(int $id)
     {
         $partido= Partido::find($id);
-        return view('admin.partidosFormAlt', compact('partido'));
+        return view('partido.edit', compact('partido'));
     }
 
     /**
@@ -74,7 +74,7 @@ class PartidosController extends Controller
     {
         $partido= Partido::find($id);
         $partido->update($request->all());
-        return redirect()->route('partidos.index');
+        return redirect()->route('partido.index');
     }
 
     /**
@@ -86,6 +86,6 @@ class PartidosController extends Controller
     public function destroy(Partido $partido)
     {
         $partido->delete();
-        return redirect()->route('partidos.index');
+        return redirect()->route('partido.index');
     }
 }

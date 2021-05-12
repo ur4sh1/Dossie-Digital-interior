@@ -11,7 +11,7 @@ class ProgramaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('programas')->insert([
+        DB::table('programa')->insert([
            ["municipio_id"=>5,"descricao"=>"Equipes de Saúde da Família","sigla"=>"ESF","teto"=>"11","cred"=>9,"implant"=>"9","repasse"=>"78453.00"],
            ["municipio_id"=>5,"descricao"=>"Equipes de Saúde da Família Ribeirinha","sigla"=>"ESFR","teto"=>"0","cred"=>"0","implant"=>"0","repasse"=>"0"],
            ["municipio_id"=>5,"descricao"=>"Agentes Comunitários de Saúde","sigla"=>"ACS","teto"=>"62","cred"=>"65","implant"=>"60","repasse"=>"75000.00"],

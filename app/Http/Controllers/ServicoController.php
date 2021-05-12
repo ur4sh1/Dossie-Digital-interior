@@ -19,7 +19,7 @@ class ServicoController extends Controller
         $servico=Servico::all();
         $tiposervico=TipoServico::all();
         $hospital=Hospital::all();
-        return view('admin.servicos',compact('servico','tiposervico','hospital'));
+        return view('servico.index',compact('servico','tiposervico','hospital'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ServicoController extends Controller
     {
         $hospital=Hospital::all();
         $tiposervico=TipoServico::all();
-        return view('admin.servicosForm',compact('hospital','tiposervico'));
+        return view('servico.form',compact('hospital','tiposervico'));
     }
 
     /**
@@ -68,7 +68,7 @@ class ServicoController extends Controller
         $hospital=Hospital::all();
         $tiposervico=TipoServico::all();
         $servico=Servico::find($id);
-        return view('admin.servicosFormAlt',compact('hospital','tiposervico','servico'));
+        return view('servico.edit',compact('hospital','tiposervico','servico'));
     }
 
     /**

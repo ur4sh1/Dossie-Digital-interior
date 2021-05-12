@@ -19,7 +19,7 @@ class EquipamentoController extends Controller
         $hospital=Hospital::all();
         $tipoEquipamento=TipoEquipamento::all();
         $equipamento=Equipamento::all();
-        return view('admin.equipamentos',compact('equipamento','hospital','tipoEquipamento'));
+        return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento'));
     }
 
     /**
@@ -31,7 +31,7 @@ class EquipamentoController extends Controller
     {
         $hospital=Hospital::all();
         $tipoEquipamento=TipoEquipamento::all();
-        return view('admin.equipamentosForm',compact('hospital','tipoEquipamento'));
+        return view('equipamentos.form',compact('hospital','tipoEquipamento'));
     }
 
     /**
@@ -68,7 +68,7 @@ class EquipamentoController extends Controller
         $hospital=Hospital::all();
         $tipoEquipamento=TipoEquipamento::all();
         $equipamento=Equipamento::find($id);
-        return view('admin.equipamentosFormAlt',compact('hospital','tipoEquipamento','equipamento'));
+        return view('equipamentos.edit',compact('hospital','tipoEquipamento','equipamento'));
     }
 
     /**

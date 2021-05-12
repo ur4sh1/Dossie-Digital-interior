@@ -21,8 +21,6 @@ class CreateDadosMunicipiosTable extends Migration
             $table->string('linha_fluvial')->nullable();
             $table->string('latitude_decimal')->nullable();
             $table->string('longitude_decimal')->nullable();
-            $table->string('latitude_sexagesimais')->nullable();
-            $table->string('longitude_sexagesimais')->nullable();
             $table->timestamps();
         });
     }

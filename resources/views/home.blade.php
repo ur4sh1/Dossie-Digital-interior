@@ -19,6 +19,7 @@
                                         <h5 class="card-title">MUNICÍPIOS</h5>
                                         <p class="card-text">Exibe a lista de municípios e as informações gerais de cada um.</p>
                                         <a href="/municipios" class="btn btn-primary">EXIBIR</a>
+                                        <a href="/dados" class="btn btn-primary">GERENCIAR</a>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +48,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">AUTORIDADES</h5>
                                         <p class="card-text">Cadastre, edite ou exclua autoridades no sistema.</p>
-                                        <a href="/autoridades" class="btn btn-primary">GERENCIAR</a>
+                                        <a href="/autoridade" class="btn btn-primary">GERENCIAR</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +77,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">PARTIDOS</h5>
                                         <p class="card-text">Cadastre, edite ou exclua partidos no sistema.</p>
-                                        <a href="/partidos" class="btn btn-primary">GERENCIAR</a>
+                                        <a href="/partido" class="btn btn-primary">GERENCIAR</a>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +86,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">VEÍCULOS</h5>
                                         <p class="card-text">Cadastre, edite ou exclua serviços no sistema.</p>
-                                        <a href="/veiculos" class="btn btn-primary">GERENCIAR</a>
+                                        <a href="/veiculo" class="btn btn-primary">GERENCIAR</a>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +95,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">FOLHA</h5>
                                         <p class="card-text">Cadastre, edite ou exclua registros no sistema.</p>
-                                        <a href="/folhas" class="btn btn-primary">GERENCIAR</a>
+                                        <a href="/folha" class="btn btn-primary">GERENCIAR</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +107,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">PROGRAMAS E AÇÕES</h5>
                                             <p class="card-text">Cadastre, edite ou exclua programas e ações no sistema.</p>
-                                            <a href="/programas" class="btn btn-primary">GERENCIAR</a>
+                                            <a href="/programa" class="btn btn-primary">GERENCIAR</a>
                                         </div>
                                     </div>
                                 </div>

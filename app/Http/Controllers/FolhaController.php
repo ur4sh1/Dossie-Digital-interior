@@ -19,7 +19,7 @@ class FolhaController extends Controller
         $folhas=Folha::all();
         $hospital=Hospital::all();
         $profissional=Profissional::all();
-        return view('admin.folha',compact('folhas','hospital','profissional'));
+        return view('folha.index',compact('folhas','hospital','profissional'));
     }
 
     /**
@@ -31,15 +31,7 @@ class FolhaController extends Controller
     {
         $hospital=Hospital::all();
         $profissional=Profissional::all();
-        return view('admin.folhaForm',compact('hospital','profissional'));
-    }
-
-    public function teste(int $id)
-    {
-        dd($id);
-        $hospital=Hospital::find($id);
-        $profissional=Profissional::all();
-        return view('admin.folhaForm',compact('hospital','profissional'));
+        return view('folha.form',compact('hospital','profissional'));
     }
 
     /**
@@ -54,7 +46,7 @@ class FolhaController extends Controller
         $data['salario_inicial']=str_replace('.',"",$data['salario_inicial']);
         $data['salario_inicial']=str_replace(',',".",$data['salario_inicial']);
         $folha=Folha::create($data);
-        return redirect()->route('folhas.index');
+        return redirect()->route('folha.index');
     }
 
     /**
@@ -68,7 +60,7 @@ class FolhaController extends Controller
         $hospital=Hospital::find($hospital_id);
         $profissional=Profissional::all();
         $folha=Folha::where('hospital_id',$hospital_id)->get();
-        return view('admin.folhaLista',compact('folha','hospital','profissional'));
+        return view('folha.lista',compact('folha','hospital','profissional'));
     }
 
     /**
@@ -82,7 +74,7 @@ class FolhaController extends Controller
         $hospital=Hospital::all();
         $profissional=Profissional::all();
         $folha=Folha::find($id);
-        return view('admin.folhaFormAlt',compact('hospital','profissional','folha'));
+        return view('folha.edit',compact('hospital','profissional','folha'));
     }
 
     /**
@@ -95,8 +87,10 @@ class FolhaController extends Controller
     public function update(Request $request, $id)
     {
         $folha=Folha::find($id);
+        $h = $folha['hospital_id'];
         $folha->update($request->all());
-        return redirect()->route('folhas.index');
+ /*       return redirect('/folha/'.$h);*/
+        return redirect("/folha/{$h}");
     }
 
     /**
@@ -109,6 +103,6 @@ class FolhaController extends Controller
     {
         $folha=Folha::find($id);
         $folha->delete();
-        return redirect()->route('folhas.index');
+        return redirect()->route('folha.index');
     }
 }

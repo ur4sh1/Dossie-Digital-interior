@@ -19,7 +19,7 @@ class RhController extends Controller
         $rhCategorias=RhCategoria::all();
         $rhs=Rh::all();
         $hospital=Hospital::all();
-        return view('admin.rh',compact('rhs','rhCategorias','hospital'));
+        return view('rh.index',compact('rhs','rhCategorias','hospital'));
     }
 
     /**
@@ -31,7 +31,7 @@ class RhController extends Controller
     {
         $hospital=Hospital::all();
         $rhCategoria=RhCategoria::all();
-        return view('admin.rhForm',compact('hospital','rhCategoria'));
+        return view('rh.form',compact('hospital','rhCategoria'));
     }
 
     /**
@@ -68,7 +68,7 @@ class RhController extends Controller
         $hospital=Hospital::all();
         $rhCategoria=RhCategoria::all();
         $rh=Rh::find($id);
-        return view('admin.rhFormALt',compact('hospital','rhCategoria','rh'));
+        return view('rh.edit',compact('hospital','rhCategoria','rh'));
     }
 
     /**

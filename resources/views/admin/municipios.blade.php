@@ -33,6 +33,15 @@
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t3{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Hospitais</a>
                                 </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t4{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Programas e Ações</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t5{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Cobertura Vacinal</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t6{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Doenças e Agravos</a>
+                                </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="t{{$m->id}}" role="tabpanel" aria-labelledby="home-tab">
@@ -52,21 +61,9 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <br>
-                                            <i class="fa fa-area-chart "></i> Área Territorial : {{number_format($m->dados->area_territorial?? '',0,'.','.')}} Km²<br>
-                                            <i class="fa fa-globe"></i> Densidade Demográfica: {{$m->dados->densidade_demografica?? ''}} hab/Km²<br>
-                                            <i class="fa fa-globe"></i> Latitude Decimal: {{$m->dados->latitude_decimal?? ''}}<br>
-                                            <i class="fa fa-globe"></i> Longitude Decimal: {{$m->dados->longitude_decimal?? ''}}<br>
-                                        <!--<i class="fa fa-globe"></i> Latitude Sexagesimal: {{$m->dados->latitude_sexagesimais?? ''}}<br>
-                                            <i class="fa fa-globe"></i> Longitude Sexagesimal: {{$m->dados->longitude_sexagesimais?? ''}}<br><br>-->
-                                            <i class="fa fa-group"></i> População Estimada: {{number_format($m->detalhe->populacao_estimada??'',0,'.','.')}}<br>
-                                            <i class="fa fa-arrow-up"></i>PIB: {{$m->detalhe->pib_percapita??''}}<br>
-                                            <i class="fa fa-arrow-up"></i>IDH: {{$m->detalhe->idh??''}}<br>
-                                            <i class="fa fa-dollar"></i>População em extrema pobreza: {{$m->detalhe->pop_plan_saude??''}}% em({{$m->detalhe->pop_plan_saude_ano??''}})<br>
-                                            <i class="fa fa-dollar"></i>População com plano de saúde: {{$m->detalhe->pop_extr_pobreza??''}}% em({{$m->detalhe->pop_extr_pobreza_ano??''}})<br>
+                                            @include('dado.view')
+                                            @include('detalhe.view')
                                             <div class="row">
-                                                <div class="col-sm-12 text-right">
-                                                    <a class="btn btn-outline-primary mt-2" href="{{route('dados.edit',$m->id)}}" role="button">EDITAR</a>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -102,14 +99,8 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             @endforeach
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12 text-right">
-                                                <a class="btn btn-outline-primary mt-2" href="{{route('autoridades.index')}}" role="button">LISTA</a>
-                                            </div>
                                         </div>
                                     @endif
                                 </div>
@@ -120,7 +111,6 @@
                                         @foreach ($m->hospital as $ho)
                                             <div class="row">
                                                 <div class="col">
-
                                                     <!-- Button trigger modal -->
                                                     <button type="button" class="btn btn-link redime" data-toggle="modal" data-target="#end{{$ho->id}}">
                                                         {{$ho->nome}}
@@ -153,7 +143,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <!--MENU-->
                                                     <!--internação-->
                                                     <a class="btn btn-link" data-toggle="collapse" href="#int{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -191,7 +180,7 @@
                                                     <a class="btn btn-link" data-toggle="collapse" href="#servi{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Servidor</b><br>
                                                     </a>
-                                                    <!--veiculos-->
+                                                    <!--veiculo-->
                                                     <a class="btn btn-link" data-toggle="collapse" href="#veicu{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Veículos</b><br>
                                                     </a>
@@ -199,348 +188,58 @@
                                                     <!--COLAPSE-->
                                                     <!--colapse internação-->
                                                     <div class="collapse" id="int{{$ho->id}}">
-                                                        @if(!$ho->internacao)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>INTERNAÇÃO</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td>
-                                                                        <label><b>INTERNAÇÃO</b></label>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Média / dia:</td>
-                                                                    <td>{{$ho->internacao->media_dia??''}}</td>
-                                                                    <td>Média / mês:</td>
-                                                                    <td>{{$ho->internacao->media_mes??''}}</td>
-                                                                </tr>
-                                                            </table>
-                                                        @endif
+                                                       @include('internacao.view')
                                                     </div>
                                                     <!--colapse Leitos-->
                                                     <div class="collapse" id="lei{{$ho->id}}">
-                                                        @if(!$ho->leito)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>LEITOS</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td>
-                                                                        <label><b>LEITOS</b></label>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="table">
-                                                                    <td>Clínicos:</td>
-                                                                    <td>{{$ho->leito->leito_clinico ?? 'Informações não cadastradas'}}</td>
-                                                                    <td>Cirúrgicos:</td>
-                                                                    <td>{{$ho->leito->leito_cirurgico ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Obstétrico:</td>
-                                                                    <td>{{$ho->leito->leito_obstetrico ?? 'Informações não cadastradas'}}</td>
-                                                                    <td>Pediádrico:</td>
-                                                                    <td>{{$ho->leito->leito_pediatrico ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Outros:</td>
-                                                                    <td>{{$ho->leito->leito_outro ?? 'Informações não cadastradas'}}</td>
-                                                                    <td>Suporte Ventilátorio</td>
-                                                                    <td>{{$ho->leito->suporte_ventilatorio ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>UCI Adulto:</td>
-                                                                    <td>{{$ho->leito->uci_adulto ?? 'Informações não cadastradas'}}</td>
-                                                                    <td>UCI Pediátrico</td>
-                                                                    <td>{{$ho->leito->uci_pediatrico ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Total: </td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td>{{$ho->leito->total ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                            </table>
-                                                        @endif
+                                                        @include('leito.view')
                                                     </div>
                                                     <!--colapse exames realizados-->
                                                     <div class="collapse" id="exa{{$ho->id}}">
-                                                        @if(!$ho->exame)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>EXAMES REALIZADOS</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>EXAMES REALIZADOS</b></label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Mamografia:</td>
-                                                                    <td>{{$ho->exame->mamografia ?? 'Informações não cadastradas'}}</td>
-                                                                    <td>Ultrassonografia</td>
-                                                                    <td>{{$ho->exame->ultrassonografia ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Raio X:</td>
-                                                                    <td>{{$ho->exame->raio_x ?? 'Informações não cadastradas'}}</td>
-                                                                    <td>Eletrocardiograma</td>
-                                                                    <td>{{$ho->exame->eletrocardiograma ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                            </table>
-                                                        @endif
+                                                        @include('exame.view')
                                                     </div>
                                                     <!--colapse salas cirurgicas-->
                                                     <div class="collapse" id="sal{{$ho->id}}">
-                                                        @if(!$ho->salacirurgica)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>SALAS CIRÚRGICAS</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>SALAS CIRÚRGICAS</b></label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Existente</td>
-                                                                    <td>{{$ho->salacirurgica->sala_cirurgicas_existentes ?? 'Informações não cadastradas'}}</td>
-                                                                    <td>Funcional</td>
-                                                                    <td>{{$ho->salacirurgica->sala_cirurgicas_funcionais ?? 'Informações não cadastradas'}}</td>
-                                                                </tr>
-                                                            </table>
-                                                        @endif
+                                                        @include('salacirugica.view')
                                                     </div>
                                                     <!--colapse RH-->
                                                     <div class="collapse" id="rh{{$ho->id}}">
-                                                        @if($ho->rh->count()==0)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>RH</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>RH</b></label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Categoria</td>
-                                                                    <td>SESAM Estatutário</td>
-                                                                    <td>SESAM Contrato</td>
-                                                                    <td>Prefeitura</td>
-                                                                </tr>
-                                                                @foreach($ho->rh as $r)
-                                                                    <tr>
-                                                                        <td>{{$r->rhcategoria->nome}}:</td>
-                                                                        <td>{{$r->susam_estatutario}}</td>
-                                                                        <td>{{$r->susam_contrato}}</td>
-                                                                        <td>{{$r->prefeitura}}</td>
-                                                                    </tr>
-                                                                @endforeach
-                                                                <tr>
-                                                                    <td>SubTotal</td>
-                                                                    <td>{{$ho->rh->sum('susam_estatutario')}}</td>
-                                                                    <td>{{$ho->rh->sum('susam_contrato')}}</td>
-                                                                    <td>{{$ho->rh->sum('prefeitura')}}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td colspan="2">Total</td>
-                                                                    <td colspan="2">{{$ho->rh->sum('susam_estatutario')+$ho->rh->sum('susam_contrato')+$ho->rh->sum('prefeitura')}}</td>
-                                                                </tr>
-                                                            </table>
-                                                        @endif
+                                                        @include('rh.view')
                                                     </div>
                                                     <!--colapse folha-->
                                                     <div class="collapse" id="fo{{$ho->id}}">
-                                                        @if($ho->folha->count()==0)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>FOLHA SESAM</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>FOLHA SESAM</b></label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="text-left">Profissionais de Saúde</td>
-                                                                    <td class="text-right">Salário Unitário R$</td>
-                                                                    <td class="text-right">Qtd</td>
-                                                                    <td class="text-right">Valor R$</td>
-                                                                </tr>
-                                                                @foreach($ho->folha as $hof)
-                                                                    <tr>
-                                                                        <td class="text-left">{{$hof->profissional->nome}}</td>
-                                                                        <td class="text-right">{{$hof->salario()}}</td>
-                                                                        <td class="text-right">{{$hof->SUSAM}}</td>
-                                                                        <td class="text-right">{{$hof->msalario()}}</td>
-                                                                    </tr>
-                                                                @endforeach
-                                                                <tr>
-                                                                    <td colspan="2" class="text-center">Total</td>
-                                                                    <td class="text-right">{{$ho->folha->sum('SUSAM')}}</td>
-                                                                    <td class="text-right">{{number_format($ho->folha->sum('total'),2,',','.')}}</td>
-                                                                </tr>
-                                                            </table>
-                                                        @endif
+                                                        @include('folha.view')
                                                     </div>
                                                     <!--colapse equipamentos-->
                                                     <div class="collapse" id="equi{{$ho->id}}">
-                                                        @if($ho->equipamento->count()==0)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>EQUIPAMENTOS</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>EQUIPAMENTOS</b></label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td></td>
-                                                                    <td class="text-center">Existente</td>
-                                                                    <td class="text-center">Funcional</td>
-                                                                </tr>
-                                                                @foreach($ho->equipamento as $equip)
-                                                                    <tr>
-                                                                        <td>{{$equip->tipoequipamento->nome}}:</td>
-                                                                        <td class="text-center">{{$equip->existente}}</td>
-                                                                        <td class="text-center">{{$equip->funcional}}</td>
-                                                                    </tr>
-                                                                @endforeach
-                                                            </table>
-                                                        @endif
+                                                        @include('equipamentos.view')
                                                     </div>
                                                     <!--colapse Servicos-->
                                                     <div class="collapse" id="ser{{$ho->id}}">
-                                                        @if($ho->servico->count()==0)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>SERVIÇOS</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>SERVIÇOS</b></label></td>
-                                                                </tr>
-                                                                @foreach($ho->servico as $se)
-                                                                    <tr>
-                                                                        <td>{{$se->tiposervico->nome}}</td>
-                                                                        <td>{{$se->ativo?"Sim":"Não"}}</td>
-                                                                    </tr>
-                                                                @endforeach
-                                                            </table>
-                                                        @endif
+                                                        @include('servico.view')
                                                     </div>
                                                     <!--colapse Servidor-->
                                                     <div class="collapse" id="servi{{$ho->id}}">
-                                                        @if($ho->folha->count()==0)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>SERVIDOR</b></label></td>
-                                                                    <td><i>Informações não Cadastradas</i></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>SERVIDOR</b></label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="text-left">Profissional</td>
-                                                                    <td class="text-center">SESAM</td>
-                                                                    <td class="text-center">Prefeitura</td>
-                                                                    <td class="text-center">Cedido</td>
-                                                                    <td class="text-center">Aposentado</td>
-                                                                    <td class="text-center">Ativo</td>
-                                                                </tr>
-                                                                @foreach($ho->folha as $hof)
-                                                                    <tr>
-                                                                        <td class="text-left">{{$hof->profissional->nome}}</td>
-                                                                        <td class="text-center">{{$hof->SUSAM}}</td>
-                                                                        <td class="text-center">{{$hof->prefeitura}}</td>
-                                                                        <td class="text-center">{{$hof->cedidos}}</td>
-                                                                        <td class="text-center">{{$hof->aponsetadoria}}</td>
-                                                                        <td class="text-center">{{$hof->servidores_ativos}}</td>
-                                                                    </tr>
-                                                                @endforeach
-                                                                <tr>
-                                                                    <td>Total</td>
-                                                                    <td class="text-center">{{$ho->folha->sum('SUSAM')}}</td>
-                                                                    <td class="text-center">{{$ho->folha->sum('prefeitura')}}</td>
-                                                                    <td class="text-center">{{$ho->folha->sum('cedidos')}}</td>
-                                                                    <td class="text-center">{{$ho->folha->sum('aponsetadoria')}}</td>
-                                                                    <td class="text-center">{{$ho->folha->sum('servidores_ativos')}}</td>
-                                                                </tr>
-                                                            </table>
-                                                        @endif
+                                                        @include('servidor.view')
                                                     </div>
-                                                    <!--colapse veiculos-->
+                                                    <!--colapse veiculo-->
                                                     <div class="collapse" id="veicu{{$ho->id}}">
-                                                        @if($ho->veiculo->count()==0)
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>VEÍCULOS</b></label></td>
-                                                                    <td><label><i>Informações não Cadastradas</i></label></td>
-                                                                </tr>
-                                                            </table>
-                                                        @else
-                                                            <table class="table table-sm">
-                                                                <tr>
-                                                                    <td><label><b>VEÍCULOS</b></label></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="text-center" colspan="2">Administrativo</td>
-                                                                    <td class="text-center" colspan="2">Ambulância Terrestre</td>
-                                                                    <td class="text-center" colspan="2">Ambulância Flúvia</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="text-center" >Existente</td>
-                                                                    <td class="text-center" >Funcional</td>
-                                                                    <td class="text-center" >Existente</td>
-                                                                    <td class="text-center" >Funcional</td>
-                                                                    <td class="text-center" >Existente</td>
-                                                                    <td class="text-center" >Funcional</td>
-                                                                </tr>
-                                                                @foreach($ho->veiculo as $hv)
-                                                                    <tr>
-                                                                        <td class="text-center">{{ $hv->administrativo_existente }}</td>
-                                                                        <td class="text-center">{{ $hv->administrativo_funcional }}</td>
-                                                                        <td class="text-center">{{ $hv->ambulancia_terrestre_existente }}</td>
-                                                                        <td class="text-center">{{ $hv->ambulancia_terrestre_funcional }}</td>
-                                                                        <td class="text-center">{{ $hv->ambulancia_fluvial_existente }}</td>
-                                                                        <td class="text-center">{{ $hv->ambulancia_fluvial_funcional }}</td>
-                                                                    </tr>
-                                                                @endforeach
-                                                            </table>
-                                                        @endif
+                                                         @include('veiculo.view')
                                                     </div>
-
 
                                                 </div>
                                             </div>
                                         @endforeach
                                     @endif
+                                </div>
+                                <div class="tab-pane fade" id="t4{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
+
+                                </div>
+                                <div class="tab-pane fade" id="t5{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
+
+                                </div>
+                                <div class="tab-pane fade" id="t6{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
+
                                 </div>
                             </div>
                         </div>

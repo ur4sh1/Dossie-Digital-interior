@@ -17,4 +17,5 @@ class Servico extends Model
     {
         return $this->belongsTo('App\TipoServico','tipo_servicos_id','id');
     }
+
 }

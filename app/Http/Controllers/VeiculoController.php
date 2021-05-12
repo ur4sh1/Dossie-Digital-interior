@@ -17,7 +17,7 @@ class VeiculoController extends Controller
     {
         $veiculo=Veiculo::all();
         $hospital=Hospital::all();
-        return view('admin.veiculos',compact('veiculo','hospital'));
+        return view('veiculo.index',compact('veiculo','hospital'));
     }
 
     /**
@@ -28,7 +28,7 @@ class VeiculoController extends Controller
     public function create()
     {
         $hospital=Hospital::all();
-        return view('admin.veiculosForm',compact('hospital'));
+        return view('veiculo.form',compact('hospital'));
     }
 
     /**
@@ -40,7 +40,7 @@ class VeiculoController extends Controller
     public function store(Request $request)
     {
         $veiculo=Veiculo::create($request->all());
-        return redirect()->route('veiculos.index');
+        return redirect()->route('veiculo.index');
     }
 
     /**
@@ -64,7 +64,7 @@ class VeiculoController extends Controller
     {
         $hospital=Hospital::all();
         $veiculo=Veiculo::find($id);
-        return view('admin.veiculosFormAlt',compact('hospital','veiculo'));
+        return view('veiculo.edit',compact('hospital','veiculo'));
     }
 
     /**
@@ -78,7 +78,7 @@ class VeiculoController extends Controller
     {
         $veiculo=Veiculo::find($id);
         $veiculo->update($request->all());
-        return redirect()->route('veiculos.index');
+        return redirect()->route('veiculo.index');
     }
 
     /**
@@ -91,6 +91,6 @@ class VeiculoController extends Controller
     {
         $veiculo=Veiculo::find($id);
         $veiculo->delete();
-        return redirect()->route('veiculos.index');
+        return redirect()->route('veiculo.index');
     }
 }

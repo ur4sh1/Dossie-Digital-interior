@@ -18,7 +18,7 @@ class DadosController extends Controller
     {
         $municipios=Municipio::all();
         $dadosMunicipios= Dados_municipios::all();
-        return view('admin.dados',compact('dadosMunicipios','municipios'));
+        return view('dado.index',compact('dadosMunicipios','municipios'));
     }
 
     /**
@@ -38,7 +38,7 @@ class DadosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
 
     }
@@ -49,9 +49,12 @@ class DadosController extends Controller
      * @param  \App\Dados_municipios  $dados_municipios
      * @return \Illuminate\Http\Response
      */
-    public function show(Dados_municipios $dados_municipios)
+    public function show($id)
     {
-        //
+        $municipios=Municipio::find($id);
+        $dados=Dados_municipios::find($id);
+        $detalhes=Detalhes_municipio::find($id);
+        return view('dado.dados', compact('municipios','dados','detalhes'));
     }
 
     /**
@@ -64,8 +67,8 @@ class DadosController extends Controller
     {
         $municipios=Municipio::find($id);
         $dados=Dados_municipios::find($id);
-        $detalhe=Detalhes_municipio::find($id);
-        return view('admin.dadosFormAlt',compact('municipios','dados','detalhe'));
+        $detalhes=Detalhes_municipio::find($id);
+        return view('dado.edit',compact('municipios','dados','detalhes'));
     }
 
     /**
@@ -80,10 +83,10 @@ class DadosController extends Controller
         $dados=Dados_municipios::find($id);
         $dados->update($request->all());
 
-        $detalhe=Detalhes_municipio::find($id);
-        $detalhe->update($request->all());
+        $detalhes=Detalhes_municipio::find($id);
+        $detalhes->update($request->all());
 
-        return redirect()->route('municipios.index');
+        return redirect()->route('dados.show',$id);
     }
 
     /**

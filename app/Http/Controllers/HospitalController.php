@@ -23,7 +23,7 @@ class HospitalController extends Controller
     public function index()
     {
        $hospital=Hospital::all();
-       return view('admin.hospitals', compact('hospital'));
+       return view('hospital.index', compact('hospital'));
     }
 
     /**
@@ -34,7 +34,7 @@ class HospitalController extends Controller
     public function create()
     {
         $municipio= Municipio::all();
-        return view('admin.hospitalsForm',compact('municipio'));
+        return view('hospital.form',compact('municipio'));
     }
 
     /**
@@ -74,7 +74,7 @@ class HospitalController extends Controller
     {
         $municipio=Municipio::all();
         $hospital=Hospital::find($id);
-        return view('admin.hospitalsFormAlt',compact('municipio','hospital'));
+        return view('hospital.edit',compact('municipio','hospital'));
     }
 
     /**

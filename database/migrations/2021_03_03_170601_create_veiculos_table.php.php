@@ -34,6 +34,6 @@ class CreateVeiculosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('veiculos');
+        Schema::dropIfExists('veiculo');
     }
 }

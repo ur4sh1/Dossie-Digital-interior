@@ -18,7 +18,7 @@ class AutoridadesController extends Controller
     public function index()
     {
         $autoridades= Autoridade::all();
-        return view('admin.autoridades', compact('autoridades'));
+        return view('autoridade.index', compact('autoridades'));
     }
 
     /**
@@ -31,7 +31,7 @@ class AutoridadesController extends Controller
         $cargos= Cargo::all();
         $partidos= Partido::all();
         $municipios= Municipio::all();
-        return view('admin.autoridadesForm', compact('cargos','partidos','municipios'));
+        return view('autoridade.form', compact('cargos','partidos','municipios'));
     }
 
     /**
@@ -43,7 +43,7 @@ class AutoridadesController extends Controller
     public function store(Request $request)
     {
         $autoridade = Autoridade::create($request->all());
-        return redirect()->route('autoridades.index');
+        return redirect()->route('autoridade.index');
     }
 
     /**
@@ -69,7 +69,7 @@ class AutoridadesController extends Controller
         $partidos= Partido::all();
         $municipios= Municipio::all();
         $autoridades= Autoridade::find($id);
-        return view('admin.autoridadesFormAlt', compact('autoridades','cargos','partidos','municipios'));
+        return view('autoridade.edit', compact('autoridades','cargos','partidos','municipios'));
     }
 
     /**
@@ -83,7 +83,7 @@ class AutoridadesController extends Controller
     {
         $autoridade= Autoridade::find($id);
         $autoridade->update($request->all());
-        return redirect()->route('autoridades.index');
+        return redirect()->route('autoridade.index');
     }
 
     /**
@@ -95,6 +95,6 @@ class AutoridadesController extends Controller
     public function destroy(Autoridade $autoridade)
     {
         $autoridade->delete();
-        return redirect()->route('autoridades.index');
+        return redirect()->route('autoridade.index');
     }
 }

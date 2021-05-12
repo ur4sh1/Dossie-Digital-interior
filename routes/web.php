@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('/admin/login');
 });
@@ -23,19 +26,19 @@ Route::get('/admin/login', 'AuthController@login')->name('admin.login');
 Route::get('/admin/municipios', 'MunicipiosController@indexAlternativo');
 
 Route::resources([
-    'partidos'=>'PartidosController',
+    'partido'=>'PartidosController',
     'municipios'=>'MunicipiosController',
-    'autoridades'=>'AutoridadesController',
+    'autoridade'=>'AutoridadesController',
     'regionals'=>'RegionalsController',
     'hospitals'=>'HospitalController',
     'servicos'=>'ServicoController',
-    'veiculos'=>'VeiculoController',
+    'veiculo'=>'VeiculoController',
     'tipoServicos'=>'TipoServicoController',
     'equipamentos'=>'EquipamentoController',
     'tipoEquipamentos'=>'TipoEquipamentoController',
     'dados'=>'DadosController',
     'rhs'=>'RhController',
     'rhCategorias'=>'RhCategoriaController',
-    'folhas'=>'FolhaController',
-    'programas'=>'ProgramaController'
+    'folha'=>'FolhaController',
+    'programa'=>'ProgramaController'
 ]);

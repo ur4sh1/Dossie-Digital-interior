@@ -15,7 +15,7 @@ class TipoServicoController extends Controller
     public function index()
     {
         $tipoServicos=TipoServico::all();
-        return view('admin.tipoServicos',compact('tipoServicos'));
+        return view('tipoServico.index',compact('tipoServicos'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TipoServicoController extends Controller
      */
     public function create()
     {
-        return view('admin.tipoServicosForm');
+        return view('tipoServico.form');
     }
 
     /**

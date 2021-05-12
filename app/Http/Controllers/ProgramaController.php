@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ano;
 use App\Programa;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class ProgramaController extends Controller
     public function index()
     {
         $programas=Programa::all();
-        return view('admin.programas',compact('programas'));
+        return view('programa.index',compact('programas'));
     }
 
     /**
@@ -25,7 +26,8 @@ class ProgramaController extends Controller
      */
     public function create()
     {
-        //
+        $ano=Ano::all();
+        return view('programa.form',compact('ano'));
     }
 
     /**

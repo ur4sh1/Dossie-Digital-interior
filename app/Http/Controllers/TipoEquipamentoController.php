@@ -15,7 +15,7 @@ class TipoEquipamentoController extends Controller
     public function index()
     {
         $tipoEquipamento=TipoEquipamento::all();
-        return view('admin.tipoEquipamentos',compact('tipoEquipamento'));
+        return view('tipoEquipamento.index',compact('tipoEquipamento'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TipoEquipamentoController extends Controller
      */
     public function create()
     {
-        return view('admin.tipoEquipamentosForm');
+        return view('tipoEquipamento.form');
     }
 
     /**

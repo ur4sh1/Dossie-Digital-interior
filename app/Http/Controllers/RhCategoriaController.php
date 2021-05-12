@@ -16,7 +16,7 @@ class RhCategoriaController extends Controller
     public function index()
     {
         $rhCategorias=RhCategoria::all();
-        return view('admin.rhCategoria',compact('rhCategorias'));
+        return view('rhCategoria.index',compact('rhCategorias'));
     }
 
     /**
@@ -26,7 +26,7 @@ class RhCategoriaController extends Controller
      */
     public function create()
     {
-        return view('admin.rhCategoriaForm');
+        return view('rhCategoria.form');
     }
 
     /**
