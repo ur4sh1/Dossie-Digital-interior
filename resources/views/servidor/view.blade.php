@@ -6,6 +6,7 @@
         </tr>
     </table>
 @else
+    <div class="table-responsive-sm">
     <table class="table table-sm">
         <tr>
             <td><label><b>SERVIDOR</b></label></td>
@@ -37,4 +38,5 @@
             <td class="text-center">{{$ho->folha->sum('servidores_ativos')}}</td>
         </tr>
     </table>
+    </div>
 @endif

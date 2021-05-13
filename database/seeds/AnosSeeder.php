@@ -12,7 +12,6 @@ class AnosSeeder extends Seeder
     public function run()
     {
         DB::table('anos')->insert([
-            ["ano"=>2000],
             ["ano"=>2001],
             ["ano"=>2002],
             ["ano"=>2003],

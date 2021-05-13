@@ -33,4 +33,13 @@ class Municipio extends Model
         return $this->belongsTo('App\Detalhes_municipio','detalhes_id');
     }
 
+    public function programas()
+    {
+        return $this->hasMany('App\Programa','municipio_id');
+    }
+
+    public function coberturaVacinal()
+    {
+        return $this->hasMany('App\CoberturaVacinal','municipio_id');
+    }
 }

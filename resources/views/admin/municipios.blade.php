@@ -233,10 +233,10 @@
                                     @endif
                                 </div>
                                 <div class="tab-pane fade" id="t4{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
-
+                                    @include('programa.view')
                                 </div>
                                 <div class="tab-pane fade" id="t5{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
-
+                                    @include('conerturaVacinal.view')
                                 </div>
                                 <div class="tab-pane fade" id="t6{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
 
@@ -250,7 +250,10 @@
     </div>
 @endsection
 <script>
-
+    import CoberturaVacinal from "../../js/components/CoberturaVacinal";
+    export default {
+        components: {CoberturaVacinal}
+    }
 </script>
 <style>
     @media screen and (max-width: 442px) {
@@ -273,6 +276,26 @@
         button.redime{
             font-size: 15px;
             text-align: left;
+        }
+    }
+    @media screen and (max-width: 442px) {
+        div.tituloVac{
+            display: none;
+        }
+    }
+    @media screen and (min-width: 442px) {
+        div.tituloVac {
+            display: run-in;
+        }
+    }
+    @media screen and (max-width: 442px) {
+        div.nome{
+            display: run-in;
+        }
+    }
+    @media screen and (min-width: 442px) {
+        div.nome {
+            display: none;
         }
     }
 </style>

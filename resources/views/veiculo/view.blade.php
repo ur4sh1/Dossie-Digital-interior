@@ -6,6 +6,7 @@
         </tr>
     </table>
 @else
+    <div class="table-responsive-sm">
     <table class="table table-sm">
         <tr>
             <td><label><b>VEÍCULOS</b></label></td>
@@ -34,4 +35,5 @@
             </tr>
         @endforeach
     </table>
+    </div>
 @endif

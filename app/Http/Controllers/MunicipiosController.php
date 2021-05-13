@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Autoridade;
+use App\CoberturaVacinal;
 use App\dados_municipios;
 use App\Detalhes_municipio;
 use App\Equipamento;
 use App\Folha;
 use App\Hospital;
+use App\Imunobiologica;
 use App\Leito;
 use App\Municipio;
 use App\Profissional;
+use App\Programa;
 use App\Regional;
 use App\Rh;
 use App\RhCategoria;
@@ -21,7 +24,9 @@ use App\Veiculo;
 use App\Cargo;
 use App\Partido;
 use App\Internacao;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 
 class MunicipiosController extends Controller
 {
@@ -44,9 +49,13 @@ class MunicipiosController extends Controller
         $servico=Servico::all();
         $rh=Rh::all();
         $rhcategoria=RhCategoria::all();
+        $programas=Programa::all();
+        $coberturaVacinal=CoberturaVacinal::all();
+        $imunobiologicas=Imunobiologica::all();
 
-        return view("admin.municipios", compact('autoridade','municipio','regional','leito','hospital',
-            'veiculo','equipamento','tipo_equipamento','tipo_servico','servico','rh','rhcategoria'));
+        return view("admin.municipios", compact('autoridade','municipio',
+            'regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico',
+            'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologicas'));
     }
 
     public function indexAlternativo()

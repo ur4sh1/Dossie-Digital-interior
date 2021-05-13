@@ -17,4 +17,13 @@ class Ano extends Model
     {
         return $this->hasMany('App\Hospital');
     }
+
+    public function coberturaVacinal()
+    {
+        return $this->hasMany('App\CoberturaVacinal','ano_id','id');
+    }
+    public function ano()
+    {
+        return $this->hasMany('App\Ano','ano_id','id');
+    }
 }
