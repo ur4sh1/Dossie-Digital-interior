@@ -60,7 +60,7 @@ class TipoEquipamentoController extends Controller
     public function edit(int $id)
     {
         $tipoEquipamento=TipoEquipamento::find($id);
-        return view('admin.tipoEquipamentosFormAlt',compact('tipoEquipamento'));
+        return view('tipoEquipamento.edit',compact('tipoEquipamento'));
     }
 
     /**

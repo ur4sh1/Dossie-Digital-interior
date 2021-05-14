@@ -23,7 +23,7 @@
                     <td>{{$te->nome}}</td>
                     <td>
                         <span class="form-inline">
-                        <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('tipoEquipamentos.edit',$te)}}" role="button"><span class="fa fa-edit"></span></a>
+<!--                        <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('tipoEquipamentos.edit',$te)}}" role="button"><span class="fa fa-edit"></span></a>-->
                             <form action="{{route('tipoEquipamentos.destroy',$te)}}" method="post" class="mr-1 ml-1">
                                 @csrf
                                 @method('delete')
