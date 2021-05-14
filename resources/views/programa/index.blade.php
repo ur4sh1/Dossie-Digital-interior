@@ -16,6 +16,7 @@
             <tr>
                 <th scope="col">DESCRIÇÃO</th>
                 <th scope="col">SIGLA</th>
+                <th scope="col">ANO</th>
                 <th scope="col" class="text-center">TETO</th>
                 <th scope="col" class="text-center">CRED</th>
                 <th scope="col" class="text-center">IMPLANT</th>
@@ -28,6 +29,7 @@
                 <tr>
                     <td>{{$p->descricao}}</td>
                     <td>{{$p->sigla}}</td>
+                    <td>{{$p->ano->ano}}</td>
                     <td class="text-center">{{$p->teto}}</td>
                     <td class="text-center">{{$p->cred}}</td>
                     <td class="text-center">{{$p->implant}}</td>

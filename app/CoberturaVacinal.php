@@ -21,6 +21,4 @@ class CoberturaVacinal extends Model
     {
         return $this->belongsTo('App\Ano','ano_id','id');
     }
-
-
 }

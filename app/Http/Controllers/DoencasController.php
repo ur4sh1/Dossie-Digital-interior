@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Ano;
-use App\Programa;
+use App\Doencas;
 use Illuminate\Http\Request;
 
-class ProgramaController extends Controller
+class DoencasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class ProgramaController extends Controller
      */
     public function index()
     {
-        $ano=Ano::all();
-        $programas=Programa::all();
-        return view('programa.index',compact('programas','ano'));
+        //
     }
 
     /**
@@ -27,8 +24,7 @@ class ProgramaController extends Controller
      */
     public function create()
     {
-        $ano=Ano::all();
-        return view('programa.form',compact('ano'));
+        //
     }
 
     /**
@@ -45,10 +41,10 @@ class ProgramaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Programa  $programa
+     * @param  \App\Doencas  $doencas
      * @return \Illuminate\Http\Response
      */
-    public function show(Programa $programa)
+    public function show(Doencas $doencas)
     {
         //
     }
@@ -56,10 +52,10 @@ class ProgramaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Programa  $programa
+     * @param  \App\Doencas  $doencas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Programa $programa)
+    public function edit(Doencas $doencas)
     {
         //
     }
@@ -68,10 +64,10 @@ class ProgramaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Programa  $programa
+     * @param  \App\Doencas  $doencas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Programa $programa)
+    public function update(Request $request, Doencas $doencas)
     {
         //
     }
@@ -79,10 +75,10 @@ class ProgramaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Programa  $programa
+     * @param  \App\Doencas  $doencas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Programa $programa)
+    public function destroy(Doencas $doencas)
     {
         //
     }

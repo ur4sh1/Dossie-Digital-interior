@@ -236,10 +236,10 @@
                                     @include('programa.view')
                                 </div>
                                 <div class="tab-pane fade" id="t5{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
-                                    @include('conerturaVacinal.view')
+                                    @include('coberturaVacinal.view')
                                 </div>
                                 <div class="tab-pane fade" id="t6{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
-
+                                    @include('doencaAgravo.view')
                                 </div>
                             </div>
                         </div>
@@ -250,10 +250,6 @@
     </div>
 @endsection
 <script>
-    import CoberturaVacinal from "../../js/components/CoberturaVacinal";
-    export default {
-        components: {CoberturaVacinal}
-    }
 </script>
 <style>
     @media screen and (max-width: 442px) {

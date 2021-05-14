@@ -42,4 +42,14 @@ class Municipio extends Model
     {
         return $this->hasMany('App\CoberturaVacinal','municipio_id');
     }
+
+    public function doencasAgravos()
+    {
+        return $this->hasMany('App\DoencasAgravos','municipio_id');
+    }
+
+    public function doencas()
+    {
+        return $this->hasMany('App\Doencas');
+    }
 }

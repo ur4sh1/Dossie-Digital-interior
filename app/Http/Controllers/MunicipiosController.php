@@ -6,6 +6,8 @@ use App\Autoridade;
 use App\CoberturaVacinal;
 use App\dados_municipios;
 use App\Detalhes_municipio;
+use App\Doencas;
+use App\DoencasAgravos;
 use App\Equipamento;
 use App\Folha;
 use App\Hospital;
@@ -52,10 +54,13 @@ class MunicipiosController extends Controller
         $programas=Programa::all();
         $coberturaVacinal=CoberturaVacinal::all();
         $imunobiologicas=Imunobiologica::all();
+        $doencas=Doencas::all();
+        $doencasAgravos=DoencasAgravos::all();
 
         return view("admin.municipios", compact('autoridade','municipio',
             'regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico',
-            'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologicas'));
+            'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologicas',
+        'doencas','doencasAgravos'));
     }
 
     public function indexAlternativo()

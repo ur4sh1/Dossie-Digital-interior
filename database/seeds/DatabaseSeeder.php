@@ -38,5 +38,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProgramaSeeder::class);
         $this->call(ImunobiologicaSeeder::class);
         $this->call(CoberturaVacinalSeeder::class);
+        $this->call(DoencasSeeder::class);
+        $this->call(DoencasAgravosSeeder::class);
     }
 }
