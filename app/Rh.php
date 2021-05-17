@@ -18,6 +18,10 @@ class Rh extends Model
         return $this->belongsTo('App\RhCategoria','rh_categoria_id','id');
     }
 
+    public function somaCat()
+    {
+        return $this->attributes['susam_estatutario']+$this->attributes['susam_contrato'];
+    }
     public function getTotalAttribute()
     {
         return $this->attributes['susam_estatutario']+$this->attributes['susam_contrato']+$this->attributes['prefeitura'];

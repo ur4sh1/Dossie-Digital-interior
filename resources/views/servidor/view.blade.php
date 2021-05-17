@@ -8,16 +8,16 @@
 @else
     <div class="table-responsive-sm">
     <table class="table table-sm">
-        <tr>
-            <td><label><b>SERVIDOR</b></label></td>
+        <tr style="background:lavenderblush">
+            <td scope="col" colspan="6"><label><b>RH</b></label></td>
         </tr>
         <tr>
-            <td class="text-left">Profissional</td>
-            <td class="text-center">SESAM</td>
-            <td class="text-center">Prefeitura</td>
-            <td class="text-center">Cedido</td>
-            <td class="text-center">Aposentado</td>
-            <td class="text-center">Ativo</td>
+            <th scope="col" class="text-left">Profissional</th>
+            <th scope="col" class="text-center">SES-AM</th>
+            <th scope="col" class="text-center">Prefeitura</th>
+            <th scope="col" class="text-center">Cedido</th>
+            <th scope="col" class="text-center">Aposentado</th>
+            <th scope="col" class="text-center">Ativo</th>
         </tr>
         @foreach($ho->folha as $hof)
             <tr>
@@ -30,7 +30,7 @@
             </tr>
         @endforeach
         <tr>
-            <td>Total</td>
+            <td><b>Total</b></td>
             <td class="text-center">{{$ho->folha->sum('SUSAM')}}</td>
             <td class="text-center">{{$ho->folha->sum('prefeitura')}}</td>
             <td class="text-center">{{$ho->folha->sum('cedidos')}}</td>

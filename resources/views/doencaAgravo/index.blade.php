@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Doenças e Agravos Cadastrados</h1>
+            <h1>Doenças e Agravos</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
@@ -11,14 +11,14 @@
                 <a class="btn btn-primary btn-sm mt-1" href="" role="button">LISTA DE DOENÇAS</a>
             </div>
         </div>
-        <table id="table" class="table-responsive-sm">
-            <thead>
+        <table class="table table-sm table-responsive" id="table">
+            <thead class="table-active">
             <tr>
-                <td>DESCRIÇÃO</td>
-                <td>MUNICÍPIO</td>
-                <td>ANO</td>
-                <td class="text-center">CASOS</td>
-                <td class="text-center">FONTE</td>
+                <th scope="col" style="width: 120px">DESCRIÇÃO</th>
+                <th scope="col">MUNICÍPIO</th>
+                <th scope="col">ANO</th>
+                <th scope="col" class="text-center">CASOS</th>
+                <th scope="col" class="text-center" style="width: 120px">FONTE</th>
             </tr>
             </thead>
             <tbody>
@@ -27,8 +27,8 @@
                 <td>{{$d->doencas->nome}}</td>
                 <td>{{$d->municipio->nome}}</td>
                 <td>{{$d->ano->ano}}</td>
-                <td class="text-right">{{$d->casos}}</td>
-                <td>{{$d->fonte}}</td>
+                <td class="text-center">{{$d->casos}}</td>
+                <td style="width: 120px" class="text-right">{{$d->fonte}}</td>
             </tr>
             @endforeach
             </tbody>

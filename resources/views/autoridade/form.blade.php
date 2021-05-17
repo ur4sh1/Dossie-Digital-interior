@@ -7,7 +7,7 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary mt-1" href="{{route('autoridade.index')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('autoridade.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
         <form method="post" class="needs-validation" action="{{route('autoridade.store')}}">

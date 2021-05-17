@@ -7,10 +7,8 @@
     </table>
 @else
     <table class="table table-sm">
-        <tr>
-            <td>
-                <label><b>LEITOS</b></label>
-            </td>
+        <tr style="background:lavenderblush">
+            <td colspan="4"><label><b>LEITOS</b></label></td>
         </tr>
         <tr class="table">
             <td>Clínicos:</td>
@@ -37,7 +35,7 @@
             <td>{{$ho->leito->uci_pediatrico ?? 'Informações não cadastradas'}}</td>
         </tr>
         <tr>
-            <td>Total: </td>
+            <td><b>Total: </b></td>
             <td></td>
             <td></td>
             <td>{{$ho->leito->total ?? 'Informações não cadastradas'}}</td>

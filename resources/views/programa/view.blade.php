@@ -7,8 +7,8 @@
                 <td><b>SIGLA</b></td>
                 <td class="text-center"><b>TETO</b></td>
                 <td class="text-center"><b>CRED</b></td>
-                <td class="text-center"><b>IMPLANT</b></td>
-                <td class="text-center"><b>REPASSE</b></td>
+                <td class="text-center"><b>IMPLANTADO</b></td>
+                <td class="text-center"><b>REPASSE R$</b></td>
             </tr>
             </thead>
             <tbody>
@@ -18,7 +18,7 @@
                     <td>{{$mp->sigla}}</td>
                     <td class="text-right">{{$mp->teto}}</td>
                     <td class="text-right">{{$mp->cred}}</td>
-                    <td class="text-right">{{$mp->implant}}</td>
+                    <td class="text-center">{{$mp->implant}}</td>
                     <td class="text-right">{{$mp->repasseformat()}}</td>
                 </tr>
             @endforeach

@@ -10,7 +10,7 @@ $data=date('Y')
             @endforeach
         </div>
         <div class="col-sm-1">
-            <label><b>{{$data-3}}</b></label>
+            <div class=""><label><b>{{$data-3}}</b></label></div>
             @foreach($m->doencasAgravos as $md)
                 @if($md->ano->ano == ($data-3))
                     <div class="nome">{{$md->doencas->nome}}</div>

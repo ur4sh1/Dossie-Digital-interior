@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Programas e Ações Cadastrados</h1>
+            <h1>Programas e Açõess</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
@@ -11,7 +11,7 @@
                 <a class="btn btn-primary btn-sm" href="{{route('programa.create')}}" role="button">ADICIONAR</a>
             </div>
         </div>
-        <table class="table table-sm" id="table">
+        <table class="table table-sm table-responsive" id="table">
             <thead>
             <tr>
                 <th scope="col">DESCRIÇÃO</th>

@@ -7,8 +7,8 @@
     </table>
 @else
     <table class="table table-sm">
-        <tr>
-            <td><label><b>SERVIÇOS</b></label></td>
+        <tr style="background:lavenderblush">
+            <td colspan="2"><label><b>SERVIÇOS</b></label></td>
         </tr>
         @foreach($ho->servico as $se)
             <tr>

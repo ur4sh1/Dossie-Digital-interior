@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>Lista de Hospitais Cadastrados</h1>
+                    <h1>Lista de Hospitais</h1>
                 </div>
             </div>
         </div>

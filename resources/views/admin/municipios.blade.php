@@ -23,15 +23,25 @@
                 <div class="col-lg-12">
                     <div class="collapse" id="expander{{$m->id}}"><!--colapse-->
                         <div class="card card-body">
+                            <div class="row text-right">
+                                <div class="col-12">
+                                    <button class="btn btn-outline-secondary btn-sm" style=" width: 100px" type="button" data-toggle="collapse" data-target="#expander{{$m->id}}" aria-expanded="true" aria-controls="collapseOne">
+                                        FECHAR
+                                    </button>
+                                </div>
+                            </div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#t{{$m->id}}" role="tab" aria-controls="home" aria-selected="true">Informações Gerais</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#t{{$m->id}}" role="tab" aria-controls="home" aria-selected="true">Gerais</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t2{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Autoridades</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t3{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Hospitais</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t3{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Hospital</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t7{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Hospital RH</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t4{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Programas e Ações</a>
@@ -41,6 +51,9 @@
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t6{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Doenças e Agravos</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t8{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Financeiro</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
@@ -144,55 +157,51 @@
                                                         </div>
                                                     </div>
                                                     <!--MENU-->
-                                                    <!--internação-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#int{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                                        <b>Internação</b><br>
-                                                    </a>
                                                     <!--leitos-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#lei{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#lei{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Leitos</b><br>
                                                     </a>
+                                                    <!--Internação-->
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#int{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <b>Internação</b><br>
+                                                    </a>
+                                                    <!--servicos-->
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#ser{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <b>Serviços</b><br>
+                                                    </a>
+                                                    <!--Equipamentos-->
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#equi{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <b>Equipamentos</b><br>
+                                                    </a>
                                                     <!--exames realizados-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#exa{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#exa{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Exame Realizados</b><br>
                                                     </a>
                                                     <!--exames realizados-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#sal{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#sal{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Salas Cirúrgicas</b><br>
                                                     </a>
-                                                    <!--exames RH-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#rh{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                                        <b>RH</b><br>
-                                                    </a>
-                                                    <!--exames Folha-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#fo{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                                        <b>Folha SESAM</b><br>
-                                                    </a>
-                                                    <!--exames Folha-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#equi{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                                        <b>Equipamentos</b><br>
-                                                    </a>
-                                                    <!--servicos-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#ser{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                                        <b>Serviços</b><br>
-                                                    </a>
-                                                    <!--servidor-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#servi{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                                        <b>Servidor</b><br>
-                                                    </a>
                                                     <!--veiculo-->
-                                                    <a class="btn btn-link" data-toggle="collapse" href="#veicu{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#veicu{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Veículos</b><br>
                                                     </a>
 
                                                     <!--COLAPSE-->
-                                                    <!--colapse internação-->
-                                                    <div class="collapse" id="int{{$ho->id}}">
-                                                       @include('internacao.view')
-                                                    </div>
                                                     <!--colapse Leitos-->
                                                     <div class="collapse" id="lei{{$ho->id}}">
                                                         @include('leito.view')
+                                                    </div>
+                                                    <!--colapse Internação-->
+                                                    <div class="collapse" id="int{{$ho->id}}">
+                                                        @include('internacao.view')
+                                                    </div>
+                                                    <!--colapse Servicos-->
+                                                    <div class="collapse" id="ser{{$ho->id}}">
+                                                        @include('servico.view')
+                                                    </div>
+                                                    <!--colapse equipamentos-->
+                                                    <div class="collapse" id="equi{{$ho->id}}">
+                                                        @include('equipamentos.view')
                                                     </div>
                                                     <!--colapse exames realizados-->
                                                     <div class="collapse" id="exa{{$ho->id}}">
@@ -202,29 +211,9 @@
                                                     <div class="collapse" id="sal{{$ho->id}}">
                                                         @include('salacirugica.view')
                                                     </div>
-                                                    <!--colapse RH-->
-                                                    <div class="collapse" id="rh{{$ho->id}}">
-                                                        @include('rh.view')
-                                                    </div>
-                                                    <!--colapse folha-->
-                                                    <div class="collapse" id="fo{{$ho->id}}">
-                                                        @include('folha.view')
-                                                    </div>
-                                                    <!--colapse equipamentos-->
-                                                    <div class="collapse" id="equi{{$ho->id}}">
-                                                        @include('equipamentos.view')
-                                                    </div>
-                                                    <!--colapse Servicos-->
-                                                    <div class="collapse" id="ser{{$ho->id}}">
-                                                        @include('servico.view')
-                                                    </div>
-                                                    <!--colapse Servidor-->
-                                                    <div class="collapse" id="servi{{$ho->id}}">
-                                                        @include('servidor.view')
-                                                    </div>
                                                     <!--colapse veiculo-->
                                                     <div class="collapse" id="veicu{{$ho->id}}">
-                                                         @include('veiculo.view')
+                                                        @include('veiculo.view')
                                                     </div>
 
                                                 </div>
@@ -240,6 +229,50 @@
                                 </div>
                                 <div class="tab-pane fade" id="t6{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
                                     @include('doencaAgravo.view')
+                                </div>
+                                <div class="tab-pane fade" id="t7{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
+                                @if($m->hospital->count()==0)<!--aba hospital RH-->
+                                    <i>Informações não cadastradas</i>
+                                    @else
+                                        @foreach ($m->hospital as $ho)
+                                            <div class="row">
+                                                <div class="col">
+                                                {{$ho->nome}}
+                                                <!--MENU-->
+                                                    <!--exames RH-->
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#rh{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <b>Categoria</b><br>
+                                                    </a>
+                                                    <!--servidor-->
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#servi{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <b>RH</b><br>
+                                                    </a>
+                                                    <!--exames Folha-->
+                                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#fo{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        <b>Folha SES-AM</b><br>
+                                                    </a>
+
+                                                    <!--COLAPSE-->
+                                                    <!--colapse Categorias-->
+                                                    <div class="collapse" id="rh{{$ho->id}}">
+                                                        @include('rh.view')
+                                                    </div>
+                                                    <!--colapse RH-->
+                                                    <div class="collapse" id="servi{{$ho->id}}">
+                                                        @include('servidor.view')
+                                                    </div>
+                                                    <!--colapse folha-->
+                                                    <div class="collapse" id="fo{{$ho->id}}">
+                                                        @include('folha.view')
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
+                                <div class="tab-pane fade" id="t8{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
+
                                 </div>
                             </div>
                         </div>
@@ -293,5 +326,15 @@
         div.nome {
             display: none;
         }
+    }
+
+    a.btn-link.teste.collapsed {
+        background-color: white;
+        color: #4aa0e6;
+    }
+    a.btn-link.teste {
+        /*background-color: rgba(158,163,255,0.55);*/
+        background-color: #9ba2ab;
+        color: white;
     }
 </style>

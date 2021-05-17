@@ -7,8 +7,8 @@
     </table>
 @else
     <table class="table table-sm">
-        <tr>
-            <td><label><b>SALAS CIRÚRGICAS</b></label></td>
+        <tr style="background:lavenderblush">
+            <td colspan="4"><label><b>SALAS CIRÚRGICAS</b></label></td>
         </tr>
         <tr>
             <td>Existente</td>
