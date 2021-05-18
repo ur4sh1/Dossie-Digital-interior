@@ -8,7 +8,7 @@
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
-                <a class="btn btn-primary btn-sm mt-1" href="" role="button">LISTA DE DOENÇAS</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('doencas.index')}}" role="button">LISTA DE DOENÇAS</a>
             </div>
         </div>
         <table class="table table-sm table-responsive" id="table">

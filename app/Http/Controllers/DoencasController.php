@@ -14,7 +14,8 @@ class DoencasController extends Controller
      */
     public function index()
     {
-        //
+        $doencas=Doencas::all();
+        return view('doenca.index',compact('doencas'));
     }
 
     /**

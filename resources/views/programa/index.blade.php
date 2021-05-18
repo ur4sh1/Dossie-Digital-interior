@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Programas e Açõess</h1>
+            <h1>Programas e Ações</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
@@ -11,16 +11,17 @@
                 <a class="btn btn-primary btn-sm" href="{{route('programa.create')}}" role="button">ADICIONAR</a>
             </div>
         </div>
-        <table class="table table-sm table-responsive" id="table">
+        <table class="table table-sm table-responsive table-bordered" id="table">
             <thead>
             <tr>
-                <th scope="col">DESCRIÇÃO</th>
+                <th style="width: 300px" scope="col">DESCRIÇÃO</th>
                 <th scope="col">SIGLA</th>
                 <th scope="col">ANO</th>
+                <th scope="col">MUNICÍPIO</th>
                 <th scope="col" class="text-center">TETO</th>
-                <th scope="col" class="text-center">CRED</th>
-                <th scope="col" class="text-center">IMPLANT</th>
-                <th scope="col" class="text-center">REPASSE R$</th>
+                <th scope="col" class="text-center">CRÉDITO</th>
+                <th scope="col" class="text-center">IMPLANTADO</th>
+                <th scope="col" class="text-center">REPASSE</th>
                 <th scope="col" class="text-center">AÇÕES</th>
             </tr>
             </thead>
@@ -30,11 +31,12 @@
                     <td>{{$p->descricao}}</td>
                     <td>{{$p->sigla}}</td>
                     <td>{{$p->ano->ano}}</td>
+                    <td>{{$p->municipio->nome}}</td>
                     <td class="text-center">{{$p->teto}}</td>
                     <td class="text-center">{{$p->cred}}</td>
                     <td class="text-center">{{$p->implant}}</td>
                     <td class="text-right">{{$p->repasseformat()}}</td>
-                    <td>
+                    <td class="text-right">
                         <span class="form-inline">
                         <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('programa.edit',$p)}}" role="button"><span class="fa fa-edit"></span></a>
                             <form action="{{route('programa.destroy',$p)}}" method="post" class="mr-1 ml-1">

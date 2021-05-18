@@ -22,7 +22,7 @@ class CreateProgramasTable extends Migration
             $table->string('teto')->default(0);
             $table->string('cred')->default(0);
             $table->string('implant')->default(0);
-            $table->string('repasse')->default(0);
+            $table->decimal('repasse',16,2)->default(0);
             $table->unsignedBigInteger('ano_id')->nullable();
             $table->foreign('ano_id')->references('id')->on('anos');
             $table->timestamps();

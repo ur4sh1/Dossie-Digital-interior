@@ -14,6 +14,11 @@ class Programa extends Model
         return $this->belongsTo('App\Municipio','municipio_id','id');
     }
 
+    public function formatRepasse()
+    {
+        return number_format($this->repasse,2,',','.');
+    }
+
     public function ano()
     {
         return $this->belongsTo('App\Ano','ano_id','id');
