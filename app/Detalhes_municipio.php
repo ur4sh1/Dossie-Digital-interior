@@ -12,4 +12,9 @@ class Detalhes_municipio extends Model
     {
         return $this->hasMany('App\Municipio');
     }
+
+    public function ano()
+    {
+        return $this->belongsTo('App\Ano','ano_id','id');
+    }
 }

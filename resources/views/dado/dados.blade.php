@@ -14,7 +14,10 @@
             <div class="row">
                 <div class="col-sm-2 mt-2">
                     <label for="area_territorial"><h5><b>Área Territorial</b></h5></label>
-                    <input type="text" disabled value="{{$dados->area_territorial}}" class="form-control" style="width: 130px" name="area_territorial" id="area_territorial">
+                    <div class="input-group-prepend">
+                        <input type="text" disabled value="{{$dados->area_territorial}}" class="form-control" style="width: 130px" name="area_territorial" id="area_territorial">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Km²</span>
+                    </div>
                 </div>
                 <div class="col-sm-4 mt-2">
                     <label for="densidade_demografica"><h5><b>Densidade Demográfica</b></h5></label>
@@ -46,13 +49,31 @@
             <div class="row mt-4">
                 <div class="col-sm-4 mt-2">
                     <label for="pop_plan_saude"><h5><b>População com Plano de Saúde</b></h5></label>
-                    <input type="text" disabled value="{{$detalhes->pop_plan_saude}}" class="form-control" style="width: 130px" name="pop_plan_saude" id="pop_plan_saude">
-                    Atualizado em: <input type="text" disabled value="{{$detalhes->pop_plan_saude_ano}}" class="form-control" style="width: 80px" name="pop_plan_saude_ano" id="pop_plan_saude_ano">
+                    <div class="input-group-prepend">
+                        <input type="text" disabled value="{{$detalhes->pop_plan_saude}}" class="form-control" style="width: 130px" name="pop_plan_saude" id="pop_plan_saude">
+                        <span class="input-group-text" id="inputGroupFileAddon01">%</span>
+                    </div>
+                    Atualizado em:
+                    <select disabled id="pop_plan_saude_ano" name="pop_plan_saude_ano">
+                        <option></option>
+                        @foreach($ano as $a)
+                            <option value="{{ $a->id }}" {{$detalhes->pop_plan_saude_ano==$a->id?"selected":''}}>{{ $a->ano }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="col-sm-4 mt-2">
                     <label for="pop_extr_pobreza"><h5><b>População em Extrema Pobreza</b></h5></label>
-                    <input type="text" disabled value="{{$detalhes->pop_extr_pobreza}}" class="form-control" style="width: 130px" name="pop_extr_pobreza" id="pop_extr_pobreza">
-                    Atualizado em: <input type="text" disabled value="{{$detalhes->pop_extr_pobreza_ano}}" class="form-control" style="width: 80px" name="pop_extr_pobreza_ano" id="pop_extr_pobreza_ano">
+                    <div class="input-group-prepend">
+                        <input type="text" disabled value="{{$detalhes->pop_extr_pobreza}}" class="form-control" style="width: 130px" name="pop_extr_pobreza" id="pop_extr_pobreza">
+                        <span class="input-group-text" id="inputGroupFileAddon01">%</span>
+                    </div>
+                    Atualizado em:
+                    <select disabled id="pop_extr_pobreza_ano" name="pop_extr_pobreza_ano">
+                        <option></option>
+                        @foreach($ano as $a)
+                            <option value="{{ $a->id }}" {{ $detalhes->pop_extr_pobreza_no == $a->id?"selected":'' }}>{{ $a->ano }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="row mt-4">
@@ -63,11 +84,17 @@
             <div class="row">
                 <div class="col-sm-4 mt-2">
                     <label for="linha_reta"><h5><b>Linha Reta</b></h5></label>
-                    <input type="email" disabled value="{{$dados->linha_reta}}" class="form-control" style="width: 130px" name="linha_reta" id="linha_reta">
+                    <div class="input-group-prepend">
+                        <input type="email" disabled value="{{$dados->linha_reta}}" class="form-control" style="width: 130px" name="linha_reta" id="linha_reta">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Km</span>
+                    </div>
                 </div>
                 <div class="col-sm-4 mt-2">
                     <label for="linha_fluvial"><h5><b>Linha Fluvial</b></h5></label>
-                    <input type="email" disabled value="{{$dados->linha_fluvial}}" class="form-control" style="width: 130px" name="linha_fluvial" id="linha_fluvial">
+                    <div class="input-group-prepend">
+                        <input type="email" disabled value="{{$dados->linha_fluvial}}" class="form-control" style="width: 130px" name="linha_fluvial" id="linha_fluvial">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Km</span>
+                    </div>
                 </div>
             </div>
             <div class="form-row text-right"><!--buttonsAções-->

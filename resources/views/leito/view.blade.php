@@ -1,14 +1,22 @@
 @if(!$ho->leito)
     <table class="table table-sm">
         <tr>
-            <td><label><b>LEITOS</b></label></td>
+            <td>
+                <a data-toggle="collapse" href="#lei{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <label style="color: #1b1e21"><b>LEITOS</b></label>
+                </a>
+            </td>
             <td><i>Informações não Cadastradas</i></td>
         </tr>
     </table>
 @else
     <table class="table table-sm">
         <tr style="background:lavenderblush">
-            <td colspan="4"><label><b>LEITOS</b></label></td>
+            <td colspan="4">
+                <a data-toggle="collapse" href="#lei{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <label style="color: #1b1e21"><b>LEITOS</b></label>
+                </a>
+            </td>
         </tr>
         <tr class="table">
             <td>Clínicos:</td>

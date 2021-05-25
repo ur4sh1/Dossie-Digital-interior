@@ -272,7 +272,29 @@
                                     @endif
                                 </div>
                                 <div class="tab-pane fade" id="t8{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
-
+                                    <!--MENU-->
+                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#rest{{$m->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <b>RECURSO ESTADUAL</b><br>
+                                    </a>
+                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#rfest{{$m->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <b>RECURSO FUNDO ESTADUAL</b><br>
+                                    </a>
+                                    <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#rfna{{$m->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <b>RECURSO FUNDO NACIONAL</b><br>
+                                    </a>
+                                    <!--COLAPSE-->
+                                    <!--colapse recurso estadual-->
+                                    <div class="collapse" id="rest{{$m->id}}">
+                                        @include('recursoEstadual.view')
+                                    </div>
+                                    <!--colapse recurso fundo estadual-->
+                                    <div class="collapse" id="rfest{{$m->id}}">
+                                        @include('recursoFundoEstadual.view')
+                                    </div>
+                                    <!--colapse recurso fundo nacional-->
+                                    <div class="collapse" id="rfna{{$m->id}}">
+                                        @include('recursoFundoNacional.view')
+                                    </div>
                                 </div>
                             </div>
                         </div>

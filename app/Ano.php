@@ -35,4 +35,8 @@ class Ano extends Model
     {
         return $this->hasMany('App\Programa','ano_id','id');
     }
+    public function detalhes_municipio()
+    {
+        return $this->hasMany('App\Detalhes_municipio','ano_id','id');
+    }
 }

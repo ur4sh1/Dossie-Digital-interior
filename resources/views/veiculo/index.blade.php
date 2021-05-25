@@ -12,9 +12,9 @@
         <table class="table table-sm" id="table">
             <thead>
             <td scope="col"><b>HOSPITAL</b></td>
-            <td scope="col" class="text-center"><b>ADMINISTRATIVOS</b><br>Existente | Funcional</td>
-            <td scope="col" class="text-center"><b>AMBULÂNCIA TERRESTRE</b><br>Existente | Funcional</td>
-            <td scope="col" class="text-center"><b>AMBULÂNCIA FLUVIAL</b><br>Existente | Funcional</td>
+            <td scope="col" class="text-center"><b>ADMINISTRATIVOS</b><br>Existente | Funcionando</td>
+            <td scope="col" class="text-center"><b>AMBULÂNCIA TERRESTRE</b><br>Existente | Funcionando</td>
+            <td scope="col" class="text-center"><b>AMBULÂNCIA FLUVIAL</b><br>Existente | Funcionando</td>
             <td scope="col" class="text-center"><b>AÇÕES</b></td>
             </thead>
             @foreach($veiculo as $v)

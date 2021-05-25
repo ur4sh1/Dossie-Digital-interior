@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ano;
 use App\Autoridade;
 use App\CoberturaVacinal;
 use App\dados_municipios;
@@ -12,15 +13,22 @@ use App\Equipamento;
 use App\Folha;
 use App\Hospital;
 use App\Imunobiologica;
+use App\ItemRecursoEstadual;
+use App\ItemRecursoFundoEstadual;
+use App\ItemRecursoFundoNacional;
 use App\Leito;
 use App\Municipio;
 use App\Profissional;
 use App\Programa;
+use App\RecursoEstadual;
+use App\RecursoFundoEstadual;
+use App\RecursoFundoNacional;
 use App\Regional;
 use App\Rh;
 use App\RhCategoria;
 use App\Servico;
 use App\TipoEquipamento;
+use App\TipoRecursoNacional;
 use App\TipoServico;
 use App\Veiculo;
 use App\Cargo;
@@ -56,11 +64,20 @@ class MunicipiosController extends Controller
         $imunobiologicas=Imunobiologica::all();
         $doencas=Doencas::all();
         $doencasAgravos=DoencasAgravos::all();
+        $ano=Ano::all();
+        $tipoRecursoNacional=TipoRecursoNacional::all();
+        $recursoFundoNacional=RecursoFundoNacional::all();
+        $recursoFundoEstadual=RecursoFundoEstadual::all();
+        $recursoEstadual=RecursoEstadual::all();
+        $itemRecursoEstadual=ItemRecursoEstadual::all();
+        $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
+        $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
 
         return view("admin.municipios", compact('autoridade','municipio',
             'regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico',
             'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologicas',
-        'doencas','doencasAgravos'));
+            'doencas','doencasAgravos','ano','tipoRecursoNacional','recursoEstadual','recursoFundoEstadual','recursoFundoNacional',
+            'itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional'));
     }
 
     public function indexAlternativo()

@@ -8,11 +8,12 @@
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('doencasAgravos.create')}}" role="button">ADICIONAR</a>
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('doencas.index')}}" role="button">LISTA DE DOENÇAS</a>
             </div>
         </div>
         <table class="table table-sm table-responsive" id="table">
-            <thead class="table-active">
+            <thead class="thead-light">
             <tr>
                 <th scope="col" style="width: 120px">DESCRIÇÃO</th>
                 <th scope="col">MUNICÍPIO</th>
@@ -28,7 +29,7 @@
                 <td>{{$d->municipio->nome}}</td>
                 <td>{{$d->ano->ano}}</td>
                 <td class="text-center">{{$d->casos}}</td>
-                <td style="width: 120px" class="text-right">{{$d->fonte}}</td>
+                <td style="width: 120px" class="text-center">{{$d->fonte}}</td>
             </tr>
             @endforeach
             </tbody>

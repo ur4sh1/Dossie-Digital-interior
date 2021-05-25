@@ -19,10 +19,11 @@ class CreateDetalhesMunicipiosTable extends Migration
             $table->string('pib_percapita');
             $table->string('idh');
             $table->string('pop_plan_saude')->nullable();
-            $table->integer('pop_plan_saude_ano')->nullable();
+            $table->unsignedBigInteger('pop_plan_saude_ano')->nullable();
+            $table->foreign('pop_plan_saude_ano')->references('id')->on('anos');
             $table->string('pop_extr_pobreza')->nullable();
-            $table->integer('pop_extr_pobreza_ano')->nullable();
-
+            $table->unsignedBigInteger('pop_extr_pobreza_ano')->nullable();
+            $table->foreign('pop_extr_pobreza_ano')->references('id')->on('anos');
             $table->timestamps();
         });
     }

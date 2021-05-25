@@ -52,4 +52,20 @@ class Municipio extends Model
     {
         return $this->hasMany('App\Doencas');
     }
+
+    public function recursoEstadual()
+    {
+        return $this->hasMany('App\RecursoEstadual','municipio_id','id');
+    }
+
+    public function recursoFundoNacional()
+    {
+        return $this->hasMany('App\RecursoFundoNacional','municipio_id','id');
+    }
+
+    public function recursoFundoEstadual()
+    {
+        return $this->hasMany('App\RecursoFundoEstadual','municipio_id','id');
+    }
+
 }

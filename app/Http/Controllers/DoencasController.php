@@ -25,7 +25,7 @@ class DoencasController extends Controller
      */
     public function create()
     {
-        //
+        return view('doenca.form');
     }
 
     /**
@@ -36,7 +36,8 @@ class DoencasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $doenca=Doencas::create($request->all());
+        return redirect()->route('doencas.index');
     }
 
     /**
@@ -79,8 +80,10 @@ class DoencasController extends Controller
      * @param  \App\Doencas  $doencas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Doencas $doencas)
+    public function destroy($id)
     {
-        //
+        $doenca=Doencas::find($id);
+        $doenca->delete();
+        return redirect()->route('doencas.index');
     }
 }

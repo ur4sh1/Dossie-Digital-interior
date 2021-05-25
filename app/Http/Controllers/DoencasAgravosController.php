@@ -31,9 +31,10 @@ class DoencasAgravosController extends Controller
      */
     public function create()
     {
+        $municipios=Municipio::all();
         $ano=Ano::all();
         $doencas=Doencas::all();
-
+        return view('doencaAgravo.form',compact('ano','doencas','municipios'));
     }
 
     /**
@@ -44,7 +45,8 @@ class DoencasAgravosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $doencasAgravos=DoencasAgravos::create($request->all());
+        return redirect()->route('doencasAgravos.index');
     }
 
     /**

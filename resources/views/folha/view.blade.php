@@ -1,14 +1,22 @@
 @if($ho->folha->count()==0)
     <table class="table table-sm">
         <tr>
-            <td><label><b>FOLHA SES-AM</b></label></td>
+            <td>
+                <a data-toggle="collapse" href="#fo{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <label style="color: #1b1e21"><b>FOLHA SES-AM</b></label>
+                </a>
+            </td>
             <td><i>Informações não Cadastradas</i></td>
         </tr>
     </table>
 @else
     <table class="table table-sm">
         <tr style="background:lavenderblush">
-            <td scope="col" colspan="4"><label><b>FOLHA SES-AM</b></label></td>
+            <td colspan="4">
+                <a data-toggle="collapse" href="#fo{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <label style="color: #1b1e21"><b>FOLHA SES-AM</b></label>
+                </a>
+            </td>
         </tr>
         <tr>
             <th scope="col" class="text-left">Profissionais de Saúde</th>

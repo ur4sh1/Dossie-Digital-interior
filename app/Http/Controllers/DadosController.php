@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Ano;
 use App\Dados_municipios;
 use App\Detalhes_municipio;
+use App\Doencas;
 use App\Municipio;
 use Illuminate\Http\Request;
 
@@ -28,8 +30,9 @@ class DadosController extends Controller
      */
     public function create()
     {
+        $ano=Ano::all();
         $municipios=Municipio::all();
-        return view('admin.dadosForm',compact('municipios'));
+        return view('admin.dadosForm',compact('municipios','ano'));
     }
 
     /**
@@ -51,10 +54,11 @@ class DadosController extends Controller
      */
     public function show($id)
     {
+        $ano=Ano::all();
         $municipios=Municipio::find($id);
         $dados=Dados_municipios::find($id);
         $detalhes=Detalhes_municipio::find($id);
-        return view('dado.dados', compact('municipios','dados','detalhes'));
+        return view('dado.dados', compact('municipios','dados','detalhes','ano'));
     }
 
     /**
@@ -65,10 +69,11 @@ class DadosController extends Controller
      */
     public function edit($id)
     {
+        $ano=Ano::all();
         $municipios=Municipio::find($id);
         $dados=Dados_municipios::find($id);
         $detalhes=Detalhes_municipio::find($id);
-        return view('dado.edit',compact('municipios','dados','detalhes'));
+        return view('dado.edit',compact('municipios','dados','detalhes','ano'));
     }
 
     /**

@@ -120,6 +120,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">FINANCEIRO</h5>
+                                            <p class="card-text">Cadastre, edite ou exclua registros no sistema.</p>
+                                            <a href="/financeiro" class="btn btn-primary">GERENCIAR</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                     </div>

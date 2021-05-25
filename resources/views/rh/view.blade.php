@@ -1,14 +1,22 @@
 @if($ho->rh->count()==0)
     <table class="table table-sm">
         <tr>
-            <td><label><b>CATEGORIAS</b></label></td>
+            <td>
+                <a data-toggle="collapse" href="#rh{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <label style="color: #1b1e21"><b>CATEGORIAS</b></label>
+                </a>
+            </td>
             <td><i>Informações não Cadastradas</i></td>
         </tr>
     </table>
 @else
     <table class="table table-responsive-sm table-sm">
         <tr style="background:lavenderblush">
-            <td colspan="5"><label><b>CATEGORIAS</b></label></td>
+            <td colspan="5">
+                <a data-toggle="collapse" href="#rh{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <label style="color: #1b1e21"><b>CATEGORIAS</b></label>
+                </a>
+            </td>
         </tr>
         <tr>
             <th scope="col">Total por Categoria</th>

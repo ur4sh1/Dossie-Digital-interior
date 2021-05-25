@@ -42,5 +42,7 @@ Route::resources([
     'folha'=>'FolhaController',
     'programa'=>'ProgramaController',
     'doencasAgravos'=>'DoencasAgravosController',
-    'doencas'=>'DoencasController'
+    'doencas'=>'DoencasController',
+    'financeiro'=>'FinanceiroController'
+
 ]);

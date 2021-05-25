@@ -40,5 +40,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CoberturaVacinalSeeder::class);
         $this->call(DoencasSeeder::class);
         $this->call(DoencasAgravosSeeder::class);
+        $this->call(ItemRecursoEstadualSeeder::class);
+        $this->call(ItemRecursoFundoEstadualSeeder::class);
+        $this->call(ItemRecursoFundoNacionalSeeder::class);
+        $this->call(TipoRecursoNacionalSeeder::class);
+        $this->call(RecursoEstadualSeeder::class);
+        $this->call(RecursoFundoEstadualSeeder::class);
+        $this->call(RecursoFundoNacionalSeeder::class);
     }
 }

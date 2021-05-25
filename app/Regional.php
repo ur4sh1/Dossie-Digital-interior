@@ -10,7 +10,7 @@ class Regional extends Model
 
     public function municipio()
     {
-        return $this->hasMany('App\Municipio');
+    return $this->hasMany('App\Municipio');
     }
     public function autoridade()
     {
