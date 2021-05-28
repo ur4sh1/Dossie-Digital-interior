@@ -349,14 +349,31 @@
             display: none;
         }
     }
-
+    /*link modificado*/
     a.btn-link.teste.collapsed {
         background-color: white;
         color: #4aa0e6;
     }
     a.btn-link.teste {
-        /*background-color: rgba(158,163,255,0.55);*/
         background-color: #9ba2ab;
         color: white;
+    }
+    /*Recurso Fundo Nacional*/
+    @media screen and (max-width: 442px) {
+        div.desktop{
+            display: none;
+        }
+    }
+    @media screen and (min-width: 442px) {
+        div.mobile {
+            display: none;
+        }
+    }
+
+    div.descricaogrande {
+        width: 350px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 </style>

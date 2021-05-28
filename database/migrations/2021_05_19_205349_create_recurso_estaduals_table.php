@@ -17,8 +17,8 @@ class CreateRecursoEstadualsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
-            $table->unsignedBigInteger('item_id');
-            $table->foreign('item_id')->references('id')->on('item_recurso_estaduals');
+            $table->unsignedBigInteger('item_recurso_estadual_id');
+            $table->foreign('item_recurso_estadual_id')->references('id')->on('item_recurso_estaduals');
             $table->decimal('valor',16,2);
             $table->unsignedBigInteger('ano_id');
             $table->foreign('ano_id')->references('id')->on('anos');

@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Financeiro;
+use App\ItemRecursoEstadual;
+use App\ItemRecursoFundoEstadual;
+use App\ItemRecursoFundoNacional;
+use App\Municipio;
+use App\RecursoEstadual;
+use App\RecursoFundoEstadual;
+use App\RecursoFundoNacional;
+use App\TipoRecursoNacional;
 use Illuminate\Http\Request;
 
 class FinanceiroController extends Controller
@@ -14,7 +22,8 @@ class FinanceiroController extends Controller
      */
     public function index()
     {
-        //
+        $municipio=Municipio::all();
+        return view('financeiro.index',compact('municipio'));
     }
 
     /**
@@ -44,9 +53,19 @@ class FinanceiroController extends Controller
      * @param  \App\Financeiro  $financeiro
      * @return \Illuminate\Http\Response
      */
-    public function show(Financeiro $financeiro)
+    public function show($id)
     {
-        //
+        $municipio=Municipio::find($id);
+        $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
+        $recursoFundoEstadual=RecursoFundoEstadual::where('municipio_id',$id)->get();
+        $recursoFundoNacional=RecursoFundoNacional::where('municipio_id',$id)->get();
+        $itemRecursoEstadual=ItemRecursoEstadual::all();
+        $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
+        $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
+        $tipoRecursoNacional=TipoRecursoNacional::all();
+        return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
+            'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
+            'tipoRecursoNacional'));
     }
 
     /**

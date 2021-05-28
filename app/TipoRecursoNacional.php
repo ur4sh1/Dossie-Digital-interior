@@ -12,4 +12,5 @@ class TipoRecursoNacional extends Model
     {
         return $this->hasMany('App\RecursoFundoNacional','tipo_recurso_nacional_id','id');
     }
+
 }

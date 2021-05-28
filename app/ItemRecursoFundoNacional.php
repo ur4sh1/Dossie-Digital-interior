@@ -10,6 +10,6 @@ class ItemRecursoFundoNacional extends Model
 
     public function recursoFundoNacional()
     {
-        return $this->hasMany('App\RecursoFundoNacional','tipo_recurso_nacional_id','id');
+        return $this->hasMany('App\RecursoFundoNacional','item_recurso_fundo_nacional_id','id');
     }
 }

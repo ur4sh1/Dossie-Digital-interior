@@ -13,8 +13,8 @@ class RecursoFundoEstadualSeeder extends Seeder
     public function run()
     {
         DB::table('recurso_fundo_estaduals')->insert([
-            ['municipio_id'=>5,'item_id'=>1,'valor'=>1156387.75,'ano_id'=>19],
-            ['municipio_id'=>5,'item_id'=>1,'valor'=>927729.60,'ano_id'=>20]
+            ['municipio_id'=>5,'item_recurso_fundo_estadual_id'=>1,'valor'=>1156387.75,'ano_id'=>19],
+            ['municipio_id'=>5,'item_recurso_fundo_estadual_id'=>1,'valor'=>927729.60,'ano_id'=>20]
             ]);
     }
 }

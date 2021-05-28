@@ -17,8 +17,8 @@ class CreateRecursoFundoEstadualsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
-            $table->unsignedBigInteger('item_id');
-            $table->foreign('item_id')->references('id')->on('item_recurso_fundo_estaduals');
+            $table->unsignedBigInteger('item_recurso_fundo_estadual_id');
+            $table->foreign('item_recurso_fundo_estadual_id')->references('id')->on('item_recurso_fundo_estaduals');
             $table->string('referencia')->nullable();
             $table->string('qtd')->nullable();
             $table->decimal('valor',16,2);
