@@ -26,26 +26,26 @@
                 <div class="text-left">{{ $i->descricao }}</div>
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoEstadual as $mr)
-                    @if($mr->ano->ano == ($data-3) and $mr->item_id == $i->id)
-                        <div class="text-right">{{ $mr->valor() }}</div>
-                        <span hidden>{{$t3 += $mr->valor}}</span>
+                @foreach($municipio->recursoEstadual as $mre)
+                    @if($mre->ano->ano == ($data-3) and $mre->item_recurso_estadual_id == $i->id)
+                        <div class="text-right">{{ $mre->valor() }}</div>
+                        <span hidden>{{$t3 += $mre->valor}}</span>
                     @endif
                 @endforeach
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoEstadual as $mr)
-                    @if($mr->ano->ano == ($data-2) and $mr->item_id == $i->id)
-                        <div class="text-right">{{ $mr->valor() }}</div>
-                        <span hidden>{{$t2 += $mr->valor}}</span>
+                @foreach($municipio->recursoEstadual as $mre)
+                    @if($mre->ano->ano == ($data-2) and $mre->item_recurso_estadual_id == $i->id)
+                        <div class="text-right">{{ $mre->valor() }}</div>
+                        <span hidden>{{$t2 += $mre->valor}}</span>
                     @endif
                 @endforeach
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoEstadual as $mr)
-                    @if($mr->ano->ano == ($data-1) and $mr->item_id == $i->id)
-                        <div class="text-right">{{ $mr->valor() }}</div>
-                        <span hidden>{{$t1 += $mr->valor}}</span>
+                @foreach($municipio->recursoEstadual as $mre)
+                    @if($mre->ano->ano == ($data-1) and $mre->item_recurso_estadual_id == $i->id)
+                        <div class="text-right">{{ $mre->valor() }}</div>
+                        <span hidden>{{$t1 += $mre->valor}}</span>
                     @endif
                 @endforeach
             </div>

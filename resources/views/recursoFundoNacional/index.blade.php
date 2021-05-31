@@ -27,7 +27,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoFundoNacional as $mrfn)
-                    @if($mrfn->ano->ano == ($data-3) and $mrfn->item_id == $i->id and $mrfn->tipo_recurso_nacional_id == 1)
+                    @if($mrfn->ano->ano == ($data-3) and $mrfn->item_recurso_fundo_nacional_id == $i->id and $mrfn->tipo_recurso_nacional_id == 1)
                         <div class="text-right">{{ $mrfn->valor() }}</div>
                         <span hidden>{{$t3 += $mrfn->valor}}</span>
                     @endif
@@ -35,7 +35,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoFundoNacional as $mrfn)
-                    @if($mrfn->ano->ano == ($data-2) and $mrfn->item_id == $i->id and $mrfn->tipo_recurso_nacional_id == 1)
+                    @if($mrfn->ano->ano == ($data-2) and $mrfn->item_recurso_fundo_nacional_id == $i->id and $mrfn->tipo_recurso_nacional_id == 1)
                         <div class="text-right">{{ $mrfn->valor() }}</div>
                         <span hidden>{{$t2 += $mrfn->valor}}</span>
                     @endif
@@ -43,7 +43,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoFundoNacional as $mrfn)
-                    @if($mrfn->ano->ano == ($data-1) and $mrfn->item_id == $i->id and $mrfn->tipo_recurso_nacional_id == 1)
+                    @if($mrfn->ano->ano == ($data-1) and $mrfn->item_recurso_fundo_nacional_id == $i->id and $mrfn->tipo_recurso_nacional_id == 1)
                         <div class="text-right">{{ $mrfn->valor() }}</div>
                         <span hidden>{{$t1 += $mrfn->valor}}</span>
                     @endif
@@ -91,26 +91,26 @@
                 <div class="text-left">{{ $i->descricao }}</div>
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoFundoNacional as $mrfn)
-                    @if($mrfn->ano->ano == ($data-3) and $mrfn->item_id == $i->id and $mrfn->tipo_recurso_nacional_id == 2)
-                        <div class="text-right">{{ $mrfn->valor() }}</div>
-                        <span hidden>{{$t33 += $mrfn->valor}}</span>
+                @foreach($municipio->recursoFundoNacional as $mrfni)
+                    @if($mrfni->ano->ano == ($data-3) and $mrfni->item_recurso_fundo_nacional_id == $i->id and $mrfni->tipo_recurso_nacional_id == 2)
+                        <div class="text-right">{{ $mrfni->valor() }}</div>
+                        <span hidden>{{$t33 += $mrfni->valor}}</span>
                     @endif
                 @endforeach
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoFundoNacional as $mrfn)
-                    @if($mrfn->ano->ano == ($data-2) and $mrfn->item_id == $i->id and $mrfn->tipo_recurso_nacional_id == 2)
-                        <div class="text-right">{{ $mrfn->valor() }}</div>
-                        <span hidden>{{$t22 += $mrfn->valor}}</span>
+                @foreach($municipio->recursoFundoNacional as $mrfni)
+                    @if($mrfni->ano->ano == ($data-2) and $mrfni->item_recurso_fundo_nacional_id == $i->id and $mrfni->tipo_recurso_nacional_id == 2)
+                        <div class="text-right">{{ $mrfni->valor() }}</div>
+                        <span hidden>{{$t22 += $mrfni->valor}}</span>
                     @endif
                 @endforeach
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoFundoNacional as $mrfn)
-                    @if($mrfn->ano->ano == ($data-1) and $mrfn->item_id == $i->id and $mrfn->tipo_recurso_nacional_id == 2)
-                        <div class="text-right">{{ $mrfn->valor() }}</div>
-                        <span hidden>{{$t11 += $mrfn->valor}}</span>
+                @foreach($municipio->recursoFundoNacional as $mrfni)
+                    @if($mrfni->ano->ano == ($data-1) and $mrfni->item_recurso_fundo_nacional_id == $i->id and $mrfni->tipo_recurso_nacional_id == 2)
+                        <div class="text-right">{{ $mrfni->valor() }}</div>
+                        <span hidden>{{$t11 += $mrfni->valor}}</span>
                     @endif
                 @endforeach
             </div>

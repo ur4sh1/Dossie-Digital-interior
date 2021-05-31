@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Ano;
+use App\ItemRecursoEstadual;
+use App\Municipio;
 use App\RecursoEstadual;
 use Illuminate\Http\Request;
 
@@ -24,7 +27,15 @@ class RecursoEstadualController extends Controller
      */
     public function create()
     {
-        //
+
+    }
+
+    public function createAlternative($id)
+    {
+        $ano=Ano::all();
+        $itemRecursoEstadual=ItemRecursoEstadual::all();
+        $municipio=Municipio::find($id);
+        return view('recursoEstadual.form',compact('municipio','itemRecursoEstadual','ano'));
     }
 
     /**

@@ -19,6 +19,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
+            <a class="btn btn-primary btn-sm" href="{{route('financeiroCreate',$municipio->id)}}" role="button">ADICIONAR</a>
             <a class="btn btn-primary btn-sm" href="{{route('financeiro.index')}}" role="button">VOLTAR</a>
         </div>
         <div class="row">

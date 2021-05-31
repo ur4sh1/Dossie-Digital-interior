@@ -26,26 +26,26 @@
                 <div class="text-left">{{ $i->descricao }}</div>
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoFundoEstadual as $mrf)
-                    @if($mrf->ano->ano == ($data-3) and $mrf->item_id == $i->id)
-                        <div class="text-right">{{ $mrf->valor() }}</div>
-                        <span hidden>{{$t3 += $mrf->valor}}</span>
+                @foreach($municipio->recursoFundoEstadual as $mrfe)
+                    @if($mrfe->ano->ano == ($data-3) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
+                        <div class="text-right">{{ $mrfe->valor() }}</div>
+                        <span hidden>{{$t3 += $mrfe->valor}}</span>
                     @endif
                 @endforeach
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoFundoEstadual as $mrf)
-                    @if($mrf->ano->ano == ($data-2) and $mrf->item_id == $i->id)
-                        <div class="text-right">{{ $mrf->valor() }}</div>
-                        <span hidden>{{$t2 += $mrf->valor}}</span>
+                @foreach($municipio->recursoFundoEstadual as $mrfe)
+                    @if($mrfe->ano->ano == ($data-2) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
+                        <div class="text-right">{{ $mrfe->valor() }}</div>
+                        <span hidden>{{$t2 += $mrfe->valor}}</span>
                     @endif
                 @endforeach
             </div>
             <div class="col-sm-2">
-                @foreach($municipio->recursoFundoEstadual as $mrf)
-                    @if($mrf->ano->ano == ($data-1) and $mrf->item_id == $i->id)
-                        <div class="text-right">{{ $mrf->valor() }}</div>
-                        <span hidden>{{$t1 += $mrf->valor}}</span>
+                @foreach($municipio->recursoFundoEstadual as $mrfe)
+                    @if($mrfe->ano->ano == ($data-1) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
+                        <div class="text-right">{{ $mrfe->valor() }}</div>
+                        <span hidden>{{$t1 += $mrfe->valor}}</span>
                     @endif
                 @endforeach
             </div>

@@ -25,6 +25,9 @@ Route::get('/admin/login', 'AuthController@login')->name('admin.login');
 
 Route::get('/admin/municipios', 'MunicipiosController@indexAlternativo');
 
+Route::get('/financeiro/create/{id}', 'FinanceiroController@createAlternative')->name('financeiroCreate');
+Route::get('/recursoEstadual/create/{id}', 'RecursoEstadualController@createAlternative')->name('recursoEstadualCreate');
+
 Route::resources([
     'partido'=>'PartidosController',
     'municipios'=>'MunicipiosController',
@@ -43,6 +46,9 @@ Route::resources([
     'programa'=>'ProgramaController',
     'doencasAgravos'=>'DoencasAgravosController',
     'doencas'=>'DoencasController',
-    'financeiro'=>'FinanceiroController'
+    'financeiro'=>'FinanceiroController',
+    'recursoEstadual'=>'RecursoEstadualController',
+    'recursoFundoEstadual'=>'RecursoFundoEstadualController',
+    'recursoFundoNacional'=>'RecursoFundoNacionalController',
 
 ]);

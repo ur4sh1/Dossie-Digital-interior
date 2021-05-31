@@ -33,9 +33,14 @@ class FinanceiroController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
+    public function createAlternative($id)
+    {
+        $municipio=Municipio::find($id);
+        return view('financeiro.form',compact('municipio'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -63,6 +68,7 @@ class FinanceiroController extends Controller
         $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
         $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
         $tipoRecursoNacional=TipoRecursoNacional::all();
+
         return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
             'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
             'tipoRecursoNacional'));
