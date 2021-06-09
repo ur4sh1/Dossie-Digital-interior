@@ -45,9 +45,9 @@ class HospitalController extends Controller
      */
     public function store(Request $request)
     {
- /*   dd($request->all());*/
         $data=$request->all();
-        $data['nome']=strtoupper($data['nome']);
+        $encoding='UTF-8';
+        $data['nome']=mb_strtoupper($data['nome'],$encoding);
         $hospital=Hospital::create($data);
 
         return redirect()->route('hospitals.index');
@@ -88,7 +88,6 @@ class HospitalController extends Controller
     {
         $hospital=Hospital::find($id);
         $hospital->update($request->all());
-
         return redirect()->route('hospitals.index');
     }
 

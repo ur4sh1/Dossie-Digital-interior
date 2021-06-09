@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RecursoEstadual extends Model
 {
-    protected $fillable=['municipio_id','item_id','valor','ano_id','ativo'];
+    protected $fillable=['municipio_id','item_recurso_estadual_id','valor','ano_id','ativo'];
 
     public function municipio()
     {
@@ -19,7 +19,7 @@ class RecursoEstadual extends Model
 
     public function itemRecursoEstadual()
     {
-        return $this->belongsTo('App\ItemRecursoEstadual','item_id','id');
+        return $this->belongsTo('App\ItemRecursoEstadual','item_recurso_estadual_id','id');
     }
 
     public function valor()

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="text-info">
@@ -307,20 +306,21 @@
 <script>
 </script>
 <style>
+    /*Mobile e Desktop*/
     @media screen and (max-width: 442px) {
         div.container {
             font-size: 20px;
+        }
+    }
+    @media screen and (min-width: 442px) {
+        div.container {
+            font-size: 15px;
         }
     }
     @media screen and (max-width: 442px) {
         button.redime{
             font-size: 20px;
             text-align: left;
-        }
-    }
-    @media screen and (min-width: 442px) {
-        div.container {
-            font-size: 15px;
         }
     }
     @media screen and (min-width: 442px) {
@@ -358,13 +358,13 @@
         background-color: #9ba2ab;
         color: white;
     }
-    /*Recurso Fundo Nacional*/
-    @media screen and (max-width: 442px) {
+    /*Mobile e Desktop resolução*/
+    @media screen and (max-width: 800px) {
         div.desktop{
             display: none;
         }
     }
-    @media screen and (min-width: 442px) {
+    @media screen and (min-width: 800px) {
         div.mobile {
             display: none;
         }

@@ -10,6 +10,6 @@ class ItemRecursoFundoEstadual extends Model
 
     public function recursoFundoEstadual()
     {
-        return $this->hasMany('App\RecursoFundoEstadual','item_id','id');
+        return $this->hasMany('App\RecursoFundoEstadual','item_recurso_fundo_estadual_id','id');
     }
 }

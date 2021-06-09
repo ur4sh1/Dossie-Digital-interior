@@ -15,6 +15,7 @@
     <!-- Scripts local-->
     <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/vue.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/notify.js') }}" defer></script>
 
     <!-- google charts   -->
     <!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
@@ -121,7 +122,6 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             <div id="app">
                 @yield('content')
@@ -131,3 +131,16 @@
 
 </body>
 </html>
+<script>
+    $("#alerta").fadeTo(2000, 500).slideUp(500, function () {
+        $("#alerta").slideUp(500);
+    });
+</script>
+<style>
+    @media screen and (max-width: 442px) {
+        h1 {
+            font-size: 30px;
+            color: #1b1e21;
+        }
+    }
+</style>

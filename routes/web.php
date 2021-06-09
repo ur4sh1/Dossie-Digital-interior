@@ -26,7 +26,36 @@ Route::get('/admin/login', 'AuthController@login')->name('admin.login');
 Route::get('/admin/municipios', 'MunicipiosController@indexAlternativo');
 
 Route::get('/financeiro/create/{id}', 'FinanceiroController@createAlternative')->name('financeiroCreate');
+
+Route::get('/itemRecursoEstadual/list/{id}','ItemRecursoEstadualController@indexAlternative')->name('itemRecursoEstadualIndex');
+Route::get('/itemRecursoEstadual/create/{id}','ItemRecursoEstadualController@createAlternative')->name('itemRecursoEstadualCreate');
+Route::get('/itemRecursoEstadual/edit/{id}/{mid}','ItemRecursoEstadualController@editAlternative')->name('itemRecursoEstadualEdit');
+Route::post('/itemRecursoEstadual/store/{id}','ItemRecursoEstadualController@storeAlternative')->name('itemRecursoEstadualStore');
+Route::post('/itemRecursoEstadual/destroy/{id}/{mid}','ItemRecursoEstadualController@deletAlternative')->name('itemRecursoEstadualDestroy');
+Route::post('/itemRecursoEstadual/update/{id}/{mid}','ItemRecursoEstadualController@upAlternative')->name('itemRecursoEstadualUpdate');
+
+Route::get('/itemRecursoFundoEstadual/list/{id}','ItemRecursoFundoEstadualController@indexAlternative')->name('itemRecursoFundoEstadualIndex');
+Route::get('/itemRecursoFundoEstadual/create/{id}','ItemRecursoFundoEstadualController@createAlternative')->name('itemRecursoFundoEstadualCreate');
+Route::get('/itemRecursoFundoEstadual/edit/{id}/{mid}','ItemRecursoFundoEstadualController@editAlternative')->name('itemRecursoFundoEstadualEdit');
+Route::post('/itemRecursoFundoEstadual/store/{id}','ItemRecursoFundoEstadualController@storeAlternative')->name('itemRecursoFundoEstadualStore');
+Route::post('/itemRecursoFundoEstadual/destroy/{id}/{mid}','ItemRecursoFundoEstadualController@deletAlternative')->name('itemRecursoFundoEstadualDestroy');
+Route::post('/itemRecursoFundoEstadual/update/{id}/{mid}','ItemRecursoFundoEstadualController@upAlternative')->name('itemRecursoFundoEstadualUpdate');
+
+Route::get('/itemRecursoFundoNacional/list/{id}','ItemRecursoFundoNacionalController@indexAlternative')->name('itemRecursoFundoNacionalIndex');
+Route::get('/itemRecursoFundoNacional/create/{id}','ItemRecursoFundoNacionalController@createAlternative')->name('itemRecursoFundoNacionalCreate');
+Route::get('/itemRecursoFundoNacional/edit/{id}/{mid}','ItemRecursoFundoNacionalController@editAlternative')->name('itemRecursoFundoNacionalEdit');
+Route::post('/itemRecursoFundoNacional/store/{id}','ItemRecursoFundoNacionalController@storeAlternative')->name('itemRecursoFundoNacionalStore');
+Route::post('/itemRecursoFundoNacional/destroy/{id}/{mid}','ItemRecursoFundoNacionalController@deletAlternative')->name('itemRecursoFundoNacionalDestroy');
+Route::post('/itemRecursoFundoNacional/update/{id}/{mid}','ItemRecursoFundoNacionalController@upAlternative')->name('itemRecursoFundoNacionalUpdate');
+
 Route::get('/recursoEstadual/create/{id}', 'RecursoEstadualController@createAlternative')->name('recursoEstadualCreate');
+Route::post('/recursoEstadual/store/{id}','RecursoEstadualController@storeAlternative')->name('recursoEstadualStore');
+
+Route::get('/recursoFundoEstadual/create/{id}', 'RecursoFundoEstadualController@createAlternative')->name('recursoFundoEstadualCreate');
+Route::post('/recursoFundoEstadual/store/{id}','RecursoFundoEstadualController@storeAlternative')->name('recursoFundoEstadualStore');
+
+Route::get('/recursoFundoNacional/create/{id}', 'RecursoFundoNacionalController@createAlternative')->name('recursoFundoNacionalCreate');
+Route::post('/recursoFundoNacional/store/{id}','RecursoFundoNacionalController@storeAlternative')->name('recursoFundoNacionalStore');
 
 Route::resources([
     'partido'=>'PartidosController',
@@ -50,5 +79,7 @@ Route::resources([
     'recursoEstadual'=>'RecursoEstadualController',
     'recursoFundoEstadual'=>'RecursoFundoEstadualController',
     'recursoFundoNacional'=>'RecursoFundoNacionalController',
+    'itemRecursoEstadual'=>'ItemRecursoEstadualController',
+    'itemRecursoFundoEstadual'=>'ItemRecursoFundoEstadualController',
 
 ]);

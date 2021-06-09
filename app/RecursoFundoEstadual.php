@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RecursoFundoEstadual extends Model
 {
-    protected $fillable=['municipio_id','item_id','referencia','qtd','valor','parcela','ano_id','ativo'];
+    protected $fillable=['municipio_id','item_recurso_fundo_estadual_id','referencia','qtd','valor','parcela','ano_id','ativo'];
 
     public function municipio()
     {
@@ -19,7 +19,7 @@ class RecursoFundoEstadual extends Model
 
     public function itemRecursoFundoEstadual()
     {
-        return $this->belongsTo('App\ItemRecursoFundoEstadual','item_id','id');
+        return $this->belongsTo('App\ItemRecursoFundoEstadual','item_recurso_fundo_estadual_id','id');
     }
     public function valor()
     {

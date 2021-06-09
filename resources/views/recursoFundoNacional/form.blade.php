@@ -5,24 +5,33 @@
             <div class="col-sm-12">
                 <div class="text-info">
                     <h1>REPASSE FINANCEIRO</h1>
-                    <h2>{{ $municipio->nome }} / Recurso Estadual</h2>
+                    <h2>{{ $municipio->nome }} / Recurso Fundo Nacional</h2>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('itemRecursoEstadualIndex',$municipio->id)}}" role="button">GERENCIAR ITENS</a>
+            <a class="btn btn-primary btn-sm" href="{{route('itemRecursoFundoNacionalIndex',$municipio->id)}}" role="button">GERENCIAR ITENS</a>
         </div>
-        <form method="post" action="{{route('recursoEstadualStore',$municipio->id)}}">
+        <form method="post" action="{{route('recursoFundoNacionalStore',$municipio->id)}}">
             @csrf
             <input hidden value="{{ $municipio->id }}" id="municipio_id" name="municipio_id">
             <div class="form-group">
                 <div class="form-row">
                     <div class="form-col-8">
-                        <label for="item_recurso_estadual_id">Descrição do Item a ser vinculado:</label>
-                        <select class="form-control" id="item_recurso_estadual_id" name="item_recurso_estadual_id" required>
+                        <label for="item_recurso_fundo_nacional_id">Descrição do Item</label>
+                        <select class="form-control" id="item_recurso_fundo_nacional_id" name="item_recurso_fundo_nacional_id" required>
                             <option value="" disabled selected> Selecione o item</option>
-                            @foreach($itemRecursoEstadual as $ire)
-                                <option value="{{ $ire->id }}">{{ $ire->descricao }}</option>
+                            @foreach($itemRecursoFundoNacional as $irfn)
+                                <option value="{{ $irfn->id }}">{{ $irfn->descricao }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-col-2">
+                        <label for="tipo_recurso_nacional_id">Tipo</label>
+                        <select class="form-control" id="tipo_recurso_nacional_id" name="tipo_recurso_nacional_id" required>
+                            <option disabled selected>Selecione</option>
+                            @foreach($tipoRecursoNacional as $trn)
+                            <option value="{{ $trn->id }}">{{ $trn->nome }}</option>
                             @endforeach
                         </select>
                     </div>

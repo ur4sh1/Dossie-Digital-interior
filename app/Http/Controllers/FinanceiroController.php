@@ -60,6 +60,7 @@ class FinanceiroController extends Controller
      */
     public function show($id)
     {
+        $msg=0;
         $municipio=Municipio::find($id);
         $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
         $recursoFundoEstadual=RecursoFundoEstadual::where('municipio_id',$id)->get();
@@ -71,7 +72,7 @@ class FinanceiroController extends Controller
 
         return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
             'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-            'tipoRecursoNacional'));
+            'tipoRecursoNacional','msg'));
     }
 
     /**

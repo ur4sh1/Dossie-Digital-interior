@@ -18,7 +18,7 @@ class CreateRecursoFundoNacionalsTable extends Migration
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->unsignedBigInteger('item_recurso_fundo_nacional_id');
-            $table->foreign('item_recurso_fundo_nacional_id')->references('id')->on('item_recurso_fundo_nacionals');
+            $table->foreign('item_recurso_fundo_nacional_id')->references('id')->on('item_recurso_fundo_nacionals')->onDelete('cascade');
             $table->unsignedBigInteger('tipo_recurso_nacional_id');
             $table->foreign('tipo_recurso_nacional_id')->references('id')->on('tipo_recurso_nacionals');
             $table->decimal('valor',16,2);
