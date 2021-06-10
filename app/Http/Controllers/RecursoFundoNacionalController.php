@@ -41,9 +41,10 @@ class RecursoFundoNacionalController extends Controller
         $msg=0;
         $ano=Ano::all();
         $municipio=Municipio::find($id);
+        $m=Municipio::find($id);
         $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
         $tipoRecursoNacional=TipoRecursoNacional::all();
-        return view('recursoFundoNacional.form',compact('municipio','ano','itemRecursoFundoNacional','tipoRecursoNacional','msg'));
+        return view('recursoFundoNacional.form',compact('municipio','ano','itemRecursoFundoNacional','tipoRecursoNacional','msg','m'));
     }
     /**
      * Store a newly created resource in storage.

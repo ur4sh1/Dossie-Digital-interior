@@ -40,8 +40,9 @@ class RecursoEstadualController extends Controller
     {
         $ano=Ano::all();
         $municipio=Municipio::find($id);
+        $m=Municipio::find($id);
         $itemRecursoEstadual=ItemRecursoEstadual::all();
-        return view('recursoEstadual.form',compact('municipio','itemRecursoEstadual','ano'));
+        return view('recursoEstadual.form',compact('municipio','itemRecursoEstadual','ano','m'));
     }
 
     /**

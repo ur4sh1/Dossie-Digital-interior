@@ -57,5 +57,23 @@
                 </div><!--buttonsAções-->
             </div>
         </form>
+        <div class="row">
+            <div class="col">
+                @include('recursoFundoNacional.view')
+            </div>
+        </div>
     </div>
 @endsection
+<style>
+    /*Mobile e Desktop resolução*/
+    @media screen and (max-width: 800px) {
+        div.desktop{
+            display: none;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        div.mobile {
+            display: none;
+        }
+    }
+</style>

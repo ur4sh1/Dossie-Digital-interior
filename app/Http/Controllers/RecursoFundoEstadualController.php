@@ -41,8 +41,9 @@ class RecursoFundoEstadualController extends Controller
         $msg=0;
         $ano=Ano::all();
         $municipio=Municipio::find($id);
+        $m=Municipio::find($id);
         $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
-        return view('recursoFundoEstadual.form',compact('municipio','ano','itemRecursoFundoEstadual','msg'));
+        return view('recursoFundoEstadual.form',compact('municipio','ano','itemRecursoFundoEstadual','msg','m'));
     }
 
     /**
