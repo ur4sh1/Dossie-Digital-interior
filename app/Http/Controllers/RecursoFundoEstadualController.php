@@ -64,6 +64,7 @@ class RecursoFundoEstadualController extends Controller
             $msg=1;
             $data=RecursoFundoEstadual::create($request->all());
             $municipio=Municipio::find($id);
+            $m=Municipio::find($id);
             $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
             $recursoFundoEstadual=RecursoFundoEstadual::where('municipio_id',$id)->get();
             $recursoFundoNacional=RecursoFundoNacional::where('municipio_id',$id)->get();
@@ -74,11 +75,12 @@ class RecursoFundoEstadualController extends Controller
 
             return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
                 'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-                'tipoRecursoNacional','msg','id'));
+                'tipoRecursoNacional','msg','id','m'));
 
         }catch (Exception $e){
             $msg=2;
             $municipio=Municipio::find($id);
+            $m=Municipio::find($id);
             $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
             $recursoFundoEstadual=RecursoFundoEstadual::where('municipio_id',$id)->get();
             $recursoFundoNacional=RecursoFundoNacional::where('municipio_id',$id)->get();
@@ -89,7 +91,7 @@ class RecursoFundoEstadualController extends Controller
 
             return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
                 'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-                'tipoRecursoNacional','msg'));
+                'tipoRecursoNacional','msg','m'));
         }
     }
 
