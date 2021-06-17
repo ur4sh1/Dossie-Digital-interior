@@ -176,7 +176,7 @@
                                                     <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#exa{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Exame Realizados</b><br>
                                                     </a>
-                                                    <!--exames realizados-->
+                                                    <!--Salas Cirúrgicas-->
                                                     <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#sal{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                         <b>Salas Cirúrgicas</b><br>
                                                     </a>

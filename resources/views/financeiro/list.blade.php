@@ -40,10 +40,19 @@
                 <div class="col-9">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="text-right">
+                                <a class="btn-sm" href="{{route('recursoEstadualCreate',$municipio->id)}}">GERENCIAR</a>
+                            </div>
                             @include('recursoEstadual.index')</div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="text-right">
+                                <a class="btn-sm" href="{{route('recursoFundoEstadualCreate',$municipio->id)}}">GERENCIAR</a>
+                            </div>
                             @include('recursoFundoEstadual.index')</div>
                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            <div class="text-right">
+                                <a class="btn-sm" href="{{route('recursoFundoNacionalCreate',$municipio->id)}}">GERENCIAR</a>
+                            </div>
                             @include('recursoFundoNacional.index')</div>
                     </div>
                 </div>

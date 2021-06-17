@@ -50,6 +50,7 @@ Route::post('/itemRecursoFundoNacional/update/{id}/{mid}','ItemRecursoFundoNacio
 
 Route::get('/recursoEstadual/create/{id}', 'RecursoEstadualController@createAlternative')->name('recursoEstadualCreate');
 Route::post('/recursoEstadual/store/{id}','RecursoEstadualController@storeAlternative')->name('recursoEstadualStore');
+Route::get('/recursoEstadual/edit/{id}','RecursoEstadualController@editAlternative')->name('recursoEstadualEdit');
 
 Route::get('/recursoFundoEstadual/create/{id}', 'RecursoFundoEstadualController@createAlternative')->name('recursoFundoEstadualCreate');
 Route::post('/recursoFundoEstadual/store/{id}','RecursoFundoEstadualController@storeAlternative')->name('recursoFundoEstadualStore');

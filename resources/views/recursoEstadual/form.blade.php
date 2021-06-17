@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        @include('layouts.alertLaravel')
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
@@ -10,6 +11,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
+            <a class="btn btn-primary btn-sm" href="{{route('recursoEstadualEdit',$municipio->id)}}" role="button">EDITAR RECURSOS</a>
             <a class="btn btn-primary btn-sm" href="{{route('itemRecursoEstadualIndex',$municipio->id)}}" role="button">GERENCIAR ITENS</a>
         </div>
         <form method="post" action="{{route('recursoEstadualStore',$municipio->id)}}">

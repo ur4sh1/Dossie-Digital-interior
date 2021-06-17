@@ -38,11 +38,12 @@ class RecursoEstadualController extends Controller
 
     public function createAlternative($id)
     {
+        $msg=0;
         $ano=Ano::all();
         $municipio=Municipio::find($id);
         $m=Municipio::find($id);
         $itemRecursoEstadual=ItemRecursoEstadual::all();
-        return view('recursoEstadual.form',compact('municipio','itemRecursoEstadual','ano','m'));
+        return view('recursoEstadual.form',compact('municipio','itemRecursoEstadual','ano','m','msg'));
     }
 
     /**
@@ -60,7 +61,13 @@ class RecursoEstadualController extends Controller
     {
         try {
             $msg=1;
-            $data=RecursoEstadual::create($request->all());
+
+            $data=$request->all();
+            $data['valor']=str_replace('.',"",$data['valor']);
+            $data['valor']=str_replace(',',".",$data['valor']);
+            $recursoEstadual=RecursoEstadual::create($data);
+
+            /*$data=RecursoEstadual::create($request->all());*/
 
             $municipio=Municipio::find($id);
             $m=Municipio::find($id);
@@ -74,7 +81,7 @@ class RecursoEstadualController extends Controller
 
             return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
                 'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-                'tipoRecursoNacional','msg','id','m'));
+                'tipoRecursoNacional','msg','id','m'))->with('status', 'Efetuado com Sucesso!');
 
         }catch (Exception $e){
             $msg=2;
@@ -90,7 +97,7 @@ class RecursoEstadualController extends Controller
 
             return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
                 'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-                'tipoRecursoNacional','msg','m'));
+                'tipoRecursoNacional','msg','m'))->with('status', 'Algo deu Errado!');
         }
     }
 
@@ -116,6 +123,43 @@ class RecursoEstadualController extends Controller
         //
     }
 
+    public function editAlternative($id)
+    {
+        try {
+            $msg=0;
+            $ano=Ano::all();
+            $municipio=Municipio::find($id);
+            $m=Municipio::find($id);
+            $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
+            $recursoFundoEstadual=RecursoFundoEstadual::where('municipio_id',$id)->get();
+            $recursoFundoNacional=RecursoFundoNacional::where('municipio_id',$id)->get();
+            $itemRecursoEstadual=ItemRecursoEstadual::all();
+            $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
+            $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
+            $tipoRecursoNacional=TipoRecursoNacional::all();
+
+            return view('recursoEstadual.edit',compact('municipio','recursoEstadual','recursoFundoEstadual',
+            'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional','tipoRecursoNacional',
+            'ano','msg','m'));
+        }catch (Exception $e){
+            $msg=2;
+            $ano=Ano::all();
+            $municipio=Municipio::find($id);
+            $m=Municipio::find($id);
+            $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
+            $recursoFundoEstadual=RecursoFundoEstadual::where('municipio_id',$id)->get();
+            $recursoFundoNacional=RecursoFundoNacional::where('municipio_id',$id)->get();
+            $itemRecursoEstadual=ItemRecursoEstadual::all();
+            $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
+            $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
+            $tipoRecursoNacional=TipoRecursoNacional::all();
+
+            return view('recursoEstadual.edit',compact('municipio','recursoEstadual','recursoFundoEstadual',
+                'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional','tipoRecursoNacional',
+                'ano','msg','m'));
+        }
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -126,6 +170,19 @@ class RecursoEstadualController extends Controller
     public function update(Request $request, RecursoEstadual $recursoEstadual)
     {
         //
+    }
+
+    public function updateAlternative(Request $request)
+    {
+        try {
+            $recursoEstadual=RecursoEstadual::find($request->id);
+            $recursoEstadual->update([
+                'valor'=>$request->valor
+            ]);
+            return $recursoEstadual;
+        }catch (Exception $e){
+            return $recursoEstadual;
+        }
     }
 
     /**

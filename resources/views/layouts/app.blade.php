@@ -143,4 +143,7 @@
             color: #1b1e21;
         }
     }
+    a{
+        cursor: pointer;
+    }
 </style>

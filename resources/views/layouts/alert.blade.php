@@ -1,4 +1,3 @@
-
 @if($msg>0)
     @if($msg==1)
         <div class="alert alert-success text-center" id="alerta" role="alert">
@@ -13,4 +12,3 @@
         <span hidden>{{ $msg=0 }}</span>
     @endif
 @endif
-

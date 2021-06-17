@@ -9,7 +9,6 @@
     $n3=0;
     ?>
     <div style="color: #1b1e21; background:lavenderblush"><b>RECURSO ESTADUAL</b></div>
-
     <div id="carouselExampleIndicatorsRecursoEstadual" class="carousel slide" data-ride="carousel"  data-interval="0">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicatorsRecursoEstadual" data-slide-to="0" class="active"></li>
