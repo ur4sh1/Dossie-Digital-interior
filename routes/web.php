@@ -54,9 +54,11 @@ Route::get('/recursoEstadual/edit/{id}','RecursoEstadualController@editAlternati
 
 Route::get('/recursoFundoEstadual/create/{id}', 'RecursoFundoEstadualController@createAlternative')->name('recursoFundoEstadualCreate');
 Route::post('/recursoFundoEstadual/store/{id}','RecursoFundoEstadualController@storeAlternative')->name('recursoFundoEstadualStore');
+Route::get('/recursoFundoEstadual/edit/{id}','RecursoFundoEstadualController@editAlternative')->name('recursoFundoEstadualEdit');
 
 Route::get('/recursoFundoNacional/create/{id}', 'RecursoFundoNacionalController@createAlternative')->name('recursoFundoNacionalCreate');
 Route::post('/recursoFundoNacional/store/{id}','RecursoFundoNacionalController@storeAlternative')->name('recursoFundoNacionalStore');
+Route::get('/recursoFundoNacional/edit/{id}','RecursoFundoNacionalController@editAlternative')->name('recursoFundoNacionalEdit');
 
 Route::resources([
     'partido'=>'PartidosController',

@@ -16,12 +16,11 @@ class RecursoEstadual extends Model
     {
         return $this->belongsTo('App\Ano','ano_id','id');
     }
-
     public function itemRecursoEstadual()
     {
         return $this->belongsTo('App\ItemRecursoEstadual','item_recurso_estadual_id','id');
     }
-
+    /*Funções*/
     public function valor()
     {
         return number_format($this->valor,2,',','.');

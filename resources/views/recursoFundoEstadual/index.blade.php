@@ -11,13 +11,13 @@
             <label><b>ITEM</b></label>
         </div>
         <div class="col-sm-2 text-right">
-            <label><b>{{ $data-3 }}</b></label>
-        </div>
-        <div class="col-sm-2 text-right">
             <label><b>{{ $data-2 }}</b></label>
         </div>
         <div class="col-sm-2 text-right">
             <label><b>{{ $data-1 }}</b></label>
+        </div>
+        <div class="col-sm-2 text-right">
+            <label><b>{{ $data }}</b></label>
         </div>
     </div>
     @foreach($itemRecursoFundoEstadual as $i)
@@ -27,7 +27,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoFundoEstadual as $mrfe)
-                    @if($mrfe->ano->ano == ($data-3) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
+                    @if($mrfe->ano->ano == ($data-2) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
                         <div class="text-right">{{ $mrfe->valor() }}</div>
                         <span hidden>{{$t3 += $mrfe->valor}}</span>
                     @endif
@@ -35,7 +35,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoFundoEstadual as $mrfe)
-                    @if($mrfe->ano->ano == ($data-2) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
+                    @if($mrfe->ano->ano == ($data-1) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
                         <div class="text-right">{{ $mrfe->valor() }}</div>
                         <span hidden>{{$t2 += $mrfe->valor}}</span>
                     @endif
@@ -43,7 +43,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoFundoEstadual as $mrfe)
-                    @if($mrfe->ano->ano == ($data-1) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
+                    @if($mrfe->ano->ano == ($data) and $mrfe->item_recurso_fundo_estadual_id == $i->id)
                         <div class="text-right">{{ $mrfe->valor() }}</div>
                         <span hidden>{{$t1 += $mrfe->valor}}</span>
                     @endif

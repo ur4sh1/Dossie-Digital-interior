@@ -1,15 +1,19 @@
 @extends('layouts.app')
 @section('content')
+    <?php
+    $data=date('Y');
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
                     <h1>REPASSE FINANCEIRO</h1>
-                    <h2>{{ $municipio->nome }} / Recurso Fundo Nacional</h2>
+                    <h2><a href="{{route('financeiro.show',$municipio->id)}}">{{ $municipio->nome }}</a> / Recurso Fundo Nacional</h2>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
+            <a class="btn btn-primary btn-sm" href="{{route('recursoFundoNacionalEdit',$municipio->id)}}" role="button">EDITAR RECURSOS</a>
             <a class="btn btn-primary btn-sm" href="{{route('itemRecursoFundoNacionalIndex',$municipio->id)}}" role="button">GERENCIAR ITENS</a>
         </div>
         <form method="post" action="{{route('recursoFundoNacionalStore',$municipio->id)}}">
@@ -44,7 +48,9 @@
                         <select class="form-control" id="ano_id" name="ano_id">
                             <option disabled selected>Selecione</option>
                             @foreach($ano as $a)
-                                <option value="{{ $a->id }}">{{ $a->ano }}</option>
+                                @if($a->ano>=($data-2) && $a->ano<=($data))
+                                    <option value="{{ $a->id }}">{{ $a->ano }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

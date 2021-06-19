@@ -56,7 +56,7 @@ class FinanceiroController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Financeiro  $financeiro
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show($id)
     {

@@ -2088,7 +2088,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     editaValor: function editaValor(id, valor, item, ano) {
-      this.valor_repasse = valor;
+      this.valor_repasse = new Intl.NumberFormat('pt-BR').format(valor);
       this.item_repasse = item;
       this.ano_repasse = ano;
       this.id_repasse = id;
@@ -2098,6 +2098,312 @@ __webpack_require__.r(__webpack_exports__);
         municipio_id: this.municipio.id,
         id: this.id_repasse,
         item_recurso_estadual: this.item_repasse,
+        valor: this.valor_repasse,
+        ano_id: this.ano_repasse
+      }).then(function (response) {
+        window.location.reload();
+      })["catch"](function (response) {
+        window.location.reload();
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    municipio: Object,
+    ano: Array,
+    itemrecursofundoestadual: Array,
+    recursofundoestadual: Array,
+    url: String
+  },
+  data: function data() {
+    return {
+      anoatual: new Date().getFullYear(),
+      valor_repasse: '',
+      item_repasse: 0,
+      ano_repasse: 0,
+      id_repasse: 0
+    };
+  },
+  methods: {
+    editaValor: function editaValor(id, valor, item, ano) {
+      this.valor_repasse = new Intl.NumberFormat('pt-BR').format(valor);
+      this.item_repasse = item;
+      this.ano_repasse = ano;
+      this.id_repasse = id;
+    },
+    salvarDados: function salvarDados() {
+      axios.post(this.url, {
+        municipio_id: this.municipio.id,
+        id: this.id_repasse,
+        item_recurso_fundo_estadual: this.item_repasse,
+        valor: this.valor_repasse,
+        ano_id: this.ano_repasse
+      }).then(function (response) {
+        window.location.reload();
+      })["catch"](function (response) {
+        window.location.reload();
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    municipio: Object,
+    ano: Array,
+    itemrecursofundonacional: Array,
+    recursofundonacional: Array,
+    tiporecursonacional: Array,
+    url: String
+  },
+  data: function data() {
+    return {
+      anoatual: new Date().getFullYear(),
+      valor_repasse: '',
+      item_repasse: 0,
+      tipo_repasse: 0,
+      ano_repasse: 0,
+      id_repasse: 0
+    };
+  },
+  methods: {
+    editaValor: function editaValor(id, item, tipo, valor, ano) {
+      this.id_repasse = id;
+      this.item_repasse = item;
+      this.tipo_repasse = tipo;
+      this.valor_repasse = new Intl.NumberFormat('pt-BR').format(valor).toFixed(2);
+      this.ano_repasse = ano;
+    },
+    salvarDados: function salvarDados() {
+      axios.post(this.url, {
+        municipio_id: this.municipio.id,
+        id: this.id_repasse,
+        item_recurso_fundo_nacional: this.item_repasse,
+        tipo_recurso_nacional: this.tipo_repasse,
         valor: this.valor_repasse,
         ano_id: this.ano_repasse
       }).then(function (response) {
@@ -57337,14 +57643,10 @@ var render = function() {
         "div",
         {
           staticClass: "row table-responsive-sm",
-          staticStyle: { background: "lavenderblush" }
+          staticStyle: { background: "#a8f3c4" }
         },
         [
           _vm._m(5),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 3))])])
-          ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-sm-2 text-right" }, [
             _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
@@ -57352,6 +57654,10 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "col-sm-2 text-right" }, [
             _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
           ])
         ]
       ),
@@ -57361,43 +57667,6 @@ var render = function() {
           _c("div", { staticClass: "col-sm-6" }, [
             _c("div", [_vm._v(_vm._s(ire.descricao))])
           ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursoestadual, function(re) {
-                  return re.item_recurso_estadual_id === ire.id &&
-                    re.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 3
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  re.id,
-                                  re.valor,
-                                  re.item_recurso_estadual_id,
-                                  re.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(re.valor))]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
           _vm._v(" "),
           _c(
             "div",
@@ -57425,7 +57694,13 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(re.valor))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR").format(re.valor)
+                              )
+                            )
+                          ]
                         )
                       ])
                     : _vm._e()
@@ -57462,7 +57737,56 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(re.valor))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR").format(re.valor)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursoestadual, function(re) {
+                  return re.item_recurso_estadual_id === ire.id &&
+                    re.ano_id === a.id &&
+                    a.ano === _vm.anoatual
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  re.id,
+                                  re.valor,
+                                  re.item_recurso_estadual_id,
+                                  re.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR").format(re.valor)
+                              )
+                            )
+                          ]
                         )
                       ])
                     : _vm._e()
@@ -57531,6 +57855,1042 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-sm-6" }, [
       _c("label", { staticStyle: { color: "#1b1e21" } }, [
         _c("b", [_vm._v("ITEM")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("input", {
+        attrs: {
+          disabled: "",
+          hidden: "",
+          id: "municipio_id",
+          name: "municipio_id",
+          required: ""
+        },
+        domProps: { value: _vm.municipio.id }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { disabled: "", hidden: "", id: "id", name: "id", required: "" },
+        domProps: { value: _vm.id_repasse }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-col-8" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.item_repasse,
+                    expression: "item_repasse"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  id: "item_recurso_estadual_id",
+                  name: "item_recurso_estadual_id",
+                  disabled: "",
+                  required: ""
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.item_repasse = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.itemrecursofundoestadual, function(item) {
+                return _c("option", { domProps: { value: item.id } }, [
+                  _vm._v(_vm._s(item.descricao))
+                ])
+              }),
+              0
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-col-2" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.valor_repasse,
+                  expression: "valor_repasse"
+                }
+              ],
+              staticClass: "form-control text-right",
+              attrs: { id: "valor", name: "valor", required: "" },
+              domProps: { value: _vm.valor_repasse },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.valor_repasse = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-col-2" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ano_repasse,
+                    expression: "ano_repasse"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  id: "ano_id",
+                  name: "ano_id",
+                  disabled: "",
+                  required: ""
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.ano_repasse = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.ano, function(a) {
+                return _c("option", { domProps: { value: a.id } }, [
+                  _vm._v(_vm._s(a.ano))
+                ])
+              }),
+              0
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row text-right" }, [
+          _c("div", { staticClass: "col-sm-12 mt-3" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm btn-primary",
+                on: {
+                  click: function($event) {
+                    return _vm.salvarDados()
+                  }
+                }
+              },
+              [_c("span", { staticClass: "fa fa-save" })]
+            ),
+            _vm._v(" "),
+            _vm._m(3)
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row table-responsive-sm",
+          staticStyle: { background: "#a8f3c4" }
+        },
+        [
+          _vm._m(5),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.itemrecursofundoestadual, function(irfe) {
+        return _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("div", [_vm._v(_vm._s(irfe.descricao))])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundoestadual, function(rfe) {
+                  return rfe.item_recurso_fundo_estadual_id === irfe.id &&
+                    rfe.ano_id === a.id &&
+                    a.ano === _vm.anoatual - 2
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfe.id,
+                                  rfe.valor,
+                                  rfe.item_recurso_fundo_estadual_id,
+                                  rfe.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR")
+                                  .format(rfe.valor)
+                                  .toFixed(2)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundoestadual, function(rfe) {
+                  return rfe.item_recurso_fundo_estadual_id === irfe.id &&
+                    rfe.ano_id === a.id &&
+                    a.ano === _vm.anoatual - 1
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfe.id,
+                                  rfe.valor,
+                                  rfe.item_recurso_fundo_estadual_id,
+                                  rfe.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR")
+                                  .format(rfe.valor)
+                                  .toFixed(2)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundoestadual, function(rfe) {
+                  return rfe.item_recurso_fundo_estadual_id === irfe.id &&
+                    rfe.ano_id === a.id &&
+                    a.ano === _vm.anoatual
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfe.id,
+                                  rfe.valor,
+                                  rfe.item_recurso_fundo_estadual_id,
+                                  rfe.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR")
+                                  .format(rfe.valor)
+                                  .toFixed(2)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          )
+        ])
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "item_recurso_estadual_id" } }, [
+      _c("b", [_vm._v("ITEM")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "valor" } }, [
+      _c("b", [_vm._v("VALOR")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "ano_id" } }, [_c("b", [_vm._v("ANO")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "btn btn-sm btn-danger",
+        attrs: { title: "CANCELAR", href: "javascript:history.back()" }
+      },
+      [_c("span", { staticClass: "fa fa-window-close" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row text-center" }, [
+      _c("div", { staticClass: "col text-center" }, [
+        _c("i", [_vm._v("Selecione o valor que deseja alterar")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-6" }, [
+      _c("label", { staticStyle: { color: "#1b1e21" } }, [
+        _c("b", [_vm._v("ITEM")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("input", {
+        attrs: {
+          disabled: "",
+          hidden: "",
+          id: "municipio_id",
+          name: "municipio_id",
+          required: ""
+        },
+        domProps: { value: _vm.municipio.id }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { disabled: "", hidden: "", id: "id", name: "id", required: "" },
+        domProps: { value: _vm.id_repasse }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-col-6" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.item_repasse,
+                    expression: "item_repasse"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  id: "item_recurso_nacional_id",
+                  name: "item_recurso_nacional_id",
+                  disabled: "",
+                  required: ""
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.item_repasse = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.itemrecursofundonacional, function(item) {
+                return _c("option", { domProps: { value: item.id } }, [
+                  _vm._v(_vm._s(item.descricao))
+                ])
+              }),
+              0
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-col-2" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.tipo_repasse,
+                    expression: "tipo_repasse"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  id: "tipo_recurso_nacional_id",
+                  name: "tipo_recurso_nacional_id",
+                  disabled: "",
+                  required: ""
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.tipo_repasse = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.tiporecursonacional, function(trn) {
+                return _c("option", { domProps: { value: trn.id } }, [
+                  _vm._v(_vm._s(trn.nome))
+                ])
+              }),
+              0
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-col-2" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.valor_repasse,
+                  expression: "valor_repasse"
+                }
+              ],
+              staticClass: "form-control text-right",
+              attrs: { id: "valor", name: "valor", required: "" },
+              domProps: { value: _vm.valor_repasse },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.valor_repasse = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-col-2" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ano_repasse,
+                    expression: "ano_repasse"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  id: "ano_id",
+                  name: "ano_id",
+                  disabled: "",
+                  required: ""
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.ano_repasse = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.ano, function(a) {
+                return _c("option", { domProps: { value: a.id } }, [
+                  _vm._v(_vm._s(a.ano))
+                ])
+              }),
+              0
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-row text-right" }, [
+          _c("div", { staticClass: "col-sm-12 mt-3" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm btn-primary",
+                on: {
+                  click: function($event) {
+                    return _vm.salvarDados()
+                  }
+                }
+              },
+              [_c("span", { staticClass: "fa fa-save" })]
+            ),
+            _vm._v(" "),
+            _vm._m(4)
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(5),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row table-responsive-sm",
+          staticStyle: { background: "#a8f3c4" }
+        },
+        [
+          _vm._m(6),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.itemrecursofundonacional, function(irfn) {
+        return _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("div", [_vm._v(_vm._s(irfn.descricao))])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundonacional, function(rfn) {
+                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
+                    rfn.ano_id === a.id &&
+                    a.ano === _vm.anoatual - 2 &&
+                    rfn.tipo_recurso_nacional_id === 1
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfn.id,
+                                  rfn.item_recurso_fundo_nacional_id,
+                                  rfn.tipo_recurso_nacional_id,
+                                  rfn.valor,
+                                  rfn.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR").format(rfn.valor)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundonacional, function(rfn) {
+                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
+                    rfn.ano_id === a.id &&
+                    a.ano === _vm.anoatual - 1 &&
+                    rfn.tipo_recurso_nacional_id === 1
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfn.id,
+                                  rfn.item_recurso_fundo_nacional_id,
+                                  rfn.tipo_recurso_nacional_id,
+                                  rfn.valor,
+                                  rfn.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR").format(rfn.valor)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundonacional, function(rfn) {
+                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
+                    rfn.ano_id === a.id &&
+                    a.ano === _vm.anoatual &&
+                    rfn.tipo_recurso_nacional_id === 1
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfn.id,
+                                  rfn.item_recurso_fundo_nacional_id,
+                                  rfn.tipo_recurso_nacional_id,
+                                  rfn.valor,
+                                  rfn.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                new Intl.NumberFormat("pt-BR").format(rfn.valor)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          )
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row table-responsive-sm",
+          staticStyle: { background: "#a8f3c4" }
+        },
+        [
+          _vm._m(7),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-2 text-right" }, [
+            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.itemrecursofundonacional, function(irfn) {
+        return _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("div", [_vm._v(_vm._s(irfn.descricao))])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundonacional, function(rfn) {
+                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
+                    rfn.ano_id === a.id &&
+                    a.ano === _vm.anoatual - 2 &&
+                    rfn.tipo_recurso_nacional_id === 2
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfn.id,
+                                  rfn.item_recurso_fundo_nacional_id,
+                                  rfn.tipo_recurso_nacional_id,
+                                  rfn.valor,
+                                  rfn.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(rfn.valor))]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundonacional, function(rfn) {
+                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
+                    rfn.ano_id === a.id &&
+                    a.ano === _vm.anoatual - 1 &&
+                    rfn.tipo_recurso_nacional_id === 2
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfn.id,
+                                  rfn.item_recurso_fundo_nacional_id,
+                                  rfn.tipo_recurso_nacional_id,
+                                  rfn.valor,
+                                  rfn.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(rfn.valor))]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2" },
+            _vm._l(_vm.ano, function(a) {
+              return _c(
+                "span",
+                _vm._l(_vm.recursofundonacional, function(rfn) {
+                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
+                    rfn.ano_id === a.id &&
+                    a.ano === _vm.anoatual &&
+                    rfn.tipo_recurso_nacional_id === 2
+                    ? _c("div", { staticClass: "text-right" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "link",
+                            on: {
+                              click: function($event) {
+                                return _vm.editaValor(
+                                  rfn.id,
+                                  rfn.item_recurso_fundo_nacional_id,
+                                  rfn.tipo_recurso_nacional_id,
+                                  rfn.valor,
+                                  rfn.ano_id
+                                )
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(rfn.valor))]
+                        )
+                      ])
+                    : _vm._e()
+                }),
+                0
+              )
+            }),
+            0
+          )
+        ])
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "item_recurso_nacional_id" } }, [
+      _c("b", [_vm._v("ITEM")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "tipo_recurso_nacional_id" } }, [
+      _c("b", [_vm._v("TIPO")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "valor" } }, [
+      _c("b", [_vm._v("VALOR")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "ano_id" } }, [_c("b", [_vm._v("ANO")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "btn btn-sm btn-danger",
+        attrs: { title: "CANCELAR", href: "javascript:history.back()" }
+      },
+      [_c("span", { staticClass: "fa fa-window-close" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row text-center" }, [
+      _c("div", { staticClass: "col text-center" }, [
+        _c("i", [_vm._v("Selecione o valor que deseja alterar")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-6" }, [
+      _c("label", { staticStyle: { color: "#1b1e21" } }, [
+        _c("b", [_vm._v("ITEM")]),
+        _vm._v(" - "),
+        _c("b", [_vm._v("CUSTEIO")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-6" }, [
+      _c("label", { staticStyle: { color: "#1b1e21" } }, [
+        _c("b", [_vm._v("ITEM")]),
+        _vm._v(" - "),
+        _c("b", [_vm._v("INVESTIMENTO")])
       ])
     ])
   }
@@ -69712,7 +71072,9 @@ module.exports = function(module) {
 
 var map = {
 	"./components/Endereco.vue": "./resources/js/components/Endereco.vue",
-	"./components/RecursoEstadualEdit.vue": "./resources/js/components/RecursoEstadualEdit.vue"
+	"./components/RecursoEstadualEdit.vue": "./resources/js/components/RecursoEstadualEdit.vue",
+	"./components/RecursoFundoEstadualEdit.vue": "./resources/js/components/RecursoFundoEstadualEdit.vue",
+	"./components/RecursoFundoNacionalEdit.vue": "./resources/js/components/RecursoFundoNacionalEdit.vue"
 };
 
 
@@ -69965,6 +71327,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/RecursoFundoEstadualEdit.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/RecursoFundoEstadualEdit.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& */ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&");
+/* harmony import */ var _RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& */ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/RecursoFundoEstadualEdit.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/RecursoFundoNacionalEdit.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/RecursoFundoNacionalEdit.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& */ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&");
+/* harmony import */ var _RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& */ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/RecursoFundoNacionalEdit.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

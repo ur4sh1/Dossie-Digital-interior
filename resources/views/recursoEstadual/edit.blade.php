@@ -5,7 +5,7 @@
             <div class="col-sm-12">
                 <div class="text-info">
                     <h1>REPASSE FINANCEIRO</h1>
-                    <h2>{{ $municipio->nome }} / Recurso Estadual</h2>
+                    <h2><a href="{{route('financeiro.show',$municipio->id)}}">{{ $municipio->nome }}</a> / <a href="{{route('recursoEstadualCreate',$municipio->id)}}">Recurso Estadual</a> / Editar</h2>
                 </div>
             </div>
         </div>

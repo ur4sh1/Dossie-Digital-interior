@@ -1,13 +1,13 @@
 <template>
     <div class="container">
-        <input hidden disabled :value="municipio.id" id="municipio_id" name="municipio_id" required>
-        <input hidden disabled :value="id_repasse" id="id" name="id" required>
+        <input disabled hidden :value="municipio.id" id="municipio_id" name="municipio_id" required>
+        <input disabled hidden :value="id_repasse" id="id" name="id" required>
         <div class="form-group">
             <div class="form-row">
                 <div class="form-col-8">
                     <label for="item_recurso_estadual_id"><b>ITEM</b></label>
                     <select class="form-control" id="item_recurso_estadual_id" name="item_recurso_estadual_id" v-model="item_repasse" disabled required>
-                        <option v-for="item in itemrecursoestadual" :value="item.id">{{item.descricao}}</option>
+                        <option v-for="item in itemrecursofundoestadual" :value="item.id">{{item.descricao}}</option>
                     </select>
                 </div>
                 <div class="form-col-2">
@@ -47,28 +47,28 @@
                 <label><b>{{anoatual}}</b></label>
             </div>
         </div>
-        <div class="row" v-for="ire in itemrecursoestadual">
+        <div class="row" v-for="irfe in itemrecursofundoestadual">
             <div class="col-sm-6">
-                <div>{{ ire.descricao }}</div>
+                <div>{{ irfe.descricao }}</div>
             </div>
             <div class="col-2">
                 <span v-for="a in ano">
-                    <div class="text-right" v-for="re in recursoestadual" v-if="re.item_recurso_estadual_id===ire.id && re.ano_id===a.id && a.ano===anoatual-2">
-                        <a class="link" v-on:click="editaValor(re.id,re.valor,re.item_recurso_estadual_id,re.ano_id)">{{new Intl.NumberFormat('pt-BR').format(re.valor)}}</a>
+                    <div class="text-right" v-for="rfe in recursofundoestadual" v-if="rfe.item_recurso_fundo_estadual_id===irfe.id && rfe.ano_id===a.id && a.ano===anoatual-2">
+                        <a class="link" v-on:click="editaValor(rfe.id,rfe.valor,rfe.item_recurso_fundo_estadual_id,rfe.ano_id)">{{new Intl.NumberFormat('pt-BR').format(rfe.valor).toFixed(2)}}</a>
                     </div>
                 </span>
             </div>
             <div class="col-2">
                 <span v-for="a in ano">
-                    <div class="text-right" v-for="re in recursoestadual" v-if="re.item_recurso_estadual_id===ire.id && re.ano_id===a.id && a.ano===anoatual-1">
-                        <a class="link" v-on:click="editaValor(re.id,re.valor,re.item_recurso_estadual_id,re.ano_id)">{{new Intl.NumberFormat('pt-BR').format(re.valor)}}</a>
+                    <div class="text-right" v-for="rfe in recursofundoestadual" v-if="rfe.item_recurso_fundo_estadual_id===irfe.id && rfe.ano_id===a.id && a.ano===anoatual-1">
+                        <a class="link" v-on:click="editaValor(rfe.id,rfe.valor,rfe.item_recurso_fundo_estadual_id,rfe.ano_id)">{{new Intl.NumberFormat('pt-BR').format(rfe.valor).toFixed(2)}}</a>
                     </div>
                 </span>
             </div>
             <div class="col-2">
                 <span v-for="a in ano">
-                    <div class="text-right" v-for="re in recursoestadual" v-if="re.item_recurso_estadual_id===ire.id && re.ano_id===a.id && a.ano===anoatual">
-                        <a class="link" v-on:click="editaValor(re.id,re.valor, re.item_recurso_estadual_id,re.ano_id)">{{new Intl.NumberFormat('pt-BR').format(re.valor)}}</a>
+                    <div class="text-right" v-for="rfe in recursofundoestadual" v-if="rfe.item_recurso_fundo_estadual_id===irfe.id && rfe.ano_id===a.id && a.ano===anoatual">
+                        <a class="link" v-on:click="editaValor(rfe.id,rfe.valor, rfe.item_recurso_fundo_estadual_id,rfe.ano_id)">{{new Intl.NumberFormat('pt-BR').format(rfe.valor).toFixed(2)}}</a>
                     </div>
                 </span>
             </div>
@@ -80,8 +80,8 @@ export default {
     props: {
         municipio: Object,
         ano: Array,
-        itemrecursoestadual: Array,
-        recursoestadual: Array,
+        itemrecursofundoestadual: Array,
+        recursofundoestadual: Array,
         url: String
     },
     data() {
@@ -104,7 +104,7 @@ export default {
             axios.post(this.url,{
                 municipio_id: this.municipio.id,
                 id: this.id_repasse,
-                item_recurso_estadual: this.item_repasse,
+                item_recurso_fundo_estadual: this.item_repasse,
                 valor: this.valor_repasse,
                 ano_id: this.ano_repasse,
             })

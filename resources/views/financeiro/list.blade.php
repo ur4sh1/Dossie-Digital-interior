@@ -26,13 +26,13 @@
         <div class="desktop">
             <div class="row">
                 <div class="col-12">
-                    <label><b>SELECIONE O RECURSO: </b></label>
+                    <label><b>SELECIONE: </b></label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Estadual</a>
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Recurso Estadual</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Fundo Estadual</a>
                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Fundo Nacional</a>
                     </div>
@@ -43,17 +43,20 @@
                             <div class="text-right">
                                 <a class="btn-sm" href="{{route('recursoEstadualCreate',$municipio->id)}}">GERENCIAR</a>
                             </div>
-                            @include('recursoEstadual.index')</div>
+                            {{--@include('recursoEstadual.index')</div>--}}
+                            @include('recursoEstadual.view')</div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             <div class="text-right">
                                 <a class="btn-sm" href="{{route('recursoFundoEstadualCreate',$municipio->id)}}">GERENCIAR</a>
                             </div>
-                            @include('recursoFundoEstadual.index')</div>
+                            {{--@include('recursoFundoEstadual.index')</div>--}}
+                            @include('recursoFundoEstadual.view')</div>
                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                             <div class="text-right">
                                 <a class="btn-sm" href="{{route('recursoFundoNacionalCreate',$municipio->id)}}">GERENCIAR</a>
                             </div>
-                            @include('recursoFundoNacional.index')</div>
+                            {{--@include('recursoFundoNacional.index')</div>--}}
+                            @include('recursoFundoNacional.view')</div>
                     </div>
                 </div>
             </div>

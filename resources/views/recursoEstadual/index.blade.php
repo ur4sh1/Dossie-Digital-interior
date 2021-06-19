@@ -11,13 +11,13 @@
             <label><b>ITEM</b></label>
         </div>
         <div class="col-sm-2 text-right">
-            <label><b>{{ $data-3 }}</b></label>
-        </div>
-        <div class="col-sm-2 text-right">
             <label><b>{{ $data-2 }}</b></label>
         </div>
         <div class="col-sm-2 text-right">
             <label><b>{{ $data-1 }}</b></label>
+        </div>
+        <div class="col-sm-2 text-right">
+            <label><b>{{ $data }}</b></label>
         </div>
     </div>
     @foreach($itemRecursoEstadual as $i)
@@ -27,7 +27,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoEstadual as $mre)
-                    @if($mre->ano->ano == ($data-3) and $mre->item_recurso_estadual_id == $i->id)
+                    @if($mre->ano->ano == ($data-2) and $mre->item_recurso_estadual_id == $i->id)
                         <div class="text-right">{{ $mre->valor() }}</div>
                         <span hidden>{{$t3 += $mre->valor}}</span>
                     @endif
@@ -35,7 +35,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoEstadual as $mre)
-                    @if($mre->ano->ano == ($data-2) and $mre->item_recurso_estadual_id == $i->id)
+                    @if($mre->ano->ano == ($data-1) and $mre->item_recurso_estadual_id == $i->id)
                         <div class="text-right">{{ $mre->valor() }}</div>
                         <span hidden>{{$t2 += $mre->valor}}</span>
                     @endif
@@ -43,7 +43,7 @@
             </div>
             <div class="col-sm-2">
                 @foreach($municipio->recursoEstadual as $mre)
-                    @if($mre->ano->ano == ($data-1) and $mre->item_recurso_estadual_id == $i->id)
+                    @if($mre->ano->ano == ($data) and $mre->item_recurso_estadual_id == $i->id)
                         <div class="text-right">{{ $mre->valor() }}</div>
                         <span hidden>{{$t1 += $mre->valor}}</span>
                     @endif

@@ -1,12 +1,15 @@
 @extends('layouts.app')
 @section('content')
+    <?php
+    $data=date('Y');
+    ?>
     <div class="container">
-        @include('layouts.alertLaravel')
+        @include('layouts.alert')
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
                     <h1>REPASSE FINANCEIRO</h1>
-                    <h2>{{ $municipio->nome }} / Recurso Estadual</h2>
+                    <h2><a href="{{route('financeiro.show',$municipio->id)}}">{{ $municipio->nome }}</a> / Recurso Estadual</h2>
                 </div>
             </div>
         </div>
@@ -37,7 +40,9 @@
                         <select class="form-control" id="ano_id" name="ano_id">
                             <option disabled selected>Selecione</option>
                             @foreach($ano as $a)
+                                @if($a->ano>=($data-2) && $a->ano<=($data+2))
                                 <option value="{{ $a->id }}">{{ $a->ano }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

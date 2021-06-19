@@ -18,10 +18,10 @@
         </ol>
         <div class="carousel-inner" data-interval="0">
             <div class="carousel-item active" data-interval="0">
-                <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-3 }}</b></div>
+                <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-2 }}</b></div>
                 @foreach($itemRecursoFundoEstadual as $i)
                     @foreach($m->recursoFundoEstadual as $mfem)
-                        @if($mfem->ano->ano == ($data-3) and $mfem->item_recurso_fundo_estadual_id == $i->id)
+                        @if($mfem->ano->ano == ($data-2) and $mfem->item_recurso_fundo_estadual_id == $i->id)
                             @if($mfem->item_recurso_fundo_estadual_id == $i->id)
                                 <div style="background:#b3e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
                             @endif
@@ -34,10 +34,10 @@
                 <div class="text-right"><b>{{number_format($m3,2,',','.')}}</b></div>
             </div>
             <div class="carousel-item"  data-interval="0">
-                <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-2 }}</b></div>
+                <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-1 }}</b></div>
                 @foreach($itemRecursoFundoEstadual as $i)
                     @foreach($m->recursoFundoEstadual as $mfem)
-                        @if($mfem->ano->ano == ($data-2) and $mfem->item_recurso_fundo_estadual_id == $i->id)
+                        @if($mfem->ano->ano == ($data-1) and $mfem->item_recurso_fundo_estadual_id == $i->id)
                             @if($mfem->item_recurso_fundo_estadual_id == $i->id)
                                 <div style="background:#b2e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
                             @endif
@@ -50,10 +50,10 @@
                 <div class="text-right"><b>{{number_format($m2,2,',','.')}}</b></div>
             </div>
             <div class="carousel-item"  data-interval="0">
-                <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-1 }}</b></div>
+                <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data }}</b></div>
                 @foreach($itemRecursoFundoEstadual as $i)
                     @foreach($m->recursoFundoEstadual as $mfem)
-                        @if($mfem->ano->ano == ($data-1) and $mfem->item_recurso_fundo_estadual_id == $i->id)
+                        @if($mfem->ano->ano == ($data) and $mfem->item_recurso_fundo_estadual_id == $i->id)
                             @if($mfem->item_recurso_fundo_estadual_id == $i->id)
                                 <div style="background:#b1e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
                             @endif

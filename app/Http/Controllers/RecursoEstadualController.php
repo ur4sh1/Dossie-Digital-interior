@@ -71,6 +71,7 @@ class RecursoEstadualController extends Controller
 
             $municipio=Municipio::find($id);
             $m=Municipio::find($id);
+            $ano=Ano::all();
             $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
             $recursoFundoEstadual=RecursoFundoEstadual::where('municipio_id',$id)->get();
             $recursoFundoNacional=RecursoFundoNacional::where('municipio_id',$id)->get();
@@ -79,12 +80,13 @@ class RecursoEstadualController extends Controller
             $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
             $tipoRecursoNacional=TipoRecursoNacional::all();
 
-            return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
+            return view('recursoEstadual.form',compact('municipio','recursoEstadual','recursoFundoEstadual',
                 'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-                'tipoRecursoNacional','msg','id','m'))->with('status', 'Efetuado com Sucesso!');
+                'tipoRecursoNacional','msg','id','m','ano'));
 
         }catch (Exception $e){
             $msg=2;
+            $ano=Ano::all();
             $municipio=Municipio::find($id);
             $m=Municipio::find($id);
             $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
@@ -95,9 +97,9 @@ class RecursoEstadualController extends Controller
             $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
             $tipoRecursoNacional=TipoRecursoNacional::all();
 
-            return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
+            return view('recursoEstadual.form',compact('municipio','recursoEstadual','recursoFundoEstadual',
                 'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-                'tipoRecursoNacional','msg','m'))->with('status', 'Algo deu Errado!');
+                'tipoRecursoNacional','msg','m','ano'));
         }
     }
 

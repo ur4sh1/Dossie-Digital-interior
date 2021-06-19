@@ -26,6 +26,8 @@ class CreateRecursoFundoNacionalsTable extends Migration
             $table->foreign('ano_id')->references('id')->on('anos');
             $table->boolean('ativo')->default(true);
             $table->timestamps();
+
+            $table->unique(['municipio_id', 'item_recurso_fundo_nacional_id','tipo_recurso_nacional_id','ano_id'],'unico');
         });
     }
 

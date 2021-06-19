@@ -12,7 +12,7 @@ class ItemRecursoFundoEstadualSeeder extends Seeder
     public function run()
     {
         DB::table('item_recurso_fundo_estaduals')->insert([
-            ['descricao'=>'FTI (enfrentamento a CONVID-19)']
+            ['descricao'=>'FTI (enfrentamento a COVID-19)']
         ]);
     }
 }
