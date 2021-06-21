@@ -88,7 +88,7 @@
         </div>
     </div>
     <!--     versão mobie-->
-    @include('recursoEstadual.mobile2')
+    @include('recursoEstadual.mobile')
 @endif
 <style>
     div.descricaogrande {

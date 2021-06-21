@@ -1,14 +1,9 @@
 <div class="mobile">
     <?php
     $data=date('Y');
-    $t0=0;
-    $m0=0;
-    $m1=0;
-    $m2=0;
-    $m3=0;
-    $n1=0;
-    $n2=0;
-    $n3=0;
+    $col1=0;
+    $col2=0;
+    $col3=0;
     ?>
     <div style="color: #1b1e21; background:lavenderblush"><b>RECURSO ESTADUAL</b></div>
     <div id="carouselExampleIndicatorsRecursoEstadual" class="carousel slide" data-ride="carousel"  data-interval="0">
@@ -28,12 +23,12 @@
                                 <div style="background:#b3e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
                             @endif
                             <div class="text-right">{{ $mrem->valor() }}</div>
-                            <span hidden>{{$m3 += $mrem->valor}}</span>
+                            <span hidden>{{$col1 += $mrem->valor}}</span>
                         @endif
                     @endforeach
                 @endforeach
                 <div><b>TOTAL</b></div>
-                <div class="text-right"><b>{{number_format($m3,2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format($col1,2,',','.')}}</b></div>
             </div>
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-1 }}</b></div>
@@ -44,12 +39,12 @@
                                 <div style="background:#b2e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
                             @endif
                             <div class="text-right">{{ $mrem->valor() }}</div>
-                            <span hidden>{{$m2 += $mrem->valor}}</span>
+                            <span hidden>{{$col2 += $mrem->valor}}</span>
                         @endif
                     @endforeach
                 @endforeach
                 <div><b>TOTAL</b></div>
-                <div class="text-right"><b>{{number_format($m2,2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format($col2,2,',','.')}}</b></div>
             </div>
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data }}</b></div>
@@ -60,24 +55,22 @@
                                 <div style="background:#b1e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
                             @endif
                             <div class="text-right">{{ $mrem->valor() }}</div>
-                            <span hidden>{{$m1 += $mrem->valor}}</span>
+                            <span hidden>{{$col3 += $mrem->valor}}</span>
                         @endif
                     @endforeach
                 @endforeach
                 <div><b>TOTAL</b></div>
-                <div class="text-right"><b>{{number_format($m1,2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format($col3,2,',','.')}}</b></div>
             </div>
-
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>TOTAL</b></div>
                 @foreach($itemRecursoEstadual as $i)
                             <div style="background:#b1e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
-                    <div class="text-right"><b>{{number_format($t0,2,',','.')}}</b></div>
+                    <div class="text-right"><b></b></div>
                 @endforeach
                 <div><b>TOTAL</b></div>
-                <div class="text-right"><b>{{number_format($t0,2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format($col1+$col2+$col3,2,',','.')}}</b></div>
             </div>
-
         </div>
         <a class="carousel-control-prev"  data-interval="0" href="#carouselExampleIndicatorsRecursoEstadual" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

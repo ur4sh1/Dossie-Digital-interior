@@ -10,6 +10,7 @@
         </tr>
     </table>
 @else
+    <div class="table-responsive-sm">
     <table class="table table-sm">
         <tr style="background:lavenderblush">
             <td colspan="3">
@@ -31,4 +32,5 @@
             </tr>
         @endforeach
     </table>
+    </div>
 @endif

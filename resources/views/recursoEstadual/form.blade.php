@@ -40,7 +40,7 @@
                         <select class="form-control" id="ano_id" name="ano_id">
                             <option disabled selected>Selecione</option>
                             @foreach($ano as $a)
-                                @if($a->ano>=($data-2) && $a->ano<=($data+2))
+                                @if($a->ano>=($data-2) && $a->ano<=($data))
                                 <option value="{{ $a->id }}">{{ $a->ano }}</option>
                                 @endif
                             @endforeach
