@@ -303,8 +303,6 @@
         @endforeach
     </div>
 @endsection
-<script>
-</script>
 <style>
     /*Mobile e Desktop*/
     @media screen and (max-width: 442px) {
@@ -340,12 +338,12 @@
         }
     }
     @media screen and (max-width: 442px) {
-        div.nome{
+        div.nomeDoenca{
             display: run-in;
         }
     }
     @media screen and (min-width: 442px) {
-        div.nome {
+        div.nomeDoenca {
             display: none;
         }
     }

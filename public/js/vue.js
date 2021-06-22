@@ -2083,12 +2083,20 @@ __webpack_require__.r(__webpack_exports__);
       valor_repasse: '',
       item_repasse: 0,
       ano_repasse: 0,
-      id_repasse: 0
+      id_repasse: 0,
+      v: 0
     };
   },
   methods: {
+    formata: function formata(valor) {
+      var formatter = new Intl.NumberFormat(['pt-BR'], {
+        style: 'currency',
+        currency: 'BRL'
+      });
+      return formatter.format(valor).replace('R$', '');
+    },
     editaValor: function editaValor(id, valor, item, ano) {
-      this.valor_repasse = new Intl.NumberFormat('pt-BR').format(valor);
+      this.valor_repasse = valor;
       this.item_repasse = item;
       this.ano_repasse = ano;
       this.id_repasse = id;
@@ -2098,7 +2106,7 @@ __webpack_require__.r(__webpack_exports__);
         municipio_id: this.municipio.id,
         id: this.id_repasse,
         item_recurso_estadual: this.item_repasse,
-        valor: this.valor_repasse,
+        valor: this.v,
         ano_id: this.ano_repasse
       }).then(function (response) {
         window.location.reload();
@@ -2106,7 +2114,8 @@ __webpack_require__.r(__webpack_exports__);
         window.location.reload();
       });
     }
-  }
+  },
+  computed: {}
 });
 
 /***/ }),
@@ -3157,7 +3166,7 @@ var render = function() {
                 }
               ],
               staticClass: "form-control text-right",
-              attrs: { id: "valor", name: "valor", required: "" },
+              attrs: { type: "text", id: "valor", name: "valor", required: "" },
               domProps: { value: _vm.valor_repasse },
               on: {
                 input: function($event) {
@@ -3285,22 +3294,16 @@ var render = function() {
                             staticClass: "link",
                             on: {
                               click: function($event) {
-                                return _vm.editaValor(
+                                _vm.editaValor(
                                   re.id,
-                                  re.valor,
+                                  _vm.formata(re.valor),
                                   re.item_recurso_estadual_id,
                                   re.ano_id
                                 )
                               }
                             }
                           },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR").format(re.valor)
-                              )
-                            )
-                          ]
+                          [_vm._v(_vm._s(_vm.formata(re.valor)))]
                         )
                       ])
                     : _vm._e()
@@ -3328,22 +3331,16 @@ var render = function() {
                             staticClass: "link",
                             on: {
                               click: function($event) {
-                                return _vm.editaValor(
+                                _vm.editaValor(
                                   re.id,
-                                  re.valor,
+                                  _vm.formata(re.valor),
                                   re.item_recurso_estadual_id,
                                   re.ano_id
                                 )
                               }
                             }
                           },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR").format(re.valor)
-                              )
-                            )
-                          ]
+                          [_vm._v(_vm._s(_vm.formata(re.valor)))]
                         )
                       ])
                     : _vm._e()
@@ -3371,22 +3368,16 @@ var render = function() {
                             staticClass: "link",
                             on: {
                               click: function($event) {
-                                return _vm.editaValor(
+                                _vm.editaValor(
                                   re.id,
-                                  re.valor,
+                                  _vm.formata(re.valor),
                                   re.item_recurso_estadual_id,
                                   re.ano_id
                                 )
                               }
                             }
                           },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR").format(re.valor)
-                              )
-                            )
-                          ]
+                          [_vm._v(_vm._s(_vm.formata(re.valor)))]
                         )
                       ])
                     : _vm._e()

@@ -13,7 +13,7 @@ $data=date('Y')
             <div class="col"><label><b>{{$data-2}}</b></label></div>
             @foreach($m->doencasAgravos as $md)
                 @if($md->ano->ano == ($data-2))
-                    <div class="nome" style="background: #a8f3c4">{{$md->doencas->nome}}</div>
+                    <div class="nomeDoenca" style="background: #a8f3c4">{{$md->doencas->nome}}</div>
                     <div class="text-right">{{$md->casos}}</div>
                 @endif
             @endforeach
@@ -22,7 +22,7 @@ $data=date('Y')
             <div class="col"><label><b>{{$data-1}}</b></label></div>
             @foreach($m->doencasAgravos as $md)
                 @if($md->ano->ano == ($data-1))
-                    <div class="nome" style="background: #a8f3c4">{{$md->doencas->nome}}</div>
+                    <div class="nomeDoenca" style="background: #a8f3c4">{{$md->doencas->nome}}</div>
                     <div class="text-right">{{$md->casos}}</div>
                 @endif
             @endforeach
@@ -31,7 +31,7 @@ $data=date('Y')
             <div class="col"><label><b>{{$data}}</b></label></div>
             @foreach($m->doencasAgravos as $md)
                 @if($md->ano->ano == ($data))
-                    <div class="nome" style="background: #a8f3c4">{{$md->doencas->nome}}</div>
+                    <div class="nomeDoenca" style="background: #a8f3c4">{{$md->doencas->nome}}</div>
                     <div class="text-right">{{$md->casos}}</div>
                 @endif
             @endforeach
@@ -40,4 +40,3 @@ $data=date('Y')
 @else
     Não existe Informações cadastradas
 @endif
-
