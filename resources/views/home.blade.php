@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -13,124 +12,110 @@
                             </div>
                         @endif
                         <div class="row mb-2 align-items-center">
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">MUNICÍPIOS</h5>
-                                        <p class="card-text">Exibe a lista de municípios e as informações gerais de cada um.</p>
-                                        <a href="/municipios" class="btn btn-primary">EXIBIR</a>
-                                        <a href="/dados" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">HOSPITAIS</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua hospitais no sistema.</p>
-                                        <a href="/hospitals" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">EQUIPAMENTOS</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua equipamentos no sistema.</p>
-                                        <a href="/equipamentos" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
+                            <div class="col-sm-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">MUNICÍPIOS</h5>
+                                    <a href="/municipios" class="btn btn-primary">EXIBIR</a>
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        GERENCIAR
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-2 align-items-center">
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">AUTORIDADES</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua autoridades no sistema.</p>
-                                        <a href="/autoridade" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">SERVIÇOS</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua serviços no sistema.</p>
-                                        <a href="/servicos" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">RH</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua registros no sistema.</p>
-                                        <a href="/rhs" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-2 align-items-center">
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">PARTIDOS</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua partidos no sistema.</p>
-                                        <a href="/partido" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">VEÍCULOS</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua serviços no sistema.</p>
-                                        <a href="/veiculo" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">FOLHA</h5>
-                                        <p class="card-text">Cadastre, edite ou exclua registros no sistema.</p>
-                                        <a href="/folha" class="btn btn-primary">GERENCIAR</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <div class="collapse" id="collapseExample">
                             <div class="row mb-2 align-items-center">
                                 <div class="col-sm-4">
-                                    <div class="card" style="width: 18rem;">
+                                    <div class="card" style="width: 15rem;">
                                         <div class="card-body">
-                                            <h5 class="card-title">PROGRAMAS E AÇÕES</h5>
-                                            <p class="card-text">Cadastre, edite ou exclua programas e ações no sistema.</p>
-                                            <a href="/programa" class="btn btn-primary">GERENCIAR</a>
+                                            <a href="/dados" class="link">INFORMAÇÕES GERAIS</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="card" style="width: 18rem;">
+                                    <div class="card" style="width: 15rem;">
                                         <div class="card-body">
-                                            <h5 class="card-title">DOENÇAS E AGRAVOS</h5>
-                                            <p class="card-text">Cadastre, edite ou exclua registros no sistema.</p>
-                                            <a href="/doencasAgravos" class="btn btn-primary">GERENCIAR</a>
+                                            <a href="/hospitals" class="link">HOSPITAIS</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="card" style="width: 18rem;">
+                                    <div class="card" style="width: 15rem;">
                                         <div class="card-body">
-                                            <h5 class="card-title">FINANCEIRO</h5>
-                                            <p class="card-text">Cadastre, edite ou exclua registros no sistema.</p>
-                                            <a href="/financeiro" class="btn btn-primary">GERENCIAR</a>
+                                            <a href="/equipamentos" class="link">EQUIPAMENTOS</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="row mb-2 align-items-center">
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/autoridade" class="link">AUTORIDADES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/servicos" class="link">SERVIÇOS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/rhs" class="link">RH</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2 align-items-center">
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/partido" class="link">PARTIDOS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/veiculo" class="link">VEÍCULOS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/folha" class="link">FOLHA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2 align-items-center">
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/programa" class="link">PROGRAMAS E AÇÕES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/doencasAgravos" class="link">DOENÇAS E AGRAVOS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/financeiro" class="link">FINANCEIRO</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

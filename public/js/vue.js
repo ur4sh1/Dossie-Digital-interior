@@ -2083,8 +2083,7 @@ __webpack_require__.r(__webpack_exports__);
       valor_repasse: '',
       item_repasse: 0,
       ano_repasse: 0,
-      id_repasse: 0,
-      v: 0
+      id_repasse: 0
     };
   },
   methods: {
@@ -2093,7 +2092,15 @@ __webpack_require__.r(__webpack_exports__);
         style: 'currency',
         currency: 'BRL'
       });
-      return formatter.format(valor).replace('R$', '');
+      return formatter.format(valor).replace('R$', "");
+    },
+    formatav2: function formatav2(valor) {
+      return valor.toLocaleString('pt-BR', {
+        minimumFractionDigits: 2
+      });
+    },
+    formatav3: function formatav3(valor) {
+      return new Intl.NumberFormat('pt-BR').format(valor.toFixed(2));
     },
     editaValor: function editaValor(id, valor, item, ano) {
       this.valor_repasse = valor;
@@ -2106,7 +2113,7 @@ __webpack_require__.r(__webpack_exports__);
         municipio_id: this.municipio.id,
         id: this.id_repasse,
         item_recurso_estadual: this.item_repasse,
-        valor: this.v,
+        valor: this.valor_repasse,
         ano_id: this.ano_repasse
       }).then(function (response) {
         window.location.reload();
@@ -3160,9 +3167,10 @@ var render = function() {
               directives: [
                 {
                   name: "model",
-                  rawName: "v-model",
+                  rawName: "v-model.number",
                   value: _vm.valor_repasse,
-                  expression: "valor_repasse"
+                  expression: "valor_repasse",
+                  modifiers: { number: true }
                 }
               ],
               staticClass: "form-control text-right",
@@ -3173,7 +3181,10 @@ var render = function() {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.valor_repasse = $event.target.value
+                  _vm.valor_repasse = _vm._n($event.target.value)
+                },
+                blur: function($event) {
+                  return _vm.$forceUpdate()
                 }
               }
             })
@@ -3294,9 +3305,9 @@ var render = function() {
                             staticClass: "link",
                             on: {
                               click: function($event) {
-                                _vm.editaValor(
+                                return _vm.editaValor(
                                   re.id,
-                                  _vm.formata(re.valor),
+                                  re.valor,
                                   re.item_recurso_estadual_id,
                                   re.ano_id
                                 )
@@ -3331,9 +3342,9 @@ var render = function() {
                             staticClass: "link",
                             on: {
                               click: function($event) {
-                                _vm.editaValor(
+                                return _vm.editaValor(
                                   re.id,
-                                  _vm.formata(re.valor),
+                                  re.valor,
                                   re.item_recurso_estadual_id,
                                   re.ano_id
                                 )
@@ -3368,9 +3379,9 @@ var render = function() {
                             staticClass: "link",
                             on: {
                               click: function($event) {
-                                _vm.editaValor(
+                                return _vm.editaValor(
                                   re.id,
-                                  _vm.formata(re.valor),
+                                  re.valor,
                                   re.item_recurso_estadual_id,
                                   re.ano_id
                                 )

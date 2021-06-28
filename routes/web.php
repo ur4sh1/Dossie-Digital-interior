@@ -49,16 +49,22 @@ Route::post('/itemRecursoFundoNacional/destroy/{id}/{mid}','ItemRecursoFundoNaci
 Route::post('/itemRecursoFundoNacional/update/{id}/{mid}','ItemRecursoFundoNacionalController@upAlternative')->name('itemRecursoFundoNacionalUpdate');
 
 Route::get('/recursoEstadual/create/{id}', 'RecursoEstadualController@createAlternative')->name('recursoEstadualCreate');
-Route::post('/recursoEstadual/store/{id}','RecursoEstadualController@storeAlternative')->name('recursoEstadualStore');
 Route::get('/recursoEstadual/edit/{id}','RecursoEstadualController@editAlternative')->name('recursoEstadualEdit');
+Route::get('/recursoEstadual/editValor/{id}/{mid}','RecursoEstadualController@editValorAlternative')->name('recursoEstadualEditvalor');
+Route::post('/recursoEstadual/update/{id}/{mid}','RecursoEstadualController@updateAlternative')->name('recursoEstadualUpdate');
+Route::post('/recursoEstadual/store/{id}','RecursoEstadualController@storeAlternative')->name('recursoEstadualStore');
 
 Route::get('/recursoFundoEstadual/create/{id}', 'RecursoFundoEstadualController@createAlternative')->name('recursoFundoEstadualCreate');
-Route::post('/recursoFundoEstadual/store/{id}','RecursoFundoEstadualController@storeAlternative')->name('recursoFundoEstadualStore');
 Route::get('/recursoFundoEstadual/edit/{id}','RecursoFundoEstadualController@editAlternative')->name('recursoFundoEstadualEdit');
+Route::get('/recursoFundoEstadual/editValor/{id}/{mid}','RecursoFundoEstadualController@editValorAlternative')->name('recursoFundoEstadualEditValor');/**/
+Route::post('/recursoFundoEstadual/update/{id}/{mid}','RecursoFundoEstadualController@updateAlternative')->name('recursoFundoEstadualUpdate');
+Route::post('/recursoFundoEstadual/store/{id}','RecursoFundoEstadualController@storeAlternative')->name('recursoFundoEstadualStore');
 
 Route::get('/recursoFundoNacional/create/{id}', 'RecursoFundoNacionalController@createAlternative')->name('recursoFundoNacionalCreate');
-Route::post('/recursoFundoNacional/store/{id}','RecursoFundoNacionalController@storeAlternative')->name('recursoFundoNacionalStore');
 Route::get('/recursoFundoNacional/edit/{id}','RecursoFundoNacionalController@editAlternative')->name('recursoFundoNacionalEdit');
+Route::get('/recursoFundoNacional/editValor/{id}/{mid}','RecursoFundoNacionalController@editValorAlternative')->name('recursoFundoNacionalEditValor');
+Route::post('/recursoFundoNacional/update/{id}/{mid}','RecursoFundoNacionalController@updateAlternative')->name('recursoFundoNacionalUpdate');
+Route::post('/recursoFundoNacional/store/{id}','RecursoFundoNacionalController@storeAlternative')->name('recursoFundoNacionalStore');
 
 Route::resources([
     'partido'=>'PartidosController',

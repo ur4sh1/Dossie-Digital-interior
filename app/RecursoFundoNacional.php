@@ -28,4 +28,5 @@ class RecursoFundoNacional extends Model
     {
         return number_format($this->valor,2,',','.');
     }
+
 }

@@ -96,6 +96,7 @@
             </div>
         </div>
 
+        <!--modicicado-->
         <div class="row" style="background: #a8f3c4">
             <div class="col-sm-4">
                 <label><b>ITEM - INVESTIMENTO</b></label>
@@ -172,10 +173,3 @@
     <!--     versão mobie-->
     @include('recursoFundoNacional.mobile')
 @endif
-
-<script>
-
-</script>
-<style>
-
-</style>

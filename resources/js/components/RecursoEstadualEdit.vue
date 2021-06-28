@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-col-2">
                     <label for="valor"><b>VALOR</b></label>
-                    <input type="text" class="form-control text-right" v-model="valor_repasse" id="valor" name="valor" required>
+                    <input type="text" class="form-control text-right" v-model.number="valor_repasse" id="valor" name="valor" required>
                 </div>
                 <div class="form-col-2">
                     <label for="ano_id"><b>ANO</b></label>
@@ -54,21 +54,21 @@
             <div class="col-2">
                 <span v-for="a in ano">
                     <div class="text-right" v-for="re in recursoestadual" v-if="re.item_recurso_estadual_id===ire.id && re.ano_id===a.id && a.ano===anoatual-2">
-                        <a class="link" v-on:click="editaValor(re.id,formata(re.valor),re.item_recurso_estadual_id,re.ano_id)">{{formata(re.valor)}}</a>
+                        <a class="link" v-on:click="editaValor(re.id,re.valor,re.item_recurso_estadual_id,re.ano_id)">{{formata(re.valor)}}</a>
                     </div>
                 </span>
             </div>
             <div class="col-2">
                 <span v-for="a in ano">
                     <div class="text-right" v-for="re in recursoestadual" v-if="re.item_recurso_estadual_id===ire.id && re.ano_id===a.id && a.ano===anoatual-1">
-                        <a class="link" v-on:click="editaValor(re.id,formata(re.valor),re.item_recurso_estadual_id,re.ano_id)">{{formata(re.valor)}}</a>
+                        <a class="link" v-on:click="editaValor(re.id,re.valor,re.item_recurso_estadual_id,re.ano_id)">{{formata(re.valor)}}</a>
                     </div>
                 </span>
             </div>
             <div class="col-2">
                 <span v-for="a in ano">
                     <div class="text-right" v-for="re in recursoestadual" v-if="re.item_recurso_estadual_id===ire.id && re.ano_id===a.id && a.ano===anoatual">
-                        <a class="link" v-on:click="editaValor(re.id,formata(re.valor), re.item_recurso_estadual_id,re.ano_id)">{{formata(re.valor)}}</a>
+                        <a class="link" v-on:click="editaValor(re.id,re.valor, re.item_recurso_estadual_id,re.ano_id)">{{formata(re.valor)}}</a>
                     </div>
                 </span>
             </div>
@@ -91,7 +91,6 @@ export default {
             item_repasse: 0,
             ano_repasse: 0,
             id_repasse: 0,
-            v: 0
         }
     },
     methods: {
@@ -100,7 +99,13 @@ export default {
                 style: 'currency',
                 currency: 'BRL'
             })
-            return formatter.format(valor).replace('R$','');
+            return formatter.format(valor).replace('R$',"");
+        },
+        formatav2(valor){
+            return valor.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+        },
+        formatav3(valor){
+            return new Intl.NumberFormat('pt-BR').format(valor.toFixed(2));
         },
         editaValor(id,valor,item,ano){
             this.valor_repasse=valor;
@@ -113,7 +118,7 @@ export default {
                 municipio_id: this.municipio.id,
                 id: this.id_repasse,
                 item_recurso_estadual: this.item_repasse,
-                valor:  this.v,
+                valor:  this.valor_repasse,
                 ano_id: this.ano_repasse,
             })
                 .then(response=>{
