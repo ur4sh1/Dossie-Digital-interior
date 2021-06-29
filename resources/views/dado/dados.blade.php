@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-sm-4 mt-2">
                     <label for="densidade_demografica"><h5><b>Densidade Demográfica</b></h5></label>
-                    <input type="text" disabled value="{{$dados->densidade_demografica}}" class="form-control" style="width: 130px" name="densidade_demografica" id="densidade_demografica">
+                    <input type="text" disabled value="{{$dados->densidade_demografica}}" class="form-control text-right" style="width: 130px" name="densidade_demografica" id="densidade_demografica">
                 </div>
                 <div class="col-sm-2 mt-2">
                     <label for="latitude_decimal"><h5><b>Latitude</b></h5></label>
@@ -71,7 +71,7 @@
                     <select disabled id="pop_extr_pobreza_ano" name="pop_extr_pobreza_ano">
                         <option></option>
                         @foreach($ano as $a)
-                            <option value="{{ $a->id }}" {{ $detalhes->pop_extr_pobreza_no == $a->id?"selected":'' }}>{{ $a->ano }}</option>
+                            <option value="{{ $a->id }}" {{ $detalhes->pop_extr_pobreza_ano==$a->id?"selected":'' }}>{{ $a->ano }}</option>
                         @endforeach
                     </select>
                 </div>

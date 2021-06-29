@@ -181,6 +181,20 @@
                     </div>
                 </div>
             </div>
+            @include('recursoFundoNacional.mobileEdit')
         @endif
     </div>
 @endsection
+<style>
+    /*Mobile e Desktop resolução*/
+    @media screen and (max-width: 800px) {
+        div.desktop{
+            display: none;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        div.mobile {
+            display: none;
+        }
+    }
+</style>

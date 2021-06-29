@@ -99,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            @include('recursoFundoEstadual.mobileEdit')
         @endif
     </div>
 @endsection
@@ -108,5 +109,16 @@
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+    }
+    /*Mobile e Desktop resolução*/
+    @media screen and (max-width: 800px) {
+        div.desktop{
+            display: none;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        div.mobile {
+            display: none;
+        }
     }
 </style>

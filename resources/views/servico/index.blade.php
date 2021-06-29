@@ -1,21 +1,23 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
-        <div class="text-info">
-            <h1>Lista de Serviços Ofertados Cadastrados</h1>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-info">
+                    <h1>Serviços</h1>
+                </div>
+            </div>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
-                <a class="btn btn-primary btn-sm" href="{{route('servicos.create')}}" role="button">ADICIONAR SERVIÇO HOSPITAL</a>
-                <a class="btn btn-primary btn-sm" href="{{route('tipoServicos.index')}}" role="button">LISTA DE SERVIÇOS</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('servicos.create')}}" role="button">ADICIONAR SERVIÇO HOSPITAL</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoServicos.index')}}" role="button">LISTA DE SERVIÇOS</a>
             </div>
         </div>
-        <table class="table table-sm" id="table">
+        <table class="table table-responsive-lg table-sm" id="table">
             <thead>
-            <tr>
-                <th scope="col">ID</th>
+            <tr style="background:lavenderblush">
                 <th scope="col">HOSPITAL</th>
                 <th scope="col">SERVIÇO</th>
                 <th scope="col">ATIVO</th>
@@ -24,7 +26,6 @@
             </thead>
             @foreach($servico as $s)
                 <tr>
-                    <td>{{$s->id}}</td>
                     <td>{{$s->hospital->nome}}</td>
                     <td>{{$s->tiposervico->nome}}</td>
                     <td>{{$s->ativo==1?'SIM':'NÃO'}}</td>

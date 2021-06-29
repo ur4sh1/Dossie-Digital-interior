@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Equipamentos Cadastrados dos Hospitais</h1>
+            <h1>Equipamentos</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
@@ -12,22 +12,22 @@
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">LISTA DE EQUIPAMENTOS</a>
             </div>
         </div>
-        <table class="table table-sm" id="table">
+        <table class="table table-responsive-lg table-sm" id="table">
             <thead>
-            <tr>
+            <tr style="background:lavenderblush">
                 <th scope="col">HOSPITAL</th>
                 <th scope="col">EQUIPAMENTO</th>
-                <th scope="col">EXISTENTE</th>
-                <th scope="col">FUNCIONAL</th>
-                <th scope="col">AÇÕES</th>
+                <th class="text-center" scope="col">EXISTENTE</th>
+                <th class="text-center" scope="col">FUNCIONAL</th>
+                <th class="text-center" scope="col">AÇÕES</th>
             </tr>
             </thead>
             @foreach($equipamento as $e)
                 <tr>
                     <td>{{$e->hospital->nome}}</td>
                     <td>{{$e->tipoEquipamento->nome}}</td>
-                    <td>{{$e->existente}}</td>
-                    <td>{{$e->funcional}}</td>
+                    <td class="text-center">{{$e->existente}}</td>
+                    <td class="text-center">{{$e->funcional}}</td>
                     <td>
                         <span class="form-inline">
                         <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('equipamentos.edit',$e)}}" role="button"><span class="fa fa-edit"></span></a>
@@ -44,3 +44,4 @@
         </table>
     </div>
 @endsection
+

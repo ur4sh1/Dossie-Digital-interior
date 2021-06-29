@@ -16,14 +16,15 @@
                                 <div class="card-body">
                                     <h5 class="card-title">MUNICÍPIOS</h5>
                                     <a href="/municipios" class="btn btn-primary">EXIBIR</a>
-                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <button class="btn btn-primary" data-toggle="collapse"
+                                            type="button" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                         GERENCIAR
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="collapse" id="collapseExample">
-                            <div class="row mb-2 align-items-center">
+                            <div class="row align-items-center">
                                 <div class="col-sm-4">
                                     <div class="card" style="width: 15rem;">
                                         <div class="card-body">
@@ -46,7 +47,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-2 align-items-center">
+                            <div class="row align-items-center">
                                 <div class="col-sm-4">
                                     <div class="card" style="width: 15rem;">
                                         <div class="card-body">
@@ -69,7 +70,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-2 align-items-center">
+                            <div class="row align-items-center">
                                 <div class="col-sm-4">
                                     <div class="card" style="width: 15rem;">
                                         <div class="card-body">
@@ -92,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-2 align-items-center">
+                            <div class="row align-items-center">
                                 <div class="col-sm-4">
                                     <div class="card" style="width: 15rem;">
                                         <div class="card-body">
@@ -115,6 +116,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="" class="link">COBERTURA VACINAL</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,3 +133,4 @@
     </div>
     </div>
 @endsection
+

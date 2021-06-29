@@ -1,18 +1,16 @@
 @extends('layouts.app')
-
 @section('content')
-
     <div class="container">
         <div class="text-info">
-            <h1>Lista de Autoridades Cadastrados</h1>
+            <h1>Autoridades</h1>
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
             <a class="btn btn-primary btn-sm" href="{{route('autoridade.create')}}" role="button">ADICIONAR</a>
         </div>
-        <table class="table table-sm" id="table">
+        <table class="table table-responsive-md table-sm" id="table">
             <thead>
-            <tr>
+            <tr style="background:lavenderblush">
                 <th scope="col">NOME</th>
                 <th scope="col">CARGO</th>
                 <th scope="col">MUNICÍPIO</th>

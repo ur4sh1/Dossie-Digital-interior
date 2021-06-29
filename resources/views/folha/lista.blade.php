@@ -17,8 +17,8 @@
         @if($folha->count()==0)
             <i>Informações não Cadastradas</i>
         @else
-            <table class="table-sm display" id="table">
-                <thead>
+            <table class="table table-sm table-responsive-lg" id="table">
+                <thead style="background:lavenderblush">
                 <th scope="col">PROFISSIONAL</th>
                 <th scope="col" class="text-center">SALÁRIO UNITÁRIO</th>
                 <th scope="col">SESAM</th>

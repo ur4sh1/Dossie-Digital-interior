@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -10,25 +9,25 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
-            <a class="btn btn-primary btn-sm" href="{{route('rhs.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('rhs.create')}}" role="button">ADICIONAR</a>
         </div>
-        <table class="table table-sm" id="table">
-            <thead>
-                <td><h5><b>HOSPITAL</b></h5></td>
-                <td><h5><b>CATEGORIA</b></h5></td>
-                <td> <h5><b>SESAM ESTATUTÁRIO</b></h5></td>
-                <td><h5><b>SESAM <br>CONTRATO</b></h5></td>
-                <td><h5><b>PREFEITURA</b></h5></td>
-                <td><h5><b>AÇÕES</b></h5></td>
+        <table class="table table-responsive-md table-sm" id="table">
+            <thead style="background:lavenderblush">
+                <th scope="col">HOSPITAL</th>
+                <th scope="col">CATEGORIA</th>
+                <th scope="col">SESAM ESTATUTÁRIO</th>
+                <th scope="col">SESAM <br>CONTRATO</th>
+                <th scope="col">PREFEITURA</th>
+                <th scope="col">AÇÕES</th>
             </thead>
             @foreach($rhs as $r)
             <tr>
                 <td>{{$r->hospital->nome}}</td>
                 <td>{{$r->rhcategoria->nome}}</td>
-                <td>{{$r->susam_estatutario}}</td>
-                <td>{{$r->susam_contrato}}</td>
-                <td>{{$r->prefeitura}}</td>
+                <td class="text-center">{{$r->susam_estatutario}}</td>
+                <td class="text-center">{{$r->susam_contrato}}</td>
+                <td class="text-center">{{$r->prefeitura}}</td>
                 <td>
                     <span class="form-inline">
                         <a class="btn btn-primary  btn-sm ml-1 mb-1" title="EDITAR" href="{{route('rhs.edit',$r)}}" role="button"><span class="fa fa-edit"></span></a>

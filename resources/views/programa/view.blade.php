@@ -2,7 +2,7 @@
     <div class="table-responsive-sm">
         <table class="table table-sm">
             <thead>
-            <tr>
+            <tr style="background:lavenderblush">
                 <td><b>DESCRIÇÃO</b></td>
                 <td><b>SIGLA</b></td>
                 <td class="text-center"><b>TETO</b></td>
@@ -25,7 +25,6 @@
             </tbody>
         </table>
     </div>
-
 @else
     <i>Não existe informações cadastradas</i>
 @endif

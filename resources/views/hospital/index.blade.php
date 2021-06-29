@@ -1,20 +1,19 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>Lista de Hospitais</h1>
+                    <h1>Hospitais</h1>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
-            <a class="btn btn-primary btn-sm" href="{{route('hospitals.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('hospitals.create')}}" role="button">ADICIONAR</a>
         </div>
-        <table class="table table-sm" id="table">
-            <thead>
+        <table class="table table-sm table-responsive-lg" id="table">
+            <thead style="background:lavenderblush">
                 <td scope="col"><b>NOME</b></td>
                 <td scope="col"><b>MUNICÍPIO</b></td>
                 <td scope="col"><b>AÇÕES</b></td>

@@ -2,13 +2,10 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Lista de Municípios</h1>
+            <h1>Municípios</h1>
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
-        <!--<div class="form-group">
-                <a class="btn btn-primary btn-sm" href="{{action('MunicipiosController@indexAlternativo')}}" role="button">VIEW</a>
-            </div>-->
         </div>
         @foreach($municipio as $m)
             <div class="row"><!--linha1-->
@@ -309,10 +306,16 @@
         div.container {
             font-size: 20px;
         }
+        div.car {
+            font-size: 15px;
+        }
     }
     @media screen and (min-width: 442px) {
         div.container {
             font-size: 15px;
+        }
+        div.car {
+            font-size: 10px;
         }
     }
     @media screen and (max-width: 442px) {
@@ -367,7 +370,6 @@
             display: none;
         }
     }
-
     div.descricaogrande {
         width: 350px;
         text-overflow: ellipsis;

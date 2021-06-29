@@ -9,10 +9,9 @@
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
             <a class="btn btn-primary btn-sm" href="{{route('partido.create')}}" role="button">ADICIONAR</a>
         </div>
-
-        <table class="table table-sm" id="table">
+        <table class="table table-responsive-lg table-sm" id="table">
             <thead>
-            <tr>
+            <tr style="background:lavenderblush">
                 <th scope="col">SIGLA</th>
                 <th scope="col">DESCRIÇÃO</th>
                 <th scope="col">AÇÕES</th>

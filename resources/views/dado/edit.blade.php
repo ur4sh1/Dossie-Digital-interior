@@ -7,11 +7,11 @@
     <div class="container">
         <div class="text-info">
             <h1>INFORMAÇÕES GERAIS</h1>
-            <h3>{{$municipios->nome}}</h3>
+            <h3><a href="{{route('dados.show',$dados->id)}}">{{$municipios->nome}}</a> / Editar</h3>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary mt-1" href="{{route('dados.show',$dados->id)}}" role="button">VOLTAR</a>
+                <a class="btn btn-sm btn-primary mt-1" href="{{route('dados.show',$dados->id)}}" role="button">VOLTAR</a>
             </div>
         </div>
         <form method="post" class="needs-validation" action="{{route('dados.update',$dados->id)}}">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-sm-4 mt-2">
                     <label for="densidade_demografica"><h5><b>Densidade Demográfica</b></h5></label>
-                    <input type="text" value="{{$dados->densidade_demografica}}" class="form-control" style="width: 130px" name="densidade_demografica" id="densidade_demografica">
+                    <input type="text" value="{{$dados->densidade_demografica}}" class="form-control text-right" style="width: 130px" name="densidade_demografica" id="densidade_demografica">
                 </div>
                 <div class="col-sm-2 mt-2">
                     <label for="latitude_decimal"><h5><b>Latitude</b></h5></label>
@@ -64,7 +64,7 @@
                         <option disabled selected>Selecione</option>
                         @foreach($ano as $a)
                             @if($a->ano <= $data)
-                                <option value="{{ $a->id }}">{{ $a->ano }}</option>
+                                <option value="{{ $a->id }}" {{$detalhes->pop_plan_saude_ano==$a->id?"selected":''}}>{{ $a->ano }}</option>
                             @endif
                         @endforeach
                     </select>
@@ -80,7 +80,7 @@
                         <option disabled selected>Selecione</option>
                         @foreach($ano as $a)
                             @if($a->ano <= $data)
-                                <option value="{{ $a->id }}">{{ $a->ano }}</option>
+                                <option value="{{ $a->id }}" {{ $detalhes->pop_extr_pobreza_ano==$a->id?"selected":'' }}>{{ $a->ano }}</option>
                             @endif
                         @endforeach
                     </select>
