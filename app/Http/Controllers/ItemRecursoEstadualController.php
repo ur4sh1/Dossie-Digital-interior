@@ -163,7 +163,7 @@ class ItemRecursoEstadualController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\ItemRecursoEstadual  $itemRecursoEstadual
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(Request $request, $id)
     {

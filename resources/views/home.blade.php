@@ -120,7 +120,7 @@
                                 <div class="col-sm-4">
                                     <div class="card" style="width: 15rem;">
                                         <div class="card-body">
-                                            <a href="" class="link">COBERTURA VACINAL</a>
+                                            <a href="/coberturaVacinal" class="link">COBERTURA VACINAL</a>
                                         </div>
                                     </div>
                                 </div>

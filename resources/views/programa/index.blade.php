@@ -11,7 +11,7 @@
                 <a class="btn btn-primary btn-sm" href="{{route('programa.create')}}" role="button">ADICIONAR</a>
             </div>
         </div>
-        <table class="table table-sm table-responsive" id="table">
+        <table class="table table-sm table-responsive-lg" id="table">
             <thead>
             <tr style="background:lavenderblush">
                 <th style="width: 300px" scope="col">DESCRIÇÃO</th>
