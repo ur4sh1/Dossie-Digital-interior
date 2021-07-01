@@ -16,7 +16,7 @@
             <label for="municipio_id"><h5><b>Município</b></h5></label>
             <select class="form-control" id="municipio_id" name="municipio_id" required>
                 <option>Selecione</option>
-                <option v-for="(m,i) in municipios" :value="i" :selected="selecionado(m.nome, cidade)" >{{ m.nome }}</option>
+                <option v-for="(m,i) in municipios" :value="i+1" :selected="selecionado(m.nome, cidade)" >{{ m.nome }}</option>
             </select>
         </div>
 

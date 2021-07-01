@@ -24,6 +24,8 @@ class CreateExamesTable extends Migration
             $table->integer('raio_x')->nullable()->default(0);
             $table->integer('eletrocardiograma')->default(0);
             $table->timestamps();
+
+            $table->unique(['hospital_id', 'ano_id'],'unico');
         });
     }
 

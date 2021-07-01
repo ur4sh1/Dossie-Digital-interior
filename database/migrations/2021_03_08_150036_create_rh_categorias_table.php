@@ -15,7 +15,7 @@ class CreateRhCategoriasTable extends Migration
     {
         Schema::create('rh_categorias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome')->unique();
             $table->timestamps();
         });
     }

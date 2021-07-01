@@ -3,10 +3,7 @@
 @else
     <?php
     $data=date('Y');
-    $t0=0;
-    $t1=0;
-    $t2=0;
-    $t3=0;
+
     ?>
     <div class="desktop">
         <div class="row mt-2" style="background:lavenderblush">
@@ -41,7 +38,7 @@
                     @foreach($m->recursoEstadual as $mr)
                         @if($mr->ano->ano == ($data-2) and $mr->item_recurso_estadual_id == $i->id)
                             <div class="text-right">{{ $mr->valor() }}</div>
-                            <span hidden>{{$t3 += $mr->valor}}</span>
+                            <span hidden>{{$tre1 += $mr->valor}}</span>
                             <span hidden>{{$t0 += $mr->valor}}</span>
                         @endif
                     @endforeach
@@ -50,7 +47,7 @@
                     @foreach($m->recursoEstadual as $mr)
                         @if($mr->ano->ano == ($data-1) and $mr->item_recurso_estadual_id == $i->id)
                             <div class="text-right">{{ $mr->valor() }}</div>
-                            <span hidden>{{$t2 += $mr->valor}}</span>
+                            <span hidden>{{$tre2 += $mr->valor}}</span>
                             <span hidden>{{$t0 += $mr->valor}}</span>
                         @endif
                     @endforeach
@@ -59,7 +56,7 @@
                     @foreach($m->recursoEstadual as $mr)
                         @if($mr->ano->ano == ($data) and $mr->item_recurso_estadual_id == $i->id)
                             <div class="text-right">{{ $mr->valor() }}</div>
-                            <span hidden>{{$t1 += $mr->valor}}</span>
+                            <span hidden>{{$tre3 += $mr->valor}}</span>
                             <span hidden>{{$t0 += $mr->valor}}</span>
                         @endif
                     @endforeach
@@ -74,16 +71,16 @@
                 <label><b>TOTAL</b></label>
             </div>
             <div class="col-sm-2">
-                <div class="text-right"><b>{{number_format($t3,2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format($tre1,2,',','.')}}</b></div>
             </div>
             <div class="col-sm-2">
-                <div class="text-right"><b>{{number_format($t2,2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format($tre2,2,',','.')}}</b></div>
             </div>
             <div class="col-sm-2">
-                <div class="text-right"><b>{{number_format($t1,2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format($tre3,2,',','.')}}</b></div>
             </div>
             <div class="col-sm-2">
-                <div class="text-right"><b>{{number_format(($t1+$t2+$t3),2,',','.')}}</b></div>
+                <div class="text-right"><b>{{number_format(($tre1+$tre2+$tre3),2,',','.')}}</b></div>
             </div>
         </div>
     </div>

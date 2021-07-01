@@ -15,7 +15,7 @@ class CreateTipoServicosTable extends Migration
     {
         Schema::create('tipo_servicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome')->unique();
             $table->timestamps();
         });
     }

@@ -24,9 +24,13 @@ class CreateAutoridadesTable extends Migration
             $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->boolean('liderCamara')->default(false);
             $table->string('email')->nullable();
+            $table->unsignedBigInteger('hospital_id')->nullable();
+            $table->foreign('hospital_id')->references('id')->on('hospitals');
             $table->string('tel',40)->nullable();
             $table->string('cel',40)->nullable();
             $table->timestamps();
+
+            $table->unique(['nome','cargo_id','municipio_id'],'unico');
         });
     }
 

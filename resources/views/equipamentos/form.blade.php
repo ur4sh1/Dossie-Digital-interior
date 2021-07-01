@@ -39,8 +39,9 @@
                     <label for="nome"><b>FUNCIONAL</b></label>
                     <input class="form-control" style="width: 80px;" maxlength="3" id="funcional" name="funcional" required>
                 </div>
-                <div class="col-sm-1 text-center">
-                    <label><b>AÇÕES</b></label>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-12 text-right">
                     <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>
                     <a class="btn btn-danger" title="CANCELAR" href="/equipamentos"><span class="fa fa-window-close"></span></a>
                 </div>

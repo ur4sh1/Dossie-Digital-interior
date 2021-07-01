@@ -47,6 +47,23 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
+                    <label><h5><b>HOSPITAL REGIONAL:</b></h5></label>
+                    <select class="form-control" id="hospital_id" name="hospital_id">
+                        <option>Selecione</option>
+                        @foreach($hospital as $h)
+                        <option value="{{$h->id}}">{{$h->nome}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="email"><h5><b>E-MAIL</b></h5></label>
+                        <input type="text" class="form-control" name="email" id="email">
+                    </div>
+                </div>
+                <div class="col-sm-3">
                     <div class="form-group">
                         <label for="partido_id"><h5><b>PARTIDO</b></h5></label>
                         <select class="form-control" id="partido_id" name="partido_id" required>
@@ -57,10 +74,6 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="email"><h5><b>E-MAIL</b></h5></label>
-                <input type="text" class="form-control" name="email" id="email">
             </div>
             <div class="form-group">
                 <label for="tel"><h5><b>CONTATO</b></h5></label>

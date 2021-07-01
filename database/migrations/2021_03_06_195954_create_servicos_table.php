@@ -21,6 +21,8 @@ class CreateServicosTable extends Migration
             $table->foreign('tipo_servicos_id')->references('id')->on('tipo_servicos');
             $table->boolean('ativo')->default(false);
             $table->timestamps();
+
+            $table->unique(['hospital_id', 'tipo_servicos_id'],'unico');
         });
     }
 

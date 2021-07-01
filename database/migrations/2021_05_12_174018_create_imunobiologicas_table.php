@@ -15,7 +15,7 @@ class CreateImunobiologicasTable extends Migration
     {
         Schema::create('imunobiologicas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome')->unique();
             $table->timestamps();
         });
     }

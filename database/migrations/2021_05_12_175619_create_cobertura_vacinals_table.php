@@ -24,6 +24,8 @@ class CreateCoberturaVacinalsTable extends Migration
             $table->string('porcentagem');
             $table->string('fonte')->nullable();
             $table->timestamps();
+
+            $table->unique(['imunobiologica_id','ano_id','municipio_id'],'unico');
         });
     }
 

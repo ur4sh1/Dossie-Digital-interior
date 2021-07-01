@@ -15,7 +15,7 @@ class CreateItemRecursoFundoNacionalsTable extends Migration
     {
         Schema::create('item_recurso_fundo_nacionals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('descricao');
+            $table->string('descricao')->unique();
             $table->timestamps();
         });
     }

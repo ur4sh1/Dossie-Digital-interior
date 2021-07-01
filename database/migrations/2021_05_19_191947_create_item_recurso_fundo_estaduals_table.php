@@ -15,7 +15,7 @@ class CreateItemRecursoFundoEstadualsTable extends Migration
     {
         Schema::create('item_recurso_fundo_estaduals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('descricao');
+            $table->string('descricao')->unique();
             $table->timestamps();
         });
     }

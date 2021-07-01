@@ -23,6 +23,8 @@ class CreateRhsTable extends Migration
             $table->integer('susam_contrato')->default(0);
             $table->integer('prefeitura')->default(0);
             $table->timestamps();
+
+            $table->unique(['hospital_id', 'rh_categoria_id'],'unico');
         });
     }
 

@@ -24,6 +24,8 @@ class CreateDoencasAgravosTable extends Migration
             $table->string('casos')->default(0);
             $table->string('fonte')->nullable();
             $table->timestamps();
+
+            $table->unique(['doenca_id','ano_id','municipio_id'],'unico');
         });
     }
 

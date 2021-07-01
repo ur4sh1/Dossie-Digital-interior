@@ -15,11 +15,12 @@ class CreateSalacirurgicasTable extends Migration
     {
         Schema::create('salacirurgicas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('hospital_id');
+            $table->unsignedBigInteger('hospital_id')->unique();
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
             $table->integer('sala_cirurgicas_existentes');
             $table->integer('sala_cirurgicas_funcionais');
             $table->timestamps();
+
         });
     }
 

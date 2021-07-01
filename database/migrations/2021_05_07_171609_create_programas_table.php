@@ -17,7 +17,7 @@ class CreateProgramasTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
-            $table->string('descricao');
+            $table->string('descricao')->unique();
             $table->string('sigla');
             $table->string('teto')->default(0);
             $table->string('cred')->default(0);

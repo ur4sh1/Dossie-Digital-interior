@@ -15,7 +15,7 @@ class CreateLeitosTable extends Migration
     {
         Schema::create('leitos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('hospital_id');
+            $table->unsignedBigInteger('hospital_id')->unique();
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
             $table->integer('leito_clinico')->default(0);
             $table->integer('leito_cirurgico')->default(0);

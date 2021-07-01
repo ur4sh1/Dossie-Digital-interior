@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Hospital;
 use App\Municipio;
 use App\Partido;
 use App\Autoridade;
@@ -13,7 +14,7 @@ class AutoridadesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
@@ -24,21 +25,22 @@ class AutoridadesController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
         $cargos= Cargo::all();
         $partidos= Partido::all();
         $municipios= Municipio::all();
-        return view('autoridade.form', compact('cargos','partidos','municipios'));
+        $hospital=Hospital::all();
+        return view('autoridade.form', compact('cargos','partidos','municipios','hospital'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -61,7 +63,7 @@ class AutoridadesController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit(int $id)
     {
@@ -77,7 +79,7 @@ class AutoridadesController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request,int $id)
     {
@@ -90,7 +92,7 @@ class AutoridadesController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Autoridade $autoridade)
     {

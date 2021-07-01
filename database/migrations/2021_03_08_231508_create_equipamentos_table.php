@@ -22,6 +22,8 @@ class CreateEquipamentosTable extends Migration
             $table->integer('existente');
             $table->integer('funcional');
             $table->timestamps();
+
+            $table->unique(['hospital_id', 'tipo_equipamentos_id'],'unico');
         });
     }
 

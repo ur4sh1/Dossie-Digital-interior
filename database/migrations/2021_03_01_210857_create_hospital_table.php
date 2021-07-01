@@ -15,7 +15,7 @@ class CreateHospitalTable extends Migration
     {
         Schema::create('hospitals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome')->unique();
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->string('rua')->nullable();

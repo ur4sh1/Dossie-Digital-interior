@@ -15,7 +15,7 @@ class CreateVeiculosTable extends Migration
     {
         Schema::create('veiculos', function (Blueprint $table){
            $table->bigIncrements('id');
-           $table->unsignedBigInteger('hospital_id');
+           $table->unsignedBigInteger('hospital_id')->unique();
            $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
            $table->integer('administrativo_existente')->default(0);
            $table->integer('administrativo_funcional')->default(0);
