@@ -30,5 +30,4 @@ class RecursoEstadual extends Model
     {
         return number_format($this->attributes['valor'],2,',','.');
     }
-    
 }

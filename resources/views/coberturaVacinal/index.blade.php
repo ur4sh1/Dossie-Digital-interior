@@ -12,12 +12,12 @@
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
             <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.create')}}" role="button">ADICIONAR</a>
-            <a class="btn btn-primary btn-sm mt-1" href="" role="button">VACINAS</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('imunobiologica.index')}}" role="button">VACINAS</a>
         </div>
         <table class="table table-responsive-lg table-sm" id="table">
             <thead>
             <tr style="background:lavenderblush">
-                <th scope="col">VACINA</th>
+                <th scope="col">IMUNOBIOLÓGICA</th>
                 <th scope="col">MUNICÍPIO</th>
                 <th scope="col" class="text-center">COBERTURA</th>
                 <th scope="col" class="text-center">ANO</th>

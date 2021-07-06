@@ -71,7 +71,8 @@ class AutoridadesController extends Controller
         $partidos= Partido::all();
         $municipios= Municipio::all();
         $autoridades= Autoridade::find($id);
-        return view('autoridade.edit', compact('autoridades','cargos','partidos','municipios'));
+        $hospital=Hospital::all();
+        return view('autoridade.edit', compact('autoridades','cargos','partidos','municipios','hospital'));
     }
 
     /**

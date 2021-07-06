@@ -17,6 +17,9 @@
     <script type="text/javascript" src="{{ asset('js/vue.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/notify.js') }}" defer></script>
 
+    <!--  plot pie  -->
+<!--    <script type="text/javascript" language="javascript" src="jquery.Plot.pie.min.js"></script>-->
+
     <!-- google charts   -->
     <!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
 

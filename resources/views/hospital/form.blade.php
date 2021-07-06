@@ -17,6 +17,10 @@
                     <label for="nome"><h5><b>Nome</b></h5></label>
                     <input type="text" class="form-control text-uppercase" id="nome" name="nome"  required>
                 </div>
+                <div class="col-sm-4 mt-2">
+                    <label><h5><b>E-mail</b></h5></label>
+                    <input type="email" class="form-control" name="email" id="email">
+                </div>
             </div>
             <endereco :municipios="{{$municipio}}"></endereco>
             <div class="form-row">
@@ -26,14 +30,9 @@
                 </div>
                 <div class="col-sm-2 mt-2">
                     <label><h5><b>Telefone</b></h5></label>
-                    <input type="tel" class="form-control" name="tel" id="tel">
-                </div>
-                <div class="col-sm-5 mt-2">
-                    <label><h5><b>E-mail</b></h5></label>
-                    <input type="email" class="form-control" name="email" id="email">
+                    <the-mask type="text" class="form-control" name="tel" id="tel" :mask="['(##) ####-####', '(##) #####-####']"></the-mask>
                 </div>
             </div>
-
             <div class="form-row text-right"><!--buttonsAções-->
                 <div class="col-sm-12 mt-3">
                     <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>

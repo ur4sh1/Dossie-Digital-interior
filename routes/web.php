@@ -90,6 +90,7 @@ Route::resources([
     'recursoFundoNacional'=>'RecursoFundoNacionalController',
     'itemRecursoEstadual'=>'ItemRecursoEstadualController',
     'itemRecursoFundoEstadual'=>'ItemRecursoFundoEstadualController',
-    'coberturaVacinal'=>'CoberturaVacinalController'
-
+    'coberturaVacinal'=>'CoberturaVacinalController',
+    'imunobiologica'=>'ImunobiologicaController',
+    'leito'=>'LeitosController'
 ]);

@@ -10,7 +10,7 @@
         </tr>
     </table>
 @else
-    <table class="table table-sm">
+    <table class="table table-responsive-sm">
         <tr style="background:lavenderblush">
             <td colspan="4">
                 <a data-toggle="collapse" href="#lei{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -18,7 +18,7 @@
                 </a>
             </td>
         </tr>
-        <tr class="table">
+        <tr>
             <td>Clínicos:</td>
             <td>{{$ho->leito->leito_clinico ?? 'Informações não cadastradas'}}</td>
             <td>Cirúrgicos:</td>

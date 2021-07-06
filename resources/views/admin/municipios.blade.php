@@ -139,7 +139,7 @@
                                                                     <b>Contato: </b>{{ $ho->tel }}<br>
                                                                     <b>E-mail: </b>{{ $ho->email }}<br>
                                                                     @foreach($ho->municipio->autoridade as $auto)
-                                                                        @if($auto->cargo_id==12)
+                                                                        @if($auto->cargo_id==12 and $auto->hospital_id==$ho->id)
                                                                             <b>Diretor Geral: </b>{{ $auto->nome }}<br>
                                                                             <b>Contato: </b>{{ $auto->tel }} _ {{ $auto->cel }}<br>
                                                                             <b>E-mail: </b>{{ $auto->email }}

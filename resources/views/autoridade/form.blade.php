@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="text-info">
@@ -49,7 +48,7 @@
                 <div class="col-sm-4">
                     <label><h5><b>HOSPITAL REGIONAL:</b></h5></label>
                     <select class="form-control" id="hospital_id" name="hospital_id">
-                        <option>Selecione</option>
+                        <option value="">Selecione</option>
                         @foreach($hospital as $h)
                         <option value="{{$h->id}}">{{$h->nome}}</option>
                         @endforeach
@@ -57,13 +56,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="email"><h5><b>E-MAIL</b></h5></label>
                         <input type="text" class="form-control" name="email" id="email">
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <div class="form-group">
                         <label for="partido_id"><h5><b>PARTIDO</b></h5></label>
                         <select class="form-control" id="partido_id" name="partido_id" required>
@@ -74,17 +73,16 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="tel"><h5><b>CONTATO</b></h5></label>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label for="tel">Fixo</label>
-                        <the-mask type="text" class="form-control" style="width: 200px;" name="tel" id="tel" :mask="['(##)####-####']"></the-mask>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="tel"><h5><b>TELEFONE</b></h5></label>
+                    <the-mask type="text" class="form-control" name="tel" id="tel" :mask="['(##)####-####']"></the-mask>
                     </div>
-                    <div class="col-sm-6">
-                        <label for="cel">Celular</label>
-                        <the-mask type="text" class="form-control" style="width: 200px;" name="cel" id="cel" :mask="['(##)#####-####']"></the-mask>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="cel"><h5><b>CELULAR</b></h5></label>
+                    <the-mask type="text" class="form-control" name="cel" id="cel" :mask="['(##)#####-####']"></the-mask>
                     </div>
                 </div>
             </div>

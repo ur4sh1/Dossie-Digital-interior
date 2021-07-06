@@ -13,7 +13,7 @@
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button">LISTA</a>
-            <a class="btn btn-primary btn-sm mt-1" href="" role="button">VACINAS</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('imunobiologica.index')}}" role="button">VACINAS</a>
         </div>
         <form method="post" action="{{route('coberturaVacinal.store')}}">
             @csrf
@@ -64,8 +64,8 @@
                 </div>
                 <div class="form-row text-right"><!--buttonsAções-->
                     <div class="col-sm-12 mt-3">
-                        <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>
-                        <a class="btn btn-danger" title="CANCELAR" href="/coberturaVacinal"><span class="fa fa-window-close"></span></a>
+                        <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-save"></span></button>
+                        <a class="btn btn-danger btn-sm" title="CANCELAR" href="/coberturaVacinal"><span class="fa fa-window-close"></span></a>
                     </div>
                 </div><!--buttonsAções-->
             </div>

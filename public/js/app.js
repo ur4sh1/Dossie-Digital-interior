@@ -1939,10 +1939,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["cep", "bairro", "endereco", "cidade", "municipios"],
   data: function data() {
@@ -1983,10 +1979,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoEstadualEdit.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoEstadualEdit.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/alert.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2002,433 +1998,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    municipio: Object,
-    ano: Array,
-    itemrecursoestadual: Array,
-    recursoestadual: Array,
-    url: String
-  },
+  props: ['msg'],
   data: function data() {
-    return {
-      anoatual: new Date().getFullYear(),
-      valor_repasse: '',
-      item_repasse: 0,
-      ano_repasse: 0,
-      id_repasse: 0
-    };
+    return {};
   },
   methods: {
-    formata: function formata(valor) {
-      var formatter = new Intl.NumberFormat(['pt-BR'], {
-        style: 'currency',
-        currency: 'BRL'
-      });
-      return formatter.format(valor).replace('R$', "");
+    check: function check(msg) {
+      if (msg === 1) {
+        this.alertavue();
+        console.log("auii opirrar odaodoa");
+      }
     },
-    formatav2: function formatav2(valor) {
-      return valor.toLocaleString('pt-BR', {
-        minimumFractionDigits: 2
-      });
-    },
-    formatav3: function formatav3(valor) {
-      return new Intl.NumberFormat('pt-BR').format(valor.toFixed(2));
-    },
-    editaValor: function editaValor(id, valor, item, ano) {
-      this.valor_repasse = valor;
-      this.item_repasse = item;
-      this.ano_repasse = ano;
-      this.id_repasse = id;
-    },
-    salvarDados: function salvarDados() {
-      axios.post(this.url, {
-        municipio_id: this.municipio.id,
-        id: this.id_repasse,
-        item_recurso_estadual: this.item_repasse,
-        valor: this.valor_repasse,
-        ano_id: this.ano_repasse
-      }).then(function (response) {
-        window.location.reload();
-      })["catch"](function (response) {
-        window.location.reload();
-      });
+    alertavue: function alertavue() {
+      $('.alert').addClass("show");
+      $('.alert').removeClass("ocultar");
+      $('.alert').addClass("showAlert");
+      setTimeout(function () {
+        $('.alert').removeClass("show");
+        $('.alert').addClass("ocultar");
+      }, 5000);
     }
   },
   computed: {}
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    municipio: Object,
-    ano: Array,
-    itemrecursofundoestadual: Array,
-    recursofundoestadual: Array,
-    url: String
-  },
-  data: function data() {
-    return {
-      anoatual: new Date().getFullYear(),
-      valor_repasse: '',
-      item_repasse: 0,
-      ano_repasse: 0,
-      id_repasse: 0
-    };
-  },
-  methods: {
-    editaValor: function editaValor(id, valor, item, ano) {
-      this.valor_repasse = new Intl.NumberFormat('pt-BR').format(valor);
-      this.item_repasse = item;
-      this.ano_repasse = ano;
-      this.id_repasse = id;
-    },
-    salvarDados: function salvarDados() {
-      axios.post(this.url, {
-        municipio_id: this.municipio.id,
-        id: this.id_repasse,
-        item_recurso_fundo_estadual: this.item_repasse,
-        valor: this.valor_repasse,
-        ano_id: this.ano_repasse
-      }).then(function (response) {
-        window.location.reload();
-      })["catch"](function (response) {
-        window.location.reload();
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    municipio: Object,
-    ano: Array,
-    itemrecursofundonacional: Array,
-    recursofundonacional: Array,
-    tiporecursonacional: Array,
-    url: String
-  },
-  data: function data() {
-    return {
-      anoatual: new Date().getFullYear(),
-      valor_repasse: '',
-      item_repasse: 0,
-      tipo_repasse: 0,
-      ano_repasse: 0,
-      id_repasse: 0
-    };
-  },
-  methods: {
-    editaValor: function editaValor(id, item, tipo, valor, ano) {
-      this.id_repasse = id;
-      this.item_repasse = item;
-      this.tipo_repasse = tipo;
-      this.valor_repasse = new Intl.NumberFormat('pt-BR').format(valor).toFixed(2);
-      this.ano_repasse = ano;
-    },
-    salvarDados: function salvarDados() {
-      axios.post(this.url, {
-        municipio_id: this.municipio.id,
-        id: this.id_repasse,
-        item_recurso_fundo_nacional: this.item_repasse,
-        tipo_recurso_nacional: this.tipo_repasse,
-        valor: this.valor_repasse,
-        ano_id: this.ano_repasse
-      }).then(function (response) {
-        window.location.reload();
-      })["catch"](function (response) {
-        window.location.reload();
-      });
-    }
-  }
 });
 
 /***/ }),
@@ -6875,6 +6467,112 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n*[data-v-03b9d421]{\n    margin: 0;\n    padding: 0;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    box-sizing: border-box;\n    font-family: 'Poppins', sans-serif;\n}\nhtml[data-v-03b9d421],body[data-v-03b9d421]{\n    height: 100%;\n}\nbody[data-v-03b9d421]{\n    display: grid;\n    place-items: center;\n    overflow: hidden;\n}\nbutton[data-v-03b9d421]{\n    padding: 8px 16px;\n    font-size: 25px;\n    font-weight: 500;\n    border-radius: 4px;\n    border: none;\n    outline: none;\n    background: #e69100;\n    color: white;\n    letter-spacing: 1px;\n    cursor: pointer;\n}\n.alert[data-v-03b9d421]{\n    background: #ffdb9b;\n    padding: 20px 40px;\n    min-width: 420px;\n    position: absolute;\n    right: 0;\n    top: 10px;\n    border-radius: 4px;\n    border-left: 8px solid #ffa502;\n    overflow: hidden;\n    opacity: 0;\n    pointer-events: none;\n}\n.alert.showAlert[data-v-03b9d421]{\n    opacity: 1;\n    pointer-events: auto;\n}\n.alert.show[data-v-03b9d421]{\n    -webkit-animation: show_slide-data-v-03b9d421 1s ease forwards;\n            animation: show_slide-data-v-03b9d421 1s ease forwards;\n}\n@-webkit-keyframes show_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(100%);\n}\n40%{\n        transform: translateX(-10%);\n}\n80%{\n        transform: translateX(0%);\n}\n100%{\n        transform: translateX(-10px);\n}\n}\n@keyframes show_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(100%);\n}\n40%{\n        transform: translateX(-10%);\n}\n80%{\n        transform: translateX(0%);\n}\n100%{\n        transform: translateX(-10px);\n}\n}\n.alert.hide[data-v-03b9d421]{\n    -webkit-animation: hide_slide-data-v-03b9d421 1s ease forwards;\n            animation: hide_slide-data-v-03b9d421 1s ease forwards;\n}\n@-webkit-keyframes hide_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(-10px);\n}\n40%{\n        transform: translateX(0%);\n}\n80%{\n        transform: translateX(-10%);\n}\n100%{\n        transform: translateX(100%);\n}\n}\n@keyframes hide_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(-10px);\n}\n40%{\n        transform: translateX(0%);\n}\n80%{\n        transform: translateX(-10%);\n}\n100%{\n        transform: translateX(100%);\n}\n}\n.alert .fa-exclamation-circle[data-v-03b9d421]{\n    position: absolute;\n    left: 20px;\n    top: 50%;\n    transform: translateY(-50%);\n    color: #ce8500;\n    font-size: 30px;\n}\n.alert .msg[data-v-03b9d421]{\n    padding: 0 20px;\n    font-size: 18px;\n    color: #ce8500;\n}\n.alert .close-btn[data-v-03b9d421]{\n    position: absolute;\n    right: 0px;\n    top: 50%;\n    transform: translateY(-50%);\n    background: #ffd080;\n    padding: 20px 18px;\n    cursor: pointer;\n}\n.alert .close-btn[data-v-03b9d421]:hover{\n    background: #ffc766;\n}\n.alert .close-btn .fas[data-v-03b9d421]{\n    color: #ce8500;\n    font-size: 22px;\n    line-height: 40px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js ***!
@@ -8061,7 +7759,7 @@ DataTable.ext.buttons.csvHtml5 = {
 		}
 
 		if ( config.bom ) {
-			output = '\ufeff' + output;
+			output = String.fromCharCode(0xFEFF) + output;
 		}
 
 		_saveAs(
@@ -8571,7 +8269,7 @@ return DataTable.Buttons;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Buttons for DataTables 1.7.0
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Buttons for DataTables 1.7.1
  * ©2016-2021 SpryMedia Ltd - datatables.net/license
  */
 
@@ -9598,35 +9296,29 @@ $.extend( Buttons.prototype, {
 
 		// Align the popover relative to the DataTables container
 		// Useful for wide popovers such as SearchPanes
-		if (
-			position === 'absolute' &&
-			(
-				display.hasClass( options.rightAlignClassName ) ||
-				display.hasClass( options.leftAlignClassName ) ||
-				options.align === 'dt-container'
-			)
-		) {
-
+		if (position === 'absolute') {
+			// Align relative to the host button
 			var hostPosition = hostNode.position();
+			var buttonPosition = $(hostButton.node()).position();
 
 			display.css( {
-				top: hostPosition.top + hostNode.outerHeight(),
+				top: buttonPosition.top + hostNode.outerHeight(),
 				left: hostPosition.left
 			} );
 
 			// calculate overflow when positioned beneath
 			var collectionHeight = display.outerHeight();
 			var tableBottom = tableContainer.offset().top + tableContainer.height();
-			var listBottom = hostPosition.top + hostNode.outerHeight() + collectionHeight;
+			var listBottom = buttonPosition.top + hostNode.outerHeight() + collectionHeight;
 			var bottomOverflow = listBottom - tableBottom;
 
 			// calculate overflow when positioned above
-			var listTop = hostPosition.top - collectionHeight;
+			var listTop = buttonPosition.top - collectionHeight;
 			var tableTop = tableContainer.offset().top;
 			var topOverflow = tableTop - listTop;
 
 			// if bottom overflow is larger, move to the top because it fits better, or if dropup is requested
-			var moveTop = hostPosition.top - collectionHeight - 5;
+			var moveTop = buttonPosition.top - collectionHeight - 5;
 			if ( (bottomOverflow > topOverflow || options.dropup) && -moveTop < tableTop ) {
 				display.css( 'top', moveTop);
 			}
@@ -9645,93 +9337,66 @@ $.extend( Buttons.prototype, {
 			var buttonsLeft = hostNode.offset().left;
 			var buttonsWidth = hostNode.outerWidth()
 			var buttonsRight = buttonsLeft + buttonsWidth;
-			
-			// You've then got all the numbers you need to do some calculations and if statements,
-			//  so we can do some quick JS maths and apply it only once
-			// If it has the right align class OR the buttons are right aligned OR the button container is floated right,
-			//  then calculate left position for the popover to align the popover to the right hand
-			//  side of the button - check to see if the left of the popover is inside the table container.
-			// If not, move the popover so it is, but not more than it means that the popover is to the right of the table container
-			var popoverShuffle = 0;
-			if ( display.hasClass( options.rightAlignClassName )) {
-				popoverShuffle = buttonsRight - popoverRight;
-				if(tableLeft > (popoverLeft + popoverShuffle)){
-					var leftGap = tableLeft - (popoverLeft + popoverShuffle);
-					var rightGap = tableRight - (popoverRight + popoverShuffle);
+
+			if (
+				display.hasClass( options.rightAlignClassName ) ||
+				display.hasClass( options.leftAlignClassName ) ||
+				options.align === 'dt-container'
+			){
+				// You've then got all the numbers you need to do some calculations and if statements,
+				//  so we can do some quick JS maths and apply it only once
+				// If it has the right align class OR the buttons are right aligned OR the button container is floated right,
+				//  then calculate left position for the popover to align the popover to the right hand
+				//  side of the button - check to see if the left of the popover is inside the table container.
+				// If not, move the popover so it is, but not more than it means that the popover is to the right of the table container
+				var popoverShuffle = 0;
+				if ( display.hasClass( options.rightAlignClassName )) {
+					popoverShuffle = buttonsRight - popoverRight;
+					if(tableLeft > (popoverLeft + popoverShuffle)){
+						var leftGap = tableLeft - (popoverLeft + popoverShuffle);
+						var rightGap = tableRight - (popoverRight + popoverShuffle);
+		
+						if(leftGap > rightGap){
+							popoverShuffle += rightGap; 
+						}
+						else {
+							popoverShuffle += leftGap;
+						}
+					}
+				}
+				// else attempt to left align the popover to the button. Similar to above, if the popover's right goes past the table container's right,
+				//  then move it back, but not so much that it goes past the left of the table container
+				else {
+					popoverShuffle = tableLeft - popoverLeft;
 	
-					if(leftGap > rightGap){
-						popoverShuffle += rightGap; 
-					}
-					else {
-						popoverShuffle += leftGap;
+					if(tableRight < (popoverRight + popoverShuffle)){
+						var leftGap = tableLeft - (popoverLeft + popoverShuffle);
+						var rightGap = tableRight - (popoverRight + popoverShuffle);
+	
+						if(leftGap > rightGap ){
+							popoverShuffle += rightGap;
+						}
+						else {
+							popoverShuffle += leftGap;
+						}
+	
 					}
 				}
+	
+				display.css('left', display.position().left + popoverShuffle);
 			}
-			// else attempt to left align the popover to the button. Similar to above, if the popover's right goes past the table container's right,
-			//  then move it back, but not so much that it goes past the left of the table container
 			else {
-				popoverShuffle = tableLeft - popoverLeft;
+				var top = hostNode.offset().top
+				var popoverShuffle = 0;
 
-				if(tableRight < (popoverRight + popoverShuffle)){
-					var leftGap = tableLeft - (popoverLeft + popoverShuffle);
-					var rightGap = tableRight - (popoverRight + popoverShuffle);
+				popoverShuffle = options.align === 'button-right'
+					? buttonsRight - popoverRight
+					: buttonsLeft - popoverLeft;
 
-					if(leftGap > rightGap ){
-						popoverShuffle += rightGap;
-					}
-					else {
-						popoverShuffle += leftGap;
-					}
-
-				}
+				display.css('left', display.position().left + popoverShuffle);
 			}
-
-			display.css('left', display.position().left + popoverShuffle);
 			
-		}
-		else if (position === 'absolute') {
-			// Align relative to the host button
-			var hostPosition = hostNode.position();
-
-			display.css( {
-				top: hostPosition.top + hostNode.outerHeight(),
-				left: hostPosition.left
-			} );
-
-			// calculate overflow when positioned beneath
-			var collectionHeight = display.outerHeight();
-			var top = hostNode.offset().top
-			var popoverShuffle = 0;
-
-			// Get the size of the host buttons (left and width - and ...)
-			var buttonsLeft = hostNode.offset().left;
-			var buttonsWidth = hostNode.outerWidth()
-			var buttonsRight = buttonsLeft + buttonsWidth;
-
-			// Get the size of the popover (left and width - and ...)
-			var popoverLeft = display.offset().left;
-			var popoverWidth = content.width();
-			var popoverRight = popoverLeft + popoverWidth;
-
-			var moveTop = hostPosition.top - collectionHeight - 5;
-			var tableBottom = tableContainer.offset().top + tableContainer.height();
-			var listBottom = hostPosition.top + hostNode.outerHeight() + collectionHeight;
-			var bottomOverflow = listBottom - tableBottom;
-
-			// calculate overflow when positioned above
-			var listTop = hostPosition.top - collectionHeight;
-			var tableTop = tableContainer.offset().top;
-			var topOverflow = tableTop - listTop;
-
-			if ( (bottomOverflow > topOverflow || options.dropup) && -moveTop < tableTop ) {
-				display.css( 'top', moveTop);
-			}
-
-			popoverShuffle = options.align === 'button-right'
-				? buttonsRight - popoverRight
-				: buttonsLeft - popoverLeft;
-
-			display.css('left', display.position().left + popoverShuffle);
+			
 		}
 		else {
 			// Fix position - centre on screen
@@ -10036,19 +9701,19 @@ Buttons.stripData = function ( str, config ) {
 	// Always remove comments
 	str = str.replace( /<!\-\-.*?\-\->/g, '' );
 
-	if ( config.stripHtml ) {
+	if ( ! config || config.stripHtml ) {
 		str = str.replace( /<[^>]*>/g, '' );
 	}
 
-	if ( config.trim ) {
+	if ( ! config || config.trim ) {
 		str = str.replace( /^\s+|\s+$/g, '' );
 	}
 
-	if ( config.stripNewlines ) {
+	if ( ! config || config.stripNewlines ) {
 		str = str.replace( /\n/g, ' ' );
 	}
 
-	if ( config.decodeEntities ) {
+	if ( ! config || config.decodeEntities ) {
 		_exportTextarea.innerHTML = str;
 		str = _exportTextarea.value;
 	}
@@ -10094,7 +9759,7 @@ Buttons.defaults = {
  * @type {string}
  * @static
  */
-Buttons.version = '1.7.0';
+Buttons.version = '1.7.1';
 
 
 $.extend( _dtButtons, {
@@ -10726,14 +10391,14 @@ return Buttons;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1.10.24
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1.10.25
  * ©2008-2021 SpryMedia Ltd - datatables.net/license
  */
 
 /**
  * @summary     DataTables
  * @description Paginate, search and order HTML tables
- * @version     1.10.24
+ * @version     1.10.25
  * @file        jquery.dataTables.js
  * @author      SpryMedia Ltd
  * @contact     www.datatables.net
@@ -11961,7 +11626,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 			
 				var tbody = $this.children('tbody');
 				if ( tbody.length === 0 ) {
-					tbody = $('<tbody/>').appendTo($this);
+					tbody = $('<tbody/>').insertAfter(thead);
 				}
 				oSettings.nTBody = tbody[0];
 			
@@ -13016,8 +12681,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 						}
 	
 						// Only a single match is needed for html type since it is
-						// bottom of the pile and very similar to string
-						if ( detectedType === 'html' ) {
+						// bottom of the pile and very similar to string - but it
+						// must not be empty
+						if ( detectedType === 'html' && ! _empty(cache[k]) ) {
 							break;
 						}
 					}
@@ -14122,9 +13788,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 	/**
 	 * Insert the required TR nodes into the table for display
 	 *  @param {object} oSettings dataTables settings object
+	 *  @param ajaxComplete true after ajax call to complete rendering
 	 *  @memberof DataTable#oApi
 	 */
-	function _fnDraw( oSettings )
+	function _fnDraw( oSettings, ajaxComplete )
 	{
 		/* Provide a pre-callback function which can be used to cancel the draw is false is returned */
 		var aPreDraw = _fnCallbackFire( oSettings, 'aoPreDrawCallback', 'preDraw', [oSettings] );
@@ -14173,8 +13840,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 		{
 			oSettings.iDraw++;
 		}
-		else if ( !oSettings.bDestroying && !_fnAjaxUpdate( oSettings ) )
+		else if ( !oSettings.bDestroying && !ajaxComplete)
 		{
+			_fnAjaxUpdate( oSettings );
 			return;
 		}
 	
@@ -14706,21 +14374,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 	 */
 	function _fnAjaxUpdate( settings )
 	{
-		if ( settings.bAjaxDataGet ) {
-			settings.iDraw++;
-			_fnProcessingDisplay( settings, true );
+		settings.iDraw++;
+		_fnProcessingDisplay( settings, true );
 	
-			_fnBuildAjax(
-				settings,
-				_fnAjaxParameters( settings ),
-				function(json) {
-					_fnAjaxUpdateDraw( settings, json );
-				}
-			);
-	
-			return false;
-		}
-		return true;
+		_fnBuildAjax(
+			settings,
+			_fnAjaxParameters( settings ),
+			function(json) {
+				_fnAjaxUpdateDraw( settings, json );
+			}
+		);
 	}
 	
 	
@@ -14873,14 +14536,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 		}
 		settings.aiDisplay = settings.aiDisplayMaster.slice();
 	
-		settings.bAjaxDataGet = false;
-		_fnDraw( settings );
+		_fnDraw( settings, true );
 	
 		if ( ! settings._bInitComplete ) {
 			_fnInitComplete( settings, json );
 		}
 	
-		settings.bAjaxDataGet = true;
 		_fnProcessingDisplay( settings, false );
 	}
 	
@@ -16809,7 +16470,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 		{
 			var col = columns[i];
 			var asSorting = col.asSorting;
-			var sTitle = col.sTitle.replace( /<.*?>/g, "" );
+			var sTitle = col.ariaTitle || col.sTitle.replace( /<.*?>/g, "" );
 			var th = col.nTh;
 	
 			// IE7 is throwing an error when setting these properties with jQuery's
@@ -20243,7 +19904,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 	 *  @type string
 	 *  @default Version number
 	 */
-	DataTable.version = "1.10.24";
+	DataTable.version = "1.10.25";
 
 	/**
 	 * Private data store, containing all of the settings objects that are
@@ -24325,13 +23986,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 		"sAjaxDataProp": null,
 	
 		/**
-		 * Note if draw should be blocked while getting data
-		 *  @type boolean
-		 *  @default true
-		 */
-		"bAjaxDataGet": true,
-	
-		/**
 		 * The last jQuery XHR object that was used for server-side data gathering.
 		 * This can be used for working with the XHR information in one of the
 		 * callbacks
@@ -25760,6 +25414,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 					var floatPart = precision ?
 						decimal+(d - intPart).toFixed( precision ).substring( 2 ):
 						'';
+	
+					// If zero, then can't have a negative prefix
+					if (intPart === 0 && parseFloat(floatPart) === 0) {
+						negative = '';
+					}
 	
 					return negative + (prefix||'') +
 						intPart.toString().replace(
@@ -57226,6 +56885,545 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -57390,7 +57588,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-sm-5 mt-2" }, [
+    _c("div", { staticClass: "col-sm-4 mt-2" }, [
       _vm._m(2),
       _vm._v(" "),
       _c("input", {
@@ -57477,10 +57675,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f& ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=template&id=03b9d421&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/alert.vue?vue&type=template&id=03b9d421&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -57492,1407 +57690,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("input", {
-        attrs: {
-          hidden: "",
-          disabled: "",
-          id: "municipio_id",
-          name: "municipio_id",
-          required: ""
-        },
-        domProps: { value: _vm.municipio.id }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { hidden: "", disabled: "", id: "id", name: "id", required: "" },
-        domProps: { value: _vm.id_repasse }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "form-col-8" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.item_repasse,
-                    expression: "item_repasse"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "item_recurso_estadual_id",
-                  name: "item_recurso_estadual_id",
-                  disabled: "",
-                  required: ""
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.item_repasse = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.itemrecursoestadual, function(item) {
-                return _c("option", { domProps: { value: item.id } }, [
-                  _vm._v(_vm._s(item.descricao))
-                ])
-              }),
-              0
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-col-2" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model.number",
-                  value: _vm.valor_repasse,
-                  expression: "valor_repasse",
-                  modifiers: { number: true }
-                }
-              ],
-              staticClass: "form-control text-right",
-              attrs: { type: "text", id: "valor", name: "valor", required: "" },
-              domProps: { value: _vm.valor_repasse },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.valor_repasse = _vm._n($event.target.value)
-                },
-                blur: function($event) {
-                  return _vm.$forceUpdate()
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-col-2" }, [
-            _vm._m(2),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.ano_repasse,
-                    expression: "ano_repasse"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "ano_id",
-                  name: "ano_id",
-                  disabled: "",
-                  required: ""
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.ano_repasse = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.ano, function(a) {
-                return _c("option", { domProps: { value: a.id } }, [
-                  _vm._v(_vm._s(a.ano))
-                ])
-              }),
-              0
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row text-right" }, [
-          _c("div", { staticClass: "col-sm-12 mt-3" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm btn-primary",
-                on: {
-                  click: function($event) {
-                    return _vm.salvarDados()
-                  }
-                }
-              },
-              [_c("span", { staticClass: "fa fa-save" })]
-            ),
-            _vm._v(" "),
-            _vm._m(3)
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._m(4),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "row table-responsive-sm",
-          staticStyle: { background: "#a8f3c4" }
-        },
-        [
-          _vm._m(5),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.itemrecursoestadual, function(ire) {
-        return _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("div", [_vm._v(_vm._s(ire.descricao))])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursoestadual, function(re) {
-                  return re.item_recurso_estadual_id === ire.id &&
-                    re.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 2
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  re.id,
-                                  re.valor,
-                                  re.item_recurso_estadual_id,
-                                  re.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.formata(re.valor)))]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursoestadual, function(re) {
-                  return re.item_recurso_estadual_id === ire.id &&
-                    re.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 1
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  re.id,
-                                  re.valor,
-                                  re.item_recurso_estadual_id,
-                                  re.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.formata(re.valor)))]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursoestadual, function(re) {
-                  return re.item_recurso_estadual_id === ire.id &&
-                    re.ano_id === a.id &&
-                    a.ano === _vm.anoatual
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  re.id,
-                                  re.valor,
-                                  re.item_recurso_estadual_id,
-                                  re.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.formata(re.valor)))]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          )
-        ])
-      })
-    ],
-    2
-  )
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "item_recurso_estadual_id" } }, [
-      _c("b", [_vm._v("ITEM")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "valor" } }, [
-      _c("b", [_vm._v("VALOR")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "ano_id" } }, [_c("b", [_vm._v("ANO")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-sm btn-danger",
-        attrs: { title: "CANCELAR", href: "javascript:history.back()" }
-      },
-      [_c("span", { staticClass: "fa fa-window-close" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row text-center" }, [
-      _c("div", { staticClass: "col text-center" }, [
-        _c("i", [_vm._v("Selecione o valor que deseja alterar")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-6" }, [
-      _c("label", { staticStyle: { color: "#1b1e21" } }, [
-        _c("b", [_vm._v("ITEM")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& ***!
-  \***************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("input", {
-        attrs: {
-          disabled: "",
-          hidden: "",
-          id: "municipio_id",
-          name: "municipio_id",
-          required: ""
-        },
-        domProps: { value: _vm.municipio.id }
-      }),
+    return _c("div", { staticClass: "alert hide" }, [
+      _c("span", { staticClass: "fas fa-exclamation-circle" }),
       _vm._v(" "),
-      _c("input", {
-        attrs: { disabled: "", hidden: "", id: "id", name: "id", required: "" },
-        domProps: { value: _vm.id_repasse }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "form-col-8" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.item_repasse,
-                    expression: "item_repasse"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "item_recurso_estadual_id",
-                  name: "item_recurso_estadual_id",
-                  disabled: "",
-                  required: ""
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.item_repasse = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.itemrecursofundoestadual, function(item) {
-                return _c("option", { domProps: { value: item.id } }, [
-                  _vm._v(_vm._s(item.descricao))
-                ])
-              }),
-              0
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-col-2" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.valor_repasse,
-                  expression: "valor_repasse"
-                }
-              ],
-              staticClass: "form-control text-right",
-              attrs: { id: "valor", name: "valor", required: "" },
-              domProps: { value: _vm.valor_repasse },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.valor_repasse = $event.target.value
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-col-2" }, [
-            _vm._m(2),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.ano_repasse,
-                    expression: "ano_repasse"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "ano_id",
-                  name: "ano_id",
-                  disabled: "",
-                  required: ""
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.ano_repasse = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.ano, function(a) {
-                return _c("option", { domProps: { value: a.id } }, [
-                  _vm._v(_vm._s(a.ano))
-                ])
-              }),
-              0
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row text-right" }, [
-          _c("div", { staticClass: "col-sm-12 mt-3" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm btn-primary",
-                on: {
-                  click: function($event) {
-                    return _vm.salvarDados()
-                  }
-                }
-              },
-              [_c("span", { staticClass: "fa fa-save" })]
-            ),
-            _vm._v(" "),
-            _vm._m(3)
-          ])
-        ])
+      _c("span", { staticClass: "msg" }, [
+        _vm._v(" Aviso: Este é um alerta de aviso! ")
       ]),
       _vm._v(" "),
-      _vm._m(4),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "row table-responsive-sm",
-          staticStyle: { background: "#a8f3c4" }
-        },
-        [
-          _vm._m(5),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.itemrecursofundoestadual, function(irfe) {
-        return _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("div", [_vm._v(_vm._s(irfe.descricao))])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundoestadual, function(rfe) {
-                  return rfe.item_recurso_fundo_estadual_id === irfe.id &&
-                    rfe.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 2
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfe.id,
-                                  rfe.valor,
-                                  rfe.item_recurso_fundo_estadual_id,
-                                  rfe.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR")
-                                  .format(rfe.valor)
-                                  .toFixed(2)
-                              )
-                            )
-                          ]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundoestadual, function(rfe) {
-                  return rfe.item_recurso_fundo_estadual_id === irfe.id &&
-                    rfe.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 1
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfe.id,
-                                  rfe.valor,
-                                  rfe.item_recurso_fundo_estadual_id,
-                                  rfe.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR")
-                                  .format(rfe.valor)
-                                  .toFixed(2)
-                              )
-                            )
-                          ]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundoestadual, function(rfe) {
-                  return rfe.item_recurso_fundo_estadual_id === irfe.id &&
-                    rfe.ano_id === a.id &&
-                    a.ano === _vm.anoatual
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfe.id,
-                                  rfe.valor,
-                                  rfe.item_recurso_fundo_estadual_id,
-                                  rfe.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR")
-                                  .format(rfe.valor)
-                                  .toFixed(2)
-                              )
-                            )
-                          ]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          )
-        ])
-      })
-    ],
-    2
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "item_recurso_estadual_id" } }, [
-      _c("b", [_vm._v("ITEM")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "valor" } }, [
-      _c("b", [_vm._v("VALOR")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "ano_id" } }, [_c("b", [_vm._v("ANO")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-sm btn-danger",
-        attrs: { title: "CANCELAR", href: "javascript:history.back()" }
-      },
-      [_c("span", { staticClass: "fa fa-window-close" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row text-center" }, [
-      _c("div", { staticClass: "col text-center" }, [
-        _c("i", [_vm._v("Selecione o valor que deseja alterar")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-6" }, [
-      _c("label", { staticStyle: { color: "#1b1e21" } }, [
-        _c("b", [_vm._v("ITEM")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& ***!
-  \***************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("input", {
-        attrs: {
-          disabled: "",
-          hidden: "",
-          id: "municipio_id",
-          name: "municipio_id",
-          required: ""
-        },
-        domProps: { value: _vm.municipio.id }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { disabled: "", hidden: "", id: "id", name: "id", required: "" },
-        domProps: { value: _vm.id_repasse }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("div", { staticClass: "form-row" }, [
-          _c("div", { staticClass: "form-col-6" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.item_repasse,
-                    expression: "item_repasse"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "item_recurso_nacional_id",
-                  name: "item_recurso_nacional_id",
-                  disabled: "",
-                  required: ""
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.item_repasse = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.itemrecursofundonacional, function(item) {
-                return _c("option", { domProps: { value: item.id } }, [
-                  _vm._v(_vm._s(item.descricao))
-                ])
-              }),
-              0
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-col-2" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.tipo_repasse,
-                    expression: "tipo_repasse"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "tipo_recurso_nacional_id",
-                  name: "tipo_recurso_nacional_id",
-                  disabled: "",
-                  required: ""
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.tipo_repasse = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.tiporecursonacional, function(trn) {
-                return _c("option", { domProps: { value: trn.id } }, [
-                  _vm._v(_vm._s(trn.nome))
-                ])
-              }),
-              0
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-col-2" }, [
-            _vm._m(2),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.valor_repasse,
-                  expression: "valor_repasse"
-                }
-              ],
-              staticClass: "form-control text-right",
-              attrs: { id: "valor", name: "valor", required: "" },
-              domProps: { value: _vm.valor_repasse },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.valor_repasse = $event.target.value
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-col-2" }, [
-            _vm._m(3),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.ano_repasse,
-                    expression: "ano_repasse"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "ano_id",
-                  name: "ano_id",
-                  disabled: "",
-                  required: ""
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.ano_repasse = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.ano, function(a) {
-                return _c("option", { domProps: { value: a.id } }, [
-                  _vm._v(_vm._s(a.ano))
-                ])
-              }),
-              0
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row text-right" }, [
-          _c("div", { staticClass: "col-sm-12 mt-3" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm btn-primary",
-                on: {
-                  click: function($event) {
-                    return _vm.salvarDados()
-                  }
-                }
-              },
-              [_c("span", { staticClass: "fa fa-save" })]
-            ),
-            _vm._v(" "),
-            _vm._m(4)
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._m(5),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "row table-responsive-sm",
-          staticStyle: { background: "#a8f3c4" }
-        },
-        [
-          _vm._m(6),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.itemrecursofundonacional, function(irfn) {
-        return _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("div", [_vm._v(_vm._s(irfn.descricao))])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundonacional, function(rfn) {
-                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
-                    rfn.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 2 &&
-                    rfn.tipo_recurso_nacional_id === 1
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfn.id,
-                                  rfn.item_recurso_fundo_nacional_id,
-                                  rfn.tipo_recurso_nacional_id,
-                                  rfn.valor,
-                                  rfn.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR").format(rfn.valor)
-                              )
-                            )
-                          ]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundonacional, function(rfn) {
-                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
-                    rfn.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 1 &&
-                    rfn.tipo_recurso_nacional_id === 1
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfn.id,
-                                  rfn.item_recurso_fundo_nacional_id,
-                                  rfn.tipo_recurso_nacional_id,
-                                  rfn.valor,
-                                  rfn.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR").format(rfn.valor)
-                              )
-                            )
-                          ]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundonacional, function(rfn) {
-                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
-                    rfn.ano_id === a.id &&
-                    a.ano === _vm.anoatual &&
-                    rfn.tipo_recurso_nacional_id === 1
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfn.id,
-                                  rfn.item_recurso_fundo_nacional_id,
-                                  rfn.tipo_recurso_nacional_id,
-                                  rfn.valor,
-                                  rfn.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(
-                                new Intl.NumberFormat("pt-BR").format(rfn.valor)
-                              )
-                            )
-                          ]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          )
-        ])
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "row table-responsive-sm",
-          staticStyle: { background: "#a8f3c4" }
-        },
-        [
-          _vm._m(7),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 2))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual - 1))])])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-2 text-right" }, [
-            _c("label", [_c("b", [_vm._v(_vm._s(_vm.anoatual))])])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.itemrecursofundonacional, function(irfn) {
-        return _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("div", [_vm._v(_vm._s(irfn.descricao))])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundonacional, function(rfn) {
-                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
-                    rfn.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 2 &&
-                    rfn.tipo_recurso_nacional_id === 2
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfn.id,
-                                  rfn.item_recurso_fundo_nacional_id,
-                                  rfn.tipo_recurso_nacional_id,
-                                  rfn.valor,
-                                  rfn.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(rfn.valor))]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundonacional, function(rfn) {
-                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
-                    rfn.ano_id === a.id &&
-                    a.ano === _vm.anoatual - 1 &&
-                    rfn.tipo_recurso_nacional_id === 2
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfn.id,
-                                  rfn.item_recurso_fundo_nacional_id,
-                                  rfn.tipo_recurso_nacional_id,
-                                  rfn.valor,
-                                  rfn.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(rfn.valor))]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-2" },
-            _vm._l(_vm.ano, function(a) {
-              return _c(
-                "span",
-                _vm._l(_vm.recursofundonacional, function(rfn) {
-                  return rfn.item_recurso_fundo_nacional_id === irfn.id &&
-                    rfn.ano_id === a.id &&
-                    a.ano === _vm.anoatual &&
-                    rfn.tipo_recurso_nacional_id === 2
-                    ? _c("div", { staticClass: "text-right" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "link",
-                            on: {
-                              click: function($event) {
-                                return _vm.editaValor(
-                                  rfn.id,
-                                  rfn.item_recurso_fundo_nacional_id,
-                                  rfn.tipo_recurso_nacional_id,
-                                  rfn.valor,
-                                  rfn.ano_id
-                                )
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(rfn.valor))]
-                        )
-                      ])
-                    : _vm._e()
-                }),
-                0
-              )
-            }),
-            0
-          )
-        ])
-      })
-    ],
-    2
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "item_recurso_nacional_id" } }, [
-      _c("b", [_vm._v("ITEM")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "tipo_recurso_nacional_id" } }, [
-      _c("b", [_vm._v("TIPO")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "valor" } }, [
-      _c("b", [_vm._v("VALOR")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "ano_id" } }, [_c("b", [_vm._v("ANO")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-sm btn-danger",
-        attrs: { title: "CANCELAR", href: "javascript:history.back()" }
-      },
-      [_c("span", { staticClass: "fa fa-window-close" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row text-center" }, [
-      _c("div", { staticClass: "col text-center" }, [
-        _c("i", [_vm._v("Selecione o valor que deseja alterar")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-6" }, [
-      _c("label", { staticStyle: { color: "#1b1e21" } }, [
-        _c("b", [_vm._v("ITEM")]),
-        _vm._v(" - "),
-        _c("b", [_vm._v("CUSTEIO")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-6" }, [
-      _c("label", { staticStyle: { color: "#1b1e21" } }, [
-        _c("b", [_vm._v("ITEM")]),
-        _vm._v(" - "),
-        _c("b", [_vm._v("INVESTIMENTO")])
+      _c("div", { staticClass: "close-btn" }, [
+        _c("span", { staticClass: "fas fa-times" })
       ])
     ])
   }
@@ -59024,8 +57837,8 @@ function normalizeComponent (
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.6.12
- * (c) 2014-2020 Evan You
+ * Vue.js v2.6.14
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
 
@@ -60725,13 +59538,14 @@ function assertProp (
       type = [type];
     }
     for (var i = 0; i < type.length && !valid; i++) {
-      var assertedType = assertType(value, type[i]);
+      var assertedType = assertType(value, type[i], vm);
       expectedTypes.push(assertedType.expectedType || '');
       valid = assertedType.valid;
     }
   }
 
-  if (!valid) {
+  var haveExpectedTypes = expectedTypes.some(function (t) { return t; });
+  if (!valid && haveExpectedTypes) {
     warn(
       getInvalidTypeMessage(name, value, expectedTypes),
       vm
@@ -60749,9 +59563,9 @@ function assertProp (
   }
 }
 
-var simpleCheckRE = /^(String|Number|Boolean|Function|Symbol)$/;
+var simpleCheckRE = /^(String|Number|Boolean|Function|Symbol|BigInt)$/;
 
-function assertType (value, type) {
+function assertType (value, type, vm) {
   var valid;
   var expectedType = getType(type);
   if (simpleCheckRE.test(expectedType)) {
@@ -60766,7 +59580,12 @@ function assertType (value, type) {
   } else if (expectedType === 'Array') {
     valid = Array.isArray(value);
   } else {
-    valid = value instanceof type;
+    try {
+      valid = value instanceof type;
+    } catch (e) {
+      warn('Invalid prop type: "' + String(type) + '" is not a constructor', vm);
+      valid = false;
+    }
   }
   return {
     valid: valid,
@@ -60774,13 +59593,15 @@ function assertType (value, type) {
   }
 }
 
+var functionTypeCheckRE = /^\s*function (\w+)/;
+
 /**
  * Use function string name to check built-in types,
  * because a simple equality check will fail when running
  * across different vms / iframes.
  */
 function getType (fn) {
-  var match = fn && fn.toString().match(/^\s*function (\w+)/);
+  var match = fn && fn.toString().match(functionTypeCheckRE);
   return match ? match[1] : ''
 }
 
@@ -60805,18 +59626,19 @@ function getInvalidTypeMessage (name, value, expectedTypes) {
     " Expected " + (expectedTypes.map(capitalize).join(', '));
   var expectedType = expectedTypes[0];
   var receivedType = toRawType(value);
-  var expectedValue = styleValue(value, expectedType);
-  var receivedValue = styleValue(value, receivedType);
   // check if we need to specify expected value
-  if (expectedTypes.length === 1 &&
-      isExplicable(expectedType) &&
-      !isBoolean(expectedType, receivedType)) {
-    message += " with value " + expectedValue;
+  if (
+    expectedTypes.length === 1 &&
+    isExplicable(expectedType) &&
+    isExplicable(typeof value) &&
+    !isBoolean(expectedType, receivedType)
+  ) {
+    message += " with value " + (styleValue(value, expectedType));
   }
   message += ", got " + receivedType + " ";
   // check if we need to specify received value
   if (isExplicable(receivedType)) {
-    message += "with value " + receivedValue + ".";
+    message += "with value " + (styleValue(value, receivedType)) + ".";
   }
   return message
 }
@@ -60831,9 +59653,9 @@ function styleValue (value, type) {
   }
 }
 
+var EXPLICABLE_TYPES = ['string', 'number', 'boolean'];
 function isExplicable (value) {
-  var explicitTypes = ['string', 'number', 'boolean'];
-  return explicitTypes.some(function (elem) { return value.toLowerCase() === elem; })
+  return EXPLICABLE_TYPES.some(function (elem) { return value.toLowerCase() === elem; })
 }
 
 function isBoolean () {
@@ -61060,7 +59882,7 @@ var initProxy;
   var allowedGlobals = makeMap(
     'Infinity,undefined,NaN,isFinite,isNaN,' +
     'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' +
-    'Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,' +
+    'Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,BigInt,' +
     'require' // for Webpack/Browserify
   );
 
@@ -61563,6 +60385,12 @@ function isWhitespace (node) {
 
 /*  */
 
+function isAsyncPlaceholder (node) {
+  return node.isComment && node.asyncFactory
+}
+
+/*  */
+
 function normalizeScopedSlots (
   slots,
   normalSlots,
@@ -61619,9 +60447,10 @@ function normalizeScopedSlot(normalSlots, key, fn) {
     res = res && typeof res === 'object' && !Array.isArray(res)
       ? [res] // single vnode
       : normalizeChildren(res);
+    var vnode = res && res[0];
     return res && (
-      res.length === 0 ||
-      (res.length === 1 && res[0].isComment) // #9658
+      !vnode ||
+      (res.length === 1 && vnode.isComment && !isAsyncPlaceholder(vnode)) // #9658, #10391
     ) ? undefined
       : res
   };
@@ -61694,26 +60523,28 @@ function renderList (
  */
 function renderSlot (
   name,
-  fallback,
+  fallbackRender,
   props,
   bindObject
 ) {
   var scopedSlotFn = this.$scopedSlots[name];
   var nodes;
-  if (scopedSlotFn) { // scoped slot
+  if (scopedSlotFn) {
+    // scoped slot
     props = props || {};
     if (bindObject) {
       if (!isObject(bindObject)) {
-        warn(
-          'slot v-bind without argument expects an Object',
-          this
-        );
+        warn('slot v-bind without argument expects an Object', this);
       }
       props = extend(extend({}, bindObject), props);
     }
-    nodes = scopedSlotFn(props) || fallback;
+    nodes =
+      scopedSlotFn(props) ||
+      (typeof fallbackRender === 'function' ? fallbackRender() : fallbackRender);
   } else {
-    nodes = this.$slots[name] || fallback;
+    nodes =
+      this.$slots[name] ||
+      (typeof fallbackRender === 'function' ? fallbackRender() : fallbackRender);
   }
 
   var target = props && props.slot;
@@ -61763,6 +60594,7 @@ function checkKeyCodes (
   } else if (eventKeyName) {
     return hyphenate(eventKeyName) !== key
   }
+  return eventKeyCode === undefined
 }
 
 /*  */
@@ -62294,8 +61126,10 @@ function createComponent (
 }
 
 function createComponentInstanceForVnode (
-  vnode, // we know it's MountedComponentVNode but flow doesn't
-  parent // activeInstance in lifecycle state
+  // we know it's MountedComponentVNode but flow doesn't
+  vnode,
+  // activeInstance in lifecycle state
+  parent
 ) {
   var options = {
     _isComponent: true,
@@ -62434,7 +61268,7 @@ function _createElement (
     ns = (context.$vnode && context.$vnode.ns) || config.getTagNamespace(tag);
     if (config.isReservedTag(tag)) {
       // platform built-in elements
-      if (isDef(data) && isDef(data.nativeOn)) {
+      if (isDef(data) && isDef(data.nativeOn) && data.tag !== 'component') {
         warn(
           ("The .native modifier for v-on is only valid on components but it was used on <" + tag + ">."),
           context
@@ -62756,12 +61590,6 @@ function resolveAsyncComponent (
       ? factory.loadingComp
       : factory.resolved
   }
-}
-
-/*  */
-
-function isAsyncPlaceholder (node) {
-  return node.isComment && node.asyncFactory
 }
 
 /*  */
@@ -63132,7 +61960,8 @@ function updateChildComponent (
   var hasDynamicScopedSlot = !!(
     (newScopedSlots && !newScopedSlots.$stable) ||
     (oldScopedSlots !== emptyObject && !oldScopedSlots.$stable) ||
-    (newScopedSlots && vm.$scopedSlots.$key !== newScopedSlots.$key)
+    (newScopedSlots && vm.$scopedSlots.$key !== newScopedSlots.$key) ||
+    (!newScopedSlots && vm.$scopedSlots.$key)
   );
 
   // Any static slot children from the parent may have changed during parent's
@@ -63584,11 +62413,8 @@ Watcher.prototype.run = function run () {
       var oldValue = this.value;
       this.value = value;
       if (this.user) {
-        try {
-          this.cb.call(this.vm, value, oldValue);
-        } catch (e) {
-          handleError(e, this.vm, ("callback for watcher \"" + (this.expression) + "\""));
-        }
+        var info = "callback for watcher \"" + (this.expression) + "\"";
+        invokeWithErrorHandling(this.cb, this.vm, [value, oldValue], this.vm, info);
       } else {
         this.cb.call(this.vm, value, oldValue);
       }
@@ -63810,6 +62636,8 @@ function initComputed (vm, computed) {
         warn(("The computed property \"" + key + "\" is already defined in data."), vm);
       } else if (vm.$options.props && key in vm.$options.props) {
         warn(("The computed property \"" + key + "\" is already defined as a prop."), vm);
+      } else if (vm.$options.methods && key in vm.$options.methods) {
+        warn(("The computed property \"" + key + "\" is already defined as a method."), vm);
       }
     }
   }
@@ -63962,11 +62790,10 @@ function stateMixin (Vue) {
     options.user = true;
     var watcher = new Watcher(vm, expOrFn, cb, options);
     if (options.immediate) {
-      try {
-        cb.call(vm, watcher.value);
-      } catch (error) {
-        handleError(error, vm, ("callback for immediate watcher \"" + (watcher.expression) + "\""));
-      }
+      var info = "callback for immediate watcher \"" + (watcher.expression) + "\"";
+      pushTarget();
+      invokeWithErrorHandling(cb, vm, [watcher.value], vm, info);
+      popTarget();
     }
     return function unwatchFn () {
       watcher.teardown();
@@ -64264,6 +63091,8 @@ function initAssetRegisters (Vue) {
 
 
 
+
+
 function getComponentName (opts) {
   return opts && (opts.Ctor.options.name || opts.tag)
 }
@@ -64285,9 +63114,9 @@ function pruneCache (keepAliveInstance, filter) {
   var keys = keepAliveInstance.keys;
   var _vnode = keepAliveInstance._vnode;
   for (var key in cache) {
-    var cachedNode = cache[key];
-    if (cachedNode) {
-      var name = getComponentName(cachedNode.componentOptions);
+    var entry = cache[key];
+    if (entry) {
+      var name = entry.name;
       if (name && !filter(name)) {
         pruneCacheEntry(cache, key, keys, _vnode);
       }
@@ -64301,9 +63130,9 @@ function pruneCacheEntry (
   keys,
   current
 ) {
-  var cached$$1 = cache[key];
-  if (cached$$1 && (!current || cached$$1.tag !== current.tag)) {
-    cached$$1.componentInstance.$destroy();
+  var entry = cache[key];
+  if (entry && (!current || entry.tag !== current.tag)) {
+    entry.componentInstance.$destroy();
   }
   cache[key] = null;
   remove(keys, key);
@@ -64321,6 +63150,32 @@ var KeepAlive = {
     max: [String, Number]
   },
 
+  methods: {
+    cacheVNode: function cacheVNode() {
+      var ref = this;
+      var cache = ref.cache;
+      var keys = ref.keys;
+      var vnodeToCache = ref.vnodeToCache;
+      var keyToCache = ref.keyToCache;
+      if (vnodeToCache) {
+        var tag = vnodeToCache.tag;
+        var componentInstance = vnodeToCache.componentInstance;
+        var componentOptions = vnodeToCache.componentOptions;
+        cache[keyToCache] = {
+          name: getComponentName(componentOptions),
+          tag: tag,
+          componentInstance: componentInstance,
+        };
+        keys.push(keyToCache);
+        // prune oldest entry
+        if (this.max && keys.length > parseInt(this.max)) {
+          pruneCacheEntry(cache, keys[0], keys, this._vnode);
+        }
+        this.vnodeToCache = null;
+      }
+    }
+  },
+
   created: function created () {
     this.cache = Object.create(null);
     this.keys = [];
@@ -64335,12 +63190,17 @@ var KeepAlive = {
   mounted: function mounted () {
     var this$1 = this;
 
+    this.cacheVNode();
     this.$watch('include', function (val) {
       pruneCache(this$1, function (name) { return matches(val, name); });
     });
     this.$watch('exclude', function (val) {
       pruneCache(this$1, function (name) { return !matches(val, name); });
     });
+  },
+
+  updated: function updated () {
+    this.cacheVNode();
   },
 
   render: function render () {
@@ -64376,12 +63236,9 @@ var KeepAlive = {
         remove(keys, key);
         keys.push(key);
       } else {
-        cache[key] = vnode;
-        keys.push(key);
-        // prune oldest entry
-        if (this.max && keys.length > parseInt(this.max)) {
-          pruneCacheEntry(cache, keys[0], keys, this._vnode);
-        }
+        // delay setting the cache until update
+        this.vnodeToCache = vnode;
+        this.keyToCache = key;
       }
 
       vnode.data.keepAlive = true;
@@ -64464,7 +63321,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.6.12';
+Vue.version = '2.6.14';
 
 /*  */
 
@@ -64501,7 +63358,7 @@ var isBooleanAttr = makeMap(
   'default,defaultchecked,defaultmuted,defaultselected,defer,disabled,' +
   'enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,' +
   'muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,' +
-  'required,reversed,scoped,seamless,selected,sortable,translate,' +
+  'required,reversed,scoped,seamless,selected,sortable,' +
   'truespeed,typemustmatch,visible'
 );
 
@@ -64625,7 +63482,7 @@ var isHTMLTag = makeMap(
 // contain child elements.
 var isSVG = makeMap(
   'svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,' +
-  'foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,' +
+  'foreignobject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,' +
   'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view',
   true
 );
@@ -64830,7 +63687,8 @@ var hooks = ['create', 'activate', 'update', 'remove', 'destroy'];
 
 function sameVnode (a, b) {
   return (
-    a.key === b.key && (
+    a.key === b.key &&
+    a.asyncFactory === b.asyncFactory && (
       (
         a.tag === b.tag &&
         a.isComment === b.isComment &&
@@ -64838,7 +63696,6 @@ function sameVnode (a, b) {
         sameInputType(a, b)
       ) || (
         isTrue(a.isAsyncPlaceholder) &&
-        a.asyncFactory === b.asyncFactory &&
         isUndef(b.asyncFactory.error)
       )
     )
@@ -65726,7 +64583,7 @@ function updateAttrs (oldVnode, vnode) {
     cur = attrs[key];
     old = oldAttrs[key];
     if (old !== cur) {
-      setAttr(elm, key, cur);
+      setAttr(elm, key, cur, vnode.data.pre);
     }
   }
   // #4391: in IE9, setting type can reset value for input[type=radio]
@@ -65746,8 +64603,8 @@ function updateAttrs (oldVnode, vnode) {
   }
 }
 
-function setAttr (el, key, value) {
-  if (el.tagName.indexOf('-') > -1) {
+function setAttr (el, key, value, isInPre) {
+  if (isInPre || el.tagName.indexOf('-') > -1) {
     baseSetAttr(el, key, value);
   } else if (isBooleanAttr(key)) {
     // set attribute for blank value
@@ -68268,7 +67125,7 @@ var isNonPhrasingTag = makeMap(
 
 // Regular Expressions for parsing tags and attributes
 var attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
-var dynamicArgAttribute = /^\s*((?:v-[\w-]+:|@|:|#)\[[^=]+\][^\s"'<>\/=]*)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
+var dynamicArgAttribute = /^\s*((?:v-[\w-]+:|@|:|#)\[[^=]+?\][^\s"'<>\/=]*)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
 var ncname = "[a-zA-Z_][\\-\\.0-9_a-zA-Z" + (unicodeRegExp.source) + "]*";
 var qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
 var startTagOpen = new RegExp(("^<" + qnameCapture));
@@ -68573,7 +67430,7 @@ var modifierRE = /\.[^.\]]+(?=[^\]]*$)/g;
 var slotRE = /^v-slot(:|$)|^#/;
 
 var lineBreakRE = /[\r\n]/;
-var whitespaceRE$1 = /\s+/g;
+var whitespaceRE$1 = /[ \f\t\r\n]+/g;
 
 var invalidAttributeRE = /[\s"'<>\/=]/;
 
@@ -68621,8 +67478,12 @@ function parse (
   platformMustUseProp = options.mustUseProp || no;
   platformGetTagNamespace = options.getTagNamespace || no;
   var isReservedTag = options.isReservedTag || no;
-  maybeComponent = function (el) { return !!el.component || !isReservedTag(el.tag); };
-
+  maybeComponent = function (el) { return !!(
+    el.component ||
+    el.attrsMap[':is'] ||
+    el.attrsMap['v-bind:is'] ||
+    !(el.attrsMap.is ? isReservedTag(el.attrsMap.is) : isReservedTag(el.tag))
+  ); };
   transforms = pluckModuleFunction(options.modules, 'transformNode');
   preTransforms = pluckModuleFunction(options.modules, 'preTransformNode');
   postTransforms = pluckModuleFunction(options.modules, 'postTransformNode');
@@ -69871,9 +68732,9 @@ function genHandler (handler) {
       code += genModifierCode;
     }
     var handlerCode = isMethodPath
-      ? ("return " + (handler.value) + "($event)")
+      ? ("return " + (handler.value) + ".apply(null, arguments)")
       : isFunctionExpression
-        ? ("return (" + (handler.value) + ")($event)")
+        ? ("return (" + (handler.value) + ").apply(null, arguments)")
         : isFunctionInvocation
           ? ("return " + (handler.value))
           : handler.value;
@@ -69959,7 +68820,8 @@ function generate (
   options
 ) {
   var state = new CodegenState(options);
-  var code = ast ? genElement(ast, state) : '_c("div")';
+  // fix #11483, Root level <script> tags should not be rendered.
+  var code = ast ? (ast.tag === 'script' ? 'null' : genElement(ast, state)) : '_c("div")';
   return {
     render: ("with(this){return " + code + "}"),
     staticRenderFns: state.staticRenderFns
@@ -70421,7 +69283,7 @@ function genComment (comment) {
 function genSlot (el, state) {
   var slotName = el.slotName || '"default"';
   var children = genChildren(el, state);
-  var res = "_t(" + slotName + (children ? ("," + children) : '');
+  var res = "_t(" + slotName + (children ? (",function(){return " + children + "}") : '');
   var attrs = el.attrs || el.dynamicAttrs
     ? genProps((el.attrs || []).concat(el.dynamicAttrs || []).map(function (attr) { return ({
         // slot props are camelized
@@ -71074,9 +69936,7 @@ module.exports = function(module) {
 
 var map = {
 	"./components/Endereco.vue": "./resources/js/components/Endereco.vue",
-	"./components/RecursoEstadualEdit.vue": "./resources/js/components/RecursoEstadualEdit.vue",
-	"./components/RecursoFundoEstadualEdit.vue": "./resources/js/components/RecursoFundoEstadualEdit.vue",
-	"./components/RecursoFundoNacionalEdit.vue": "./resources/js/components/RecursoFundoNacionalEdit.vue"
+	"./components/alert.vue": "./resources/js/components/alert.vue"
 };
 
 
@@ -71265,18 +70125,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/RecursoEstadualEdit.vue":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/RecursoEstadualEdit.vue ***!
-  \*********************************************************/
+/***/ "./resources/js/components/alert.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/alert.vue ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f& */ "./resources/js/components/RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f&");
-/* harmony import */ var _RecursoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecursoEstadualEdit.vue?vue&type=script&lang=js& */ "./resources/js/components/RecursoEstadualEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _alert_vue_vue_type_template_id_03b9d421_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./alert.vue?vue&type=template&id=03b9d421&scoped=true& */ "./resources/js/components/alert.vue?vue&type=template&id=03b9d421&scoped=true&");
+/* harmony import */ var _alert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./alert.vue?vue&type=script&lang=js& */ "./resources/js/components/alert.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _alert_vue_vue_type_style_index_0_id_03b9d421_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css& */ "./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -71284,189 +70146,67 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _RecursoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _alert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _alert_vue_vue_type_template_id_03b9d421_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _alert_vue_vue_type_template_id_03b9d421_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "03b9d421",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/RecursoEstadualEdit.vue"
+component.options.__file = "resources/js/components/alert.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/RecursoEstadualEdit.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/RecursoEstadualEdit.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/components/alert.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/alert.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoEstadualEdit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoEstadualEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./alert.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f&":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f& ***!
-  \****************************************************************************************/
+/***/ "./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css& ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_style_index_0_id_03b9d421_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=style&index=0&id=03b9d421&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_style_index_0_id_03b9d421_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_style_index_0_id_03b9d421_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_style_index_0_id_03b9d421_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_style_index_0_id_03b9d421_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/components/alert.vue?vue&type=template&id=03b9d421&scoped=true&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/alert.vue?vue&type=template&id=03b9d421&scoped=true& ***!
+  \**************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoEstadualEdit.vue?vue&type=template&id=7c699b0f&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_template_id_03b9d421_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./alert.vue?vue&type=template&id=03b9d421&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/alert.vue?vue&type=template&id=03b9d421&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_template_id_03b9d421_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoEstadualEdit_vue_vue_type_template_id_7c699b0f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/RecursoFundoEstadualEdit.vue":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/RecursoFundoEstadualEdit.vue ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& */ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&");
-/* harmony import */ var _RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& */ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/RecursoFundoEstadualEdit.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoEstadualEdit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& ***!
-  \*********************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoEstadualEdit.vue?vue&type=template&id=4c1f1866&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoEstadualEdit_vue_vue_type_template_id_4c1f1866___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/RecursoFundoNacionalEdit.vue":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/RecursoFundoNacionalEdit.vue ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& */ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&");
-/* harmony import */ var _RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& */ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/RecursoFundoNacionalEdit.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoNacionalEdit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& ***!
-  \*********************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecursoFundoNacionalEdit.vue?vue&type=template&id=2d62d059&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecursoFundoNacionalEdit_vue_vue_type_template_id_2d62d059___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_alert_vue_vue_type_template_id_03b9d421_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -124,6 +124,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/leito" class="link">LEITOS</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

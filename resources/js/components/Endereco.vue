@@ -11,7 +11,6 @@
                 </div>
             </div>
         </div>
-
        <div class="col-sm-3 mt-2">
             <label for="municipio_id"><h5><b>Município</b></h5></label>
             <select class="form-control" id="municipio_id" name="municipio_id" required>
@@ -19,17 +18,14 @@
                 <option v-for="(m,i) in municipios" :value="i+1" :selected="selecionado(m.nome, cidade)" >{{ m.nome }}</option>
             </select>
         </div>
-
-        <div class="col-sm-5 mt-2">
+        <div class="col-sm-4 mt-2">
             <label><h5><b>Logradouro</b></h5></label>
             <input v-model="endereco" id="rua" name="rua" class="form-control mb-3 text-uppercase"/>
         </div>
-
         <div class="col-sm-2 mt-2">
             <label><h5><b>Bairro</b></h5></label>
             <input type="text" v-model="bairro" class="form-control" name="bairro" id="bairro">
         </div>
-
     </div>
 </template>
 

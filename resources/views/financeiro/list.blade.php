@@ -2,12 +2,6 @@
 @section('content')
     <?php
     $data=date('Y');
-    global $tre1;
-    $tre1=0;
-    global $tre2;
-    $tre2=0;
-    global $tre3;
-    $tre3=0;
     ?>
     <div class="container">
         @include('layouts.alert')
@@ -23,45 +17,7 @@
             <a class="btn btn-primary btn-sm" href="{{route('financeiroCreate',$municipio->id)}}" role="button">ADICIONAR</a>
             <a class="btn btn-primary btn-sm" href="{{route('financeiro.index')}}" role="button">VOLTAR</a>
         </div>
-        <div class="row-sm-12">
-            <div class="col-sm-12 text-center" style="background: #64d5ca">
-                <label><b>TOTAL DE RECURSOS REPASSADOS</b></label>
-                <table class="border table">
-                    <thead>
-                        <tr>
-                            <th scope="col">FONTE</th>
-                            <th scope="col">{{$data-2}}</th>
-                            <th scope="col">{{$data-1}}</th>
-                            <th scope="col">{{$data}}</th>
-                            <th scope="col">TOTAL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Recurso Estadual para o Município</td>
-                            <td><div class="text-right"><b>{{number_format($tre1,2,',','.')}}</b></div></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Recurso Fundo Estadual para o Município</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Recurso Fundo Nacional para o Município</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        @include('financeiro.tabelatotalrepasse')
         <div class="desktop mt-3">
             <div class="row">
                 <div class="col-12">
@@ -102,6 +58,12 @@
         </div>
     </div>
 @endsection
+<script>
+    import RepasseFinanceiroGrid from "../../js/components/RepasseFinanceiroGrid";
+    export default {
+        components: {RepasseFinanceiroGrid}
+    }
+</script>
 <style>
     /*Mobile e Desktop resolução*/
     @media screen and (max-width: 800px) {

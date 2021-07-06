@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ano;
 use App\Financeiro;
 use App\ItemRecursoEstadual;
 use App\ItemRecursoFundoEstadual;
@@ -18,7 +19,7 @@ class FinanceiroController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
@@ -61,6 +62,7 @@ class FinanceiroController extends Controller
     public function show($id)
     {
         $msg=0;
+        $ano=Ano::all();
         $municipio=Municipio::find($id);
         $m=Municipio::find($id);
         $recursoEstadual=RecursoEstadual::where('municipio_id',$id)->get();
@@ -73,7 +75,7 @@ class FinanceiroController extends Controller
 
         return view('financeiro.list',compact('municipio','recursoEstadual','recursoFundoEstadual',
             'recursoFundoNacional','itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional',
-            'tipoRecursoNacional','msg','m'));
+            'tipoRecursoNacional','msg','m','ano'));
     }
 
     /**

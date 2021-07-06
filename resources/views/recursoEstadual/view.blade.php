@@ -3,7 +3,12 @@
 @else
     <?php
     $data=date('Y');
-
+    global $tre1;
+    $tre1=0;
+    global $tre2;
+    $tre2=0;
+    global $tre3;
+    $tre3=0;
     ?>
     <div class="desktop">
         <div class="row mt-2" style="background:lavenderblush">
