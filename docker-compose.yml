@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  app:
+  app_dossie:
     build:
       context: ./
       dockerfile: Dockerfile
@@ -12,9 +12,9 @@ services:
       - ./:/var/www
       - ./docker-compose/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - dossie
+      - susam0
 
-  db:
+  db_dossie:
     image: mysql:5.7
     container_name: dossie-db
     restart: unless-stopped
@@ -28,9 +28,9 @@ services:
     volumes:
       - dossie_volume:/var/lib/mysql
     networks:
-      - dossie
+      - susam0
 
-  nginx:
+  nginx_dossie:
     image: nginx:1.17-alpine
     container_name: dossie-nginx
     restart: unless-stopped
@@ -40,11 +40,12 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d
     networks:
-      - dossie
+      - susam0
 
 networks:
-  dossie:
-    driver: bridge
+  ses_am:
+    external:
+      name: susam0
 
 volumes:
   dossie_volume: {}
