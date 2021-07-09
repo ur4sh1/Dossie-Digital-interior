@@ -2,41 +2,60 @@
 $data=date('Y')
 ?>
 @if($m->coberturaVacinal->count()>0)
-    <div class="row table-sm">
-        <div class="col-2 tituloVac">
-            <label><b>IMUNOBIOLÓGICA</b></label><br>
-            @foreach($imunobiologicas as $i)
-                <di>{{$i->nome}}</di><br>
-            @endforeach
+    <div class="desktop">
+        <div class="d-inline-flex">
+            <table>
+                <tr style="background: lavenderblush">
+                    <td><label><b>IMUNOBIOLÓGICA</b></label></td>
+                    <td class="text-right"><label><b>{{$data-2}}</b></label></td>
+                </tr>
+                @foreach($imunobiologica as $i)
+                    <tr>
+                        <td style="width: 180px">{{$i->nome}}</td>
+                        @foreach($m->coberturaVacinal as $mc)
+                            @if($mc->ano->ano==$data-2 and $mc->imunobiologica_id==$i->id)
+                                <td class="text-right">{{$mc->porcentagem}}%</td>
+                            @endif
+                        @endforeach
+                    </tr>
+                @endforeach
+            </table>
+            <table>
+                <tr style="background: lavenderblush">
+                    <td colspan="2" class="text-right"><label><b>{{$data-1}}</b></label></td>
+                </tr>
+                @foreach($imunobiologica as $i)
+                    <tr>
+                        <td style="width: 100px; color: white">-</td>
+                        @foreach($m->coberturaVacinal as $mc)
+                            @if($mc->ano->ano==$data-1 and $mc->imunobiologica_id==$i->id)
+                                <td class="text-right">{{$mc->porcentagem}}%</td>
+                            @endif
+                        @endforeach
+                    </tr>
+                @endforeach
+            </table>
+            <table>
+                <tr style="background: lavenderblush">
+                    <td colspan="2" class="text-right"><label><b>{{$data}}</b></label></td>
+                </tr>
+                @foreach($imunobiologica as $i)
+                    <tr>
+                        <td style="width: 100px; color: white">-</td>
+                        @foreach($m->coberturaVacinal as $mc)
+                            @if($mc->ano->ano==$data and $mc->imunobiologica_id==$i->id)
+                                <td class="text-right">{{$mc->porcentagem}}%</td>
+                            @endif
+                        @endforeach
+                    </tr>
+                @endforeach
+            </table>
         </div>
-        <div class="col-sm-1">
-            <div class="col"><label><b>{{$data-2}}</b></label></div>
-            @foreach($m->coberturaVacinal as $mc)
-                @if($mc->ano->ano == ($data-2))
-                    <div class="nomeDoenca" style="background: #a8f3c4">{{$mc->imunobiologica->nome}}</div>
-                    <div class="text-right">{{$mc->porcentagem}}%</div>
-                @endif
-            @endforeach
-        </div>
-        <div class="col-sm-1">
-            <div class="col"><label><b>{{$data-1}}</b></label></div>
-            @foreach($m->coberturaVacinal as $mc)
-                @if($mc->ano->ano == ($data-1))
-                    <div class="nomeDoenca" style="background: #a8f3c4">{{$mc->imunobiologica->nome}}</div>
-                    <div class="text-right">{{$mc->porcentagem}}%</div>
-                @endif
-            @endforeach
-        </div>
-        <div class="col-sm-1">
-            <div class="col"><label><b>{{$data}}</b></label></div>
-            @foreach($m->coberturaVacinal as $mc)
-                @if($mc->ano->ano == ($data))
-                    <div class="nomeDoenca" style="background: #a8f3c4">{{$mc->imunobiologica->nome}}</div>
-                    <div class="text-right">{{$mc->porcentagem}}%</div>
-                @endif
-            @endforeach
-        </div>
+    </div>
+    <div class="mobile">
+        @include('coberturaVacinal.mobile')
     </div>
 @else
     <i>Não existe informações cadastradas</i>
 @endif
+

@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-col-2">
                     <label for="valor">Valor</label>
-                    <input class="form-control text-right" value="{{ number_format($recursoFundoEstadual->valor,2,',','.') }}" id="valor" name="valor" required>
+                    <input class="form-control text-right" onkeypress="isNumberKey(event)" value="{{ number_format($recursoFundoEstadual->valor,2,',','.') }}" id="valor" name="valor" required>
                 </div>
                 <div class="form-col-2">
                     <label for="ano_id">Ano</label>
@@ -52,3 +52,12 @@
     </form>
     </div>
 @endsection
+<script>
+    function isNumberKey(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9,',','.']/.test(char))){
+            evt.preventDefault();
+        }
+    }
+</script>

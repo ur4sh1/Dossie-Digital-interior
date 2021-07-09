@@ -161,13 +161,11 @@
             </div>
         </div>
     @endforeach
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <label><b>TOTAL REPASSE</b></label>
-        </div>
-    </div>
     <table class="table table-responsive-sm">
-        <thead>
+        <thead  style="background: #a8f3c4">
+            <tr>
+                <td style="background:lavenderblush" colspan="5"><b>TOTAL REPASSE</b></td>
+            </tr>
         <tr>
             <th scope="col"></th>
             <th scope="col" class="text-right">{{ $data-2 }}</th>

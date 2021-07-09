@@ -13,19 +13,17 @@
         </div>
         <table class="table table-sm" id="table">
             <thead>
-            <tr>
-                <th scope="col">ID</th>
+            <tr style="background:lavenderblush">
                 <th scope="col">SERVIÇO</th>
                 <th scope="col">AÇÕES</th>
             </tr>
             </thead>
             @foreach($tipoServicos as $ts)
                 <tr>
-                    <td>{{$ts->id}}</td>
                     <td>{{$ts->nome}}</td>
-                    <td>
+                    <td style="width: 80px">
                         <span class="form-inline">
-                        <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('tipoServicos.edit',$ts)}}" role="button"><span class="fa fa-edit"></span></a>
+<!--                        <a class="btn btn-primary btn-sm ml-1" title="EDITAR" href="{{route('tipoServicos.edit',$ts)}}" role="button"><span class="fa fa-edit"></span></a>-->
                             <form action="{{route('tipoServicos.destroy',$ts)}}" method="post" class="mr-1 ml-1">
                                 @csrf
                                 @method('delete')

@@ -10,7 +10,7 @@ class Imunobiologica extends Model
 
     public function coberturaVacinal()
     {
-        return $this->hasMany('App\CoberturaVacinal','imunobiologica_id','id');
+        return $this->belongsTo('App\CoberturaVacinal','imunobiologica_id','id');
     }
 
     public function ano()

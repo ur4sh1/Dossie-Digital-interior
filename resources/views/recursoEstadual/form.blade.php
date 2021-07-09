@@ -17,7 +17,7 @@
             <a class="btn btn-primary btn-sm" href="{{route('recursoEstadualEdit',$municipio->id)}}" role="button">EDITAR RECURSOS</a>
             <a class="btn btn-primary btn-sm" href="{{route('itemRecursoEstadualIndex',$municipio->id)}}" role="button">GERENCIAR ITENS</a>
         </div>
-        <form method="post" action="{{route('recursoEstadualStore',$municipio->id)}}">
+        <form method="post" autocomplete="off" action="{{route('recursoEstadualStore',$municipio->id)}}">
             @csrf
             <input hidden value="{{ $municipio->id }}" id="municipio_id" name="municipio_id">
             <div class="form-group">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-col-2">
                         <label for="valor">Valor</label>
-                        <input class="form-control text-right" id="valor" name="valor" required>
+                        <input class="form-control text-right" id="valor" name="valor" onkeypress="isNumberKey(event)" required>
                     </div>
                     <div class="form-col-2">
                         <label for="ano_id">Ano</label>
@@ -75,3 +75,12 @@
         }
     }
 </style>
+<script>
+    function isNumberKey(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9,',','.']/.test(char))){
+            evt.preventDefault();
+        }
+    }
+</script>

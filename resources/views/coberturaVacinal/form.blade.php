@@ -23,7 +23,7 @@
                         <label for="imunobiologica_id"><b>VACINA</b></label>
                         <select class="form-control" id="imunobiologica_id" name="imunobiologica_id" required>
                             <option disabled selected>Selecione</option>
-                            @foreach($imunobiologicas as $i)
+                            @foreach($imunobiologica as $i)
                                 <option value="{{$i->id}}">{{$i->nome}}</option>
                             @endforeach
                         </select>
@@ -40,7 +40,7 @@
                     <div class="col-sm-2">
                         <label for="porcentagem"><b>COBERTURA</b></label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" value="" id="" name="porcentagem">
+                            <the-mask type="text" class="form-control text-right" id="porcentagem" name="porcentagem" :mask="['###']"></the-mask>
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">%</span>
                             </div>

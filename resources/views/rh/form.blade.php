@@ -50,13 +50,13 @@
                     </select>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-control" style="width: 100px;" maxlength="4" type="text" name="susam_estatutario">
+                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="susam_estatutario">
                 </div>
                 <div class="col-sm-2">
-                    <input class="form-control" style="width: 100px;" maxlength="4" type="text" name="susam_contrato">
+                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="susam_contrato">
                 </div>
                 <div class="col-sm-2">
-                    <input class="form-control" style="width: 100px;" maxlength="4" type="text" name="prefeitura">
+                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="prefeitura">
                 </div>
             </div>
             <div class="row mt-3">
@@ -68,6 +68,12 @@
         </form>
     </div>
 @endsection
-
-
-
+<script>
+    function isNumberKey(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9]/.test(char))){
+            evt.preventDefault();
+        }
+    }
+</script>

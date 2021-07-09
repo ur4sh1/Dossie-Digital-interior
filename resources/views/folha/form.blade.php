@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -32,7 +31,7 @@
                 </div>
                 <div class="col">
                     <label for="salario_inicial">Salário Unitário</label><br>
-                    <the-mask class="form-control text-right" style="width: 150px" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
+                    <the-mask class="form-control text-right" style="width: 150px" onkeypress="isNumberKey(event)" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
                 </div>
                 <div class="col">
                     <label for="SUSAM">Qtd Funcionários SESAM</label><br>
@@ -48,3 +47,12 @@
         </form>
     </div>
 @endsection
+<script>
+    function isNumberKey(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9,',','.']/.test(char))){
+            evt.preventDefault();
+        }
+    }
+</script>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Lista de Partidos Cadastrados</h1>
+            <h1>Partidos</h1>
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>

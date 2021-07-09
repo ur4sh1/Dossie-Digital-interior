@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Cadastrado de Equipamento do Hospital</h1>
+            <h1>Cadastrado de Equipamento</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
@@ -33,11 +33,11 @@
                 </div>
                 <div class="col-sm-1">
                     <label for="existente"><b>EXISTENTE</b></label>
-                    <input class="form-control" style="width: 80px;" maxlength="3" id="existente" name="existente" required>
+                    <input class="form-control text-right" style="width: 80px;" onkeypress="isNumberKey(event)" maxlength="3" id="existente" name="existente" required>
                 </div>
                 <div class="col-sm-1">
                     <label for="nome"><b>FUNCIONAL</b></label>
-                    <input class="form-control" style="width: 80px;" maxlength="3" id="funcional" name="funcional" required>
+                    <input class="form-control text-right" style="width: 80px;" onkeypress="isNumberKey(event)" maxlength="3" id="funcional" name="funcional" required>
                 </div>
             </div>
             <div class="row mt-2">
@@ -48,12 +48,13 @@
             </div>
         </form>
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#existente').mask('999');
-            $('#funcional').mask('999');
-        });
-    </script>
-
 @endsection
+<script>
+    function isNumberKey(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9]/.test(char))){
+            evt.preventDefault();
+        }
+    }
+</script>

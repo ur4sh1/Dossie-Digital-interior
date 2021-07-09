@@ -24,7 +24,7 @@
             @foreach($imunobiologica as $i)
             <tr>
                 <td>{{$i->nome}}</td>
-                <td>
+                <td style="width: 20px">
                     <span class="text-right">
                         <form action="{{route('imunobiologica.destroy',$i)}}" method="post" class="mr-1 ml-1">
                             @csrf

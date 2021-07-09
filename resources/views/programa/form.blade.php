@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="text-info">
@@ -45,19 +44,19 @@
             <div class="row mt-3">
                 <div class="col-3">
                     <label for="teto"><b>Teto</b></label>
-                    <input class="form-control" type="text" name="teto" id="teto">
+                    <input class="form-control" onkeypress="isNumberKey(event)" type="text" name="teto" id="teto">
                 </div>
                 <div class="col-3">
                     <label for="cred"><b>Crédito</b></label>
-                    <input class="form-control" type="text" name="cred" id="cred">
+                    <input class="form-control" onkeypress="isNumberKey(event)" type="text" name="cred" id="cred">
                 </div>
                 <div class="col-3">
                     <label for="implant"><b>Implantado</b></label>
-                    <input class="form-control" type="text" name="implant" id="implant">
+                    <input class="form-control" onkeypress="isNumberKey(event)" type="text" name="implant" id="implant">
                 </div>
                 <div class="col-3">
                     <label for="repasse"><b>Repasse</b></label>
-                    <input class="form-control" type="text" name="repasse" id="repasse">
+                    <input class="form-control" onkeypress="isNumberKey(event)" type="text" name="repasse" id="repasse">
                 </div>
             </div>
             <div class="form-row text-right"><!--buttonsAções-->
@@ -69,3 +68,12 @@
         </form>
     </div>
 @endsection
+<script>
+    function isNumberKey(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9,',','.']/.test(char))){
+            evt.preventDefault();
+        }
+    }
+</script>

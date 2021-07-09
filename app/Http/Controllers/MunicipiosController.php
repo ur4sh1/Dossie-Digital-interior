@@ -61,7 +61,7 @@ class MunicipiosController extends Controller
         $rhcategoria=RhCategoria::all();
         $programas=Programa::all();
         $coberturaVacinal=CoberturaVacinal::all();
-        $imunobiologicas=Imunobiologica::all();
+        $imunobiologica=Imunobiologica::all();
         $doencas=Doencas::all();
         $doencasAgravos=DoencasAgravos::all();
         $ano=Ano::all();
@@ -75,7 +75,7 @@ class MunicipiosController extends Controller
 
         return view("admin.municipios", compact('autoridade','municipio',
             'regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico',
-            'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologicas',
+            'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologica',
             'doencas','doencasAgravos','ano','tipoRecursoNacional','recursoEstadual','recursoFundoEstadual','recursoFundoNacional',
             'itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional'));
     }

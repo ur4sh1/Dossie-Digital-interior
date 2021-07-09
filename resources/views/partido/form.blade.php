@@ -12,12 +12,12 @@
         </div>
         <form method="post" action="{{route('partido.store')}}">
             @csrf
-            <table class="table table-sm">
+            <table class="table-sm">
                 <thead>
                 <tr>
                     <th scope="col">SIGLA</th>
                     <th scope="col">DESCRIÇÃO</th>
-                    <th scope="col">AÇÕES</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tr>

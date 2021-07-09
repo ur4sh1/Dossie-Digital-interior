@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        @include('layouts.alert')
         <div class="text-info">
             <h1>Leitos</h1>
         </div>

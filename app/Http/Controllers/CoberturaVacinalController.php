@@ -22,8 +22,8 @@ class CoberturaVacinalController extends Controller
         $ano=Ano::all();
         $municipio=Municipio::all();
         $coberturaVacinal=CoberturaVacinal::all();
-        $imunobiologicas=Imunobiologica::all();
-        return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologicas','municipio','msg'));
+        $imunobiologica=Imunobiologica::all();
+        return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologica','municipio','msg'));
     }
 
     /**
@@ -37,15 +37,15 @@ class CoberturaVacinalController extends Controller
             $msg=0;
             $ano=Ano::all();
             $municipio=Municipio::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.form',compact('imunobiologicas','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.form',compact('imunobiologica','ano','municipio','msg'));
 
         }catch (Exception $e){
             $msg=2;
             $ano=Ano::all();
             $municipio=Municipio::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.form',compact('imunobiologicas','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.form',compact('imunobiologica','ano','municipio','msg'));
         }
 
     }
@@ -65,16 +65,16 @@ class CoberturaVacinalController extends Controller
             $ano=Ano::all();
             $municipio=Municipio::all();
             $coberturaVacinal=CoberturaVacinal::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.index',compact('imunobiologicas','coberturaVacinal','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.index',compact('imunobiologica','coberturaVacinal','ano','municipio','msg'));
 
         }catch (Exception $e){
             $msg=2;
             $ano=Ano::all();
             $municipio=Municipio::all();
             $coberturaVacinal=CoberturaVacinal::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.index',compact('imunobiologicas','coberturaVacinal','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.index',compact('imunobiologica','coberturaVacinal','ano','municipio','msg'));
         }
     }
 
@@ -102,16 +102,16 @@ class CoberturaVacinalController extends Controller
             $coberturaVacinal=CoberturaVacinal::find($id);
             $ano=Ano::all();
             $municipio=Municipio::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.edit',compact('imunobiologicas','coberturaVacinal','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.edit',compact('imunobiologica','coberturaVacinal','ano','municipio','msg'));
 
         }catch (Exception $e){
             $msg=2;
             $ano=Ano::all();
             $municipio=Municipio::all();
             $coberturaVacinal=CoberturaVacinal::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.index',compact('imunobiologicas','coberturaVacinal','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.index',compact('imunobiologica','coberturaVacinal','ano','municipio','msg'));
         }
     }
 
@@ -129,16 +129,16 @@ class CoberturaVacinalController extends Controller
             $coberturaVacinal=CoberturaVacinal::find($id);
             $coberturaVacinal->update($request->all());
             $ano=Ano::all();
-            $imunobiologicas=Imunobiologica::all();
+            $imunobiologica=Imunobiologica::all();
             $municipio=Municipio::all();
-            return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologicas','municipio','msg'));
+            return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologica','municipio','msg'));
         }catch (Exception $e){
             $msg=2;
             $coberturaVacinal=CoberturaVacinal::all();
             $ano=Ano::all();
-            $imunobiologicas=Imunobiologica::all();
+            $imunobiologica=Imunobiologica::all();
             $municipio=Municipio::all();
-            return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologicas','municipio','msg'));
+            return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologica','municipio','msg'));
         }
     }
     /**
@@ -157,14 +157,14 @@ class CoberturaVacinalController extends Controller
             $ano=Ano::all();
             $municipio=Municipio::all();
             $coberturaVacinal=CoberturaVacinal::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.index',compact('imunobiologicas','coberturaVacinal','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.index',compact('imunobiologica','coberturaVacinal','ano','municipio','msg'));
         }catch (Exception $e){
             $ano=Ano::all();
             $municipio=Municipio::all();
             $coberturaVacinal=CoberturaVacinal::all();
-            $imunobiologicas=Imunobiologica::all();
-            return view('coberturaVacinal.index',compact('imunobiologicas','coberturaVacinal','ano','municipio','msg'));
+            $imunobiologica=Imunobiologica::all();
+            return view('coberturaVacinal.index',compact('imunobiologica','coberturaVacinal','ano','municipio','msg'));
         }
     }
 }

@@ -26,6 +26,7 @@ class CreateLeitosTable extends Migration
             $table->integer('uci_adulto')->default(0);
             $table->integer('uci_pediatrico')->default(0);
             $table->timestamps();
+
         });
     }
 

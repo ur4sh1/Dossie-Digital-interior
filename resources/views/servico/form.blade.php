@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Cadastro de Serviços nos Hospitais</h1>
+            <h1>Cadastro de Serviços</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
@@ -12,7 +12,7 @@
         </div>
         <form method="post" action="{{route('servicos.store')}}">
             @csrf
-            <table class="table table-sm">
+            <table class="table-sm">
                 <thead>
                 <tr>
                     <th scope="col">HOSPITAL</th>

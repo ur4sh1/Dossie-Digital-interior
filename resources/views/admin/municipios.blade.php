@@ -211,7 +211,6 @@
                                                     <div class="collapse" id="veicu{{$ho->id}}">
                                                         @include('veiculo.view')
                                                     </div>
-
                                                 </div>
                                             </div>
                                         @endforeach
@@ -227,13 +226,16 @@
                                     @include('doencaAgravo.view')
                                 </div>
                                 <div class="tab-pane fade" id="t7{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
-                                @if($m->hospital->count()==0)<!--aba hospital RH-->
+                                <!--aba hospital RH-->
+                                @if($m->hospital->count()==0)
                                     <i>Informações não cadastradas</i>
                                     @else
                                         @foreach ($m->hospital as $ho)
                                             <div class="row">
                                                 <div class="col">
-                                                {{$ho->nome}}
+                                                    <button disabled type="button" style="color: #1b1e21" class="btn btn-link redime" data-toggle="modal">
+                                                        {{$ho->nome}}
+                                                    </button>
                                                 <!--MENU-->
                                                     <!--exames RH-->
                                                     <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#rh{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -268,6 +270,7 @@
                                     @endif
                                 </div>
                                 <div class="tab-pane fade" id="t8{{$m->id}}" role="tabpanel" aria-labelledby="profile-tab">
+                                    @include('financeiro.tabelatotalrepasse')
                                     <!--MENU-->
                                     <a class="btn teste btn-link collapsed" data-toggle="collapse" href="#rest{{$m->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                         <b>RECURSO ESTADUAL</b><br>

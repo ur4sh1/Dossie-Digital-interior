@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Hospital;
 use App\Leito;
+use Exception;
 use Illuminate\Http\Request;
 
 class LeitosController extends Controller
@@ -15,9 +16,10 @@ class LeitosController extends Controller
      */
     public function index()
     {
+        $msg=0;
         $leito=Leito::all();
         $hospital=Hospital::all();
-        return view('leito.index',compact('leito','hospital'));
+        return view('leito.index',compact('leito','hospital','msg'));
     }
 
     /**
@@ -35,20 +37,31 @@ class LeitosController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $leitos=Leito::create($request->all());
+        try {
+            $msg=1;
+            $leito=Leito::create($request->all());
+            $leito=Leito::all();
+            $hospital=Hospital::all();
+            return view('leito.index',compact('leito','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $leito=Leito::all();
+            $hospital=Hospital::all();
+            return view('leito.index',compact('leito','hospital','msg'));
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Leito  $leitos
+     * @param  \App\Leito  $leito
      * @return \Illuminate\Http\Response
      */
-    public function show(Leito $leitos)
+    public function show(Leito $leito)
     {
         //
     }
@@ -56,10 +69,10 @@ class LeitosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Leito  $leitos
+     * @param  \App\Leito  $leito
      * @return \Illuminate\Http\Response
      */
-    public function edit(Leito $leitos)
+    public function edit(Leito $leito)
     {
         //
     }
@@ -68,10 +81,10 @@ class LeitosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Leito  $leitos
+     * @param  \App\Leito  $leito
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Leito $leitos)
+    public function update(Request $request, Leito $leito)
     {
         //
     }
@@ -80,10 +93,22 @@ class LeitosController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Leito  $leitos
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function destroy(Leito $leitos)
+    public function destroy($id)
     {
-        $leitos->delete();
+        try {
+            $msg=1;
+            $leito=Leito::find($id);
+            $leito->delete();
+            $leito=Leito::all();
+            $hospital=Hospital::all();
+            return view('leito.index',compact('leito','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $leito=Leito::all();
+            $hospital=Hospital::all();
+            return view('leito.index',compact('leito','hospital','msg'));
+        }
     }
 }
