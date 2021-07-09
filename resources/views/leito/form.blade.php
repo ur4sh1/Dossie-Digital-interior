@@ -54,11 +54,11 @@
                     <the-mask class="form-control text-right" type="text" id="suporte_ventilatorio" name="suporte_ventilatorio" :mask="['###']"></the-mask>
                 </div>
                 <div class="col-sm-3">
-                    <label for="uci_adulto">UCI Adulto</label>
+                    <label for="uci_adulto">LSV Adulto</label>
                     <the-mask class="form-control text-right" type="text" id="uci_adulto" name="uci_adulto" :mask="['###']"></the-mask>
                 </div>
                 <div class="col-sm-3">
-                    <label for="uci_pediatrico">UCI Pediátrico</label>
+                    <label for="uci_pediatrico">LSV Pediátrico</label>
                     <the-mask class="form-control text-right" type="text" id="uci_pediatrico" name="uci_pediatrico" :mask="['###']"></the-mask>
                 </div>
             </div>

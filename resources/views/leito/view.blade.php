@@ -37,9 +37,9 @@
             <td>{{$ho->leito->suporte_ventilatorio ?? 'Informações não cadastradas'}}</td>
         </tr>
         <tr>
-            <td>UCI Adulto:</td>
+            <td>LSV Adulto:</td>
             <td>{{$ho->leito->uci_adulto ?? 'Informações não cadastradas'}}</td>
-            <td>UCI Pediátrico</td>
+            <td>LSV Pediátrico</td>
             <td>{{$ho->leito->uci_pediatrico ?? 'Informações não cadastradas'}}</td>
         </tr>
         <tr>

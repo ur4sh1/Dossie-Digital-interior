@@ -19,8 +19,8 @@
                     <th>Pediádrico</th>
                     <th>Outros</th>
                     <th>Suporte Ventilátorio</th>
-                    <th>UCI Adulto</th>
-                    <th>UCI Pediátrico</th>
+                    <th>LSV Adulto</th>
+                    <th>LSV Pediátrico</th>
                 </tr>
             </thead>
             <tbody>
