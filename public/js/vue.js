@@ -1950,6 +1950,11 @@ __webpack_require__.r(__webpack_exports__);
       selected: this.municipios
     };
   },
+  mounted: function mounted() {
+    if (this.cep) {
+      this.localizaCep();
+    }
+  },
   methods: {
     localizaCep: function localizaCep() {
       var _this = this;
@@ -2037,7 +2042,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n*[data-v-03b9d421]{\n    margin: 0;\n    padding: 0;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    box-sizing: border-box;\n    font-family: 'Poppins', sans-serif;\n}\nhtml[data-v-03b9d421],body[data-v-03b9d421]{\n    height: 100%;\n}\nbody[data-v-03b9d421]{\n    display: grid;\n    place-items: center;\n    overflow: hidden;\n}\nbutton[data-v-03b9d421]{\n    padding: 8px 16px;\n    font-size: 25px;\n    font-weight: 500;\n    border-radius: 4px;\n    border: none;\n    outline: none;\n    background: #e69100;\n    color: white;\n    letter-spacing: 1px;\n    cursor: pointer;\n}\n.alert[data-v-03b9d421]{\n    background: #ffdb9b;\n    padding: 20px 40px;\n    min-width: 420px;\n    position: absolute;\n    right: 0;\n    top: 10px;\n    border-radius: 4px;\n    border-left: 8px solid #ffa502;\n    overflow: hidden;\n    opacity: 0;\n    pointer-events: none;\n}\n.alert.showAlert[data-v-03b9d421]{\n    opacity: 1;\n    pointer-events: auto;\n}\n.alert.show[data-v-03b9d421]{\n    -webkit-animation: show_slide-data-v-03b9d421 1s ease forwards;\n            animation: show_slide-data-v-03b9d421 1s ease forwards;\n}\n@-webkit-keyframes show_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(100%);\n}\n40%{\n        transform: translateX(-10%);\n}\n80%{\n        transform: translateX(0%);\n}\n100%{\n        transform: translateX(-10px);\n}\n}\n@keyframes show_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(100%);\n}\n40%{\n        transform: translateX(-10%);\n}\n80%{\n        transform: translateX(0%);\n}\n100%{\n        transform: translateX(-10px);\n}\n}\n.alert.hide[data-v-03b9d421]{\n    -webkit-animation: hide_slide-data-v-03b9d421 1s ease forwards;\n            animation: hide_slide-data-v-03b9d421 1s ease forwards;\n}\n@-webkit-keyframes hide_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(-10px);\n}\n40%{\n        transform: translateX(0%);\n}\n80%{\n        transform: translateX(-10%);\n}\n100%{\n        transform: translateX(100%);\n}\n}\n@keyframes hide_slide-data-v-03b9d421 {\n0%{\n        transform: translateX(-10px);\n}\n40%{\n        transform: translateX(0%);\n}\n80%{\n        transform: translateX(-10%);\n}\n100%{\n        transform: translateX(100%);\n}\n}\n.alert .fa-exclamation-circle[data-v-03b9d421]{\n    position: absolute;\n    left: 20px;\n    top: 50%;\n    transform: translateY(-50%);\n    color: #ce8500;\n    font-size: 30px;\n}\n.alert .msg[data-v-03b9d421]{\n    padding: 0 20px;\n    font-size: 18px;\n    color: #ce8500;\n}\n.alert .close-btn[data-v-03b9d421]{\n    position: absolute;\n    right: 0px;\n    top: 50%;\n    transform: translateY(-50%);\n    background: #ffd080;\n    padding: 20px 18px;\n    cursor: pointer;\n}\n.alert .close-btn[data-v-03b9d421]:hover{\n    background: #ffc766;\n}\n.alert .close-btn .fas[data-v-03b9d421]{\n    color: #ce8500;\n    font-size: 22px;\n    line-height: 40px;\n}\n", ""]);
+exports.push([module.i, "\n*[data-v-03b9d421]{\r\n    margin: 0;\r\n    padding: 0;\r\n    -webkit-user-select: none;\r\n       -moz-user-select: none;\r\n        -ms-user-select: none;\r\n            user-select: none;\r\n    box-sizing: border-box;\r\n    font-family: 'Poppins', sans-serif;\n}\nhtml[data-v-03b9d421],body[data-v-03b9d421]{\r\n    height: 100%;\n}\nbody[data-v-03b9d421]{\r\n    display: grid;\r\n    place-items: center;\r\n    overflow: hidden;\n}\nbutton[data-v-03b9d421]{\r\n    padding: 8px 16px;\r\n    font-size: 25px;\r\n    font-weight: 500;\r\n    border-radius: 4px;\r\n    border: none;\r\n    outline: none;\r\n    background: #e69100;\r\n    color: white;\r\n    letter-spacing: 1px;\r\n    cursor: pointer;\n}\n.alert[data-v-03b9d421]{\r\n    background: #ffdb9b;\r\n    padding: 20px 40px;\r\n    min-width: 420px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 10px;\r\n    border-radius: 4px;\r\n    border-left: 8px solid #ffa502;\r\n    overflow: hidden;\r\n    opacity: 0;\r\n    pointer-events: none;\n}\n.alert.showAlert[data-v-03b9d421]{\r\n    opacity: 1;\r\n    pointer-events: auto;\n}\n.alert.show[data-v-03b9d421]{\r\n    -webkit-animation: show_slide-data-v-03b9d421 1s ease forwards;\r\n            animation: show_slide-data-v-03b9d421 1s ease forwards;\n}\n@-webkit-keyframes show_slide-data-v-03b9d421 {\n0%{\r\n        transform: translateX(100%);\n}\n40%{\r\n        transform: translateX(-10%);\n}\n80%{\r\n        transform: translateX(0%);\n}\n100%{\r\n        transform: translateX(-10px);\n}\n}\n@keyframes show_slide-data-v-03b9d421 {\n0%{\r\n        transform: translateX(100%);\n}\n40%{\r\n        transform: translateX(-10%);\n}\n80%{\r\n        transform: translateX(0%);\n}\n100%{\r\n        transform: translateX(-10px);\n}\n}\n.alert.hide[data-v-03b9d421]{\r\n    -webkit-animation: hide_slide-data-v-03b9d421 1s ease forwards;\r\n            animation: hide_slide-data-v-03b9d421 1s ease forwards;\n}\n@-webkit-keyframes hide_slide-data-v-03b9d421 {\n0%{\r\n        transform: translateX(-10px);\n}\n40%{\r\n        transform: translateX(0%);\n}\n80%{\r\n        transform: translateX(-10%);\n}\n100%{\r\n        transform: translateX(100%);\n}\n}\n@keyframes hide_slide-data-v-03b9d421 {\n0%{\r\n        transform: translateX(-10px);\n}\n40%{\r\n        transform: translateX(0%);\n}\n80%{\r\n        transform: translateX(-10%);\n}\n100%{\r\n        transform: translateX(100%);\n}\n}\n.alert .fa-exclamation-circle[data-v-03b9d421]{\r\n    position: absolute;\r\n    left: 20px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    color: #ce8500;\r\n    font-size: 30px;\n}\n.alert .msg[data-v-03b9d421]{\r\n    padding: 0 20px;\r\n    font-size: 18px;\r\n    color: #ce8500;\n}\n.alert .close-btn[data-v-03b9d421]{\r\n    position: absolute;\r\n    right: 0px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    background: #ffd080;\r\n    padding: 20px 18px;\r\n    cursor: pointer;\n}\n.alert .close-btn[data-v-03b9d421]:hover{\r\n    background: #ffc766;\n}\n.alert .close-btn .fas[data-v-03b9d421]{\r\n    color: #ce8500;\r\n    font-size: 22px;\r\n    line-height: 40px;\n}\r\n", ""]);
 
 // exports
 
@@ -3157,45 +3162,44 @@ var render = function() {
     _c("div", { staticClass: "col-sm-3 mt-2" }, [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "input-group" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
+      _c(
+        "div",
+        { staticClass: "input-group" },
+        [
+          _c("the-mask", {
+            staticClass: "form-control cep mb-3",
+            attrs: { type: "text", id: "cep", name: "cep", mask: "########" },
+            model: {
               value: _vm.cep,
+              callback: function($$v) {
+                _vm.cep = $$v
+              },
               expression: "cep"
             }
-          ],
-          staticClass: "form-control cep mb-3",
-          attrs: { type: "text", id: "cep", name: "cep" },
-          domProps: { value: _vm.cep },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.cep = $event.target.value
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "input-group-append" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary mb-3",
-              attrs: { type: "button", id: "button-addon2" },
-              on: {
-                click: function($event) {
-                  return _vm.localizaCep()
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "input-group-append" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary mb-3",
+                attrs: { type: "button", id: "button-addon2" },
+                on: {
+                  click: function($event) {
+                    return _vm.localizaCep()
+                  }
                 }
-              }
-            },
-            [_vm._v("\n                    Localizar\n                ")]
-          )
-        ])
-      ])
+              },
+              [
+                _vm._v(
+                  "\n                        Localizar\n                    "
+                )
+              ]
+            )
+          ])
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-sm-3 mt-2" }, [
@@ -3299,13 +3303,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("h5", [_c("b", [_vm._v("Logradouro")])])])
+    return _c("label", { attrs: { for: "rua" } }, [
+      _c("h5", [_c("b", [_vm._v("Logradouro")])])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("label", [_c("h5", [_c("b", [_vm._v("Bairro")])])])
+    return _c("label", { attrs: { for: "bairro" } }, [
+      _c("h5", [_c("b", [_vm._v("Bairro")])])
+    ])
   }
 ]
 render._withStripped = true
@@ -15789,7 +15797,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Sistema-Dossie-docker\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! D:\Projetos\Sistema-Dossie\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

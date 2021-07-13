@@ -37388,7 +37388,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Sistema-Dossie-docker\resources\js\bootstrap.js */"./resources/js/bootstrap.js");
+module.exports = __webpack_require__(/*! D:\Projetos\Sistema-Dossie\resources\js\bootstrap.js */"./resources/js/bootstrap.js");
 
 
 /***/ })

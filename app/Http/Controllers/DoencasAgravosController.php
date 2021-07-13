@@ -6,6 +6,7 @@ use App\Ano;
 use App\Doencas;
 use App\DoencasAgravos;
 use App\Municipio;
+use Exception;
 use Illuminate\Http\Request;
 
 class DoencasAgravosController extends Controller
@@ -31,10 +32,14 @@ class DoencasAgravosController extends Controller
      */
     public function create()
     {
-        $municipios=Municipio::all();
-        $ano=Ano::all();
-        $doencas=Doencas::all();
-        return view('doencaAgravo.form',compact('ano','doencas','municipios'));
+        try {
+            $municipios=Municipio::all();
+            $ano=Ano::all();
+            $doencas=Doencas::all();
+            return view('doencaAgravo.form',compact('ano','doencas','municipios'));
+        }catch (Exception $e){
+
+        }
     }
 
     /**
@@ -45,8 +50,12 @@ class DoencasAgravosController extends Controller
      */
     public function store(Request $request)
     {
-        $doencasAgravos=DoencasAgravos::create($request->all());
-        return redirect()->route('doencasAgravos.index');
+        try {
+            $doencasAgravos=DoencasAgravos::create($request->all());
+            return redirect()->route('doencasAgravos.index');
+        }catch (Exception $e){
+
+        }
     }
 
     /**
@@ -87,10 +96,20 @@ class DoencasAgravosController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\DoencasAgravos  $doencasAgravos
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function destroy(DoencasAgravos $doencasAgravos)
+    public function destroy($id)
     {
-        //
+        try {
+            $doencasAgravos=DoencasAgravos::find($id);
+            $doencasAgravos->delete();
+            $doencas=Doencas::all();
+            $doencasAgravos=DoencasAgravos::all();
+            $ano=Ano::all();
+            $municipios=Municipio::all();
+            return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios'));
+        }catch (Exception $e){
+
+        }
     }
 }

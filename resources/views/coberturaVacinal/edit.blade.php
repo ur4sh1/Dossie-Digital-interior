@@ -20,7 +20,7 @@
                     <div class="col">
                         <label for="imunobiologica_id"><b>VACINA</b></label>
                         <select class="form-control" id="imunobiologica_id" name="imunobiologica_id" required disabled>
-                            @foreach($imunobiologicas as $i)
+                            @foreach($imunobiologica as $i)
                                 <option value="{{$i->id}}" {{$coberturaVacinal->imunobiologica_id==$i->id?'selected':''}}>{{$i->nome}}</option>
                             @endforeach
                         </select>

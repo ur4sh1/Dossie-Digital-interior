@@ -3,7 +3,8 @@
         <div class="col-sm-3 mt-2">
             <label><h5><b>CEP</b></h5></label>
             <div class="input-group">
-                <input type="text" id="cep" name="cep" class="form-control cep mb-3" v-model="cep">
+<!--                <input type="text" id="cep" name="cep" class="form-control cep mb-3" v-model="cep">-->
+                <the-mask type="text" id="cep" name="cep" class="form-control cep mb-3" mask="########" v-model="cep" />
                 <div class="input-group-append">
                     <button class="btn btn-primary mb-3" type="button" id="button-addon2" @click="localizaCep()">
                         Localizar
@@ -19,16 +20,15 @@
             </select>
         </div>
         <div class="col-sm-4 mt-2">
-            <label><h5><b>Logradouro</b></h5></label>
+            <label for="rua"><h5><b>Logradouro</b></h5></label>
             <input v-model="endereco" id="rua" name="rua" class="form-control mb-3 text-uppercase"/>
         </div>
         <div class="col-sm-2 mt-2">
-            <label><h5><b>Bairro</b></h5></label>
+            <label for="bairro"><h5><b>Bairro</b></h5></label>
             <input type="text" v-model="bairro" class="form-control" name="bairro" id="bairro">
         </div>
     </div>
 </template>
-
 <script>
 export default {
     props:[
@@ -45,6 +45,11 @@ export default {
             cidade:"",
             bairro:"",
             selected:this.municipios
+        }
+    },
+    mounted() {
+        if(this.cep){
+            this.localizaCep()
         }
     },
     methods:{
@@ -66,7 +71,7 @@ export default {
             if(n1===n2){
                 return "true"
             }
-        }
+        },
     }
 }
 </script>

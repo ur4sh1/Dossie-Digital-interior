@@ -19,25 +19,29 @@
                 <th scope="col">MUNICÍPIO</th>
                 <th scope="col">ANO</th>
                 <th scope="col" class="text-center">CASOS</th>
-                <th scope="col" class="text-center" style="width: 120px">FONTE</th>
+                <th scope="col" class="text-center">FONTE</th>
+                <th scope="col" class="text-center"></th>
             </tr>
             </thead>
             <tbody>
             @foreach($doencasAgravos  as $d)
-            <tr>
-                <td>{{$d->doencas->nome}}</td>
-                <td>{{$d->municipio->nome}}</td>
-                <td>{{$d->ano->ano}}</td>
-                <td class="text-center">{{$d->casos}}</td>
-                <td style="width:100%;table-layout:fixed" class="text-center">{{$d->fonte}}</td>
-            </tr>
+                <tr>
+                    <td style="width: 20%">{{$d->doencas->nome}}</td>
+                    <td>{{$d->municipio->nome}}</td>
+                    <td>{{$d->ano->ano}}</td>
+                    <td class="text-center">{{$d->casos}}</td>
+                    <td class="text-center">{{$d->fonte}}</td>
+                    <td class="form-inline">
+                        <form action="{{route('doencasAgravos.destroy',$d->id)}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <input type="hidden" name="id" value="${{$d->id}}">
+                            <button class="btn btn-danger btn-sm ml-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
             </tbody>
         </table>
     </div>
 @endsection
-<style>
-    td{
-        white-space: nowrap;
-    }
-</style>

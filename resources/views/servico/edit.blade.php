@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Cadastro de Serviços nos Hospitais</h1>
+            <h1>Editar Serviço</h1>
         </div>
         <form method="post" action="{{route('servicos.update',$servico->id)}}">
             @csrf
