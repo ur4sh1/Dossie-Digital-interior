@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>COBERTURA VACINAL</h1>
+                    <h1>Cobertura Vacinal</h1>
                 </div>
             </div>
         </div>
@@ -28,21 +28,25 @@
             <tbody>
             @foreach($coberturaVacinal as $cv)
             <tr>
-                <td>{{$cv->imunobiologica->nome}}</td>
-                <td>{{$cv->municipio->nome}}</td>
+                <td style="width: 20%">{{$cv->imunobiologica->nome}}</td>
+                <td style="width: 20%">{{$cv->municipio->nome}}</td>
                 <td class="text-right">{{$cv->porcentagem}}%</td>
                 <td class="text-center">{{$cv->ano->ano}}</td>
                 <td class="text-center">{{$cv->fonte}}</td>
-                <td>
-                    <span class="form-inline">
-                        <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR PORCENTAGEM" href="{{route('coberturaVacinal.edit',$cv)}}" role="button"><span class="fa fa-edit"></span></a>
-                        <form action="{{route('coberturaVacinal.destroy',$cv)}}" method="post" class="mr-1 ml-1">
-                            @csrf
-                            @method('delete')
-                            <input type="hidden" name="id" value="${{$cv->id}}">
-                            <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
-                        </form>
-                    </span>
+                <td class="d-flex justify-content-end">
+                    <div class="row">
+                        <div class="col-3">
+                            <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR PORCENTAGEM" href="{{route('coberturaVacinal.edit',$cv)}}" role="button"><span class="fa fa-edit"></span></a>
+                        </div>
+                        <div class="col-6">
+                            <form action="{{route('coberturaVacinal.destroy',$cv)}}" method="post" class="mr-1 ml-1">
+                                @csrf
+                                @method('delete')
+                                <input type="hidden" name="id" value="${{$cv->id}}">
+                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                            </form>
+                        </div>
+                    </div>
                 </td>
             </tr>
             @endforeach

@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Cadastro de Autoridade</h1>
+            <h1><a href="{{route('autoridade.index')}}">Autoridade</a> / Cadastro</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">

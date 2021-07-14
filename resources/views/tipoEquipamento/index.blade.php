@@ -7,8 +7,8 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.create')}}" role="button">ADICIONAR EQUIPAMENTO</a>
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('equipamentos.index')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.create')}}" role="button">ADICIONAR EQUIPAMENTO</a>
             </div>
         </div>
         <table class="table table-sm" id="table">

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>COBERTURA VACINAL</h1>
+                    <h1><a href="{{route('coberturaVacinal.index')}}">Cobertura Vacinal</a> / Alteração</h1>
                 </div>
             </div>
         </div>

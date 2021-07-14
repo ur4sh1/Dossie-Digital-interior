@@ -6,7 +6,7 @@
     ?>
     <div class="container">
         <div class="text-info">
-            <h1>Cadastrar Doenças e Agravos</h1>
+            <h1><a href="{{route('doencasAgravos.index')}}">Doenças e Agravos</a> / Cadastro </h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">

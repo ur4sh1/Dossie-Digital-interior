@@ -135,6 +135,15 @@
         $("#alerta").slideUp(500);
     });
 </script>
+<script>
+    function isNumberKey(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9]/.test(char))){
+            evt.preventDefault();
+        }
+    }
+</script>
 <style>
     @media screen and (max-width: 442px) {
         h1 {

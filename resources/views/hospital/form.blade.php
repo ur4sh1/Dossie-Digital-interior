@@ -3,14 +3,14 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Cadastro de Hospital</h1>
+            <h1><a href="{{route('hospitals.index')}}">Hospital</a> / Cadastro</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('hospitals.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
-        <form method="post" class="needs-validation" action="{{route('hospitals.store')}}">
+        <form method="post" class="needs-validation" action="{{route('hospitals.store')}}" autocomplete="off">
             @csrf
             <div class="form-row">
                 <div class="col-sm-8 mt-2"><!--nome-->
@@ -18,18 +18,18 @@
                     <input type="text" class="form-control text-uppercase" id="nome" name="nome"  required>
                 </div>
                 <div class="col-sm-4 mt-2">
-                    <label><h5><b>E-mail</b></h5></label>
+                    <label for="email"><h5><b>E-mail</b></h5></label>
                     <input type="email" class="form-control" name="email" id="email">
                 </div>
             </div>
             <endereco :municipios="{{$municipio}}"></endereco>
             <div class="form-row">
                 <div class="col-sm-2 mt-2">
-                    <label><h5><b>N°</b></h5></label>
+                    <label for="numero"><h5><b>N°</b></h5></label>
                     <input type="text" class="form-control" name="numero" id="numero">
                 </div>
                 <div class="col-sm-2 mt-2">
-                    <label><h5><b>Telefone</b></h5></label>
+                    <label for="tel"><h5><b>Telefone</b></h5></label>
                     <the-mask type="text" class="form-control" name="tel" id="tel" :mask="['(##) ####-####', '(##) #####-####']"></the-mask>
                 </div>
             </div>

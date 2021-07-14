@@ -8,8 +8,8 @@
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('equipamentos.create')}}" role="button">ADICIONAR EQUIPAMENTO HOSPITAL</a>
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">LISTA DE EQUIPAMENTOS</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('equipamentos.create')}}" role="button">VINCULAR EQUIPAMENTO</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">EQUIPAMENTOS</a>
             </div>
         </div>
         <table class="table table-responsive-lg table-sm" id="table">

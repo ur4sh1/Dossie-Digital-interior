@@ -5,18 +5,18 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>IMUNOBIOLÓGICA</h1>
+                    <h1>Imunobiológica</h1>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button">LISTA</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button">VOLTAR</a>
             <a class="btn btn-primary btn-sm mt-1" href="{{route('imunobiologica.create')}}" role="button">ADICIONAR</a>
         </div>
         <table class="table table-responsive-lg table-sm" id="table">
             <thead>
             <tr style="background:lavenderblush">
-                <th scope="col">IMUNOBIOLÓGICA</th>
+                <th scope="col">VACINA</th>
                 <th scope="col"></th>
             </tr>
             </thead>

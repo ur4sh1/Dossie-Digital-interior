@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>IMUNOBIOLÓGICA</h1>
+                    <h1><a href="{{route('coberturaVacinal.index')}}">Imunobiológia</a> / Cadastro</h1>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button">LISTA</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button">VOLTAR</a>
         </div>
         <form method="post" action="{{route('imunobiologica.store')}}">
             @csrf

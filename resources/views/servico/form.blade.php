@@ -3,11 +3,11 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Cadastro de Serviços</h1>
+            <h1><a href="{{route('servicos.index')}}">Serviço</a> / Cadastro</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('servicos.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
         <form method="post" action="{{route('servicos.store')}}">

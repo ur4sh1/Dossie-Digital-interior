@@ -10,7 +10,7 @@
                 <a class="btn btn-primary mt-1" href="{{route('hospitals.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
-        <form method="post" class="needs-validation" action="{{route('hospitals.update',$hospital->id)}}">
+        <form method="post" class="needs-validation" action="{{route('hospitals.update',$hospital->id)}}" autocomplete="off">
             @csrf
             @method('put')
             <div class="form-row">
@@ -33,15 +33,15 @@
             </div>
             <div class="form-row">
                 <div class="col-sm-2 mt-2">
-                    <label><h5><b>N°</b></h5></label>
+                    <label for="numero"><h5><b>N°</b></h5></label>
                     <input type="text" class="form-control" name="numero" id="numero"value="{{ $hospital->numero }}">
                 </div>
                 <div class="col-sm-2 mt-2">
-                    <label><h5><b>Telefone</b></h5></label>
-                    <input type="tel" class="form-control" name="tel" id="tel" value="{{ $hospital->tel }}">
+                    <label for="tel"><h5><b>Telefone</b></h5></label>
+                    <the-mask type="text" class="form-control" name="tel" value="{{ $hospital->tel }}" id="tel" :mask="['(##) ####-####', '(##) #####-####']"></the-mask>
                 </div>
                 <div class="col-sm-5 mt-2">
-                    <label><h5><b>E-mail</b></h5></label>
+                    <label for="email"><h5><b>E-mail</b></h5></label>
                     <input type="email" class="form-control" name="email" id="email" value="{{ $hospital->email }}">
                 </div>
             </div>
