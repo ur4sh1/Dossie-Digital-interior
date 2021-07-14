@@ -3162,44 +3162,49 @@ var render = function() {
     _c("div", { staticClass: "col-sm-3 mt-2" }, [
       _vm._m(0),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "input-group" },
-        [
-          _c("the-mask", {
-            staticClass: "form-control cep mb-3",
-            attrs: { type: "text", id: "cep", name: "cep", mask: "########" },
-            model: {
+      _c("div", { staticClass: "input-group" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
               value: _vm.cep,
-              callback: function($$v) {
-                _vm.cep = $$v
-              },
               expression: "cep"
             }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "input-group-append" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary mb-3",
-                attrs: { type: "button", id: "button-addon2" },
-                on: {
-                  click: function($event) {
-                    return _vm.localizaCep()
-                  }
+          ],
+          staticClass: "form-control cep mb-3",
+          attrs: { type: "text", id: "cep", name: "cep" },
+          domProps: { value: _vm.cep },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.cep = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group-append" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary mb-3",
+              attrs: { type: "button", id: "button-addon2" },
+              on: {
+                click: function($event) {
+                  return _vm.localizaCep()
                 }
-              },
-              [
-                _vm._v(
-                  "\n                        Localizar\n                    "
-                )
-              ]
-            )
-          ])
-        ],
-        1
-      )
+              }
+            },
+            [
+              _vm._v(
+                "\n                        Localizar\n                    "
+              )
+            ]
+          )
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-sm-3 mt-2" }, [

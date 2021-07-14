@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="form-row">
-            <endereco :municipios="{{$municipio}}" :cep="{{$hospital->cep}}"></endereco>
+            <endereco :municipios="{{$municipio}}" :cep="{{$hospital->cep??'null'}}"></endereco>
             </div>
             <div class="form-row">
                 <div class="col-sm-2 mt-2">
