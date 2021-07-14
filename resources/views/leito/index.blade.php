@@ -21,6 +21,7 @@
                     <th>Suporte Ventilátorio</th>
                     <th>LSV Adulto</th>
                     <th>LSV Pediátrico</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,21 @@
                     <td>{{$l->suporte_ventilatorio}}</td>
                     <td>{{$l->uci_adulto}}</td>
                     <td>{{$l->uci_pediatrico}}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-4">
+                                <a class="btn btn-primary btn-sm ml-1" title="EDITAR" href="{{route('leito.edit',$l)}}" role="button"><span class="fa fa-edit"></span></a>
+                            </div>
+                            <div class="col-4">
+                                <form action="{{route('leito.destroy',$l->id)}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="id" value="${{$l->id}}">
+                                    <button class="btn btn-danger btn-sm mr-1 ml-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

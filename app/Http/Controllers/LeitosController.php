@@ -70,11 +70,21 @@ class LeitosController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Leito  $leito
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function edit(Leito $leito)
+    public function edit($id)
     {
-        //
+        try {
+            $msg=0;
+            $leito=Leito::find($id);
+            $hospital=Hospital::all();
+            return view('leito.edit',compact('msg','leito','hospital'));
+        }catch (Exception $e){
+            $msg=2;
+            $leito=Leito::all();
+            $hospital=Hospital::all();
+            return view('leito.index',compact('msg','leito','hospital'));
+        }
     }
 
     /**
@@ -82,11 +92,23 @@ class LeitosController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Leito  $leito
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function update(Request $request, Leito $leito)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $msg=1;
+            $leito=Leito::find($id);
+            $leito->update($request->all());
+            $leito=Leito::all();
+            $hospital=Hospital::all();
+            return view('leito.index',compact('leito','msg','hospital'));
+        }catch (Exception $e){
+            $msg=2;
+            $leito=Leito::all();
+            $hospital=Hospital::all();
+            return view('leito.index',compact('leito','hospital','msg'));
+        }
     }
 
     /**
