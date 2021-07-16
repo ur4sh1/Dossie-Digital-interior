@@ -5,14 +5,19 @@ namespace App\Http\Controllers;
 use App\Equipamento;
 use App\Hospital;
 use App\TipoEquipamento;
+use Exception;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class EquipamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|\Illuminate\Http\Response|View
      */
     public function index()
     {
@@ -25,25 +30,40 @@ class EquipamentoController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|\Illuminate\Http\Response|View
      */
     public function create()
     {
-        $hospital=Hospital::all();
-        $tipoEquipamento=TipoEquipamento::all();
-        return view('equipamentos.form',compact('hospital','tipoEquipamento'));
+        try {
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            return view('equipamentos.form',compact('hospital','tipoEquipamento'));
+        }catch (Exception $e){
+
+        }
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|Factory|View
      */
     public function store(Request $request)
     {
-        $equipamento=Equipamento::create($request->all());
-        return redirect()->route('equipamentos.index');
+        try {
+            $equipamento=Equipamento::create($request->all());
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            $equipamento=Equipamento::all();
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento'));
+        }catch (Exception $e){
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            $equipamento=Equipamento::all();
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento'));
+        }
     }
 
     /**
@@ -74,7 +94,7 @@ class EquipamentoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  \App\Equipamento  $equipamento
      * @return \Illuminate\Http\Response
      */

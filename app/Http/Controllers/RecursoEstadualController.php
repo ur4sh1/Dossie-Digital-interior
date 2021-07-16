@@ -61,13 +61,10 @@ class RecursoEstadualController extends Controller
     {
         try {
             $msg=1;
-
             $data=$request->all();
             $data['valor']=str_replace('.',"",$data['valor']);
             $data['valor']=str_replace(',',".",$data['valor']);
             $recursoEstadual=RecursoEstadual::create($data);
-
-            /*$data=RecursoEstadual::create($request->all());*/
 
             $municipio=Municipio::find($id);
             $m=Municipio::find($id);

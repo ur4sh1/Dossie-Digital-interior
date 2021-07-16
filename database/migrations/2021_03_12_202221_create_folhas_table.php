@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFolhasTable extends Migration
+class  CreateFolhasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -26,6 +26,8 @@ class CreateFolhasTable extends Migration
             $table->integer('cedidos')->nullable();
             $table->integer('servidores_ativos')->default(0);
             $table->timestamps();
+
+            $table->unique(['hospital_id', 'profissional_id'],'unico');
         });
     }
 

@@ -66,6 +66,9 @@ Route::get('/recursoFundoNacional/editValor/{id}/{mid}','RecursoFundoNacionalCon
 Route::post('/recursoFundoNacional/update/{id}/{mid}','RecursoFundoNacionalController@updateAlternative')->name('recursoFundoNacionalUpdate');
 Route::post('/recursoFundoNacional/store/{id}','RecursoFundoNacionalController@storeAlternative')->name('recursoFundoNacionalStore');
 
+Route::get('/folha/create/{id}', 'FolhaController@createAlternative')->name('folhaCreate');
+Route::post('/folha/store/{id}','FolhaController@storeAlternative')->name('folhaStore');
+
 Route::resources([
     'partido'=>'PartidosController',
     'municipios'=>'MunicipiosController',

@@ -28,16 +28,20 @@
                 <td class="text-center">{{$r->susam_estatutario}}</td>
                 <td class="text-center">{{$r->susam_contrato}}</td>
                 <td class="text-center">{{$r->prefeitura}}</td>
-                <td>
-                    <span class="form-inline">
-                        <a class="btn btn-primary  btn-sm ml-1 mb-1" title="EDITAR" href="{{route('rhs.edit',$r)}}" role="button"><span class="fa fa-edit"></span></a>
-                        <form action="{{route('rhs.destroy',$r)}}" method="post">
-                            @csrf
-                            @method('delete')
-                            <input type="hidden" name="id" value="${{$r->id}}">
-                            <button class="btn btn-danger btn-sm mr-1 ml-1 mb-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
-                        </form>
-                    </span>
+                <td class="d-flex justify-content-end">
+                    <div class="row">
+                        <div class="col-3">
+                            <a class="btn btn-primary  btn-sm ml-1 mb-1" title="EDITAR" href="{{route('rhs.edit',$r)}}" role="button"><span class="fa fa-edit"></span></a>
+                        </div>
+                        <div class="col-3">
+                            <form action="{{route('rhs.destroy',$r)}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <input type="hidden" name="id" value="${{$r->id}}">
+                                <button class="btn btn-danger btn-sm mr-1 ml-1 mb-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                            </form>
+                        </div>
+                    </div>
                 </td>
             </tr>
             @endforeach

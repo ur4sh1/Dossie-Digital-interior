@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>RH</h1>
+                    <h1><a href="{{route('rhs.index')}}">RH</a> / Cadastro</h1>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary" href="{{route('rhCategorias.index')}}" role="button">CATEGORIAS</a>
-            <a class="btn btn-primary" href="{{route('rhs.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('rhCategorias.index')}}" role="button">CATEGORIAS</a>
         </div>
         <div class="form-row mt-4">
             <div class="col-sm-4">

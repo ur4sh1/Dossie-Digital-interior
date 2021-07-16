@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>Imunobiológica</h1>
+                    <h1>Imunobiológicas</h1>
                 </div>
             </div>
         </div>

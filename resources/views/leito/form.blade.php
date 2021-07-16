@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Leitos</h1>
+            <h1><a href="{{route('leito.index')}}">Leito</a> / Cadastro</h1>
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('leito.index')}}" role="button">VOLTAR</a>

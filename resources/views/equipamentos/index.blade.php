@@ -28,16 +28,20 @@
                     <td>{{$e->tipoEquipamento->nome}}</td>
                     <td class="text-center">{{$e->existente}}</td>
                     <td class="text-center">{{$e->funcional}}</td>
-                    <td>
-                        <span class="form-inline">
-                        <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('equipamentos.edit',$e)}}" role="button"><span class="fa fa-edit"></span></a>
-                            <form action="{{route('equipamentos.destroy',$e)}}" method="post" class="mr-1 ml-1">
-                                @csrf
-                                @method('delete')
-                                <input type="hidden" name="id" value="${{$e->id}}">
-                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
-                            </form>
-                        </span>
+                    <td class="d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-3">
+                                <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('equipamentos.edit',$e)}}" role="button"><span class="fa fa-edit"></span></a>
+                            </div>
+                            <div class="col-3">
+                                <form action="{{route('equipamentos.destroy',$e)}}" method="post" class="mr-1 ml-1">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="id" value="${{$e->id}}">
+                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                </form>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach

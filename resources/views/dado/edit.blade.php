@@ -7,7 +7,7 @@
     <div class="container">
         <div class="text-info">
             <h1>INFORMAÇÕES GERAIS</h1>
-            <h3><a href="{{route('dados.show',$dados->id)}}">{{$municipios->nome}}</a> / Editar</h3>
+            <h3><a href="{{route('dados.show',$dados->id)}}">{{$municipios->nome}}</a> / Alteração</h3>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">

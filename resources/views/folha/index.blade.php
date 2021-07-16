@@ -13,7 +13,6 @@
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
             <a class="btn btn-primary btn-sm" href="{{route('folha.create')}}" role="button">ADICIONAR</a>
         </div>
-
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Selecione o Hospital

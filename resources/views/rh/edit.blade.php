@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>RH</h1>
+                    <h1><a href="{{route('rhs.index')}}">RH</a> / Alteração</h1>
                 </div>
             </div>
         </div>
@@ -34,14 +34,14 @@
             @method('put')
             <div class="form-row">
                 <div class="col-sm-4">
-                    <select class="form-control" name="hospital_id" required>
+                    <select class="form-control" name="hospital_id" disabled required>
                         @foreach($hospital as $h)
                             <option value="{{$h->id}}" {{$rh->hospital_id==$h->id?"selected":''}}>{{$h->nome}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="col-sm-2">
-                    <select class="form-control" name="rh_categoria_id" required>
+                    <select class="form-control" name="rh_categoria_id" disabled required>
                         @foreach($rhCategoria as $hc)
                             <option value="{{$hc->id}}" {{$rh->rh_categoria_id==$hc->id?"selected":''}}>{{$hc->nome}}</option>
                         @endforeach
@@ -59,8 +59,8 @@
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12 text-right">
-                    <button class="btn btn-primary" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
-                    <a class="btn btn-danger" title="CANCELAR" href="/rhs"><span class="fa fa-window-close"></span></a>
+                    <button class="btn btn-primary btn-sm" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
+                    <a class="btn btn-danger btn-sm" title="CANCELAR" href="/rhs"><span class="fa fa-window-close"></span></a>
                 </div>
             </div>
         </form>
