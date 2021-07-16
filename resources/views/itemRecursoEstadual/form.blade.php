@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="text-info">
                     <h1>RECURSO ESTADUAL</h1>
-                    <h2><a href="{{route('itemRecursoEstadualIndex',$id)}}">ITEM</a> / ADICIONAR</h2>
+                    <h2><a href="{{route('itemRecursoEstadualIndex',$id)}}">ITEM</a> / Adicionar</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <label for="descricao"><b>ITEM DESCRIÇÃO</b></label>
-                    <input class="form-control" type="text" id="descricao" name="descricao">
+                    <input class="form-control" type="text" id="descricao" name="descricao" required>
                 </div>
             </div>
             <div class="row mt-3">

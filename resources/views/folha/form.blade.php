@@ -12,7 +12,6 @@
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('folha.show',$hospital->id)}}" role="button">VOLTAR</a>
         </div>
-        {{$hospital}}
         <form method="post" action="{{route('folhaStore',$hospital->id)}}" autocomplete="off">
             @csrf
             <input hidden type="text" value="{{$hospital->id}}" name="hospital_id" id="hospital_id">
@@ -28,7 +27,7 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="salario_inicial"><b>Salário Unitário</b></label>
-                    <the-mask class="form-control text-right" onkeypress="isNumberKey(event)" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
+                    <the-mask class="form-control text-right" onkeypress="isNumberKeyMod(event)" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
                 </div>
                 <div class="col-sm-3">
                     <label for="SUSAM"><b>Qtd Funcionários SESAM</b></label>
@@ -45,7 +44,7 @@
     </div>
 @endsection
 <script>
-    function isNumberKey(evt)
+    function isNumberKeyMod(evt)
     {
         var char = String.fromCharCode(evt.which)
         if(!(/[0-9,',','.']/.test(char))){

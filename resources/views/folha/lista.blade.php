@@ -34,12 +34,12 @@
                         <td class="d-flex justify-content-end">
                             <div class="row">
                                 <div class="col-3">
-                                    <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('folha.edit',$f)}}" role="button"><span class="fa fa-edit"></span></a>
+                                    <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('folhaEdit',array('id'=>$f,'hid'=>$hospital->id))}}" role="button"><span class="fa fa-edit"></span></a>
                                 </div>
                                 <div class="col-3">
-                                    <form action="{{route('folha.destroy',$f)}}" method="post">
+                                    <form action="{{route('folhaDestroy',array('id'=>$f,'hid'=>$hospital->id))}}" method="post">
                                         @csrf
-                                        @method('delete')
+                                        {{--@method('delete')--}}
                                         <input type="hidden" name="id" value="${{$f->id}}">
                                         <button class="btn btn-sm btn-danger mr-1 ml-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
                                     </form>

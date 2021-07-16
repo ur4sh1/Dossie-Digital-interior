@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1 class="teste">EDITAR ITEM</h1>
+                    <h1>RECURSO ESTADUAL</h1>
+                    <h2><a href="{{route('itemRecursoEstadualIndex',$id)}}">ITEM</a>/ Alteração</h2>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="javascript:history.back()"  role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('itemRecursoEstadualIndex',$id)}}"  role="button">VOLTAR</a>
         </div>
         <form action="{{route('itemRecursoEstadualUpdate',array('id'=>$itemRecursoEstadual->id,'mid'=>$id))}}" method="post">
             @csrf

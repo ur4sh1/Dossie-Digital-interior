@@ -164,7 +164,7 @@
     <table class="table table-responsive-sm">
         <thead  style="background: #a8f3c4">
             <tr>
-                <td style="background:lavenderblush" colspan="5"><b>TOTAL REPASSE</b></td>
+                <td style="background:lavenderblush" colspan="5"><b>TOTAL REPASSE PARA O MUNICÍPIO</b></td>
             </tr>
         <tr>
             <th scope="col"></th>

@@ -99,10 +99,19 @@ class FolhaController extends Controller
      */
     public function edit($id)
     {
-        $hospital=Hospital::all();
-        $profissional=Profissional::all();
-        $folha=Folha::find($id);
-        return view('folha.edit',compact('hospital','profissional','folha'));
+        //
+    }
+
+    public function editAlternative($id,$hid)
+    {
+        try {
+            $profissional=Profissional::all();
+            $hospital=Hospital::find($hid);
+            $folha=Folha::find($id);
+            return view('folha.edit',compact('folha','hospital','profissional'));
+        }catch (Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -114,11 +123,27 @@ class FolhaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $folha=Folha::find($id);
-        $h = $folha['hospital_id'];
-        $folha->update($request->all());
- /*       return redirect('/folha/'.$h);*/
-        return redirect("/folha/{$h}");
+        //
+    }
+
+    public function updateAlternative(Request $request,$id,$hid)
+    {
+        try {
+            $msg=1;
+
+            $data=$request->all();
+            $data['salario_inicial']=str_replace('.',"",$data['salario_inicial']);
+            $data['salario_inicial']=str_replace(',',".",$data['salario_inicial']);
+            $folha=Folha::find($id);
+            $folha->update($data);
+
+            $profissional=Profissional::all();
+            $hospital=Hospital::find($hid);
+            $folha=Folha::where('hospital_id',$hid)->get();
+            return view('folha.lista',compact('folha','hospital','profissional','msg'));
+        }catch (Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -129,8 +154,23 @@ class FolhaController extends Controller
      */
     public function destroy($id)
     {
-        $folha=Folha::find($id);
-        $folha->delete();
-        return redirect()->route('folha.index');
+      //
+    }
+
+    public function deletAlternative($id,$hid)
+    {
+        try {
+            $folha=Folha::find($id);
+            $folha->delete();
+
+            $msg=1;
+            $profissional=Profissional::all();
+            $hospital=Hospital::find($hid);
+            $folha=Folha::where('hospital_id',$hid)->get();
+            return view('folha.lista',compact('folha','hospital','profissional','msg'));
+        }catch (Exception $e){
+            dd($e);
+        }
     }
 }
+

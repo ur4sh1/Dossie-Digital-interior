@@ -75,7 +75,7 @@ class ItemRecursoFundoEstadualController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function store(Request $request)
     {
@@ -125,7 +125,7 @@ class ItemRecursoFundoEstadualController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\ItemRecursoFundoEstadual  $itemRecursoFundoEstadual
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -160,7 +160,7 @@ class ItemRecursoFundoEstadualController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\ItemRecursoFundoEstadual  $itemRecursoFundoEstadual
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(Request $request, $id)
     {
@@ -204,7 +204,7 @@ class ItemRecursoFundoEstadualController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\ItemRecursoFundoEstadual  $itemRecursoFundoEstadual
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function destroy($id)
     {
