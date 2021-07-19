@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -13,27 +12,11 @@
             <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button">VOLTAR</a>
             <a class="btn btn-primary btn-sm" href="{{route('rhCategorias.index')}}" role="button">CATEGORIAS</a>
         </div>
-        <div class="form-row mt-4">
-            <div class="col-sm-4">
-                <h5><b>HOSPITAL</b></h5>
-            </div>
-            <div class="col-sm-2">
-                <h5><b>CATEGORIA</b></h5>
-            </div>
-            <div class="col-sm-2">
-                <h5><b>SESAM ESTATUTÁRIO</b></h5>
-            </div>
-            <div class="col-sm-2">
-                <h5><b>SESAM <br>CONTRATO</b></h5>
-            </div>
-            <div class="col-sm-2">
-                <h5><b>PREFEITURA</b></h5>
-            </div>
-        </div>
-        <form method="post" action="{{route('rhs.store')}}">
+        <form method="post" action="{{route('rhs.store')}}" autocomplete="off">
             @csrf
             <div class="form-row">
                 <div class="col-sm-4">
+                    <label for="hospital_id"><b>HOSPITAL</b></label>
                     <select class="form-control" name="hospital_id" required>
                         <option value="" selected disabled hidden>Selecione</option>
                         @foreach($hospital as $h)
@@ -42,6 +25,7 @@
                     </select>
                 </div>
                 <div class="col-sm-2">
+                    <label for="rh_categoria_id"><b>CATEGORIA</b></label>
                     <select class="form-control" name="rh_categoria_id" required>
                         <option value="" selected disabled hidden>Selecione</option>
                         @foreach($rhCategoria as $hc)
@@ -50,13 +34,16 @@
                     </select>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="susam_estatutario">
+                    <label for="susam_estatutario"><b>SESAM ESTATUTÁRIO</b></label>
+                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="susam_estatutario" id="susam_estatutario">
                 </div>
                 <div class="col-sm-2">
-                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="susam_contrato">
+                    <label for="susam_contrato"><b>SESAM CONTRATO</b></label>
+                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="susam_contrato" id="susam_contrato">
                 </div>
                 <div class="col-sm-2">
-                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="prefeitura">
+                    <label for="prefeitura"><b>PREFEITURA</b></label>
+                    <input class="form-control" style="width: 100px;" onkeypress="isNumberKey(event)" maxlength="4" type="text" name="prefeitura" id="prefeitura">
                 </div>
             </div>
             <div class="row mt-3">
