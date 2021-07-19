@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    <?php
+    $data=date('Y');
+    ?>
     <div class="container">
         <div class="text-info">
             <h1><a href="{{route('programa.index')}}">Programas e Ações</a> / Cadastro </h1>
@@ -9,7 +12,7 @@
                 <a class="btn btn-primary btn-sm" href="{{route('programa.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
-        <form method="post" action="{{route('programa.store')}}">
+        <form method="post" action="{{route('programa.store')}}" autocomplete="off">
             @csrf
             <div class="row ">
                 <div class="col-12">
@@ -36,7 +39,9 @@
                     <select class="form-control" style="width: 100px" name="ano_id" id="ano_id" required>
                         <option disabled selected>Selecione</option>
                         @foreach($ano as $a)
-                            <option value="{{$a->id}}">{{$a->ano}}</option>
+                            @if($a->ano>=($data-2) && $a->ano<=($data))
+                                <option value="{{$a->id}}">{{$a->ano}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>

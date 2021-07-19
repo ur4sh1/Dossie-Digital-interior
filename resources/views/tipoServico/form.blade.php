@@ -10,16 +10,18 @@
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoServicos.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
-        <form method="post" action="{{route('tipoServicos.store')}}">
+        <form method="post" action="{{route('tipoServicos.store')}}" autocomplete="off">
             @csrf
-            <label for="nome">NOME DO SERVIÇO</label>
+            <label for="nome"><b>NOME DO SERVIÇO</b></label>
             <div class="form-row">
                 <div class="col-sm-8">
                     <input class="form-control" id="nome" name="nome" required>
                 </div>
-                <div class="col-sm-4 text-left">
-                    <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>
-                    <a class="btn btn-danger" title="CANCELAR" href="/tipoServicos"><span class="fa fa-window-close"></span></a>
+            </div>
+            <div class="form-row mt-1">
+                <div class="col-sm-12 text-right">
+                    <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-save"></span></button>
+                    <a class="btn btn-danger btn-sm" title="CANCELAR" href="/tipoServicos"><span class="fa fa-window-close"></span></a>
                 </div>
             </div>
         </form>

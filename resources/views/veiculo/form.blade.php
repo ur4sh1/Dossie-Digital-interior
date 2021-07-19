@@ -8,7 +8,7 @@
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('veiculo.index')}}" role="button">VOLTAR</a>
         </div>
-        <form method="post" action="{{route('veiculo.store')}}">
+        <form method="post" action="{{route('veiculo.store')}}" autocomplete="off">
             @csrf
             <div class="form-row">
                 <div class="col-sm-3">
@@ -54,10 +54,10 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row-12 mt-3">
+            <div class="row mt-3">
                 <div class="col-sm-12 text-right">
-                    <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>
-                    <a class="btn btn-danger" title="CANCELAR" href="/veiculo"><span class="fa fa-window-close"></span></a>
+                    <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-save"></span></button>
+                    <a class="btn btn-danger btn-sm" title="CANCELAR" href="/veiculo"><span class="fa fa-window-close"></span></a>
                 </div>
             </div>
         </form>

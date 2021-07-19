@@ -27,7 +27,7 @@
                     <td style="width: 80%">{{ $ire->descricao }}</td>
                     <td class="d-flex justify-content-end">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-3 mr-1">
                                 <a class="btn btn-primary btn-sm ml-1" title="EDITAR" href="{{route('itemRecursoEstadualEdit',array('id'=>$ire->id,'mid'=>$id))}}" role="button"><span class="fa fa-edit"></span></a>
                             </div>
                             <div class="col-3">

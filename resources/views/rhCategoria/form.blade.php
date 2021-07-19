@@ -20,7 +20,7 @@
                     <input class="form-control" type="text" name="nome" id="nome" required>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="form-row mt-1">
                 <div class="col-sm-12 text-right">
                     <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-save"></span></button>
                     <a class="btn btn-danger btn-sm" title="CANCELAR" href="/rhCategorias"><span class="fa fa-window-close"></span></a>

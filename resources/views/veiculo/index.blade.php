@@ -24,16 +24,20 @@
                     <td class="text-center"><span class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Existente">{{$v->administrativo_existente}}</span> | <span class="badge badge-success">{{$v->administrativo_funcional}}</span></td>
                     <td class="text-center"><span class="badge badge-primary">{{$v->ambulancia_terrestre_existente}}</span> | <span class="badge badge-success">{{$v->ambulancia_terrestre_funcional}}</span></td>
                     <td class="text-center"><span class="badge badge-primary">{{$v->ambulancia_fluvial_existente}}</span> | <span class="badge badge-success">{{$v->ambulancia_fluvial_funcional}}</span></td>
-                    <td>
-                        <span class="form-inline">
-                        <a class="btn btn-sm btn-primary mr-1 ml-1" title="EDITAR" href="{{route('veiculo.edit',$v)}}" role="button"><span class="fa fa-edit"></span></a>
-                            <form action="{{route('veiculo.destroy',$v)}}" method="post" class="mr-1 ml-1">
-                                @csrf
-                                @method('delete')
-                                <input type="hidden" name="id" value="${{$v->id}}">
-                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
-                            </form>
-                        </span>
+                    <td class="d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-3 mr-1">
+                                <a class="btn btn-sm btn-primary mr-1 ml-1" title="EDITAR" href="{{route('veiculo.edit',$v)}}" role="button"><span class="fa fa-edit"></span></a>
+                            </div>
+                            <div class="col-3">
+                                <form action="{{route('veiculo.destroy',$v)}}" method="post" class="mr-1 ml-1">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="id" value="${{$v->id}}">
+                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                </form>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach

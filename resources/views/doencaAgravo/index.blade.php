@@ -12,10 +12,10 @@
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('doencas.index')}}" role="button">LISTA DE DOENÇAS</a>
             </div>
         </div>
-        <table class="table table-sm table-responsive-lg" id="table">
+        <table class="table table-sm table-responsive-md" id="table">
             <thead style="background:lavenderblush">
             <tr>
-                <th scope="col" style="width: 120px">DESCRIÇÃO</th>
+                <th scope="col">DESCRIÇÃO</th>
                 <th scope="col">MUNICÍPIO</th>
                 <th scope="col">ANO</th>
                 <th scope="col" class="text-center">CASOS</th>
@@ -26,7 +26,7 @@
             <tbody>
             @foreach($doencasAgravos  as $d)
                 <tr>
-                    <td style="width: 20%">{{$d->doencas->nome}}</td>
+                    <td>{{$d->doencas->nome}}</td>
                     <td>{{$d->municipio->nome}}</td>
                     <td>{{$d->ano->ano}}</td>
                     <td class="text-center">{{$d->casos}}</td>
