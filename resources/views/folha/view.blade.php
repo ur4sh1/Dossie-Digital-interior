@@ -10,7 +10,7 @@
         </tr>
     </table>
 @else
-    <table class="table-responsive-sm">
+    <table class="table table-md table-responsive-sm">
         <tr style="background:lavenderblush">
             <td colspan="4">
                 <a data-toggle="collapse" href="#fo{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
