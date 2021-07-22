@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Detalhes_municipio;
+use App\DetalhesMunicipio;
 use Illuminate\Http\Request;
 
 class DetalhesMunicipioController extends Controller
@@ -41,10 +41,10 @@ class DetalhesMunicipioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Detalhes_municipio  $detalhes_municipio
+     * @param  \App\DetalhesMunicipio  $detalhes_municipio
      * @return \Illuminate\Http\Response
      */
-    public function show(Detalhes_municipio $detalhes_municipio)
+    public function show(DetalhesMunicipio $detalhes_municipio)
     {
         //
     }
@@ -52,10 +52,10 @@ class DetalhesMunicipioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Detalhes_municipio  $detalhes_municipio
+     * @param  \App\DetalhesMunicipio  $detalhes_municipio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Detalhes_municipio $detalhes_municipio)
+    public function edit(DetalhesMunicipio $detalhes_municipio)
     {
         //
     }
@@ -64,10 +64,10 @@ class DetalhesMunicipioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Detalhes_municipio  $detalhes_municipio
+     * @param  \App\DetalhesMunicipio  $detalhes_municipio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Detalhes_municipio $detalhes_municipio)
+    public function update(Request $request, DetalhesMunicipio $detalhes_municipio)
     {
         //
     }
@@ -75,10 +75,10 @@ class DetalhesMunicipioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Detalhes_municipio  $detalhes_municipio
+     * @param  \App\DetalhesMunicipio  $detalhes_municipio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Detalhes_municipio $detalhes_municipio)
+    public function destroy(DetalhesMunicipio $detalhes_municipio)
     {
         //
     }

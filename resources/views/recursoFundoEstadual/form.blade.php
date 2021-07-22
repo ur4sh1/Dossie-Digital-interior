@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-col-2">
                         <label for="valor">Valor</label>
-                        <input class="form-control text-right" onkeypress="isNumberKey(event)" id="valor" name="valor" required>
+                        <input class="form-control text-right" onkeypress="isNumberKeyCurrency(event)" id="valor" name="valor" required>
                     </div>
                     <div class="form-col-2">
                         <label for="ano_id">Ano</label>

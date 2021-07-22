@@ -16,6 +16,7 @@
     <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/vue.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/notify.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.maskMoney.min.js') }}"></script>
 
     <!--  plot pie  -->
 <!--    <script type="text/javascript" language="javascript" src="jquery.Plot.pie.min.js"></script>-->
@@ -135,11 +136,19 @@
         $("#alerta").slideUp(500);
     });
 </script>
+<!-- função somente numeros / ',' e '.' -->
 <script>
     function isNumberKey(evt)
     {
         var char = String.fromCharCode(evt.which)
         if(!(/[0-9]/.test(char))){
+            evt.preventDefault();
+        }
+    }
+    function isNumberKeyCurrency(evt)
+    {
+        var char = String.fromCharCode(evt.which)
+        if(!(/[0-9,',','.']/.test(char))){
             evt.preventDefault();
         }
     }

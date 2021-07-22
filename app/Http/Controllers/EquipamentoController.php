@@ -21,10 +21,15 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        $hospital=Hospital::all();
-        $tipoEquipamento=TipoEquipamento::all();
-        $equipamento=Equipamento::all();
-        return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento'));
+        try {
+            $msg=0;
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            $equipamento=Equipamento::all();
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento','msg'));
+        }catch (Exception $e){
+
+        }
     }
 
     /**
@@ -53,16 +58,18 @@ class EquipamentoController extends Controller
     public function store(Request $request)
     {
         try {
+            $msg=1;
             $equipamento=Equipamento::create($request->all());
             $hospital=Hospital::all();
             $tipoEquipamento=TipoEquipamento::all();
             $equipamento=Equipamento::all();
-            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento'));
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento','msg'));
         }catch (Exception $e){
+            $msg=2;
             $hospital=Hospital::all();
             $tipoEquipamento=TipoEquipamento::all();
             $equipamento=Equipamento::all();
-            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento'));
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento','msg'));
         }
     }
 
@@ -81,7 +88,7 @@ class EquipamentoController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Equipamento  $equipamento
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|\Illuminate\Http\Response|View
      */
     public function edit($id)
     {
@@ -96,25 +103,49 @@ class EquipamentoController extends Controller
      *
      * @param Request $request
      * @param  \App\Equipamento  $equipamento
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|RedirectResponse|View
      */
     public function update(Request $request, $id)
     {
-        $equipamento=Equipamento::find($id);
-        $equipamento->update($request->all());
-        return redirect()->route('equipamentos.index');
+        try {
+            $equipamento=Equipamento::find($id);
+            $equipamento->update($request->all());
+            $msg=1;
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            $equipamento=Equipamento::all();
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            $equipamento=Equipamento::all();
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento','msg'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Equipamento  $equipamento
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|RedirectResponse|View
      */
     public function destroy($id)
     {
-        $equipamento=Equipamento::find($id);
-        $equipamento->delete();
-        return redirect()->route('equipamentos.index');
+        try {
+            $msg=1;
+            $equipamento=Equipamento::find($id);
+            $equipamento->delete();
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            $equipamento=Equipamento::all();
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $hospital=Hospital::all();
+            $tipoEquipamento=TipoEquipamento::all();
+            $equipamento=Equipamento::all();
+            return view('equipamentos.index',compact('equipamento','hospital','tipoEquipamento','msg'));
+        }
     }
 }

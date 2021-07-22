@@ -48,19 +48,11 @@
             </div>
             <div class="row mt-3">
                 <div class="col-sm-12 text-right">
-                    <button class="btn btn-primary" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
-                    <a class="btn btn-danger" title="CANCELAR" href="/rhs"><span class="fa fa-window-close"></span></a>
+                    <button class="btn btn-primary btn-sm" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
+                    <a class="btn btn-danger btn-sm" title="CANCELAR" href="/rhs"><span class="fa fa-window-close"></span></a>
                 </div>
             </div>
         </form>
     </div>
 @endsection
-<script>
-    function isNumberKey(evt)
-    {
-        var char = String.fromCharCode(evt.which)
-        if(!(/[0-9]/.test(char))){
-            evt.preventDefault();
-        }
-    }
-</script>
+

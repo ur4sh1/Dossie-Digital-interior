@@ -18,11 +18,12 @@ class DoencasAgravosController extends Controller
      */
     public function index()
     {
+        $msg=0;
         $doencas=Doencas::all();
         $doencasAgravos=DoencasAgravos::all();
         $ano=Ano::all();
         $municipios=Municipio::all();
-        return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios'));
+        return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios','msg'));
     }
 
     /**
@@ -38,7 +39,7 @@ class DoencasAgravosController extends Controller
             $doencas=Doencas::all();
             return view('doencaAgravo.form',compact('ano','doencas','municipios'));
         }catch (Exception $e){
-
+            dd($e);
         }
     }
 
@@ -46,15 +47,25 @@ class DoencasAgravosController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function store(Request $request)
     {
         try {
             $doencasAgravos=DoencasAgravos::create($request->all());
-            return redirect()->route('doencasAgravos.index');
+            $msg=1;
+            $doencas=Doencas::all();
+            $doencasAgravos=DoencasAgravos::all();
+            $ano=Ano::all();
+            $municipios=Municipio::all();
+            return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios','msg'));
         }catch (Exception $e){
-
+            $msg=2;
+            $doencas=Doencas::all();
+            $doencasAgravos=DoencasAgravos::all();
+            $ano=Ano::all();
+            $municipios=Municipio::all();
+            return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios','msg'));
         }
     }
 
@@ -101,15 +112,21 @@ class DoencasAgravosController extends Controller
     public function destroy($id)
     {
         try {
+            $msg=1;
             $doencasAgravos=DoencasAgravos::find($id);
             $doencasAgravos->delete();
             $doencas=Doencas::all();
             $doencasAgravos=DoencasAgravos::all();
             $ano=Ano::all();
             $municipios=Municipio::all();
-            return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios'));
+            return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios','msg'));
         }catch (Exception $e){
-
+            $msg=2;
+            $doencas=Doencas::all();
+            $doencasAgravos=DoencasAgravos::all();
+            $ano=Ano::all();
+            $municipios=Municipio::all();
+            return view('doencaAgravo.index',compact('doencasAgravos','doencas','ano','municipios','msg'));
         }
     }
 }

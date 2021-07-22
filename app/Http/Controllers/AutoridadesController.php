@@ -7,6 +7,7 @@ use App\Municipio;
 use App\Partido;
 use App\Autoridade;
 use App\Cargo;
+use Exception;
 use Illuminate\Http\Request;
 
 class AutoridadesController extends Controller
@@ -18,8 +19,9 @@ class AutoridadesController extends Controller
      */
     public function index()
     {
+        $msg=0;
         $autoridades= Autoridade::all();
-        return view('autoridade.index', compact('autoridades'));
+        return view('autoridade.index', compact('autoridades','msg'));
     }
 
     /**
@@ -40,12 +42,20 @@ class AutoridadesController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $autoridade = Autoridade::create($request->all());
-        return redirect()->route('autoridade.index');
+        try {
+            $msg=1;
+            $autoridade = Autoridade::create($request->all());
+            $autoridades= Autoridade::all();
+            return view('autoridade.index', compact('autoridades','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $autoridades= Autoridade::all();
+            return view('autoridade.index', compact('autoridades','msg'));
+        }
     }
 
     /**
@@ -80,24 +90,42 @@ class AutoridadesController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function update(Request $request,int $id)
     {
-        $autoridade= Autoridade::find($id);
-        $autoridade->update($request->all());
-        return redirect()->route('autoridade.index');
+        try {
+            $msg=1;
+            $autoridade= Autoridade::find($id);
+            $autoridade->update($request->all());
+            /*return redirect()->route('autoridade.index');*/
+            $autoridades= Autoridade::all();
+            return view('autoridade.index', compact('autoridades','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $autoridades= Autoridade::all();
+            return view('autoridade.index', compact('autoridades','msg'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function destroy(Autoridade $autoridade)
     {
-        $autoridade->delete();
-        return redirect()->route('autoridade.index');
+        try {
+            $msg=1;
+            $autoridade->delete();
+            /*return redirect()->route('autoridade.index');*/
+            $autoridades= Autoridade::all();
+            return view('autoridade.index', compact('autoridades','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $autoridades= Autoridade::all();
+            return view('autoridade.index', compact('autoridades','msg'));
+        }
     }
 }

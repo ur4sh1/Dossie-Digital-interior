@@ -42,11 +42,10 @@
             </div>
             <div class="row mt-2">
                 <div class="col-sm-12 text-right">
-                    <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>
-                    <a class="btn btn-danger" title="CANCELAR" href="/equipamentos"><span class="fa fa-window-close"></span></a>
+                    <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-save"></span></button>
+                    <a class="btn btn-danger btn-sm" title="CANCELAR" href="/equipamentos"><span class="fa fa-window-close"></span></a>
                 </div>
             </div>
         </form>
     </div>
 @endsection
-

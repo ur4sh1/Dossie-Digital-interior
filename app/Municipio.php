@@ -20,7 +20,7 @@ class Municipio extends Model
 
     public function dados()
     {
-        return $this->belongsTo('App\Dados_municipios','dados_id','id');
+        return $this->belongsTo('App\DadosMunicipios','dados_id','id');
     }
 
     public function hospital()
@@ -30,7 +30,7 @@ class Municipio extends Model
 
     public function detalhe()
     {
-        return $this->belongsTo('App\Detalhes_municipio','detalhes_id');
+        return $this->belongsTo('App\DetalhesMunicipio','detalhes_id');
     }
 
     public function programas()

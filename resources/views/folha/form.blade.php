@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="salario_inicial"><b>Salário Unitário</b></label>
-                    <the-mask class="form-control text-right" onkeypress="isNumberKeyMod(event)" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
+                    <the-mask class="form-control text-right" onkeypress="isNumberKeyCurrency(event)" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
                 </div>
                 <div class="col-sm-3">
                     <label for="SUSAM"><b>Qtd Funcionários SESAM</b></label>
@@ -43,12 +43,3 @@
         </form>
     </div>
 @endsection
-<script>
-    function isNumberKeyMod(evt)
-    {
-        var char = String.fromCharCode(evt.which)
-        if(!(/[0-9,',','.']/.test(char))){
-            evt.preventDefault();
-        }
-    }
-</script>

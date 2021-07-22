@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Hospital;
 use App\Veiculo;
+use Exception;
 use Illuminate\Http\Request;
 
 class VeiculoController extends Controller
@@ -11,19 +12,24 @@ class VeiculoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
-        $veiculo=Veiculo::all();
-        $hospital=Hospital::all();
-        return view('veiculo.index',compact('veiculo','hospital'));
+        try {
+            $msg=0;
+            $veiculo=Veiculo::all();
+            $hospital=Hospital::all();
+            return view('veiculo.index',compact('veiculo','hospital','msg'));
+        }catch (Exception $e){
+            dd($e);
+        }
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -35,12 +41,22 @@ class VeiculoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $veiculo=Veiculo::create($request->all());
-        return redirect()->route('veiculo.index');
+        try {
+            $veiculo=Veiculo::create($request->all());
+            $msg=1;
+            $veiculo=Veiculo::all();
+            $hospital=Hospital::all();
+            return view('veiculo.index',compact('veiculo','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $veiculo=Veiculo::all();
+            $hospital=Hospital::all();
+            return view('veiculo.index',compact('veiculo','hospital','msg'));
+        }
     }
 
     /**
@@ -58,7 +74,7 @@ class VeiculoController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Veiculo  $veiculo
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -72,25 +88,47 @@ class VeiculoController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Veiculo  $veiculo
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(Request $request, $id)
     {
-        $veiculo=Veiculo::find($id);
-        $veiculo->update($request->all());
-        return redirect()->route('veiculo.index');
+        try {
+            $veiculo=Veiculo::find($id);
+            $veiculo->update($request->all());
+
+            $msg=1;
+            $veiculo=Veiculo::all();
+            $hospital=Hospital::all();
+            return view('veiculo.index',compact('veiculo','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $veiculo=Veiculo::all();
+            $hospital=Hospital::all();
+            return view('veiculo.index',compact('veiculo','hospital','msg'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Veiculo  $veiculo
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $veiculo=Veiculo::find($id);
-        $veiculo->delete();
-        return redirect()->route('veiculo.index');
+        try {
+            $msg=1;
+            $veiculo=Veiculo::find($id);
+            $veiculo->delete();
+            $msg=1;
+            $veiculo=Veiculo::all();
+            $hospital=Hospital::all();
+            return view('veiculo.index',compact('veiculo','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $veiculo=Veiculo::all();
+            $hospital=Hospital::all();
+            return view('veiculo.index',compact('veiculo','hospital','msg'));
+        }
     }
 }

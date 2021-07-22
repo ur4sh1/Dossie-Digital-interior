@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Hospital;
 use App\Servico;
 use App\TipoServico;
+use Exception;
 use Illuminate\Http\Request;
 
 class ServicoController extends Controller
@@ -12,20 +13,29 @@ class ServicoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
-        $servico=Servico::all();
-        $tiposervico=TipoServico::all();
-        $hospital=Hospital::all();
-        return view('servico.index',compact('servico','tiposervico','hospital'));
+        try {
+            $msg=0;
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -38,12 +48,24 @@ class ServicoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $servico=Servico::create($request->all());
-        return redirect()->route('servicos.index');
+        try {
+            $msg=1;
+            $servico=Servico::create($request->all());
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }
     }
 
     /**
@@ -61,7 +83,7 @@ class ServicoController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Servico  $servico
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit(int $id)
     {
@@ -76,25 +98,51 @@ class ServicoController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Servico  $servico
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(Request $request, $id)
     {
-        $servico=Servico::find($id);
-        $servico->update($request->all());
-        return redirect()->route('servicos.index');
+        try {
+            $msg=1;
+            $servico=Servico::find($id);
+            $servico->update($request->all());
+
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Servico  $servico
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $servico= Servico::find($id);
-        $servico->delete();
-        return redirect()->route('servicos.index');
+        try {
+            $servico= Servico::find($id);
+            $servico->delete();
+
+            $msg=1;
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $servico=Servico::all();
+            $tiposervico=TipoServico::all();
+            $hospital=Hospital::all();
+            return view('servico.index',compact('servico','tiposervico','hospital','msg'));
+        }
     }
 }

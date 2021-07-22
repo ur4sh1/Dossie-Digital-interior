@@ -11,6 +11,7 @@ use App\Municipio;
 use App\Servico;
 use App\TipoServico;
 use App\Veiculo;
+use Exception;
 use Illuminate\Http\Request;
 
 class HospitalController extends Controller
@@ -22,8 +23,9 @@ class HospitalController extends Controller
      */
     public function index()
     {
+        $msg=0;
        $hospital=Hospital::all();
-       return view('hospital.index', compact('hospital'));
+       return view('hospital.index', compact('hospital','msg'));
     }
 
     /**
@@ -41,16 +43,23 @@ class HospitalController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $data=$request->all();
-        $encoding='UTF-8';
-        $data['nome']=mb_strtoupper($data['nome'],$encoding);
-        $hospital=Hospital::create($data);
+        try {
+            $data=$request->all();
+            $encoding='UTF-8';
+            $data['nome']=mb_strtoupper($data['nome'],$encoding);
+            $hospital=Hospital::create($data);
 
-        return redirect()->route('hospitals.index');
+            $msg=1;
+            $hospital=Hospital::all();
+            /*return redirect()->route('hospitals.index');*/
+            return view('hospital.index',compact('hospital','msg'));
+        }catch (Exception $e){
+            dd($e);
+        }
     }
 
     /**
@@ -82,13 +91,21 @@ class HospitalController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Hospital  $hospitals
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function update(Request $request, $id)
     {
-        $hospital=Hospital::find($id);
-        $hospital->update($request->all());
-        return redirect()->route('hospitals.index');
+        try {
+            $hospital=Hospital::find($id);
+            $hospital->update($request->all());
+
+            $msg=1;
+            $hospital=Hospital::all();
+            /*return redirect()->route('hospitals.index');*/
+            return view('hospital.index',compact('hospital','msg'));
+        }catch (Exception $e){
+            dd($e);
+        }
     }
 
     /**

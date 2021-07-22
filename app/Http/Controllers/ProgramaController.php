@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Ano;
 use App\Municipio;
 use App\Programa;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProgramaController extends Controller
@@ -12,19 +13,24 @@ class ProgramaController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
-        $ano=Ano::all();
-        $programas=Programa::all();
-        return view('programa.index',compact('programas','ano'));
+        try {
+            $msg=0;
+            $ano=Ano::all();
+            $programas=Programa::all();
+            return view('programa.index',compact('programas','ano','msg'));
+        }catch (Exception $e){
+            dd($e);
+        }
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -37,15 +43,26 @@ class ProgramaController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $data=$request->all();
-        $data['repasse']=str_replace('.',"",$data['repasse']);
-        $data['repasse']=str_replace(',',".",$data['repasse']);
-        $programa=Programa::create($data);
-        return redirect()->route('programa.index');
+        try {
+            $data=$request->all();
+            $data['repasse']=str_replace('.',"",$data['repasse']);
+            $data['repasse']=str_replace(',',".",$data['repasse']);
+            $programa=Programa::create($data);
+
+            $msg=1;
+            $ano=Ano::all();
+            $programas=Programa::all();
+            return view('programa.index',compact('programas','ano','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $ano=Ano::all();
+            $programas=Programa::all();
+            return view('programa.index',compact('programas','ano','msg'));
+        }
     }
 
     /**
@@ -63,7 +80,7 @@ class ProgramaController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Programa  $programa
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit(int $id)
     {
@@ -78,28 +95,50 @@ class ProgramaController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Programa  $programa
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(Request $request, $id)
     {
-        $data=$request->all();
-        $data['repasse']=str_replace('.',"",$data['repasse']);
-        $data['repasse']=str_replace(',',".",$data['repasse']);
-        $programa=Programa::find($id);
-        $programa->update($data);
-        return redirect()->route('programa.index');
+        try {
+            $data=$request->all();
+            $data['repasse']=str_replace('.',"",$data['repasse']);
+            $data['repasse']=str_replace(',',".",$data['repasse']);
+            $programa=Programa::find($id);
+            $programa->update($data);
+
+            $msg=1;
+            $ano=Ano::all();
+            $programas=Programa::all();
+            return view('programa.index',compact('programas','ano','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $ano=Ano::all();
+            $programas=Programa::all();
+            return view('programa.index',compact('programas','ano','msg'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Programa  $programa
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $programa=Programa::find($id);
-        $programa->delete();
-        return redirect()->route('programa.index');
+        try {
+            $programa=Programa::find($id);
+            $programa->delete();
+
+            $msg=1;
+            $ano=Ano::all();
+            $programas=Programa::all();
+            return view('programa.index',compact('programas','ano','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $ano=Ano::all();
+            $programas=Programa::all();
+            return view('programa.index',compact('programas','ano','msg'));
+        }
     }
 }

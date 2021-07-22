@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="text-info">
@@ -24,10 +23,10 @@
                     <label><b>ADMINISTRATIVO</b></label>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input  type="text" maxlength="3" value="{{$veiculo->administrativo_existente}}" class="form-control" style="width:90px;" id="administrativo_existente" name="administrativo_existente" placeholder="Existente">
+                            <input  type="text" maxlength="3" onkeypress="isNumberKey(event)" value="{{$veiculo->administrativo_existente}}" class="form-control" style="width:90px;" id="administrativo_existente" name="administrativo_existente" placeholder="Existente">
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" value="{{$veiculo->administrativo_funcional}}" class="form-control" style="width:90px;" id="administrativo_funcional" name="administrativo_funcional" placeholder="Funcional">
+                            <input type="text" maxlength="3" onkeypress="isNumberKey(event)" value="{{$veiculo->administrativo_funcional}}" class="form-control" style="width:90px;" id="administrativo_funcional" name="administrativo_funcional" placeholder="Funcional">
                         </div>
                     </div>
                 </div>
@@ -35,10 +34,10 @@
                     <label><b>AMBULÂNCIA TERRESTRE</b></label>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" value="{{$veiculo->ambulancia_terrestre_existente}}" class="form-control" style="width:90px;" id="ambulancia_terrestre_existente" name="ambulancia_terrestre_existente" placeholder="Existente">
+                            <input type="text" maxlength="3" onkeypress="isNumberKey(event)" value="{{$veiculo->ambulancia_terrestre_existente}}" class="form-control" style="width:90px;" id="ambulancia_terrestre_existente" name="ambulancia_terrestre_existente" placeholder="Existente">
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" value="{{$veiculo->ambulancia_terrestre_funcional}}" class="form-control" style="width:90px;" id="ambulancia_terrestre_funcional" name="ambulancia_terrestre_funcional" placeholder="Funcional">
+                            <input type="text" maxlength="3" onkeypress="isNumberKey(event)" value="{{$veiculo->ambulancia_terrestre_funcional}}" class="form-control" style="width:90px;" id="ambulancia_terrestre_funcional" name="ambulancia_terrestre_funcional" placeholder="Funcional">
                         </div>
                     </div>
                 </div>
@@ -46,10 +45,10 @@
                     <label><b>AMBULÂNCIA FLUVIAL</b></label>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" value="{{$veiculo->ambulancia_fluvial_existente}}" class="form-control" style="width:90px;" id="ambulancia_fluvial_existente" name="ambulancia_fluvial_existente" placeholder="Existente">
+                            <input type="text" maxlength="3" onkeypress="isNumberKey(event)" value="{{$veiculo->ambulancia_fluvial_existente}}" class="form-control" style="width:90px;" id="ambulancia_fluvial_existente" name="ambulancia_fluvial_existente" placeholder="Existente">
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" maxlength="3" value="{{$veiculo->ambulancia_fluvial_funcional}}" class="form-control" style="width:90px;"id="ambulancia_fluvial_funcional" name="ambulancia_fluvial_funcional" placeholder="Funcional">
+                            <input type="text" maxlength="3" onkeypress="isNumberKey(event)" value="{{$veiculo->ambulancia_fluvial_funcional}}" class="form-control" style="width:90px;"id="ambulancia_fluvial_funcional" name="ambulancia_fluvial_funcional" placeholder="Funcional">
                         </div>
                     </div>
                 </div>

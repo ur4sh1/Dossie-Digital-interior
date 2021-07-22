@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -48,13 +47,13 @@
                     </select>
                 </div>
                 <div class="col-sm-2 ">
-                    <input value="{{$rh->susam_estatutario}}" class="form-control" style="width: 100px;" maxlength="4" type="text" name="susam_estatutario" required>
+                    <input value="{{$rh->susam_estatutario}}" onkeypress="isNumberKey(event)" class="form-control" style="width: 100px;" maxlength="4" type="text" name="susam_estatutario" required>
                 </div>
                 <div class="col-sm-2">
-                    <input value="{{$rh->susam_contrato}}" class="form-control" style="width: 100px;" maxlength="4" type="text" name="susam_contrato" required>
+                    <input value="{{$rh->susam_contrato}}" onkeypress="isNumberKey(event)" class="form-control" style="width: 100px;" maxlength="4" type="text" name="susam_contrato" required>
                 </div>
                 <div class="col-sm-2">
-                    <input value="{{$rh->prefeitura}}" class="form-control" style="width: 100px;" maxlength="4" type="text" name="prefeitura" required>
+                    <input value="{{$rh->prefeitura}}" onkeypress="isNumberKey(event)" class="form-control" style="width: 100px;" maxlength="4" type="text" name="prefeitura" required>
                 </div>
             </div>
             <div class="row mt-3">

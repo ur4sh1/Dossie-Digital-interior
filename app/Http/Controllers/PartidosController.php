@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Partido;
+use Exception;
 use Illuminate\Http\Request;
 
 class PartidosController extends Controller
@@ -10,18 +11,19 @@ class PartidosController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
+        $msg=0;
         $partidos= Partido::all();
-        return view("partido.index", compact('partidos'));
+        return view("partido.index", compact('partidos','msg'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -32,12 +34,20 @@ class PartidosController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $partido = Partido::create($request->all());
-        return redirect()->route('partido.index');
+        try {
+            $partido = Partido::create($request->all());
+            $msg=1;
+            $partidos= Partido::all();
+            return view("partido.index", compact('partidos','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $partidos= Partido::all();
+            return view("partido.index", compact('partidos','msg'));
+        }
     }
 
     /**
@@ -55,7 +65,7 @@ class PartidosController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Partido  $partido
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit(int $id)
     {
@@ -68,24 +78,40 @@ class PartidosController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Partido  $partido
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(Request $request,int $id)
     {
-        $partido= Partido::find($id);
-        $partido->update($request->all());
-        return redirect()->route('partido.index');
+        try {
+            $msg=1;
+            $partido= Partido::find($id);
+            $partido->update($request->all());
+            $partidos= Partido::all();
+            return view("partido.index", compact('partidos','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $partidos= Partido::all();
+            return view("partido.index", compact('partidos','msg'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Partido  $partido
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function destroy(Partido $partido)
     {
-        $partido->delete();
-        return redirect()->route('partido.index');
+        try {
+            $msg=1;
+            $partido->delete();
+            $partidos= Partido::all();
+            return view("partido.index", compact('partidos','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $partidos= Partido::all();
+            return view("partido.index", compact('partidos','msg'));
+        }
     }
 }

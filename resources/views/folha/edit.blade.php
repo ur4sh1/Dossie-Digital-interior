@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -24,7 +23,7 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="salario_inicial"><b>Salário Unitário</b></label>
-                    <the-mask class="form-control text-right" onkeypress="isNumberKeyMod(event)" value="{{$folha->salario_inicial}}" name="salario_inicial" id="salario_inicial" :mask="['##.###,##']" required></the-mask>
+                    <input class="form-control text-right" onkeypress="isNumberKeyCurrency(event)" value="{{$folha->salario_inicial}}" name="salario_inicial" id="salario_inicial"  required>
                 </div>
                 <div class="col-sm-3">
                     <label for="SUSAM"><b>Qtd Funcionários SESAM</b></label>
@@ -40,12 +39,3 @@
         </form>
     </div>
 @endsection
-<script>
-    function isNumberKeyMod(evt)
-    {
-        var char = String.fromCharCode(evt.which)
-        if(!(/[0-9,',','.']/.test(char))){
-            evt.preventDefault();
-        }
-    }
-</script>

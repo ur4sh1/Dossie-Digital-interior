@@ -50,7 +50,7 @@
                     <select class="form-control" id="hospital_id" name="hospital_id">
                         <option value="">Selecione</option>
                         @foreach($hospital as $h)
-                        <option value="{{$h->id}}">{{$h->nome}}</option>
+                            <option value="{{$h->id}}">{{$h->nome}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -87,8 +87,8 @@
                 </div>
             </div>
             <div class="form-group text-right">
-                <button class="btn btn-primary" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
-                <a class="btn btn-danger" title="CANCELAR" href="/autoridade"><span class="fa fa-window-close"></span></a>
+                <button class="btn btn-primary btn-sm" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
+                <a class="btn btn-danger btn-sm" title="CANCELAR" href="/autoridade"><span class="fa fa-window-close"></span></a>
             </div>
         </form>
     </div>

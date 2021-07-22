@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Ano;
-use App\Dados_municipios;
-use App\Detalhes_municipio;
+use App\DadosMunicipios;
+use App\DetalhesMunicipio;
 use App\Doencas;
 use App\Municipio;
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ class DadosController extends Controller
     public function index()
     {
         $municipios=Municipio::all();
-        $dadosMunicipios= Dados_municipios::all();
+        $dadosMunicipios= DadosMunicipios::all();
         return view('dado.index',compact('dadosMunicipios','municipios'));
     }
 
@@ -49,30 +49,30 @@ class DadosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dados_municipios  $dados_municipios
+     * @param  \App\DadosMunicipios  $dados_municipios
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $ano=Ano::all();
         $municipios=Municipio::find($id);
-        $dados=Dados_municipios::find($id);
-        $detalhes=Detalhes_municipio::find($id);
+        $dados=DadosMunicipios::find($id);
+        $detalhes=DetalhesMunicipio::find($id);
         return view('dado.dados', compact('municipios','dados','detalhes','ano'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dados_municipios  $dados_municipios
+     * @param  \App\DadosMunicipios  $dados_municipios
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $ano=Ano::all();
         $municipios=Municipio::find($id);
-        $dados=Dados_municipios::find($id);
-        $detalhes=Detalhes_municipio::find($id);
+        $dados=DadosMunicipios::find($id);
+        $detalhes=DetalhesMunicipio::find($id);
         return view('dado.edit',compact('municipios','dados','detalhes','ano'));
     }
 
@@ -80,15 +80,15 @@ class DadosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dados_municipios  $dados_municipios
+     * @param  \App\DadosMunicipios  $dados_municipios
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $dados=Dados_municipios::find($id);
+        $dados=DadosMunicipios::find($id);
         $dados->update($request->all());
 
-        $detalhes=Detalhes_municipio::find($id);
+        $detalhes=DetalhesMunicipio::find($id);
         $detalhes->update($request->all());
 
         return redirect()->route('dados.show',$id);
@@ -97,10 +97,10 @@ class DadosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dados_municipios  $dados_municipios
+     * @param  \App\DadosMunicipios  $dados_municipios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dados_municipios $dados_municipios)
+    public function destroy(DadosMunicipios $dados_municipios)
     {
         //
     }

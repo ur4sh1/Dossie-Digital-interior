@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Hospital;
 use App\Rh;
 use App\RhCategoria;
+use Exception;
 use Illuminate\Http\Request;
 
 class RhController extends Controller
@@ -12,20 +13,29 @@ class RhController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
-        $rhCategorias=RhCategoria::all();
-        $rhs=Rh::all();
-        $hospital=Hospital::all();
-        return view('rh.index',compact('rhs','rhCategorias','hospital'));
+        try {
+            $msg=0;
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -38,12 +48,24 @@ class RhController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $rh=Rh::create($request->all());
-        return redirect()->route('rhs.index');
+        try {
+            $rh=Rh::create($request->all());
+            $msg=1;
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }
     }
 
     /**
@@ -61,7 +83,7 @@ class RhController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Rh  $rh
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit(int $id)
     {
@@ -76,25 +98,49 @@ class RhController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Rh  $rh
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(Request $request, $id)
     {
-        $rh=Rh::find($id);
-        $rh->update($request->all());
-        return redirect()->route('rhs.index');
+        try {
+            $rh=Rh::find($id);
+            $rh->update($request->all());
+            $msg=1;
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Rh  $rh
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $rh=Rh::find($id);
-        $rh->delete();
-        return redirect()->route('rhs.index');
+        try {
+            $msg=1;
+            $rh=Rh::find($id);
+            $rh->delete();
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $rhCategorias=RhCategoria::all();
+            $rhs=Rh::all();
+            $hospital=Hospital::all();
+            return view('rh.index',compact('rhs','rhCategorias','hospital','msg'));
+        }
     }
 }

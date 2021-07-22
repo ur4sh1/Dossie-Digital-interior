@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="text-info">
@@ -13,27 +12,30 @@
         </div>
         <table class="table table-sm" id="table">
             <thead>
-            <tr>
-                <th scope="col">NOME</th>
-                <th scope="col">AÇÕES</th>
-            </tr>
+                <tr>
+                    <th scope="col">NOME</th>
+                    <th class="text-center" scope="col">AÇÕES</th>
+                </tr>
             </thead>
+            <tbody>
             @foreach($tipoEquipamento as $te)
                 <tr>
-                    <td>{{$te->nome}}</td>
-                    <td>
-                        <span class="form-inline">
-<!--                        <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('tipoEquipamentos.edit',$te)}}" role="button"><span class="fa fa-edit"></span></a>-->
-                            <form action="{{route('tipoEquipamentos.destroy',$te)}}" method="post" class="mr-1 ml-1">
-                                @csrf
-                                @method('delete')
-                                <input type="hidden" name="id" value="${{$te->id}}">
-                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
-                            </form>
-                        </span>
+                    <td style="width: 90%">{{$te->nome}}</td>
+                    <td class="d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col">
+                                <form action="{{route('tipoEquipamentos.destroy',$te)}}" method="post" class="mr-1 ml-1">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="id" value="${{$te->id}}">
+                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                </form>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach
+            </tbody>
         </table>
     </div>
 @endsection

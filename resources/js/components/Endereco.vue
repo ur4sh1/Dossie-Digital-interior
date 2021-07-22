@@ -3,7 +3,7 @@
         <div class="col-sm-3 mt-2">
             <label><h5><b>CEP</b></h5></label>
             <div class="input-group">
-                <input type="text" id="cep" name="cep" class="form-control cep mb-3" v-model="cep">
+                <input type="text" id="cep" name="cep" onkeypress="isNumberKey(event)" class="form-control cep mb-3" v-model="cep">
 <!--                <the-mask type="text" id="cep" name="cep" class="form-control cep mb-3" mask="########" v-model="cep" />-->
                 <div class="input-group-append">
                     <button class="btn btn-primary mb-3" type="button" id="button-addon2" @click="localizaCep()">
