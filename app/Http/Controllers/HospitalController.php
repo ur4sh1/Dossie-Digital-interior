@@ -23,7 +23,7 @@ class HospitalController extends Controller
      */
     public function index()
     {
-        $msg=0;
+       $msg=0;
        $hospital=Hospital::all();
        return view('hospital.index', compact('hospital','msg'));
     }
@@ -58,7 +58,9 @@ class HospitalController extends Controller
             /*return redirect()->route('hospitals.index');*/
             return view('hospital.index',compact('hospital','msg'));
         }catch (Exception $e){
-            dd($e);
+            $msg=2;
+            $hospital=Hospital::all();
+            return view('hospital.index',compact('hospital','msg'));
         }
     }
 
@@ -101,10 +103,11 @@ class HospitalController extends Controller
 
             $msg=1;
             $hospital=Hospital::all();
-            /*return redirect()->route('hospitals.index');*/
             return view('hospital.index',compact('hospital','msg'));
         }catch (Exception $e){
-            dd($e);
+            $msg=2;
+            $hospital=Hospital::all();
+            return view('hospital.index',compact('hospital','msg'));
         }
     }
 
@@ -112,12 +115,20 @@ class HospitalController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Hospital  $hospitals
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $hospital = Hospital::find($id);
-        $hospital->delete();
-        return redirect()->route('hospitals.index');
+        try {
+            $hospital = Hospital::find($id);
+            $hospital->delete();
+            $msg=1;
+            $hospital=Hospital::all();
+            return view('hospital.index',compact('hospital','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $hospital=Hospital::all();
+            return view('hospital.index',compact('hospital','msg'));
+        }
     }
 }
