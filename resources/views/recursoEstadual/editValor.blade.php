@@ -52,12 +52,4 @@
     </form>
     </div>
 @endsection
-<script>
-    function isNumberKey(evt)
-    {
-        var char = String.fromCharCode(evt.which)
-        if(!(/[0-9,',','.']/.test(char))){
-            evt.preventDefault();
-        }
-    }
-</script>
+

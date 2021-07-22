@@ -20,7 +20,7 @@
             <div class="carousel-item active" data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>CUSTEIO-{{ $data-2 }}</b></div>
                 @foreach($itemRecursoFundoNacional as $i)
-                    @foreach($m->recursoFundoNacional as $mfnm)
+                    @foreach($municipio->recursoFundoNacional as $mfnm)
                         @if($mfnm->ano->ano == ($data-2) and $mfnm->item_recurso_fundo_nacional_id == $i->id and $mfnm->tipo_recurso_nacional_id == 1)
                             @if($mfnm->item_recurso_fundo_nacional_id == $i->id)
                                 <div style="background:#b3e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -36,7 +36,7 @@
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>CUSTEIO-{{ $data-1 }}</b></div>
                 @foreach($itemRecursoFundoNacional as $i)
-                    @foreach($m->recursoFundoNacional as $mfnm)
+                    @foreach($municipio->recursoFundoNacional as $mfnm)
                         @if($mfnm->ano->ano == ($data-1) and $mfnm->item_recurso_fundo_nacional_id == $i->id and $mfnm->tipo_recurso_nacional_id == 1)
                             @if($mfnm->item_recurso_fundo_nacional_id == $i->id)
                                 <div style="background:#b2e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -52,7 +52,7 @@
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>CUSTEIO-{{ $data }}</b></div>
                 @foreach($itemRecursoFundoNacional as $i)
-                    @foreach($m->recursoFundoNacional as $mfnm)
+                    @foreach($municipio->recursoFundoNacional as $mfnm)
                         @if($mfnm->ano->ano == ($data) and $mfnm->item_recurso_fundo_nacional_id == $i->id and $mfnm->tipo_recurso_nacional_id == 1)
                             @if($mfnm->item_recurso_fundo_nacional_id == $i->id)
                                 <div style="background:#b1e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -87,7 +87,7 @@
                 <div class="carousel-item active" data-interval="0">
                     <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>INVESTIMENTO-{{ $data-2 }}</b></div>
                     @foreach($itemRecursoFundoNacional as $i)
-                        @foreach($m->recursoFundoNacional as $mfnm)
+                        @foreach($municipio->recursoFundoNacional as $mfnm)
                             @if($mfnm->ano->ano == ($data-2) and $mfnm->item_recurso_fundo_nacional_id == $i->id and $mfnm->tipo_recurso_nacional_id == 2)
                                 @if($mfnm->item_recurso_fundo_nacional_id == $i->id)
                                     <div style="background:#b3e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -103,7 +103,7 @@
                 <div class="carousel-item"  data-interval="0">
                     <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>INVESTIMENTO-{{ $data-1 }}</b></div>
                     @foreach($itemRecursoFundoNacional as $i)
-                        @foreach($m->recursoFundoNacional as $mfnm)
+                        @foreach($municipio->recursoFundoNacional as $mfnm)
                             @if($mfnm->ano->ano == ($data-1) and $mfnm->item_recurso_fundo_nacional_id == $i->id and $mfnm->tipo_recurso_nacional_id == 2)
                                 @if($mfnm->item_recurso_fundo_nacional_id == $i->id)
                                     <div style="background:#b2e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -119,7 +119,7 @@
                 <div class="carousel-item"  data-interval="0">
                     <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>INVESTIMENTO-{{ $data }}</b></div>
                     @foreach($itemRecursoFundoNacional as $i)
-                        @foreach($m->recursoFundoNacional as $mfnm)
+                        @foreach($municipio->recursoFundoNacional as $mfnm)
                             @if($mfnm->ano->ano == ($data) and $mfnm->item_recurso_fundo_nacional_id == $i->id and $mfnm->tipo_recurso_nacional_id == 2)
                                 @if($mfnm->item_recurso_fundo_nacional_id == $i->id)
                                     <div style="background:#b1e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>

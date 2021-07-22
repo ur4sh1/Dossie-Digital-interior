@@ -19,7 +19,7 @@
             <div class="carousel-item active" data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-2 }}</b></div>
                 @foreach($itemRecursoEstadual as $i)
-                    @foreach($m->recursoEstadual as $mrem)
+                    @foreach($municipio->recursoEstadual as $mrem)
                         @if($mrem->ano->ano == ($data-2) and $mrem->item_recurso_estadual_id == $i->id)
                             @if($mrem->item_recurso_estadual_id == $i->id)
                                 <div style="background:#b3e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -36,7 +36,7 @@
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-1 }}</b></div>
                 @foreach($itemRecursoEstadual as $i)
-                    @foreach($m->recursoEstadual as $mrem)
+                    @foreach($municipio->recursoEstadual as $mrem)
                         @if($mrem->ano->ano == ($data-1) and $mrem->item_recurso_estadual_id == $i->id)
                             @if($mrem->item_recurso_estadual_id == $i->id)
                                 <div style="background:#b2e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -53,7 +53,7 @@
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data }}</b></div>
                 @foreach($itemRecursoEstadual as $i)
-                    @foreach($m->recursoEstadual as $mrem)
+                    @foreach($municipio->recursoEstadual as $mrem)
                         @if($mrem->ano->ano == ($data) and $mrem->item_recurso_estadual_id == $i->id)
                             @if($mrem->item_recurso_estadual_id == $i->id)
                                 <div style="background:#b1e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>

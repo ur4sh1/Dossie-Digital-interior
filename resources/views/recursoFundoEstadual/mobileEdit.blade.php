@@ -20,7 +20,7 @@
             <div class="carousel-item active" data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-2 }}</b></div>
                 @foreach($itemRecursoFundoEstadual as $i)
-                    @foreach($m->recursoFundoEstadual as $mfem)
+                    @foreach($municipio->recursoFundoEstadual as $mfem)
                         @if($mfem->ano->ano == ($data-2) and $mfem->item_recurso_fundo_estadual_id == $i->id)
                             @if($mfem->item_recurso_fundo_estadual_id == $i->id)
                                 <div style="background:#b3e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -36,7 +36,7 @@
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data-1 }}</b></div>
                 @foreach($itemRecursoFundoEstadual as $i)
-                    @foreach($m->recursoFundoEstadual as $mfem)
+                    @foreach($municipio->recursoFundoEstadual as $mfem)
                         @if($mfem->ano->ano == ($data-1) and $mfem->item_recurso_fundo_estadual_id == $i->id)
                             @if($mfem->item_recurso_fundo_estadual_id == $i->id)
                                 <div style="background:#b2e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
@@ -52,7 +52,7 @@
             <div class="carousel-item"  data-interval="0">
                 <div class="text-center" style="color: #1b1e21; background:lavenderblush"><b>{{ $data }}</b></div>
                 @foreach($itemRecursoFundoEstadual as $i)
-                    @foreach($m->recursoFundoEstadual as $mfem)
+                    @foreach($municipio->recursoFundoEstadual as $mfem)
                         @if($mfem->ano->ano == ($data) and $mfem->item_recurso_fundo_estadual_id == $i->id)
                             @if($mfem->item_recurso_fundo_estadual_id == $i->id)
                                 <div style="background:#b1e8ca" class="text-left descricaogrande">{{ $i->descricao }}</div>
