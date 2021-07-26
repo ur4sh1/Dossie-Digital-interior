@@ -1,9 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        @include('layouts.alert')
-        <div class="text-info">
-            <h1>Partidos</h1>
+        @include('notification.alert')
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-info">
+                    <h1>Partidos</h1>
+                </div>
+            </div>
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
@@ -14,23 +18,28 @@
             <tr style="background:lavenderblush">
                 <th scope="col">SIGLA</th>
                 <th scope="col">DESCRIÇÃO</th>
-                <th scope="col">AÇÕES</th>
+                <th class="text-center" scope="col">AÇÕES</th>
             </tr>
             </thead>
             @foreach($partidos as $p)
                 <tr>
                     <td>{{$p->sigla}}</td>
                     <td>{{$p->descricao}}</td>
-                    <td>
-                        <span class="form-inline">
-                        <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('partido.edit',$p)}}" role="button"><span class="fa fa-edit"></span></a>
-                            <form action="{{route('partido.destroy',$p)}}" method="post" class="mr-1 ml-1">
-                                @csrf
-                                @method('delete')
-                                <input type="hidden" name="id" value="${{$p->id}}">
-                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
-                            </form>
-                        </span>
+                    <td class="d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-3 mr-1">
+                                <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR" href="{{route('partido.edit',$p)}}" role="button"><span class="fa fa-edit"></span></a>
+                            </div>
+                            <div class="col-3">
+                                <form id="form{{$p->id}}" action="{{route('partido.destroy',$p)}}" method="post" class="mr-1 ml-1">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="id" value="{{$p->id}}">
+                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="confirmDelet(event,{{$p->id}})" type="submit"><span class="fa fa-trash"></span></button>
+                                    @include('notification.confirmDeleta')
+                                </form>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach

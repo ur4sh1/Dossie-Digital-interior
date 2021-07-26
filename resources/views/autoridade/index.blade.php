@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        @include('layouts.alert')
+        @include('notification.alert')
         <div class="text-info">
             <h1>Autoridades</h1>
         </div>
@@ -28,15 +28,16 @@
                     </td>
                     <td class="d-flex justify-content-end">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-3 mr-1">
                                 <a class="btn btn-primary btn-sm ml-1" title="EDITAR" href="{{route('autoridade.edit',$a)}}" role="button"><span class="fa fa-edit"></span></a>
                             </div>
                             <div class="col-3">
-                                <form action="{{route('autoridade.destroy',$a)}}" method="post">
+                                <form id="form{{$a->id}}" action="{{route('autoridade.destroy',$a)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <input type="hidden" name="id" value="${{$a->id}}">
-                                    <button class="btn btn-sm btn-danger mr-1 ml-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                    <input type="hidden" name="id" value="{{$a->id}}">
+                                    <button class="btn btn-sm btn-danger mr-1 ml-1" title="EXCLUIR" onclick="confirmDelet(event,{{$a->id}})" type="button"><span class="fa fa-trash"></span></button>
+                                    @include('notification.confirmDeleta')
                                 </form>
                             </div>
                         </div>

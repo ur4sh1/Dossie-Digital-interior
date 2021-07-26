@@ -10,7 +10,7 @@
                 <a class="btn btn-primary btn-sm  mt-1" href="{{route('equipamentos.index')}}" role="button">VOLTA</a>
             </div>
         </div>
-        <form method="post" action="{{route('equipamentos.store')}}">
+        <form method="post" action="{{route('equipamentos.store')}}" autocomplete="off">
             @csrf
             <div class="form-row">
                 <div class="col-sm-4">

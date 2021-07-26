@@ -134,11 +134,7 @@
 
 </body>
 </html>
-<script>
-    $("#alerta").fadeTo(2000, 500).slideUp(500, function () {
-        $("#alerta").slideUp(500);
-    });
-</script>
+
 <!-- função somente numeros / ',' e '.' -->
 <script>
     function isNumberKey(evt)

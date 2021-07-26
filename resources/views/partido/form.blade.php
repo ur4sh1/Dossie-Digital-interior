@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="text-info">
@@ -10,7 +9,7 @@
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('partido.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
-        <form method="post" action="{{route('partido.store')}}">
+        <form method="post" action="{{route('partido.store')}}" autocomplete="off">
             @csrf
             <table class="table-sm">
                 <thead>

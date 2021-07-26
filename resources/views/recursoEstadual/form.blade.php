@@ -4,7 +4,7 @@
     $data=date('Y');
     ?>
     <div class="container">
-        @include('layouts.alert')
+        @include('notification.alert')
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
@@ -37,8 +37,8 @@
                     </div>
                     <div class="form-col-2">
                         <label for="ano_id">Ano</label>
-                        <select class="form-control" id="ano_id" name="ano_id">
-                            <option disabled selected>Selecione</option>
+                        <select class="form-control" id="ano_id" name="ano_id" required>
+                            <option value="" disabled selected>Selecione</option>
                             @foreach($ano as $a)
                                 @if($a->ano>=($data-2) && $a->ano<=($data))
                                 <option value="{{ $a->id }}">{{ $a->ano }}</option>

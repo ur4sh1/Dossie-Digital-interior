@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        @include('notification.alert')
         <div class="text-info">
             <h1>INFORMAÇÕES GERAIS</h1>
             <h3>{{$municipios->nome}}</h3>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-    @include('layouts.alert')
+        @include('notification.alert')
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
@@ -17,24 +17,23 @@
             <thead>
             <tr style="background:lavenderblush">
                 <th scope="col">VACINA</th>
-                <th scope="col"></th>
+                <th scope="col">AÇÃO</th>
             </tr>
             </thead>
             <tbody>
             @foreach($imunobiologica as $i)
-            <tr>
-                <td>{{$i->nome}}</td>
-                <td style="width: 20px">
-                    <span class="text-right">
-                        <form action="{{route('imunobiologica.destroy',$i)}}" method="post" class="mr-1 ml-1">
+                <tr>
+                    <td style="width: 80%">{{$i->nome}}</td>
+                    <td class="d-flex justify-content-end">
+                        <form id="form{{$i->id}}" action="{{route('imunobiologica.destroy',$i)}}" method="post" class="mr-1 ml-1">
                             @csrf
                             @method('delete')
-                            <input type="hidden" name="id" value="${{$i->id}}">
-                            <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                            <input type="hidden" name="id" value="{{$i->id}}">
+                            <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="confirmDelet(event,{{$i->id}})" type="button"><span class="fa fa-trash"></span></button>
+                            @include('notification.confirmDeleta')
                         </form>
-                    </span>
-                </td>
-            </tr>
+                    </td>
+                </tr>
             @endforeach
             </tbody>
         </table>

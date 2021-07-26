@@ -9,7 +9,7 @@
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('autoridade.index')}}" role="button">VOLTAR</a>
             </div>
         </div>
-        <form method="post" class="needs-validation" action="{{route('autoridade.store')}}">
+        <form method="post" class="needs-validation" action="{{route('autoridade.store')}}" autocomplete="off">
             @csrf
             <div class="form-row">
                 <div class="col-sm-12">

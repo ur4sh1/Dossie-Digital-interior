@@ -11,8 +11,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <label for="hospital_id"><b>HOSPITAL</b></label>
-                    <select class="form-control" id="hospital_id" name="hospital_id" required>
-                        <option value="" selected disabled hidden>Selecione</option>
+                    <select class="form-control" id="hospital_id" name="hospital_id" disabled required>
                         @foreach($hospital as $h)
                             <option value="{{$h->id}}" {{$servico->hospital_id==$h->id?"selected":''}}>{{$h->nome}}</option>
                         @endforeach
@@ -20,8 +19,7 @@
                 </div>
                 <div class="col-sm-4">
                     <label for="tipo_servicos_id"><b>SERVIÇO</b></label>
-                    <select class="form-control" id="tipo_servicos_id" name="tipo_servicos_id" required>
-                        <option value="" selected disabled hidden>Selecione</option>
+                    <select class="form-control" id="tipo_servicos_id" name="tipo_servicos_id" disabled required>
                         @foreach($tiposervico as $ts)
                             <option value="{{$ts->id}}" {{$servico->tipo_servicos_id==$ts->id?"selected":''}}>{{$ts->nome}}</option>
                         @endforeach

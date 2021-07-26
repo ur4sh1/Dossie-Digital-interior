@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        @include('layouts.alert')
+        @include('notification.alert')
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
@@ -35,11 +35,12 @@
                             <a class="btn btn-primary  btn-sm ml-1 mb-1" title="EDITAR" href="{{route('rhs.edit',$r)}}" role="button"><span class="fa fa-edit"></span></a>
                         </div>
                         <div class="col-3">
-                            <form action="{{route('rhs.destroy',$r)}}" method="post">
+                            <form id="form{{$r->id}}" action="{{route('rhs.destroy',$r)}}" method="post">
                                 @csrf
                                 @method('delete')
-                                <input type="hidden" name="id" value="${{$r->id}}">
-                                <button class="btn btn-danger btn-sm mr-1 ml-1 mb-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                <input type="hidden" name="id" value="{{$r->id}}">
+                                <button class="btn btn-danger btn-sm mr-1 ml-1 mb-1" title="EXCLUIR" onclick="confirmDelet(event,{{$r->id}})" type="button"><span class="fa fa-trash"></span></button>
+                                @include('notification.confirmDeleta')
                             </form>
                         </div>
                     </div>

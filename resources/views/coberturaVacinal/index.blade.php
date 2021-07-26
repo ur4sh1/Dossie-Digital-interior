@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        @include('layouts.alert')
+        @include('notification.alert')
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
@@ -35,15 +35,16 @@
                 <td class="text-center">{{$cv->fonte}}</td>
                 <td class="d-flex justify-content-end">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-3 mr-1">
                             <a class="btn btn-primary btn-sm mr-1 ml-1" title="EDITAR PORCENTAGEM" href="{{route('coberturaVacinal.edit',$cv)}}" role="button"><span class="fa fa-edit"></span></a>
                         </div>
                         <div class="col-6">
-                            <form action="{{route('coberturaVacinal.destroy',$cv)}}" method="post" class="mr-1 ml-1">
+                            <form id="form{{$cv->id}}" action="{{route('coberturaVacinal.destroy',$cv)}}" method="post" class="mr-1 ml-1">
                                 @csrf
                                 @method('delete')
-                                <input type="hidden" name="id" value="${{$cv->id}}">
-                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                <input type="hidden" name="id" value="{{$cv->id}}">
+                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="confirmDelet(event,{{$cv->id}})" type="button"><span class="fa fa-trash"></span></button>
+                                @include('notification.confirmDeleta')
                             </form>
                         </div>
                     </div>

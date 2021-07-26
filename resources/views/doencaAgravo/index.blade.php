@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        @include('layouts.alert')
+        @include('notification.alert')
         <div class="text-info">
             <h1>Doenças e Agravos</h1>
         </div>
@@ -32,11 +32,12 @@
                     <td class="text-center">{{$d->casos}}</td>
                     <td class="text-center">{{$d->fonte}}</td>
                     <td class="form-inline">
-                        <form action="{{route('doencasAgravos.destroy',$d->id)}}" method="post">
+                        <form id="form{{$d->id}}" action="{{route('doencasAgravos.destroy',$d->id)}}" method="post">
                             @csrf
                             @method('delete')
-                            <input type="hidden" name="id" value="${{$d->id}}">
-                            <button class="btn btn-danger btn-sm ml-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                            <input type="hidden" name="id" value="{{$d->id}}">
+                            <button class="btn btn-danger btn-sm ml-1" title="EXCLUIR" onclick="confirmDelet(event,{{$d->id}})" type="button"><span class="fa fa-trash"></span></button>
+                            @include('notification.confirmDeleta')
                         </form>
                     </td>
                 </tr>

@@ -129,15 +129,16 @@ class CoberturaVacinalController extends Controller
             $coberturaVacinal=CoberturaVacinal::find($id);
             $coberturaVacinal->update($request->all());
             $ano=Ano::all();
-            $imunobiologica=Imunobiologica::all();
             $municipio=Municipio::all();
+            $coberturaVacinal=CoberturaVacinal::all();
+            $imunobiologica=Imunobiologica::all();
             return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologica','municipio','msg'));
         }catch (Exception $e){
             $msg=2;
-            $coberturaVacinal=CoberturaVacinal::all();
             $ano=Ano::all();
-            $imunobiologica=Imunobiologica::all();
             $municipio=Municipio::all();
+            $coberturaVacinal=CoberturaVacinal::all();
+            $imunobiologica=Imunobiologica::all();
             return view('coberturaVacinal.index',compact('coberturaVacinal','ano','imunobiologica','municipio','msg'));
         }
     }

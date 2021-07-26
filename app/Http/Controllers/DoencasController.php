@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Doencas;
+use Exception;
 use Illuminate\Http\Request;
 
 class DoencasController extends Controller
@@ -14,8 +15,9 @@ class DoencasController extends Controller
      */
     public function index()
     {
+        $msg=0;
         $doencas=Doencas::all();
-        return view('doenca.index',compact('doencas'));
+        return view('doenca.index',compact('doencas','msg'));
     }
 
     /**
@@ -32,12 +34,21 @@ class DoencasController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $doenca=Doencas::create($request->all());
-        return redirect()->route('doencas.index');
+        try {
+            $msg=1;
+            $doencas=Doencas::create($request->all());
+            $doencas=Doencas::all();
+            /*return redirect()->route('doencas.index');*/
+            return view('doenca.index',compact('doencas','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $doencas=Doencas::all();
+            return view('doenca.index',compact('doencas','msg'));
+        }
     }
 
     /**
@@ -78,12 +89,20 @@ class DoencasController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Doencas  $doencas
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $doenca=Doencas::find($id);
-        $doenca->delete();
-        return redirect()->route('doencas.index');
+        try {
+            $msg=1;
+            $doencas=Doencas::find($id);
+            $doencas->delete();
+            $doencas=Doencas::all();
+            return view('doenca.index',compact('doencas','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $doencas=Doencas::all();
+            return view('doenca.index',compact('doencas','msg'));
+        }
     }
 }

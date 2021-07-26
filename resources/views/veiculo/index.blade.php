@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        @include('layouts.alert')
+        @include('notification.alert')
         <div class="text-info">
             <h1>Veículos</h1>
         </div>
@@ -30,11 +30,12 @@
                                 <a class="btn btn-sm btn-primary mr-1 ml-1" title="EDITAR" href="{{route('veiculo.edit',$v)}}" role="button"><span class="fa fa-edit"></span></a>
                             </div>
                             <div class="col-3">
-                                <form action="{{route('veiculo.destroy',$v)}}" method="post" class="mr-1 ml-1">
+                                <form id="form{{$v->id}}" action="{{route('veiculo.destroy',$v)}}" method="post" class="mr-1 ml-1">
                                     @csrf
                                     @method('delete')
-                                    <input type="hidden" name="id" value="${{$v->id}}">
-                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                    <input type="hidden" name="id" value="{{$v->id}}">
+                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="confirmDelet(event,{{$v->id}})" type="button"><span class="fa fa-trash"></span></button>
+                                    @include('notification.confirmDeleta')
                                 </form>
                             </div>
                         </div>

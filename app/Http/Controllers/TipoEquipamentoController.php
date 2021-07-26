@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\TipoEquipamento;
+use Exception;
 use Illuminate\Http\Request;
 
 class TipoEquipamentoController extends Controller
@@ -14,8 +15,9 @@ class TipoEquipamentoController extends Controller
      */
     public function index()
     {
+       $msg=0;
         $tipoEquipamento=TipoEquipamento::all();
-        return view('tipoEquipamento.index',compact('tipoEquipamento'));
+        return view('tipoEquipamento.index',compact('tipoEquipamento','msg'));
     }
 
     /**
@@ -32,15 +34,23 @@ class TipoEquipamentoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function store(Request $request)
     {
-        $data=$request->all();
-        $encoding='UTF-8';
-        $data['nome']=mb_strtoupper($data['nome'],$encoding);
-        $tipoEquipamento=TipoEquipamento::create($data);
-        return redirect()->route('tipoEquipamentos.index');
+        try {
+            $msg=1;
+            $data=$request->all();
+            $encoding='UTF-8';
+            $data['nome']=mb_strtoupper($data['nome'],$encoding);
+            $tipoEquipamento=TipoEquipamento::create($data);
+            $tipoEquipamento=TipoEquipamento::all();
+            return view('tipoEquipamento.index',compact('tipoEquipamento','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $tipoEquipamento=TipoEquipamento::all();
+            return view('tipoEquipamento.index',compact('tipoEquipamento','msg'));
+        }
     }
 
     /**
@@ -84,12 +94,20 @@ class TipoEquipamentoController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\TipoEquipamento  $tipoEquipamento
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function destroy($id)
     {
-        $tipoEquipamento=TipoEquipamento::find($id);
-        $tipoEquipamento->delete();
-        return redirect()->route('tipoEquipamentos.index');
+        try {
+            $msg=1;
+            $tipoEquipamento=TipoEquipamento::find($id);
+            $tipoEquipamento->delete();
+            $tipoEquipamento=TipoEquipamento::all();
+            return view('tipoEquipamento.index',compact('tipoEquipamento','msg'));
+        }catch (Exception $e){
+            $msg=2;
+            $tipoEquipamento=TipoEquipamento::all();
+            return view('tipoEquipamento.index',compact('tipoEquipamento','msg'));
+        }
     }
 }

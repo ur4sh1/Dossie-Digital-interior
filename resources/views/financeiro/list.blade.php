@@ -4,7 +4,7 @@
     $data=date('Y');
     ?>
     <div class="container">
-        @include('layouts.alert')
+        @include('notification.alert')
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">

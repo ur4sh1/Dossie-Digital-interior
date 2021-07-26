@@ -1,10 +1,15 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
-        <div class="text-info">
-            <h1>Tipos de Serviços</h1>
+        @include('notification.alert')
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-info">
+                    <h1>Tipos de Serviços</h1>
+                </div>
+            </div>
         </div>
+
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoServicos.create')}}" role="button">ADICIONAR SERVIÇO</a>
@@ -24,11 +29,12 @@
                     <td style="width: 80px">
                         <span class="form-inline">
 <!--                        <a class="btn btn-primary btn-sm ml-1" title="EDITAR" href="{{route('tipoServicos.edit',$ts)}}" role="button"><span class="fa fa-edit"></span></a>-->
-                            <form action="{{route('tipoServicos.destroy',$ts)}}" method="post" class="mr-1 ml-1">
+                            <form id="form{{$ts->id}}" action="{{route('tipoServicos.destroy',$ts)}}" method="post" class="mr-1 ml-1">
                                 @csrf
                                 @method('delete')
-                                <input type="hidden" name="id" value="${{$ts->id}}">
-                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                <input type="hidden" name="id" value="{{$ts->id}}">
+                                <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="confirmDelet(event,{{$ts->id}})" type="submit"><span class="fa fa-trash"></span></button>
+                                @include('notification.confirmDeleta')
                             </form>
                         </span>
                     </td>

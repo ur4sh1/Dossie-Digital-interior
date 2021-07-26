@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        @include('notification.alert')
         <div class="text-info">
             <h1>Tipo de Equipamentos</h1>
         </div>
@@ -24,11 +25,12 @@
                     <td class="d-flex justify-content-end">
                         <div class="row">
                             <div class="col">
-                                <form action="{{route('tipoEquipamentos.destroy',$te)}}" method="post" class="mr-1 ml-1">
+                                <form id="form{{$te->id}}" action="{{route('tipoEquipamentos.destroy',$te)}}" method="post" class="mr-1 ml-1">
                                     @csrf
                                     @method('delete')
-                                    <input type="hidden" name="id" value="${{$te->id}}">
-                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                                    <input type="hidden" name="id" value="{{$te->id}}">
+                                    <button class="btn btn-sm btn-danger" title="EXCLUIR" onclick="confirmDelet(event,{{$te->id}})" type="button"><span class="fa fa-trash"></span></button>
+                                    @include('notification.confirmDeleta')
                                 </form>
                             </div>
                         </div>

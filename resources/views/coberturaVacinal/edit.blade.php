@@ -12,7 +12,7 @@
             <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button">LISTA</a>
             <a class="btn btn-primary btn-sm mt-1" href="" role="button">VACINAS</a>
         </div>
-        <form method="post" action="{{route('coberturaVacinal.update',$coberturaVacinal->id)}}">
+        <form method="post" action="{{route('coberturaVacinal.update',$coberturaVacinal->id)}}" autocomplete="off">
             @csrf
             @method('put')
             <div class="form-group">
