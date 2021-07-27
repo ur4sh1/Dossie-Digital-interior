@@ -7,7 +7,7 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+                <a class="btn btn-primary btn-sm mt-1" title="Home" href="{{route('home')}}" role="button"><span class="fa fa-home"></span></a>
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('doencasAgravos.create')}}" role="button">ADICIONAR</a>
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('doencas.index')}}" role="button">LISTA DE DOENÇAS</a>
             </div>

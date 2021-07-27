@@ -5,7 +5,7 @@
             <h1>Municípios</h1>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+            <a class="btn btn-primary btn-sm" title="Home" href="{{route('home')}}" role="button"><span class="fa fa-home"></span></a>
         </div>
         @foreach($municipio as $m)
             <div class="row"><!--linha1-->
@@ -40,7 +40,7 @@
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t7{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Hospital RH</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t4{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Programas e Ações</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t4{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Atenção Básica</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#t5{{$m->id}}" role="tab" aria-controls="profile" aria-selected="false">Cobertura Vacinal</a>

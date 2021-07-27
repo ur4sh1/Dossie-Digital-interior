@@ -12,31 +12,18 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <!-- Scripts local-->
-    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/vue.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/notify.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.maskMoney.min.js') }}"></script>
-
-    <!--  plot pie  -->
-<!--    <script type="text/javascript" language="javascript" src="jquery.Plot.pie.min.js"></script>-->
-
-    <!-- google charts   -->
-    <!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
-
-    <!--hightcharts-->
-    <!--    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-3d.js"></script>-->
-
-<!--sweetalert-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <!--jquery-->
     <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
 
     <!--datatable-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+
+    <!--sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Scripts local-->
+    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/vue.js') }}" defer></script>
 
     <script>
         $(document).ready(function () {
@@ -70,6 +57,10 @@
         })();
     </script>
 
+<!-- Data do sistema    -->
+<?php
+$data=date('Y');
+?>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

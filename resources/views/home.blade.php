@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Painel de controle</div>
+                    <div class="card-header">Home</div>
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -97,7 +97,7 @@
                                 <div class="col-sm-4">
                                     <div class="card" style="width: 15rem;">
                                         <div class="card-body">
-                                            <a href="/programa" class="link">PROGRAMAS E AÇÕES</a>
+                                            <a href="/programa" class="link">ATENÇÃO BÁSICA</a>
                                         </div>
                                     </div>
                                 </div>

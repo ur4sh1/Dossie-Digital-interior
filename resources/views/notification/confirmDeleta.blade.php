@@ -10,6 +10,7 @@
                     value: "Cancel",
                     visible: true,
                     closeModal: true,
+                    focus: true
                 },
                 confirm: {
                     text: "OK",
@@ -18,6 +19,7 @@
                     closeModal: true,
                 },
             },
+            dangerMode: true,
         }).then((value) => {
             switch (value) {
 

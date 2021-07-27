@@ -14,8 +14,9 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('recursoEstadualEdit',$municipio->id)}}" role="button">EDITAR RECURSOS</a>
-            <a class="btn btn-primary btn-sm" href="{{route('itemRecursoEstadualIndex',$municipio->id)}}" role="button">GERENCIAR ITENS</a>
+            <a class="btn btn-primary btn-sm" href="{{route('financeiro.show',$municipio->id)}}" role="button">INÍCIO</a>
+            <a class="btn btn-primary btn-sm" href="{{route('recursoEstadualEdit',$municipio->id)}}" role="button">EDITAR VALORES</a>
+            <a class="btn btn-primary btn-sm" href="{{route('itemRecursoEstadualIndex',$municipio->id)}}" role="button">EDITAR ITENS</a>
         </div>
         <form method="post" autocomplete="off" action="{{route('recursoEstadualStore',$municipio->id)}}">
             @csrf

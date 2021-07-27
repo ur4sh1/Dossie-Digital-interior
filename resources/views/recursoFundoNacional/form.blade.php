@@ -14,8 +14,9 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('recursoFundoNacionalEdit',$municipio->id)}}" role="button">EDITAR RECURSOS</a>
-            <a class="btn btn-primary btn-sm" href="{{route('itemRecursoFundoNacionalIndex',$municipio->id)}}" role="button">GERENCIAR ITENS</a>
+            <a class="btn btn-primary btn-sm" href="{{route('financeiro.show',$municipio->id)}}" role="button">INÍCIO</a>
+            <a class="btn btn-primary btn-sm" href="{{route('recursoFundoNacionalEdit',$municipio->id)}}" role="button">EDITAR VALORES</a>
+            <a class="btn btn-primary btn-sm" href="{{route('itemRecursoFundoNacionalIndex',$municipio->id)}}" role="button">EDITAR ITENS</a>
         </div>
         <form method="post" action="{{route('recursoFundoNacionalStore',$municipio->id)}}">
             @csrf

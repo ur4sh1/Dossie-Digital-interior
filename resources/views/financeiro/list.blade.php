@@ -14,6 +14,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
+            <a class="btn btn-primary" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
             <a class="btn btn-primary btn-sm" href="{{route('financeiro.index')}}" role="button">VOLTAR</a>
             <a class="btn btn-primary btn-sm" href="{{route('financeiroCreate',$municipio->id)}}" role="button">ADICIONAR</a>
         </div>
@@ -58,12 +59,6 @@
         </div>
     </div>
 @endsection
-<script>
-    import RepasseFinanceiroGrid from "../../js/components/RepasseFinanceiroGrid";
-    export default {
-        components: {RepasseFinanceiroGrid}
-    }
-</script>
 <style>
     /*Mobile e Desktop resolução*/
     @media screen and (max-width: 800px) {

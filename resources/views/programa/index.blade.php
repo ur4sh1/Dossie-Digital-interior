@@ -3,11 +3,11 @@
     <div class="container">
         @include('notification.alert')
         <div class="text-info">
-            <h1>Programas e Ações</h1>
+            <h1>Atenção Básica</h1>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+                <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button"><span class="fa fa-home"></span></a>
                 <a class="btn btn-primary btn-sm" href="{{route('programa.create')}}" role="button">ADICIONAR</a>
             </div>
         </div>
@@ -19,7 +19,7 @@
                 <th scope="col">ANO</th>
                 <th scope="col">MUNICÍPIO</th>
                 <th scope="col" class="text-center">TETO</th>
-                <th scope="col" class="text-center">CRÉDITO</th>
+                <th scope="col" class="text-center">CREDENCIADO</th>
                 <th scope="col" class="text-center">IMPLANTADO</th>
                 <th scope="col" class="text-center">REPASSE</th>
                 <th scope="col" class="text-center">AÇÕES</th>

@@ -6,7 +6,7 @@
             <h1>Autoridades</h1>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+            <a class="btn btn-primary btn-sm" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
             <a class="btn btn-primary btn-sm" href="{{route('autoridade.create')}}" role="button">ADICIONAR</a>
         </div>
         <table class="table table-responsive-md table-sm" id="table">
