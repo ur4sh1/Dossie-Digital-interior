@@ -6,7 +6,7 @@
             <h1>Veículos</h1>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button">PAINEL DE CONTROLE</a>
+            <a class="btn btn-primary btn-sm" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
             <a class="btn btn-primary btn-sm" href="{{route('veiculo.create')}}" role="button">ADICIONAR</a>
         </div>
         <div class="mb-2"><i>legenda: <span class="badge badge-info">Existente</span> | <span class="badge badge-success">Funcionando</span></i></div>
