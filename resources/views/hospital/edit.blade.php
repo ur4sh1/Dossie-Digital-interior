@@ -18,9 +18,9 @@
                     <label for="nome"><b>Nome</b></label>
                     <input type="text" value="{{$hospital->nome}}" class="form-control" id="nome" name="nome" required>
                 </div>
-                <div class="col-sm-4"><!--municipio-->
-                    <label for="municipio_id"><b>Município</b></label>
-                    <select class="form-control" id="municipio_id" name="municipio_id" required>
+                <div class="col-sm-4">
+                    <label for="municipio_id"><b>Município atual</b></label>
+                    <select class="form-control" id="municipio_id" name="municipio_id" disabled required>
                         <option value="" selected disabled hidden>Selecione</option>
                         @foreach($municipio as $m)
                             <option value="{{$m->id}}" {{$hospital->municipio_id==$m->id?"selected":''}}>{{$m->nome}}</option>
@@ -29,7 +29,8 @@
                 </div>
             </div>
             <div class="form-row">
-            <endereco :municipios="{{$municipio}}" :cep="{{$hospital->cep??'null'}}"></endereco>
+            <endereco :municipios="{{$municipio}}" :cep="{{$hospital->cep??'null'}}"
+            ></endereco>
             </div>
             <div class="form-row">
                 <div class="col-sm-2 mt-2">

@@ -4,7 +4,6 @@
             <label><h5><b>CEP</b></h5></label>
             <div class="input-group">
                 <input type="text" id="cep" name="cep" onkeypress="isNumberKey(event)" class="form-control cep mb-3" v-model="cep">
-<!--                <the-mask type="text" id="cep" name="cep" class="form-control cep mb-3" mask="########" v-model="cep" />-->
                 <div class="input-group-append">
                     <button class="btn btn-primary mb-3" type="button" id="button-addon2" @click="localizaCep()">
                         Localizar
@@ -15,13 +14,13 @@
        <div class="col-sm-3 mt-2">
             <label for="municipio_id"><h5><b>Município</b></h5></label>
             <select class="form-control" id="municipio_id" name="municipio_id" required>
-                <option>Selecione</option>
+                <option value="">Selecione</option>
                 <option v-for="(m,i) in municipios" :value="i+1" :selected="selecionado(m.nome, cidade)" >{{ m.nome }}</option>
             </select>
         </div>
         <div class="col-sm-4 mt-2">
             <label for="rua"><h5><b>Logradouro</b></h5></label>
-            <input v-model="endereco" id="rua" name="rua" class="form-control mb-3 text-uppercase"/>
+            <input type="text" v-model="endereco" id="rua" name="rua" class="form-control mb-3 text-uppercase"/>
         </div>
         <div class="col-sm-2 mt-2">
             <label for="bairro"><h5><b>Bairro</b></h5></label>
@@ -36,7 +35,7 @@ export default {
         "bairro",
         "endereco",
         "cidade",
-        "municipios"
+        "municipios",
     ],
     data(){
         return{
@@ -44,7 +43,7 @@ export default {
             endereco:"",
             cidade:"",
             bairro:"",
-            selected:this.municipios
+            selected:this.municipios,
         }
     },
     mounted() {

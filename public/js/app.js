@@ -1938,7 +1938,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["cep", "bairro", "endereco", "cidade", "municipios"],
   data: function data() {
@@ -56872,11 +56871,7 @@ var render = function() {
                 }
               }
             },
-            [
-              _vm._v(
-                "\n                        Localizar\n                    "
-              )
-            ]
+            [_vm._v("\n                    Localizar\n                ")]
           )
         ])
       ])
@@ -56892,7 +56887,7 @@ var render = function() {
           attrs: { id: "municipio_id", name: "municipio_id", required: "" }
         },
         [
-          _c("option", [_vm._v("Selecione")]),
+          _c("option", { attrs: { value: "" } }, [_vm._v("Selecione")]),
           _vm._v(" "),
           _vm._l(_vm.municipios, function(m, i) {
             return _c(
@@ -56924,7 +56919,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control mb-3 text-uppercase",
-        attrs: { id: "rua", name: "rua" },
+        attrs: { type: "text", id: "rua", name: "rua" },
         domProps: { value: _vm.endereco },
         on: {
           input: function($event) {
