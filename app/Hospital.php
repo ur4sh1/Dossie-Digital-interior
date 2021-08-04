@@ -61,7 +61,7 @@ class Hospital extends Model
 
     public function internacao()
     {
-        return $this->hasOne('App\Internacao');
+        return $this->hasMany('App\Internacao');
     }
 
 }
