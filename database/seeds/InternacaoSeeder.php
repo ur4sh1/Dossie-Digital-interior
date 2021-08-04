@@ -12,8 +12,8 @@ class InternacaoSeeder extends Seeder
     public function run()
     {
         DB::table('internacaos')->insert([
-            ['hospital_id'=>1,'media_dia'=>7,'media_mes'=>110],
-            ['hospital_id'=>2,'media_dia'=>3,'media_mes'=>30]
+            ['ano_id'=>20,'hospital_id'=>1,'media_dia'=>7,'media_mes'=>110],
+            ['ano_id'=>20,'hospital_id'=>2,'media_dia'=>3,'media_mes'=>30]
         ]);
     }
 }

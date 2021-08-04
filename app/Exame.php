@@ -10,12 +10,12 @@ class Exame extends Model
 
     public function ano()
     {
-        return $this->hasMany('App\Ano','ano_id');
+        return $this->belongsTo('App\Ano','ano_id');
     }
 
     public function hospital()
     {
-        return $this->hasOne('App\Hospital','hospital_id','id');
+        return $this->hasMany('App\Hospital','hospital_id','id');
     }
 
     public function municipio()

@@ -15,11 +15,16 @@ class CreateInternacaosTable extends Migration
     {
         Schema::create('internacaos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('hospital_id')->unique();
+            $table->unsignedBigInteger('ano_id');
+            $table->foreign('ano_id')->references('id')->on('anos');
+            $table->unsignedBigInteger('hospital_id');
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
             $table->integer('media_dia')->nullable();
             $table->integer('media_mes')->nullable();
+            $table->string('fonte')->nullable();
             $table->timestamps();
+
+            $table->unique(['ano_id','hospital_id'],'unico');
         });
     }
 

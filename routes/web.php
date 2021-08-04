@@ -72,6 +72,18 @@ Route::post('/folha/update/{id}/{hid}','FolhaController@updateAlternative')->nam
 Route::post('/folha/store/{id}','FolhaController@storeAlternative')->name('folhaStore');
 Route::post('/folha/destroy/{id}/{hid}','FolhaController@deletAlternative')->name('folhaDestroy');
 
+Route::get('/exame/create/{id}', 'ExameController@createAlternative')->name('exameCreate');
+Route::get('/exame/edit/{id}/{hid}','ExameController@editAlternative')->name('exameEdit');
+Route::post('/exame/destroy/{id}/{hid}','ExameController@deletAlternative')->name('exameDestroy');
+Route::post('/exame/store/{id}','ExameController@storeAlternative')->name('exameStore');
+Route::post('/exame/update/{id}/{hid}','ExameController@updateAlternative')->name('exameUpdate');
+
+Route::get('/internacao/create/{id}', 'InternacaoController@createAlternative')->name('internacaoCreate');
+Route::get('/internacao/edit/{id}/{hid}','InternacaoController@editAlternative')->name('internacaoEdit');
+Route::post('/internacao/destroy/{id}/{hid}','InternacaoController@deletAlternative')->name('internacaoDestroy');
+Route::post('/internacao/store/{id}','InternacaoController@storeAlternative')->name('internacaoStore');
+Route::post('/internacao/update/{id}/{hid}','InternacaoController@updateAlternative')->name('internacaoUpdate');
+
 Route::resources([
     'partido'=>'PartidosController',
     'municipios'=>'MunicipiosController',
@@ -98,5 +110,7 @@ Route::resources([
     'itemRecursoFundoEstadual'=>'ItemRecursoFundoEstadualController',
     'coberturaVacinal'=>'CoberturaVacinalController',
     'imunobiologica'=>'ImunobiologicaController',
-    'leito'=>'LeitosController'
+    'leito'=>'LeitosController',
+    'exame'=>'ExameController',
+    'internacao'=>'InternacaoController'
 ]);

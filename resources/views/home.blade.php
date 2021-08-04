@@ -131,6 +131,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/exame" class="link">EXAMES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4">
+                                    <div class="card" style="width: 15rem;">
+                                        <div class="card-body">
+                                            <a href="/internacao" class="link">INTERNAÇÃO</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

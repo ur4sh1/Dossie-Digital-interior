@@ -10,19 +10,19 @@
         </tr>
     </table>
 @else
-    <table class="table table-sm">
+    <table class="table table-sm table-responsive-lg">
         <tr style="background:lavenderblush">
-            <td colspan="4">
+            <th colspan="6">
                 <a data-toggle="collapse" href="#int{{$ho->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                     <label style="color: #1b1e21"><b>INTERNAÇÃO</b></label>
                 </a>
-            </td>
+            </th>
         </tr>
         <tr>
-            <td>Média / dia:</td>
-            <td>{{$ho->internacao->media_dia??''}}</td>
-            <td>Média / mês:</td>
-            <td>{{$ho->internacao->media_mes??''}}</td>
+            <td>Ano: {{$ho->internacao->ano->ano}}</td>
+            <td>Média / dia: {{$ho->internacao->media_dia??''}}</td>
+            <td>Média / mês: {{$ho->internacao->media_mes??''}}</td>
+            <td>Fonte: {{$ho->internacao->fonte??''}}</td>
         </tr>
     </table>
 @endif

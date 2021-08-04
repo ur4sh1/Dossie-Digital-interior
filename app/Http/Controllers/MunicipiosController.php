@@ -10,6 +10,7 @@ use App\DetalhesMunicipio;
 use App\Doencas;
 use App\DoencasAgravos;
 use App\Equipamento;
+use App\Exame;
 use App\Folha;
 use App\Hospital;
 use App\Imunobiologica;
@@ -72,12 +73,13 @@ class MunicipiosController extends Controller
         $itemRecursoEstadual=ItemRecursoEstadual::all();
         $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
         $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
+        $exame=Exame::all();
 
         return view("admin.municipios", compact('autoridade','municipio',
             'regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico',
             'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologica',
             'doencas','doencasAgravos','ano','tipoRecursoNacional','recursoEstadual','recursoFundoEstadual','recursoFundoNacional',
-            'itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional'));
+            'itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional','exame'));
     }
 
     public function indexAlternativo()

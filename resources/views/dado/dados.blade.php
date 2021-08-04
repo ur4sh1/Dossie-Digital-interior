@@ -3,7 +3,7 @@
     <div class="container">
         @include('notification.alert')
         <div class="text-info">
-            <h1>INFORMAÇÕES GERAIS</h1>
+            <h1>Informações Gerais</h1>
             <h3>{{$municipios->nome}}</h3>
         </div>
         <div class="text-right mb-2">

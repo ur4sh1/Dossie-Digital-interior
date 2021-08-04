@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Internacao extends Model
 {
-    protected $fillable=['hospital_id','media_dia','media_mes'];
+    protected $fillable=['ano_id','hospital_id','media_dia','media_mes','fonte'];
 
     public function hospital()
     {
-        return $this->hasMany('App\Hospital','hospital_id');
+        return $this->hasMany('App\Hospital','hospital_id','id');
+    }
+
+    public function ano()
+    {
+        return $this->belongsTo('App\Ano','ano_id','id');
     }
 }

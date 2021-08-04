@@ -10,11 +10,11 @@ class Ano extends Model
 
     public function exame()
     {
-        return $this->hasMany('App\Exame');
+        return $this->hasMany('App\Exame','ano_id','id');
     }
     public function hospital()
     {
-        return $this->hasMany('App\Hospital');
+        return $this->hasMany('App\Hospital','ano_id','id');
     }
     public function coberturaVacinal()
     {
@@ -31,5 +31,9 @@ class Ano extends Model
     public function detalhes_municipio()
     {
         return $this->hasMany('App\DetalhesMunicipio','ano_id','id');
+    }
+    public function internacao()
+    {
+        return $this->hasMany('App\Internacao','ano_id','id');
     }
 }

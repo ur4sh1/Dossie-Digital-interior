@@ -1,0 +1,52 @@
+version: "3.7"
+services:
+  app_dossie:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: dossie
+    container_name: dossie-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - dossie_nt
+    depends_on:
+      - db_dossie
+
+  db_dossie:
+    image: mysql:5.7
+    container_name: dossie-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    ports:
+      - 3307:3306
+    volumes:
+      - dossie_volume:/var/lib/mysql
+    networks:
+      - dossie_nt
+
+  nginx_dossie:
+    image: nginx:1.17-alpine
+    container_name: dossie-nginx
+    restart: unless-stopped
+    ports:
+      - 8001:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - dossie_nt
+
+networks:
+  dossie_nt:
+      driver: bridge
+
+volumes:
+  dossie_volume: {}

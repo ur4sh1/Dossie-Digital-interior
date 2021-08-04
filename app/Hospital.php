@@ -26,7 +26,7 @@ class Hospital extends Model
 
     public function exame()
     {
-        return $this->hasOne('App\Exame','hospital_id','id');
+        return $this->hasMany('App\Exame','hospital_id','id');
     }
 
     public function salacirurgica()
