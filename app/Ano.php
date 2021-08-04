@@ -38,6 +38,6 @@ class Ano extends Model
     }
     public function internacao()
     {
-        return $this->belongsTo('App\Internacao','ano_id','id');
+        return $this->hasMany('App\Internacao','ano_id','id');
     }
 }
