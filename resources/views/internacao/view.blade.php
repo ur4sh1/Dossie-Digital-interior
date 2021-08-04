@@ -18,11 +18,13 @@
                 </a>
             </th>
         </tr>
+        @foreach($ho->internacao as $hoi)
         <tr>
-            <td>Ano: {{$ho->internacao->ano->ano}}</td>
-            <td>Média / dia: {{$ho->internacao->media_dia??''}}</td>
-            <td>Média / mês: {{$ho->internacao->media_mes??''}}</td>
-            <td>Fonte: {{$ho->internacao->fonte??''}}</td>
+            <td>Ano: {{$hoi->ano_id}}</td>
+            <td>Média / dia: {{$hoi->media_dia??''}}</td>
+            <td>Média / mês: {{$hoi->media_mes??''}}</td>
+            <td>Fonte: {{$hoi->fonte??''}}</td>
         </tr>
+        @endforeach
     </table>
 @endif

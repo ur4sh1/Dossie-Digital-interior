@@ -61,7 +61,10 @@ class Hospital extends Model
 
     public function internacao()
     {
-        return $this->hasMany('App\Internacao');
+        return $this->hasMany('App\Internacao','hospital_id');
     }
-
+    public function ano()
+    {
+        return $this->hasMany('App\Ano','ano_id','id');
+    }
 }

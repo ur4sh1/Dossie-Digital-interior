@@ -67,4 +67,8 @@ class Municipio extends Model
     {
         return $this->hasMany('App\RecursoFundoNacional','municipio_id','id');
     }
+    public function ano()
+    {
+        return $this->hasMany('App\Ano','ano_id','id');
+    }
 }

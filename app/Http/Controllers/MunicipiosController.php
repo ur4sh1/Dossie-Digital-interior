@@ -74,12 +74,13 @@ class MunicipiosController extends Controller
         $itemRecursoFundoEstadual=ItemRecursoFundoEstadual::all();
         $itemRecursoFundoNacional=ItemRecursoFundoNacional::all();
         $exame=Exame::all();
+        $internacao=Internacao::all();
 
         return view("admin.municipios", compact('autoridade','municipio',
             'regional','leito','hospital','veiculo','equipamento','tipo_equipamento','tipo_servico',
             'servico','rh','rhcategoria','programas','coberturaVacinal','imunobiologica',
             'doencas','doencasAgravos','ano','tipoRecursoNacional','recursoEstadual','recursoFundoEstadual','recursoFundoNacional',
-            'itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional','exame'));
+            'itemRecursoEstadual','itemRecursoFundoEstadual','itemRecursoFundoNacional','exame','internacao'));
     }
 
     public function indexAlternativo()

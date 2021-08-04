@@ -12,9 +12,12 @@ class Internacao extends Model
     {
         return $this->hasMany('App\Hospital','hospital_id','id');
     }
-
     public function ano()
     {
-        return $this->belongsTo('App\Ano','ano_id','id');
+        return $this->hasMany('App\Ano','ano_id','id');
+    }
+    public function municipio()
+    {
+        return $this->hasMany('App\Municipio','municipio_id','id');
     }
 }
