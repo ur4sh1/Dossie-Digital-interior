@@ -62,6 +62,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                <a target="_blank" href="{{ asset('manual/Manual.pdf') }}">Help?</a>
                             </div>
                         </div>
                     </form>

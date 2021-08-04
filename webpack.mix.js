@@ -18,6 +18,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.copyDirectory('resources/img', 'public/img');
 /*mix.copy('resources/sass/custonAlert.css', 'public/css');*/
+mix.copyDirectory('resources/manual', 'public/manual');
 
 mix.browserSync('localhost:8000');
 
