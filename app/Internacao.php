@@ -14,7 +14,7 @@ class Internacao extends Model
     }
     public function ano()
     {
-        return $this->hasMany('App\Ano','ano_id','id');
+        return $this->belongsTo('App\Ano','ano_id','id');
     }
     public function municipio()
     {

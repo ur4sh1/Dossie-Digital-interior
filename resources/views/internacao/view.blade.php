@@ -20,7 +20,7 @@
         </tr>
         @foreach($ho->internacao as $hoi)
         <tr>
-            <td>Ano: {{$hoi->ano_id}}</td>
+            <td>Ano: {{$hoi->ano['ano']}}</td>
             <td>Média / dia: {{$hoi->media_dia??''}}</td>
             <td>Média / mês: {{$hoi->media_mes??''}}</td>
             <td>Fonte: {{$hoi->fonte??''}}</td>

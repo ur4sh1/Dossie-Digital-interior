@@ -28,7 +28,7 @@
             <tbody>
             @foreach($internacao as $in)
                 <tr>
-                    <td style="width: 10%">{{$in->ano_id}}</td>
+                    <td style="width: 10%">{{$in->ano['ano']}}</td>
                     <td style="width: 20%">{{$in->media_dia}}</td>
                     <td style="width: 20%">{{$in->media_mes}}</td>
                     <td style="width: 30%">{{$in->fonte}}</td>
