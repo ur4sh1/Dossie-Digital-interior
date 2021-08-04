@@ -26,19 +26,19 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="mamografia"><b>Mamografia</b></label>
-                    <input class="form-control" value="{{$exame->mamografia}}" name="mamografia" id="mamografia">
+                    <input class="form-control" onkeypress="isNumberKey(event)" value="{{$exame->mamografia}}" name="mamografia" id="mamografia">
                 </div>
                 <div class="col-sm-3">
                     <label for="ultrassonografia"><b>Ultrassonografia</b></label>
-                    <input class="form-control" value="{{$exame->ultrassonografia}}" name="ultrassonografia" id="ultrassonografia">
+                    <input class="form-control" onkeypress="isNumberKey(event)" value="{{$exame->ultrassonografia}}" name="ultrassonografia" id="ultrassonografia">
                 </div>
                 <div class="col-sm-3">
                     <label for="raio_x"><b>Raio-X</b></label>
-                    <input class="form-control" value="{{$exame->raio_x}}" name="raio_x" id="raio_x">
+                    <input class="form-control" onkeypress="isNumberKey(event)" value="{{$exame->raio_x}}" name="raio_x" id="raio_x">
                 </div>
                 <div class="col-sm-3">
                     <label for="eletrocardiograma"><b>Eletrocardiograma</b></label>
-                    <input class="form-control" value="{{$exame->eletrocardiograma}}" name="eletrocardiograma" id="eletrocardiograma">
+                    <input class="form-control" onkeypress="isNumberKey(event)" value="{{$exame->eletrocardiograma}}" name="eletrocardiograma" id="eletrocardiograma">
                 </div>
             </div>
             <div class="form-row text-right">

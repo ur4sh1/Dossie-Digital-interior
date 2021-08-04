@@ -32,19 +32,19 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="mamografia"><b>Mamografia</b></label>
-                    <input class="form-control" name="mamografia" id="mamografia" required>
+                    <input class="form-control" onkeypress="isNumberKey(event)" name="mamografia" id="mamografia" required>
                 </div>
                 <div class="col-sm-3">
                     <label for="ultrassonografia"><b>Ultrassonografia</b></label>
-                    <input class="form-control" name="ultrassonografia" id="ultrassonografia" required>
+                    <input class="form-control" onkeypress="isNumberKey(event)" name="ultrassonografia" id="ultrassonografia" required>
                 </div>
                 <div class="col-sm-3">
                     <label for="raio_x"><b>Raio-X</b></label>
-                    <input class="form-control" name="raio_x" id="raio_x" required>
+                    <input class="form-control" onkeypress="isNumberKey(event)" name="raio_x" id="raio_x" required>
                 </div>
                 <div class="col-sm-3">
                     <label for="eletrocardiograma"><b>Eletrocardiograma</b></label>
-                    <input class="form-control" name="eletrocardiograma" id="eletrocardiograma" required>
+                    <input class="form-control" onkeypress="isNumberKey(event)" name="eletrocardiograma" id="eletrocardiograma" required>
                 </div>
             </div>
             <div class="form-row text-right">

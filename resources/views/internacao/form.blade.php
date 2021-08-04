@@ -33,11 +33,11 @@
                 </div>
                 <div class="col-sm-3">
                     <label for="media_dia"><b>Média / Dia</b></label>
-                    <input type="text" class="form-control" name="media_dia" id="media_dia" required>
+                    <input type="text" onkeypress="isNumberKey(event)" class="form-control" name="media_dia" id="media_dia" required>
                 </div>
                 <div class="col-sm-3">
                     <label for="media_mes"><b>Média / Mês</b></label>
-                    <input type="text" class="form-control" name="media_mes" id="media_mes" required>
+                    <input type="text" onkeypress="isNumberKey(event)" class="form-control" name="media_mes" id="media_mes" required>
                 </div>
                 <div class="col-sm-3">
                     <label for="media_mes"><b>Fonte</b></label>
