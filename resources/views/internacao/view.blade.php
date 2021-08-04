@@ -19,6 +19,7 @@
             </th>
         </tr>
         @foreach($ho->internacao as $hoi)
+           @dd($hoi)
         <tr>
             <td>Ano: {{$hoi->ano_id}}</td>
             <td>Média / dia: {{$hoi->media_dia??''}}</td>
