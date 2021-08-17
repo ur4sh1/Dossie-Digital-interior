@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('folha.index')}}" role="button">VOLTAR</a>
-            <a class="btn btn-primary btn-sm" href="{{route('folhaCreate',$hospital->id)}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('folha.index')}}" role="button"><span class="fa fa-undo"></span></a>
+            <a class="btn btn-primary btn-sm" href="{{route('folhaCreate',$hospital->id)}}" role="button"><span class="fa fa-plus-square"></span></a>
         </div>
         @if($folha->count()==0)
             <i>Informações não Cadastradas</i>

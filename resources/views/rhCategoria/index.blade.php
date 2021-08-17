@@ -4,13 +4,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>CATEGORIAS</h1>
+                    <h1>Categorias</h1>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button">VOLTAR</a>
-            <a class="btn btn-primary btn-sm" href="{{route('rhCategorias.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button"><span class="fa fa-undo"></span></a>
+            <a class="btn btn-primary btn-sm" href="{{route('rhCategorias.create')}}" role="button"><span class="fa fa-plus-square"></span></a>
         </div>
         <table class="table table-responsive-md table-sm" id="table">
             <thead style="background:lavenderblush">
@@ -28,7 +28,7 @@
                             @csrf
                             @method('delete')
                             <input type="hidden" name="id" value="${{$hc->id}}">
-                            <button class="btn btn-danger btn-sm mr-1 ml-1 mb-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
+                            <button disabled class="btn btn-danger btn-sm mr-1 ml-1 mb-1" title="EXCLUIR" onclick="return confirm('Tem Certeza?')" type="submit"><span class="fa fa-trash"></span></button>
                         </form>
                     </td>
                 </tr>

@@ -5,12 +5,12 @@
     ?>
     <div class="container">
         <div class="text-info">
-            <h1>INFORMAÇÕES GERAIS</h1>
+            <h1>Informações Gerais</h1>
             <h3><a href="{{route('dados.show',$dados->id)}}">{{$municipios->nome}}</a> / Alteração</h3>
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-sm btn-primary mt-1" href="{{route('dados.show',$dados->id)}}" role="button">VOLTAR</a>
+                <a class="btn btn-sm btn-primary mt-1" href="{{route('dados.show',$dados->id)}}" role="button"><span class="fa fa-undo"></span></a>
             </div>
         </div>
         <form method="post" class="needs-validation" action="{{route('dados.update',$dados->id)}}">

@@ -7,7 +7,7 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm  mt-1" href="{{route('equipamentos.index')}}" role="button">VOLTA</a>
+                <a class="btn btn-primary btn-sm  mt-1" href="{{route('equipamentos.index')}}" role="button"><span class="fa fa-undo"></span></a>
             </div>
         </div>
         <form method="post" action="{{route('equipamentos.store')}}" autocomplete="off">

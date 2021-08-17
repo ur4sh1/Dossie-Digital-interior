@@ -6,7 +6,7 @@
             <h1><a href="{{route('veiculo.index')}}">Veículo</a> / Cadastro</h1>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('veiculo.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('veiculo.index')}}" role="button"><span class="fa fa-undo"></span></a>
         </div>
         <form method="post" action="{{route('veiculo.store')}}" autocomplete="off">
             @csrf
@@ -27,7 +27,7 @@
                             <the-mask type="text" class="form-control text-right" style="width:90px;" id="administrativo_existente" name="administrativo_existente" placeholder="Existente" :mask="['###']"></the-mask>
                         </div>
                         <div class="col-sm-6">
-                            <the-mask type="text" class="form-control text-right" style="width:110px;" id="administrativo_funcional" name="administrativo_funcional" placeholder="Funcionando" :mask="['###']"></the-mask>
+                            <the-mask type="text" class="form-control text-right" style="width:110px;" id="administrativo_funcional" name="administrativo_funcional" placeholder="Ativo" :mask="['###']"></the-mask>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             <the-mask type="text" class="form-control text-right" style="width:90px;" id="ambulancia_terrestre_existente" name="ambulancia_terrestre_existente" placeholder="Existente" :mask="['###']"></the-mask>
                         </div>
                         <div class="col-sm-6">
-                            <the-mask type="text" class="form-control text-right" style="width:110px;" id="ambulancia_terrestre_funcional" name="ambulancia_terrestre_funcional" placeholder="Funcionando" :mask="['###']"></the-mask>
+                            <the-mask type="text" class="form-control text-right" style="width:110px;" id="ambulancia_terrestre_funcional" name="ambulancia_terrestre_funcional" placeholder="Ativo" :mask="['###']"></the-mask>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             <the-mask type="text" class="form-control text-right" style="width:90px;" id="ambulancia_fluvial_existente" name="ambulancia_fluvial_existente" placeholder="Existente" :mask="['###']"></the-mask>
                         </div>
                         <div class="col-sm-6">
-                            <the-mask type="text" class="form-control text-right" style="width:110px;"id="ambulancia_fluvial_funcional" name="ambulancia_fluvial_funcional" placeholder="Funcionando" :mask="['###']"></the-mask>
+                            <the-mask type="text" class="form-control text-right" style="width:110px;"id="ambulancia_fluvial_funcional" name="ambulancia_fluvial_funcional" placeholder="Ativo" :mask="['###']"></the-mask>
                         </div>
                     </div>
                 </div>

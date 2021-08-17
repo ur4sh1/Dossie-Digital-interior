@@ -7,9 +7,9 @@
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
-            <a class="btn btn-primary btn-sm" href="{{route('veiculo.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('veiculo.create')}}" role="button"><span class="fa fa-plus-square"></span></a>
         </div>
-        <div class="mb-2"><i>legenda: <span class="badge badge-info">Existente</span> | <span class="badge badge-success">Funcionando</span></i></div>
+        <div class="mb-2"><i>legenda: <span class="badge badge-info">Existente</span> | <span class="badge badge-success">Ativo</span></i></div>
         <table class="table table-responsive-lg table-sm mt-2" id="table">
             <thead style="background:lavenderblush">
                 <th scope="col"><b>HOSPITAL</b></th>

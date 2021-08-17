@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button"><span class="fa fa-undo"></span></a>
         </div>
         <div class="form-row mt-4">
             <div class="col-sm-4">

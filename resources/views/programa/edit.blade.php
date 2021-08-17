@@ -6,7 +6,7 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm" href="{{route('programa.index')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary btn-sm" href="{{route('programa.index')}}" role="button"><span class="fa fa-undo"></span></a>
             </div>
         </div>
         <form method="post" action="{{route('programa.update',$programa->id)}}">

@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.index')}}" role="button"><span class="fa fa-undo"></span></a>
             <a class="btn btn-primary btn-sm mt-1" href="{{route('imunobiologica.index')}}" role="button">VACINAS</a>
         </div>
         <form method="post" action="{{route('coberturaVacinal.store')}}">

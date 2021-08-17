@@ -12,8 +12,8 @@
 
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoServicos.create')}}" role="button">ADICIONAR SERVIÇO</a>
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('servicos.index')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('servicos.index')}}" role="button"><span class="fa fa-undo"></span></a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoServicos.create')}}" role="button"><span class="fa fa-plus-square"></span></a>
             </div>
         </div>
         <table class="table table-sm" id="table">

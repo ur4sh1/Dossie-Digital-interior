@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
+            <a class="btn btn-primary btn-sm" href="{{route('exame.show',$hospital->id)}}" title="Voltar" role="button"><span class="fa fa-undo"></span></a>
         </div>
         <form method="post" action="{{route('exameUpdate',['id'=>$exame->id,'hid'=>$hospital->id])}}">
             @csrf

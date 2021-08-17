@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('rhs.index')}}" role="button"><span class="fa fa-undo"></span></a>
             <a class="btn btn-primary btn-sm" href="{{route('rhCategorias.index')}}" role="button">CATEGORIAS</a>
         </div>
         <form method="post" action="{{route('rhs.store')}}" autocomplete="off">

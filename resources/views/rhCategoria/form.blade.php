@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-info">
-                    <h1>CATEGORIAS</h1>
+                    <h1>Categorias</h1>
                 </div>
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('rhCategorias.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('rhCategorias.index')}}" role="button"><span class="fa fa-undo"></span></a>
         </div>
         <form method="post" action="{{route('rhCategorias.store')}}">
             @csrf

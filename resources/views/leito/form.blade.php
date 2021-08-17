@@ -5,7 +5,7 @@
             <h1><a href="{{route('leito.index')}}">Leito</a> / Cadastro</h1>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('leito.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('leito.index')}}" role="button"><span class="fa fa-undo"></span></a>
         </div>
         <form method="post" action="{{route('leito.store')}}" autocomplete="off">
             @csrf

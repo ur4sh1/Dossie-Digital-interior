@@ -12,8 +12,8 @@
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('servicos.create')}}" role="button">ADICIONAR SERVIÇO HOSPITAL</a>
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoServicos.index')}}" role="button">LISTA DE SERVIÇOS</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('servicos.create')}}" role="button">ADICIONAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoServicos.index')}}" role="button"><span class="fa fa-plus-square"></span></a>
             </div>
         </div>
         <table class="table table-responsive-lg table-sm" id="table">

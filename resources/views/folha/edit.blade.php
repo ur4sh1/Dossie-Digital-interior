@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('folha.show',$hospital->id)}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('folha.show',$hospital->id)}}" role="button"><span class="fa fa-undo"></span></a>
         </div>
         <form method="post" action="{{route('folhaUpdate',array('id'=>$folha->id,'hid'=>$hospital->id))}}" autocomplete="off">
             @csrf
@@ -32,8 +32,8 @@
             </div>
             <div class="row mt-1">
                 <div class="col-sm-12 text-right">
-                    <button class="btn btn-primary" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
-                    <a class="btn btn-danger" title="CANCELAR" href="{{route('folha.show',$hospital->id)}}"><span class="fa fa-window-close"></span></a>
+                    <button class="btn btn-primary btn-sm" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
+                    <a class="btn btn-danger btn-sm" title="CANCELAR" href="{{route('folha.show',$hospital->id)}}"><span class="fa fa-window-close"></span></a>
                 </div>
             </div>
         </form>

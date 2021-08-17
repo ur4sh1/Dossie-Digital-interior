@@ -12,12 +12,12 @@ class ItemRecursoEstadualSeeder extends Seeder
     public function run()
     {
         DB::table('item_recurso_estaduals')->insert([
-            ['descricao'=>'CONTAS PÚBLICAS - ENERGIA  (JANEIRO A AGOSTO)'],
+            ['descricao'=>'CONTAS PÚBLICAS - ENERGIA '],
             ['descricao'=>'EQUIPAMENTOS (DIGITALIZADOR + DIVERSOS)'],
-            ['descricao'=>'FOLHA DE PAGAMENTO  (JAN/OUT)'],
-            ['descricao'=>'MEDICAMENTOS E PPS (CEMA JAN/SET)'],
-            ['descricao'=>'OXIGÊNIO (DELOG) (JAN/SET)'],
-            ['descricao'=>'UTI AÉREA - REMOÇOES (JAN/JUN)']
+            ['descricao'=>'FOLHA DE PAGAMENTO  '],
+            ['descricao'=>'MEDICAMENTOS E PPS (CEMA)'],
+            ['descricao'=>'OXIGÊNIO (DELOG)'],
+            ['descricao'=>'UTI AÉREA - REMOÇOES']
         ]);
     }
 }

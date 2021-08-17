@@ -8,7 +8,7 @@
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm" href="{{route('home')}}" role="button"><span class="fa fa-home"></span></a>
-                <a class="btn btn-primary btn-sm" href="{{route('programa.create')}}" role="button">ADICIONAR</a>
+                <a class="btn btn-primary btn-sm" href="{{route('programa.create')}}" role="button"><span class="fa fa-plus-square"></span></a>
             </div>
         </div>
         <table class="table table-sm table-responsive-lg" id="table">

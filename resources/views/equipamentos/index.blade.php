@@ -8,8 +8,8 @@
         <div class="text-right mb-2">
             <div class="form-group">
                 <a class="btn btn-primary btn-sm mt-1" title="Home" href="{{route('home')}}" role="button"><span class="fa fa-home"></span></a>
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('equipamentos.create')}}" role="button">VINCULAR EQUIPAMENTO</a>
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">EQUIPAMENTOS</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('equipamentos.create')}}" role="button">VINCULAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button"><span class="fa fa-plus-square"></span></a>
             </div>
         </div>
         <table class="table table-responsive-lg table-sm" id="table">
@@ -18,7 +18,7 @@
                 <th scope="col">HOSPITAL</th>
                 <th scope="col">EQUIPAMENTO</th>
                 <th class="text-center" scope="col">EXISTENTE</th>
-                <th class="text-center" scope="col">FUNCIONAL</th>
+                <th class="text-center" scope="col">ATIVO</th>
                 <th class="text-center" scope="col">AÇÕES</th>
             </tr>
             </thead>

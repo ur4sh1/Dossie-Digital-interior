@@ -11,7 +11,7 @@
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
-            <a class="btn btn-primary btn-sm mt-1" href="{{route('rhs.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('rhs.create')}}" role="button"><span class="fa fa-plus-square"></span></a>
         </div>
         <table class="table table-responsive-md table-sm" id="table">
             <thead style="background:lavenderblush">

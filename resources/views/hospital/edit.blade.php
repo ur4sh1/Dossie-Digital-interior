@@ -7,7 +7,7 @@
             </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary mt-1" href="{{route('hospitals.index')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary mt-1 btn-sm" href="{{route('hospitals.index')}}" role="button"><span class="fa fa-undo"></span></a>
             </div>
         </div>
         <form method="post" class="needs-validation" action="{{route('hospitals.update',$hospital->id)}}" autocomplete="off">
@@ -48,8 +48,8 @@
             </div>
             <div class="form-row"><!--buttonsAções-->
                 <div class="col-sm-12 mt-3 text-right">
-                    <button class="btn btn-primary" type="submit"><span class="fa fa-save"></span></button>
-                    <a class="btn btn-danger" title="CANCELAR" href="/hospitals"><span class="fa fa-window-close"></span></a>
+                    <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-save"></span></button>
+                    <a class="btn btn-danger btn-sm" title="CANCELAR" href="/hospitals"><span class="fa fa-window-close"></span></a>
                 </div>
             </div><!--buttonsAções-->
         </form>

@@ -12,7 +12,7 @@
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm" href="{{route('home')}}" title="Home" role="button"><span class="fa fa-home"></span></a>
-            <a class="btn btn-primary btn-sm" href="{{route('exameCreate',$hospital->id)}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('exameCreate',$hospital->id)}}" role="button"><span class="fa fa-plus-square"></span></a>
         </div>
         <table class="table table-sm table-responsive-lg" id="table">
             <thead style="background:lavenderblush">

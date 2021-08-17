@@ -7,7 +7,7 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('tipoEquipamentos.index')}}" role="button"><span class="fa fa-undo"></span></a>
             </div>
         </div>
         <form method="post" action="{{route('tipoEquipamentos.store')}}" autocomplete="off">
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="form-row mt-1">
-                <div class="col-sm-4 text-right">
+                <div class="col-sm-12 text-right">
                     <button class="btn btn-primary btn-sm" title="SALVAR" type="submit"><span class="fa fa-save"></span></button>
                     <a class="btn btn-danger btn-sm" title="CANCELAR" href="/tipoEquipamentos"><span class="fa fa-window-close"></span></a>
                 </div>

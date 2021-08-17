@@ -8,7 +8,7 @@
         </div>
         <div class="text-right mb-2">
             <div class="form-group">
-                <a class="btn btn-primary btn-sm mt-1" href="{{route('dados.index')}}" role="button">VOLTAR</a>
+                <a class="btn btn-primary btn-sm mt-1" href="{{route('dados.index')}}" role="button"><span class="fa fa-undo"></span></a>
             </div>
         </div>
         <div class="row">

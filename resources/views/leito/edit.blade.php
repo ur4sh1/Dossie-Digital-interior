@@ -2,10 +2,10 @@
 @section('content')
     <div class="container">
         <div class="text-info">
-            <h1>Leitos</h1>
+            <h1><a href="{{route('leito.index')}}">Leitos</a> / Alteração</h1>
         </div>
         <div class="text-right mb-2">
-            <a class="btn btn-primary btn-sm" href="{{route('leito.index')}}" role="button">VOLTAR</a>
+            <a class="btn btn-primary btn-sm" href="{{route('leito.index')}}" role="button"><span class="fa fa-undo"></span></a>
         </div>
         <form method="post" action="{{route('leito.update',$leito->id)}}">
             @csrf

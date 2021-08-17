@@ -22,7 +22,7 @@
         <tr>
             <td></td>
             <td class="text-center">Existente</td>
-            <td class="text-center">Funcionando</td>
+            <td class="text-center">Ativo</td>
         </tr>
         @foreach($ho->equipamento as $equip)
             <tr>

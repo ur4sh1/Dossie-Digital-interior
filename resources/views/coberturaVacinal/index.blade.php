@@ -11,7 +11,7 @@
         </div>
         <div class="text-right mb-2">
             <a class="btn btn-primary btn-sm mt-1" href="{{route('home')}}" role="button"><span class="fa fa-home"></span></a>
-            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.create')}}" role="button">ADICIONAR</a>
+            <a class="btn btn-primary btn-sm mt-1" href="{{route('coberturaVacinal.create')}}" role="button"><span class="fa fa-plus-square"></span></a>
             <a class="btn btn-primary btn-sm mt-1" href="{{route('imunobiologica.index')}}" role="button">VACINAS</a>
         </div>
         <table class="table table-responsive-lg table-sm" id="table">
