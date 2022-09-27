@@ -10,4 +10,4 @@ Sistema que exibe e cadastra informações dos interiores do Amazonas
 * Laravel;
 
 ## :dart: Status do projeto
-Versão 1.0 Finalizada
+Versão 1.0 Beta Finalizada 
